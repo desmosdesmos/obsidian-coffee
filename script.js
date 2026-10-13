@@ -745,17 +745,53 @@ checkoutForm.addEventListener('submit', (e) => {
 });
 
 // ==========================================================================
-// 8. TOAST HELPER
+// 8. TOAST NOTIFICATION ENGINE
 // ==========================================================================
 let toastTimer = null;
 function showToast(msg) {
+  let toast = document.getElementById('toastNotification');
+  let text = document.getElementById('toastText');
+
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.id = 'toastNotification';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.innerHTML = `<span class="toast-indicator"></span><span class="toast-text" id="toastText"></span>`;
+    document.body.appendChild(toast);
+    text = document.getElementById('toastText');
+  }
+
   if (toastTimer) clearTimeout(toastTimer);
-  toastText.textContent = msg;
-  toastNotification.classList.add('active');
+
+  if (text) {
+    text.textContent = msg;
+  } else {
+    toast.textContent = msg;
+  }
+
+  toast.classList.add('active');
+
+  // Interactive haptic bump on cart badges
+  const headerBadge = document.getElementById('cartCount');
+  const dockBadge = document.getElementById('dockCartCount');
+  [headerBadge, dockBadge].forEach(b => {
+    if (b) {
+      b.classList.remove('badge-pop');
+      void b.offsetWidth;
+      b.classList.add('badge-pop');
+    }
+  });
+
   toastTimer = setTimeout(() => {
-    toastNotification.classList.remove('active');
-  }, 3200);
+    if (toast) toast.classList.remove('active');
+  }, 3000);
 }
+
+window.showToast = showToast;
+window.addToCart = addToCart;
+window.changeQty = changeQty;
 
 // ==========================================================================
 // 9. MOBILE MENU TOGGLE
