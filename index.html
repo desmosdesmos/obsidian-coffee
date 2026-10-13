@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOT BLACK — Спешелти кофейня в Королёве | Подмосковная 7</title>
+  <meta name="description" content="Минималистичная кофейня Hot Black: 100% спешелти арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 4.9 на Яндекс Картах.">
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Video Background with Dynamic Scroll Blur & Parallax -->
+  <div class="video-background-container" id="videoBgContainer" aria-hidden="true">
+    <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
+      <source src="gemini_generated_video_e50f7306.mp4" type="video/mp4">
+    </video>
+    <!-- Vignette & Dark Tint -->
+    <div class="video-overlay" id="videoOverlay"></div>
+    <!-- Blur backdrop overlay -->
+    <div class="video-blur-layer" id="videoBlurLayer"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="header" id="header">
+    <div class="header-inner container">
+      <!-- Logo -->
+      <a href="#hero" class="brand-logo">
+        <span class="logo-mark">●</span>
+        <span class="logo-name">HOT BLACK</span>
+        <span class="logo-city">КОРОЛЁВ</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#menu" class="nav-link">Меню</a>
+        <a href="#facts" class="nav-link">Стандарты</a>
+        <a href="#beans" class="nav-link">Зерно</a>
+        <a href="#reviews" class="nav-link">Отзывы 4.9</a>
+        <a href="#contacts" class="nav-link">Локация</a>
+      </nav>
+
+      <!-- Status & Cart CTA -->
+      <div class="header-actions">
+        <div class="live-status-badge" id="liveStatusBadge">
+          <span class="status-dot"></span>
+          <span class="status-text">08:00 – 22:00</span>
+        </div>
+
+        <button class="cart-trigger-btn" id="openCartBtn" aria-label="Открыть корзину">
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Burger Toggle for Mobile -->
+        <button class="burger-btn" id="burgerBtn" aria-label="Меню навигации">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (Строго по референсу) -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Eyebrow label -->
+        <div class="hero-top-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">HOT BLACK · SPECIALTY COFFEE & ROASTERY</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <!-- Main Big Bold Headline -->
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            КОФЕ,<br>
+            КОТОРЫЙ РАБОТАЕТ<br>
+            ТАК ЖЕ ЧЕСТНО, КАК ВЫ.
+          </h1>
+        </div>
+
+        <!-- Lower Interactive Blocks (As in reference screenshot: left & right) -->
+        <div class="hero-bottom-grid">
+          
+          <!-- Left Element (Reference left card) -->
+          <a href="#menu" class="hero-card hero-card-left" id="heroMenuShortcut">
+            <div class="hero-card-marker">
+              <div class="radar-circle">
+                <span class="radar-pulse"></span>
+                <span class="radar-num">01</span>
+              </div>
+            </div>
+            <div class="hero-card-content">
+              <h2 class="hero-card-title">ОТКРЫТЬ МЕНЮ</h2>
+              <p class="hero-card-desc">
+                Айс-латте, фильтр, батч-брю, сырники и свежие чизкейки. Выбирайте онлайн или на баре.
+              </p>
+              <div class="hero-card-action">
+                <span>Перейти к позициям</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-icon">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Right Element (Reference right card) -->
+          <a href="#reviews" class="hero-card hero-card-right" id="heroLocationShortcut">
+            <div class="hero-card-marker">
+              <div class="grid-badge">
+                <span class="grid-dot"></span>
+                <span class="grid-dot"></span>
+                <span class="grid-dot"></span>
+                <span class="grid-dot active"></span>
+              </div>
+            </div>
+            <div class="hero-card-content">
+              <h2 class="hero-card-title">РЕЙТИНГ 4.9 В ЯНДЕКС КАРТАХ</h2>
+              <p class="hero-card-desc">
+                Победитель премии «Хорошее место 2026». Королёв, Подмосковная ул., 7.
+              </p>
+              <div class="hero-card-action">
+                <span>Читать 436+ отзывов</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-icon">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="hero-scroll-cue">
+          <span class="scroll-cue-text">ЛИСТАТЬ ВНИЗ</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ticker / Quick Facts strip -->
+    <section class="ticker-strip" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-item">● 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item">● ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
+        <div class="ticker-item">● БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
+        <div class="ticker-item">● ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item">● РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
+        <div class="ticker-item">● ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
+        <div class="ticker-item">● PET-FRIENDLY</div>
+        <div class="ticker-item">● 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item">● ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
+        <div class="ticker-item">● БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
+        <div class="ticker-item">● ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item">● РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
+        <div class="ticker-item">● ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
+        <div class="ticker-item">● PET-FRIENDLY</div>
+      </div>
+    </section>
+
+    <!-- MENU / CATALOG SECTION -->
+    <section class="menu-section section-padding" id="menu">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-label">АРСЕНАЛ ТОВАРОВ</div>
+          <h2 class="section-title">МЕНЮ КОФЕЙНИ</h2>
+          <p class="section-subtitle">
+            Всё по факту: точный граммаж, свежая обжарка, стабильный рецепт и чистый вкус без компромиссов.
+          </p>
+        </div>
+
+        <!-- Controls: Category Filters & Live Search -->
+        <div class="catalog-controls">
+          <div class="category-tabs" id="categoryTabs">
+            <button class="cat-btn active" data-category="all">Все (19)</button>
+            <button class="cat-btn" data-category="coffee">Кофе & Напитки (8)</button>
+            <button class="cat-btn" data-category="food">Блюда & Завтраки (5)</button>
+            <button class="cat-btn" data-category="desserts">Десерты (4)</button>
+            <button class="cat-btn" data-category="beans">Зерно с собой (2)</button>
+          </div>
+
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="catalogSearch" placeholder="Поиск напитка или блюда..." aria-label="Поиск по меню">
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display:none;">✕</button>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid" id="catalogGrid">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BEANS & ROASTING SECTION -->
+    <section class="beans-highlight-section section-padding" id="beans">
+      <div class="container">
+        <div class="beans-card-banner">
+          <div class="beans-banner-info">
+            <div class="section-label">СВЕЖАЯ ОБЖАРКА</div>
+            <h3 class="banner-title">ЗЕРНО ДЛЯ ДОМА И ОФИСА</h3>
+            <p class="banner-desc">
+              Обжариваем небольшими батчами. Помолем под ваш способ заваривания бесплатно (фильтр, воронка V60, гейзер, турка или эспрессо).
+            </p>
+            <div class="banner-specs">
+              <div class="spec-col">
+                <span class="spec-val">100%</span>
+                <span class="spec-lbl">Арабика Specialty</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-val">84+</span>
+                <span class="spec-lbl">Q-Grade Score</span>
+              </div>
+              <div class="spec-col">
+                <span class="spec-val">каждую неделю</span>
+                <span class="spec-lbl">Свежая обжарка</span>
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="document.querySelector('[data-category=\'beans\']').click(); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
+              Выбрать пачку зерна
+            </button>
+          </div>
+          <div class="beans-banner-image">
+            <img src="assets/images/cafe_photo_1.jpg" alt="Пачки спешелти кофе Hot Black" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACTS & STANDARDS (БЕЗ ВОДЫ) -->
+    <section class="standards-section section-padding" id="facts">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-label">КАЧЕСТВО БЕЗ КОМПРОМИССОВ</div>
+          <h2 class="section-title">СТАНДАРТЫ HOT BLACK</h2>
+          <p class="section-subtitle">
+            Только факты и прозрачные цифры. Почему наш кофе держит высокую планку каждый день.
+          </p>
+        </div>
+
+        <div class="standards-grid">
+          
+          <div class="standard-card">
+            <div class="standard-num">01</div>
+            <h3 class="standard-title">ЗЕРНО И ОБЖАРКА</h3>
+            <p class="standard-text">
+              Используем исключительно зерно уровня Specialty с оценкой Q-Grader выше 84 баллов. Ротация сортов каждые две недели: яркая мытая Эфиопия под фильтр и плотная сладкая Колумбия под эспрессо.
+            </p>
+            <div class="standard-tags">
+              <span>Мытая обработка</span>
+              <span>Свежий урожай</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-num">02</div>
+            <h3 class="standard-title">ОБОРУДОВАНИЕ И ВОДА</h3>
+            <p class="standard-text">
+              Экстракция на двухгруппной итальянской машине с PID-контролем температуры до 0.1°C. Кофемолки с плоскими 98-мм жерновами. 4-ступенчатый обратный осмос с минерализацией (TDS 110 ppm).
+            </p>
+            <div class="standard-tags">
+              <span>TDS 110 ppm</span>
+              <span>PID контроль</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-num">03</div>
+            <h3 class="standard-title">КУХНЯ И ВЫПЕЧКА</h3>
+            <p class="standard-text">
+              Никаких замороженных полуфабрикатов. Свежие круассаны, баскские чизкейки и сырники из фермерского творога выпекаются утром. Завтраки готовим на протяжении всего рабочего дня.
+            </p>
+            <div class="standard-tags">
+              <span>К открытию 08:00</span>
+              <span>Фермерский творог</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-num">04</div>
+            <h3 class="standard-title">ПРОСТРАНСТВО</h3>
+            <p class="standard-text">
+              Эргономичные посадочные места, стабильный Wi-Fi 150 Мбит/с, розетки у каждого столика для комфортной работы. Гостеприимны к четвероногим друзьям (полный pet-friendly).
+            </p>
+            <div class="standard-tags">
+              <span>Wi-Fi 150 Mb/s</span>
+              <span>Pet-friendly</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION (С ЯНДЕКС КАРТ) -->
+    <section class="reviews-section section-padding" id="reviews">
+      <div class="container">
+        
+        <div class="yandex-header-card">
+          <div class="yandex-brand-col">
+            <div class="yandex-maps-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
+              </svg>
+              <span>ЯНДЕКС КАРТЫ</span>
+            </div>
+            <div class="yandex-award">
+              🏆 Победитель премии <strong>«Хорошее место 2026»</strong>
+            </div>
+          </div>
+
+          <div class="yandex-score-col">
+            <div class="big-score">4.9</div>
+            <div class="stars-row">
+              ★★★★★
+            </div>
+            <div class="score-meta">
+              На основе <strong>436 отзывов</strong> и 182 фотографий гостей
+            </div>
+          </div>
+
+          <div class="yandex-action-col">
+            <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-link-btn">
+              <span>Открыть карточку на Яндекс Картах</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Real Reviews Carousel / Grid -->
+        <div class="reviews-grid" id="reviewsGrid">
+          
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="author-info">
+                <div class="author-avatar-stub">E</div>
+                <div>
+                  <div class="author-name">evorlova15</div>
+                  <div class="author-level">Знаток города 12 уровня</div>
+                </div>
+              </div>
+              <div class="review-rating-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
+            </p>
+            <div class="review-date">15 мая · Источник: Яндекс Карты</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="author-info">
+                <div class="author-avatar-stub">Д</div>
+                <div>
+                  <div class="author-name">Дарья С.</div>
+                  <div class="author-level">Знаток города 7 уровня</div>
+                </div>
+              </div>
+              <div class="review-rating-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
+            </p>
+            <div class="review-date">14 сентября · Источник: Яндекс Карты</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="author-info">
+                <div class="author-avatar-stub">М</div>
+                <div>
+                  <div class="author-name">Михаил К.</div>
+                  <div class="author-level">Знаток города 9 уровня</div>
+                </div>
+              </div>
+              <div class="review-rating-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
+            </p>
+            <div class="review-date">4 сентября · Источник: Яндекс Карты</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card-top">
+              <div class="author-info">
+                <div class="author-avatar-stub">А</div>
+                <div>
+                  <div class="author-name">Артем В.</div>
+                  <div class="author-level">Местный житель</div>
+                </div>
+              </div>
+              <div class="review-rating-stars">★★★★★</div>
+            </div>
+            <p class="review-text">
+              «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
+            </p>
+            <div class="review-date">18 августа · Источник: Яндекс Карты</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOCATION & CONTACTS SECTION -->
+    <section class="contacts-section section-padding" id="contacts">
+      <div class="container">
+        
+        <div class="contacts-layout">
+          
+          <div class="contacts-info-card">
+            <div class="section-label">ЛОКАЦИЯ И СВЯЗЬ</div>
+            <h2 class="section-title">ЖДЁМ ВАС В ГОСТИ</h2>
+            
+            <div class="info-items-list">
+              
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-title">Адрес</div>
+                  <div class="info-val">Московская обл., г. Королёв, Подмосковная ул., 7</div>
+                  <div class="info-sub">Ориентир: рядом со станциями Болшево и Подлипки</div>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-title">Режим работы</div>
+                  <div class="info-val">Ежедневно: 08:00 — 22:00</div>
+                  <div class="info-sub">Кухня и бар работают до закрытия</div>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-title">Телефон для предзаказа и вопросов</div>
+                  <a href="tel:+79252173915" class="info-val info-link">+7 (925) 217-39-15</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="contacts-action-btns">
+              <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Построить маршрут на Яндекс Картах
+              </a>
+              <a href="tel:+79252173915" class="btn btn-outline">
+                Позвонить на бар
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Yandex Maps Embedded Frame -->
+          <div class="contacts-map-wrapper">
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?ll=37.868484%2C55.914760&z=16&pt=37.868484,55.914760,pm2rdm"
+              width="100%" 
+              height="100%" 
+              frameborder="0" 
+              allowfullscreen="true" 
+              title="Hot Black на Яндекс Картах"
+              class="yandex-map-frame">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <div class="footer-logo">HOT BLACK</div>
+        <p class="footer-copy">
+          Спешелти кофейня и обжарка в Королёве.<br>
+          Честный кофе без компромиссов.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-heading">НАВИГАЦИЯ</div>
+        <ul class="footer-links">
+          <li><a href="#menu">Каталог меню</a></li>
+          <li><a href="#facts">Стандарты качества</a></li>
+          <li><a href="#beans">Зерно для дома</a></li>
+          <li><a href="#reviews">Отзывы гостей</a></li>
+          <li><a href="#contacts">Локация и контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-heading">ЯНДЕКС КАРТЫ</div>
+        <p class="footer-yandex-info">
+          Рейтинг: 4.9 из 5.0<br>
+          «Хорошее место 2026»<br>
+          <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
+            Перейти к профилю организации ↗
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container">
+      <div class="copyright">© 2026 HOT BLACK COFFEE. Все права защищены.</div>
+      <div class="dev-badge">Подмосковная ул., 7, г. Королёв</div>
+    </div>
+  </footer>
+
+  <!-- CART SLIDE-OVER DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Корзина заказа">
+      <div class="cart-drawer-header">
+        <h3 class="cart-title">
+          <span>ВАШ ВЫБОР</span>
+          <span class="cart-title-count" id="cartHeaderCount">(0)</span>
+        </h3>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Закрыть корзину">✕</button>
+      </div>
+
+      <div class="cart-items-container" id="cartItemsList">
+        <!-- Rendered dynamically -->
+        <div class="empty-cart-state" id="emptyCartState">
+          <div class="empty-icon">☕</div>
+          <div class="empty-title">В корзине пока пусто</div>
+          <div class="empty-desc">Выберите понравившиеся позиции из меню, чтобы оформить предзаказ к нужному времени.</div>
+          <button class="btn btn-outline" onclick="document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
+            Перейти в меню
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+        <div class="cart-summary-row">
+          <span>Итого к оплате:</span>
+          <span class="cart-total-sum" id="cartTotalSum">0 ₽</span>
+        </div>
+        <button class="btn btn-primary btn-block" id="proceedCheckoutBtn">
+          Оформить предзаказ на бар
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal-overlay" id="productModalOverlay">
+    <div class="product-modal" id="productModal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Закрыть окно">✕</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-overlay" id="checkoutModalOverlay">
+    <div class="checkout-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Закрыть окно">✕</button>
+      <div class="checkout-header">
+        <h3>БЫСТРЫЙ ПРЕДЗАКАЗ</h3>
+        <p>Готовим к вашему приходу — заберите без очереди на Подмосковной, 7</p>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-group">
+          <label for="orderName">Ваше имя</label>
+          <input type="text" id="orderName" required placeholder="Например, Александр">
+        </div>
+        <div class="form-group">
+          <label for="orderPhone">Телефон</label>
+          <input type="tel" id="orderPhone" required placeholder="+7 (999) 000-00-00">
+        </div>
+        <div class="form-group">
+          <label for="orderTime">К какому времени приготовить?</label>
+          <select id="orderTime">
+            <option value="Через 10-15 минут">Через 10–15 минут</option>
+            <option value="Через 20-30 минут">Через 20–30 минут</option>
+            <option value="Через 45 минут">Через 45 минут</option>
+            <option value="К определенному времени">К определенному времени (укажите в комментарии)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="orderComment">Пожелания к заказу (альтернативное молоко, без сахара и т.д.)</label>
+          <input type="text" id="orderComment" placeholder="Например: в свою кружку / овсяное молоко">
+        </div>
+
+        <div class="order-summary-box" id="orderSummaryBox">
+          <!-- Summary list -->
+        </div>
+
+        <div class="checkout-submit-buttons">
+          <button type="submit" class="btn btn-primary btn-block">
+            Подтвердить предзаказ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotification">
+    <span class="toast-text" id="toastText">Позиция добавлена</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
