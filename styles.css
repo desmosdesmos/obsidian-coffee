@@ -1555,6 +1555,176 @@ button, input, select {
 }
 
 /* ==========================================================================
+   INTERACTIVE MESSENGERS GRID (TELEGRAM, WHATSAPP, YANDEX MAPS)
+   ========================================================================== */
+.messengers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.messenger-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.messenger-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.messenger-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.messenger-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.messenger-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.messenger-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.messenger-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.messenger-arrow {
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+/* Telegram Specific Style */
+.tg-card .messenger-icon-wrap {
+  background: rgba(34, 158, 217, 0.12);
+  color: #2aabee;
+  border: 1px solid rgba(34, 158, 217, 0.25);
+}
+.tg-card .messenger-tag {
+  color: #2aabee;
+}
+.tg-card:hover {
+  border-color: rgba(34, 158, 217, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(34, 158, 217, 0.18);
+}
+.tg-card:hover::before {
+  background: #2aabee;
+}
+.tg-card:hover .messenger-arrow {
+  color: #2aabee;
+  transform: translate(3px, -3px);
+}
+.tg-card:hover .messenger-icon-wrap {
+  background: #2aabee;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(42, 171, 238, 0.5);
+}
+
+/* WhatsApp Specific Style */
+.wa-card .messenger-icon-wrap {
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366;
+  border: 1px solid rgba(37, 211, 102, 0.25);
+}
+.wa-card .messenger-tag {
+  color: #25d366;
+}
+.wa-card:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.18);
+}
+.wa-card:hover::before {
+  background: #25d366;
+}
+.wa-card:hover .messenger-arrow {
+  color: #25d366;
+  transform: translate(3px, -3px);
+}
+.wa-card:hover .messenger-icon-wrap {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.5);
+}
+
+/* Yandex Maps Specific Style */
+.maps-card .messenger-icon-wrap {
+  background: rgba(252, 63, 29, 0.12);
+  color: #fc3f1d;
+  border: 1px solid rgba(252, 63, 29, 0.25);
+}
+.maps-card .messenger-tag {
+  color: #fc3f1d;
+}
+.maps-card:hover {
+  border-color: rgba(252, 63, 29, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(252, 63, 29, 0.18);
+}
+.maps-card:hover::before {
+  background: #fc3f1d;
+}
+.maps-card:hover .messenger-arrow {
+  color: #fc3f1d;
+  transform: translate(3px, -3px);
+}
+.maps-card:hover .messenger-icon-wrap {
+  background: #fc3f1d;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(252, 63, 29, 0.5);
+}
+
+/* ==========================================================================
    BESPOKE DARK ARCHITECTURAL MAP
    ========================================================================== */
 .contacts-layout {
@@ -2289,6 +2459,13 @@ button, input, select {
 }
 
 /* ==========================================================================
+   MOBILE BOTTOM ACTION DOCK (HIDDEN ON DESKTOP)
+   ========================================================================== */
+.mobile-bottom-dock {
+  display: none;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -2321,9 +2498,15 @@ button, input, select {
 }
 
 @media (max-width: 768px) {
-  .section-padding {
-    padding: 70px 0;
+  /* Give body safe bottom clearance for sticky mobile dock */
+  body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
   .nav-menu {
     position: fixed;
     top: var(--header-height);
@@ -2361,7 +2544,7 @@ button, input, select {
     min-height: auto;
   }
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
   .hero-top-eyebrow {
     flex-direction: column;
@@ -2374,5 +2557,178 @@ button, input, select {
   }
   .grind-options-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Messengers grid on tablets & mobile */
+  .messengers-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .messenger-card {
+    padding: 16px 18px;
+  }
+  .messenger-icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+  .messenger-svg {
+    width: 22px;
+    height: 22px;
+  }
+  .messenger-name {
+    font-size: 1.05rem;
+  }
+  .messenger-sub {
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+
+  /* Catalog horizontal swipe navigation on touch devices */
+  .catalog-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .cat-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .search-box {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  /* STICKY BOTTOM ACTION DOCK */
+  .mobile-bottom-dock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 190;
+    background: rgba(14, 12, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-medium);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-items: center;
+  }
+
+  .dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 6px 0;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dock-item:active, .dock-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .dock-item svg {
+    stroke: currentColor;
+    transition: transform var(--transition-fast);
+  }
+
+  .dock-item:active svg {
+    transform: scale(0.92);
+  }
+
+  .dock-badge-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dock-cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--accent-orange);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 9px;
+    min-width: 16px;
+    text-align: center;
+    font-family: var(--font-heading);
+    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.5);
+  }
+
+  .dock-item.dock-accent {
+    color: #2aabee;
+  }
+  .dock-item.dock-accent:active {
+    color: #fff;
+    background: rgba(42, 171, 238, 0.15);
+  }
+
+  /* Cart Drawer Mobile */
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Toast notification safe position above dock */
+  .toast-notification {
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+    left: 16px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.15;
+  }
+  .hero-bottom-grid {
+    gap: 12px;
+  }
+  .hero-matrix-box, .hero-radar-box {
+    padding: 16px;
+  }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .checkout-modal {
+    padding: 24px 18px;
+  }
+  .modal-detail-content {
+    padding: 20px 16px;
   }
 }

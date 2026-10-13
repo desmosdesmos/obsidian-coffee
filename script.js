@@ -438,6 +438,11 @@ function updateCartUI() {
   cartCount.textContent = totalCount;
   cartHeaderCount.textContent = `(${totalCount})`;
 
+  const dockCartCount = document.getElementById('dockCartCount');
+  if (dockCartCount) {
+    dockCartCount.textContent = totalCount;
+  }
+
   if (cart.length === 0) {
     cartItemsList.innerHTML = '';
     cartItemsList.appendChild(emptyCartState);
@@ -479,6 +484,14 @@ openCartBtn.addEventListener('click', () => {
   cartOverlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 });
+
+const mobileCartTrigger = document.getElementById('mobileCartTrigger');
+if (mobileCartTrigger) {
+  mobileCartTrigger.addEventListener('click', () => {
+    cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
 
 closeCartBtn.addEventListener('click', () => {
   cartOverlay.classList.remove('active');
