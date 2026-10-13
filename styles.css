@@ -51,12 +51,17 @@ html {
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
   font-family: var(--font-body);
   line-height: 1.55;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
 }
@@ -1702,26 +1707,43 @@ button, input, select {
 
 /* Track scrolling continuously to the right */
 .reviews-marquee-track {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   gap: 24px;
-  width: max-content;
-  animation: scrollTrackRight 40s linear infinite;
+  width: max-content !important;
+  animation: scrollTrackRight 38s linear infinite !important;
   will-change: transform;
 }
 
-/* Moving to the right: translate from -50% to 0% */
-@keyframes scrollTrackRight {
+/* Moving to the right: translate from -50% to 0% with 3D hardware acceleration */
+@-webkit-keyframes scrollTrackRight {
   0% {
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0%);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-/* Pause on hover so visitor can read effortlessly */
-.reviews-marquee-viewport:hover .reviews-marquee-track {
-  animation-play-state: paused;
+@keyframes scrollTrackRight {
+  0% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Pause on hover ONLY on desktop with mouse pointer (prevents mobile touch from freezing) */
+@media (hover: hover) and (pointer: fine) {
+  .reviews-marquee-viewport:hover .reviews-marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 /* Review Card Styling */
@@ -2978,279 +3000,572 @@ button, input, select {
 }
 
 @media (max-width: 768px) {
-  /* Give body safe bottom clearance for sticky mobile dock */
+  /* Prevent any horizontal body overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
   body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .container {
+    padding: 0 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .section-padding {
-    padding: 60px 0;
+    padding: 55px 0 !important;
+    overflow-x: hidden !important;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background: #110f0e;
-    border-bottom: 1px solid var(--border-subtle);
-    flex-direction: column;
-    padding: 24px;
-    gap: 18px;
-    transform: translateY(-150%);
-    transition: transform var(--transition-fast);
-  }
-  .nav-menu.open {
-    transform: translateY(0);
-  }
-  .burger-btn {
-    display: flex;
-  }
-  .live-status-badge {
-    padding: 6px 10px;
-  }
-  .schedule-dropdown {
-    right: -40px;
-    width: 290px;
-  }
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .contacts-info-card {
-    padding: 28px 20px;
-  }
-  .hero-container {
-    min-height: auto;
-  }
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  .hero-top-eyebrow {
-    flex-direction: column;
-    gap: 6px;
-    border-radius: 12px;
-  }
-  .eyebrow-coords {
-    border-left: none;
-    padding-left: 0;
-  }
-  .grind-options-grid {
-    grid-template-columns: 1fr;
+  /* ========================================================================
+     1. FIXED & BALANCED COMPACT MOBILE HEADER (Ничего не съезжает)
+     ======================================================================== */
+  :root {
+    --header-height: 60px;
   }
 
-  /* Messengers grid on tablets & mobile */
-  .messengers-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .messenger-card {
-    padding: 16px 18px;
-  }
-  .messenger-icon-wrap {
-    width: 44px;
-    height: 44px;
-  }
-  .messenger-svg {
-    width: 22px;
-    height: 22px;
-  }
-  .messenger-name {
-    font-size: 1.05rem;
-  }
-  .messenger-sub {
-    font-size: 0.78rem;
-    white-space: normal;
+  .header {
+    height: 60px !important;
+    background: rgba(12, 10, 9, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 0 !important;
   }
 
-  /* Catalog horizontal swipe navigation on touch devices */
-  .catalog-controls {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
+  .header-inner {
+    height: 100% !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .category-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
-    scrollbar-width: none;
-  }
-  .category-tabs::-webkit-scrollbar {
-    display: none;
-  }
-  .cat-btn {
+
+  .nav-logo {
+    font-size: 1.05rem !important;
+    letter-spacing: -0.01em;
     flex-shrink: 0;
-    white-space: nowrap;
-  }
-  .search-box {
-    min-width: 100%;
-    width: 100%;
   }
 
-  /* STICKY BOTTOM ACTION DOCK */
+  /* HIDE SCHEDULE DROPDOWN TRIGGER FROM TOP BAR TO PREVENT OVERLAP & OVERFLOW */
+  .schedule-trigger-wrapper {
+    display: none !important;
+  }
+
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .cart-trigger-btn {
+    padding: 6px 12px !important;
+    gap: 6px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .burger-btn {
+    display: flex !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 7px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Fullscreen Slide-Down Mobile Drawer */
+  .nav-menu {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 60px) !important;
+    overflow-y: auto !important;
+    background: rgba(14, 12, 10, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    flex-direction: column !important;
+    padding: 24px 20px 100px !important;
+    gap: 16px !important;
+    transform: translateY(-120%) !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    z-index: 99 !important;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0) !important;
+  }
+
+  .nav-link {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* ========================================================================
+     2. HERO: HIDE OBSIDIAN EYEBROW & HIGHLIGHT DIRECT MENU CTA
+     ======================================================================== */
+  .hero-section {
+    min-height: auto !important;
+    padding: 85px 0 35px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    overflow-x: hidden !important;
+  }
+
+  .hero-container {
+    min-height: auto !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* USER REQUEST: Hide the bulky header element with roaster & coords on mobile */
+  .hero-top-eyebrow {
+    display: none !important;
+  }
+
+  .hero-title-wrapper {
+    margin: 0 auto 12px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 4px !important;
+  }
+
+  .hero-bottom-grid {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin-top: 6px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* PRIMARY HERO ACTION: VIBRANT "ОТКРЫТЬ МЕНЮ" CARD */
+  .hero-card-left {
+    background: linear-gradient(135deg, rgba(255, 87, 34, 0.2) 0%, rgba(20, 17, 14, 0.92) 100%) !important;
+    border: 1.5px solid rgba(255, 87, 34, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(255, 87, 34, 0.22) !important;
+    padding: 20px 22px !important;
+    border-radius: 16px !important;
+  }
+
+  .hero-card-left .hero-card-title {
+    font-size: 1.25rem !important;
+    color: #fff !important;
+  }
+
+  .hero-card-left .hero-card-desc {
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-card-left .hero-card-action {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    color: var(--accent-orange) !important;
+    text-transform: uppercase !important;
+  }
+
+  .hero-card-right {
+    padding: 16px 20px !important;
+    border-radius: 14px !important;
+    background: rgba(18, 15, 13, 0.72) !important;
+  }
+
+  .hero-card-right .hero-card-title {
+    font-size: 1.02rem !important;
+  }
+
+  .hero-card-right .hero-card-desc {
+    font-size: 0.78rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* ========================================================================
+     3. BEANS SECTION: PRICE & GRAMMAGE PERFECT ALIGNMENT (Ничего не съезжает)
+     ======================================================================== */
+  .beans-editorial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .beans-image-wrap {
+    height: 250px !important;
+  }
+
+  .beans-config-card {
+    padding: 22px 18px !important;
+  }
+
+  .beans-card-title {
+    font-size: 1.45rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .beans-descriptors {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .desc-pill {
+    font-size: 0.72rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .grind-options-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .grind-pill {
+    padding: 9px 8px !important;
+    font-size: 0.76rem !important;
+    text-align: center !important;
+  }
+
+  /* Strict single-line row for price and weight: never wrap onto 2 lines! */
+  .beans-order-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    margin-top: 20px !important;
+    padding-top: 18px !important;
+  }
+
+  .beans-price-box {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .beans-price-value {
+    font-size: 1.6rem !important;
+    white-space: nowrap !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 800 !important;
+    color: var(--text-main) !important;
+  }
+
+  .beans-price-meta {
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
+    color: var(--text-dim) !important;
+  }
+
+  #addBeansToCartBtn {
+    padding: 11px 18px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ========================================================================
+     4. REVIEWS SECTION: RIGHT-SCROLLING MARQUEE (Никогда не список)
+     ======================================================================== */
+  .yandex-minimal-banner {
+    padding: 24px 18px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .score-row-minimal {
+    gap: 14px !important;
+  }
+
+  .rating-num-big {
+    font-size: 3.2rem !important;
+  }
+
+  .reviews-marquee-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .marquee-indicator-pill {
+    font-size: 0.66rem !important;
+  }
+
+  /* STRICT VIEWPORT CLIPPING - PREVENTS HORIZONTAL PAGE OVERFLOW */
+  .reviews-marquee-viewport {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    contain: paint !important;
+    padding: 10px 0 16px !important;
+  }
+
+  .reviews-marquee-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    width: max-content !important;
+    animation: scrollTrackRight 34s linear infinite !important;
+    will-change: transform !important;
+  }
+
+  .review-card {
+    flex: 0 0 295px !important;
+    width: 295px !important;
+    min-width: 295px !important;
+    max-width: 295px !important;
+    flex-shrink: 0 !important;
+    padding: 18px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .marquee-edge-fade {
+    width: 30px !important;
+  }
+
+  /* ========================================================================
+     5. BESPOKE MAP CARD (Ничего не вылезает)
+     ======================================================================== */
+  .contacts-layout {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .bespoke-map-card {
+    min-height: 460px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .map-visual-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .custom-vector-map {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .map-top-bar {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+  }
+
+  .map-hud-overlay {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    padding: 14px 16px !important;
+    gap: 10px !important;
+  }
+
+  .hud-transit-pills {
+    gap: 6px !important;
+  }
+
+  .transit-pill {
+    font-size: 0.68rem !important;
+    padding: 3px 8px !important;
+  }
+
+  .messengers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .messenger-card {
+    padding: 16px 18px !important;
+  }
+
+  /* ========================================================================
+     6. FLOATING CLOUD DOCK (ЛЕТАЮЩЕЕ ОБЛАЧКО ПОЛУ С ЗАКРУГЛЕННЫМИ КРАЯМИ)
+     ======================================================================== */
   .mobile-bottom-dock {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 190;
-    background: rgba(14, 12, 10, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid var(--border-medium);
-    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
-    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.7);
-    align-items: center;
-    justify-items: center;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    position: fixed !important;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    z-index: 190 !important;
+    background: rgba(18, 15, 13, 0.82) !important;
+    backdrop-filter: blur(28px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 36px !important;
+    padding: 6px 10px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 24px rgba(255, 87, 34, 0.16) !important;
+    align-items: center !important;
+    justify-items: center !important;
   }
 
   .dock-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    cursor: pointer;
-    width: 100%;
-    padding: 6px 0;
-    border-radius: 8px;
-    transition: all var(--transition-fast);
-    -webkit-tap-highlight-color: transparent;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-muted) !important;
+    font-size: 0.66rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    padding: 6px 4px !important;
+    border-radius: 22px !important;
+    transition: all var(--transition-fast) !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   .dock-item:active, .dock-item:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .dock-item svg {
-    stroke: currentColor;
-    transition: transform var(--transition-fast);
-  }
-
-  .dock-item:active svg {
-    transform: scale(0.92);
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
 
   .dock-badge-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .dock-cart-count {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background: var(--accent-orange);
-    color: #fff;
-    font-size: 0.62rem;
-    font-weight: 800;
-    padding: 1px 5px;
-    border-radius: 9px;
-    min-width: 16px;
-    text-align: center;
-    font-family: var(--font-heading);
-    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.5);
+    position: absolute !important;
+    top: -5px !important;
+    right: -9px !important;
+    background: var(--accent-orange) !important;
+    color: #fff !important;
+    font-size: 0.6rem !important;
+    font-weight: 800 !important;
+    padding: 1px 5px !important;
+    border-radius: 9px !important;
+    min-width: 16px !important;
+    text-align: center !important;
+    font-family: var(--font-heading) !important;
+    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.6) !important;
   }
 
   .dock-item.dock-accent {
-    color: #2aabee;
-  }
-  .dock-item.dock-accent:active {
-    color: #fff;
-    background: rgba(42, 171, 238, 0.15);
+    color: #2aabee !important;
   }
 
-  /* Yandex Banner & Reviews on Mobile */
-  .yandex-minimal-banner {
-    padding: 24px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .score-row-minimal {
-    gap: 14px;
-  }
-  .review-card {
-    width: 310px;
-    min-width: 310px;
-    padding: 20px;
-  }
-  .marquee-edge-fade {
-    width: 35px;
+  /* Catalog Controls horizontal swipe */
+  .catalog-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
   }
 
-  /* Architectural Map on Mobile */
-  .bespoke-map-card {
-    min-height: 480px;
+  .category-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
   }
-  .map-top-bar {
-    padding: 10px 14px;
-    gap: 8px;
+
+  .category-tabs::-webkit-scrollbar {
+    display: none !important;
   }
-  .map-hud-overlay {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    padding: 14px 16px;
-    gap: 10px;
+
+  .cat-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
   }
-  .hud-transit-pills {
-    gap: 6px;
+
+  .search-box {
+    min-width: 100% !important;
+    width: 100% !important;
   }
-  .transit-pill {
-    font-size: 0.68rem;
-    padding: 3px 8px;
+
+  /* Catalog Grid on Mobile */
+  .catalog-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .product-card {
+    min-height: auto !important;
+  }
+
+  .card-body {
+    padding: 18px 16px !important;
   }
 
   /* Cart Drawer Mobile */
   .cart-drawer {
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  /* Toast notification safe position above dock */
+  /* Toast notification position above floating dock */
   .toast-notification {
-    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
-    right: 16px;
-    left: 16px;
-    justify-content: center;
-    text-align: center;
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 16px !important;
+    left: 16px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.85rem;
-    line-height: 1.15;
-  }
-  .hero-bottom-grid {
-    gap: 12px;
-  }
-  .hero-matrix-box, .hero-radar-box {
-    padding: 16px;
-  }
-  .catalog-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    font-size: 1.8rem !important;
+    line-height: 1.15 !important;
   }
   .checkout-modal {
-    padding: 24px 18px;
+    padding: 24px 18px !important;
   }
   .modal-detail-content {
-    padding: 20px 16px;
+    padding: 20px 16px !important;
   }
 }
