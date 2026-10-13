@@ -1056,224 +1056,77 @@
 
           </div>
 
-          <!-- Custom Bespoke Dark Architectural Map (Индивидуальная карта) -->
-          <div class="bespoke-map-card" id="mapCard">
+          <!-- Minimalist Dark Online Map (Ночная тема, без перегруженности и эмодзи) -->
+          <div class="bespoke-map-card minimal-dark-map-card" id="mapCard">
             
-            <!-- Map Top Bar: Coordinates & View Switcher -->
+            <!-- Map Top Bar: Coordinates & Status -->
             <div class="map-top-bar">
               <div class="map-coords-tag">
                 <span class="map-radar-pulse"></span>
                 <span class="map-coords-text">55°55′05″ N, 37°49′05″ E · КОРОЛЁВ</span>
               </div>
               
-              <div class="map-view-switcher">
-                <button class="map-tab-btn active" id="btnSvgMap" type="button" aria-label="Архитектурная схема">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                  <span>Схема</span>
-                </button>
-                <button class="map-tab-btn" id="btnLiveMap" type="button" aria-label="Яндекс Карты онлайн">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-                  <span>Карты онлайн</span>
+              <div class="map-top-actions">
+                <div class="map-night-mode-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                  </svg>
+                  <span>НОЧНАЯ ТЕМА КАРТЫ</span>
+                </div>
+                <button class="map-copy-btn" id="copyAddressBtn" type="button" title="Скопировать адрес">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                  </svg>
+                  <span>Скопировать</span>
                 </button>
               </div>
             </div>
 
-            <!-- Visual Container -->
-            <div class="map-visual-container" id="mapVisualContainer">
-              
-              <!-- Bespoke Architectural Vector Blueprint -->
-              <svg class="custom-vector-map" id="customVectorMap" viewBox="0 0 700 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <!-- Delicate Technical CAD Grid -->
-                  <pattern id="archGrid" width="35" height="35" patternUnits="userSpaceOnUse">
-                    <path d="M 35 0 L 0 0 0 35" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
-                    <circle cx="35" cy="35" r="1" fill="rgba(255,255,255,0.08)"/>
-                  </pattern>
+            <!-- Dark Online Map Container -->
+            <div class="dark-map-viewport">
+              <iframe 
+                class="dark-online-map-iframe" 
+                id="onlineMapIframe" 
+                src="https://yandex.ru/map-widget/v1/?ll=37.8685%2C55.9148&z=16&pt=37.8685,55.9148,pm2rdm" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                loading="lazy"
+                title="Интерактивная ночная карта кофейни Obsidian // 07">
+              </iframe>
 
-                  <!-- Cafe Building Isometric Pattern -->
-                  <pattern id="buildingHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(255,87,34,0.12)" stroke-width="1.5" />
-                  </pattern>
-
-                  <!-- High-End Radial Beacon Glow -->
-                  <radialGradient id="beaconGlowCore" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#ff5722" stop-opacity="0.85"/>
-                    <stop offset="30%" stop-color="#ff5722" stop-opacity="0.35"/>
-                    <stop offset="70%" stop-color="#ff5722" stop-opacity="0.08"/>
-                    <stop offset="100%" stop-color="#ff5722" stop-opacity="0"/>
-                  </radialGradient>
-
-                  <!-- Station Beacon Glow -->
-                  <radialGradient id="stationGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5"/>
-                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
-                  </radialGradient>
-                </defs>
-
-                <!-- Deep Obsidian Base Layer -->
-                <rect width="700" height="500" fill="#0d0b0a"/>
-                <rect width="700" height="500" fill="url(#archGrid)"/>
-
-                <!-- Architectural District Blocks (Городские кварталы) -->
-                <rect x="40" y="40" width="180" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                <rect x="250" y="30" width="220" height="120" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                <rect x="500" y="40" width="160" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-
-                <rect x="40" y="240" width="160" height="120" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                <rect x="440" y="240" width="220" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-
-                <!-- Building Footprints & Lit Windows (Архитектурные строения) -->
-                <g class="building-footprints" opacity="0.8">
-                  <!-- Block 1 Buildings -->
-                  <rect x="55" y="55" width="45" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="110" y="55" width="55" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="55" y="100" width="110" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-
-                  <!-- Block 2 Buildings -->
-                  <rect x="265" y="45" width="80" height="40" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="360" y="45" width="95" height="40" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="265" y="95" width="190" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-
-                  <!-- South Block Buildings -->
-                  <rect x="55" y="255" width="65" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="130" y="255" width="55" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="455" y="255" width="95" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                  <rect x="560" y="255" width="85" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
-                </g>
-
-                <!-- Railroad Corridor (Ярославское направление МЖД) -->
-                <path d="M-20 420 L 720 400" stroke="#181512" stroke-width="26"/>
-                <path d="M-20 420 L 720 400" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-dasharray="8 8"/>
-                <path d="M-20 415 L 720 395" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                <path d="M-20 425 L 720 405" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-
-                <!-- Railway Stations -->
-                <!-- Station 1: Подлипки-Дачные -->
-                <circle cx="95" cy="417" r="28" fill="url(#stationGlow)"/>
-                <rect x="65" y="411" width="60" height="12" rx="3" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                <circle cx="95" cy="417" r="4" fill="#60a5fa"/>
-                <text x="95" y="445" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Manrope" font-size="9" font-weight="700" letter-spacing="0.5">ст. ПОДЛИПКИ-ДАЧНЫЕ</text>
-
-                <!-- Station 2: Болшево (Ближайшая!) -->
-                <circle cx="560" cy="404" r="34" fill="url(#stationGlow)"/>
-                <rect x="525" y="398" width="70" height="12" rx="3" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
-                <circle cx="560" cy="404" r="4" fill="#60a5fa"/>
-                <text x="560" y="432" text-anchor="middle" fill="#60a5fa" font-family="Manrope" font-size="9.5" font-weight="800" letter-spacing="0.5">ст. БОЛШЕВО (380 м)</text>
-
-                <!-- Main Roads Infrastructure -->
-                <!-- Secondary Cross Road (Грабина / Октябрьский б-р) -->
-                <path d="M 230 -20 L 230 520" stroke="#161311" stroke-width="32" stroke-linecap="round"/>
-                <path d="M 230 -20 L 230 520" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="10 8"/>
-
-                <!-- Central Arterial: ПОДМОСКОВНАЯ УЛИЦА -->
-                <path d="M-20 195 Q 350 205 720 185" stroke="#1e1a17" stroke-width="36" stroke-linecap="round"/>
-                <path d="M-20 195 Q 350 205 720 185" stroke="#2a2420" stroke-width="26" stroke-linecap="round"/>
-                <!-- Animated Road Dashline (Traffic Lane) -->
-                <path class="road-center-line" d="M-20 195 Q 350 205 720 185" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="8 10"/>
-
-                <!-- Animated Flowing Vehicle Particles -->
-                <circle class="traffic-particle p1" r="2.5" fill="#ffc107">
-                  <animateMotion path="M-20 191 Q 350 201 720 181" dur="7s" repeatCount="indefinite" />
-                </circle>
-                <circle class="traffic-particle p2" r="2.5" fill="#ff5722">
-                  <animateMotion path="M 720 199 Q 350 209 -20 199" dur="8.5s" repeatCount="indefinite" />
-                </circle>
-
-                <!-- Connecting Driveway to Podmoskovnaya 7 -->
-                <path d="M 330 195 L 330 250" stroke="#2a2420" stroke-width="18" stroke-linecap="round"/>
-                <path d="M 330 195 L 330 250" stroke="rgba(255,87,34,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
-
-                <!-- Street Typography Labels -->
-                <text x="75" y="186" fill="rgba(255,255,255,0.4)" font-family="Manrope" font-size="10.5" font-weight="700" letter-spacing="2">ПОДМОСКОВНАЯ УЛИЦА</text>
-                <text x="242" y="75" fill="rgba(255,255,255,0.25)" font-family="Manrope" font-size="9" font-weight="700" letter-spacing="1.5" transform="rotate(90 242 75)">ОКТЯБРЬСКИЙ БУЛЬВАР</text>
-                <text x="490" y="176" fill="rgba(255,255,255,0.35)" font-family="Manrope" font-size="10" font-weight="700" letter-spacing="1.5">В СТОРОНУ БОЛШЕВО →</text>
-
-                <!-- ANIMATED WALKING ROUTE FROM BOLSHEVO STATION TO OBSIDIAN (ст. Болшево ➔ Кофейня) -->
-                <!-- Dotted animated route path -->
-                <path class="walking-route-path" d="M 560 395 L 530 270 L 370 270 L 330 260" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
-                
-                <!-- Walking waypoint indicator -->
-                <rect x="420" y="278" width="94" height="18" rx="9" fill="rgba(255,87,34,0.18)" stroke="#ff5722" stroke-width="1"/>
-                <text x="467" y="290" text-anchor="middle" fill="#fff" font-family="Manrope" font-size="8.5" font-weight="800">🚶 4 МИН ПЕШКОМ</text>
-
-                <!-- ============================================== -->
-                <!-- OBSIDIAN // 07 COFFEE SHOP (ПОДМОСКОВНАЯ, 7)  -->
-                <!-- ============================================== -->
-                <!-- Concentric Radar Sonar Waves -->
-                <circle cx="330" cy="255" r="75" class="sonar-wave wave-3" fill="url(#beaconGlowCore)"/>
-                <circle cx="330" cy="255" r="50" class="sonar-ring ring-2" stroke="#ff5722" stroke-width="1.2" stroke-dasharray="4 4"/>
-                <circle cx="330" cy="255" r="28" class="sonar-ring ring-1" stroke="#ff5722" stroke-width="1.8"/>
-
-                <!-- Cafe Building Silhouette Footprint (Isometric Accent) -->
-                <rect x="305" y="235" width="50" height="40" rx="6" fill="#1b1410" stroke="#ff5722" stroke-width="2"/>
-                <rect x="305" y="235" width="50" height="40" rx="6" fill="url(#buildingHatch)"/>
-
-                <!-- Parking Bay Indicator -->
-                <rect x="275" y="242" width="22" height="26" rx="4" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
-                <text x="286" y="259" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Manrope" font-size="11" font-weight="800">P</text>
-
-                <!-- Center Obsidian Pin Marker -->
-                <g class="obsidian-pin-group">
-                  <circle cx="330" cy="255" r="14" fill="#ff5722"/>
-                  <circle cx="330" cy="255" r="7" fill="#fff"/>
-                  <!-- Mini Coffee Cup Vector in Pin -->
-                  <path d="M327 253 h6 v4 a3 3 0 0 1 -3 3 h0 a3 3 0 0 1 -3 -3 v-4 z M333 254 h1.5 a1.5 1.5 0 0 1 0 3 h-1.5" stroke="#161311" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                </g>
-
-                <!-- Floating Beacon Label -->
-                <g class="pin-floating-tag">
-                  <rect x="260" y="196" width="140" height="26" rx="13" fill="#14110e" stroke="#ff5722" stroke-width="1.5" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.8))"/>
-                  <circle cx="274" cy="209" r="4" fill="#22c55e"/>
-                  <text x="330" y="213" text-anchor="middle" fill="#fff" font-family="Unbounded, sans-serif" font-size="9.5" font-weight="800" letter-spacing="0.5">OBSIDIAN // 07</text>
-                </g>
-              </svg>
-
-              <!-- Live Interactive Yandex Map Iframe (Switched via Tab) -->
-              <div class="yandex-live-map-wrap" id="yandexLiveWrap" style="display:none;">
-                <iframe class="yandex-live-iframe" id="yandexLiveIframe" src="about:blank" data-src="https://yandex.ru/map-widget/v1/?ll=37.818000%2C55.918000&z=16&pt=37.818000,55.918000,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" title="Интерактивная карта Яндекс"></iframe>
-              </div>
-
-              <!-- Map Overlay HUD Card with Quick Route Info -->
-              <div class="map-hud-overlay">
-                <div class="hud-header-row">
-                  <div class="map-hud-badge">
-                    <div class="hud-dot-pulse"></div>
+              <!-- Sleek Minimalist Map HUD Footer -->
+              <div class="map-hud-overlay minimal-hud">
+                <div class="hud-main-info">
+                  <div class="hud-brand-row">
+                    <span class="hud-status-dot"></span>
                     <span class="hud-brand-title">OBSIDIAN // 07</span>
-                    <span class="hud-open-tag">ОТКРЫТО ДО 22:00</span>
+                    <span class="hud-hours-pill">Ежедневно 08:00 – 22:00</span>
                   </div>
-                  <button class="hud-copy-btn" id="copyAddressBtn" title="Скопировать адрес">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-                    <span>Скопировать</span>
-                  </button>
-                </div>
-
-                <div class="map-hud-address" id="mapAddressText">г. Королёв, Подмосковная ул., 7</div>
-
-                <!-- Fast Transit Pills -->
-                <div class="hud-transit-pills">
-                  <div class="transit-pill">
-                    <span class="pill-ico">🚶</span>
-                    <span>4 мин от ст. Болшево (380 м)</span>
-                  </div>
-                  <div class="transit-pill">
-                    <span class="pill-ico">🚗</span>
-                    <span>1 мин с Октябрьского б-ра</span>
-                  </div>
-                  <div class="transit-pill">
-                    <span class="pill-ico">🅿️</span>
-                    <span>Бесплатная парковка</span>
-                  </div>
+                  <div class="hud-address-text">г. Королёв, Подмосковная ул., 7</div>
+                  <div class="hud-meta-info">380 м от ст. Болшево · Бесплатная парковка перед кофейней</div>
                 </div>
 
                 <div class="hud-actions-row">
                   <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary hud-route-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
                     <span>Маршрут в Яндекс Навигаторе</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                  <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline hud-maps-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>Яндекс Карты</span>
                   </a>
                 </div>
               </div>
-
             </div>
+
           </div>
 
         </div>
@@ -1361,7 +1214,15 @@
     </div>
     
     <div class="footer-bottom container">
-      <div class="copyright">© 2026 OBSIDIAN // 07 SPECIALTY COFFEE. Все права защищены.</div>
+      <div class="copyright">
+        <span>© 2026 OBSIDIAN // 07 SPECIALTY COFFEE. Все права защищены.</span>
+        <button class="secret-admin-trigger" id="secretAdminTrigger" type="button" title="Закрытая консоль управления" aria-label="Панель администратора">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </button>
+      </div>
       <div class="dev-badge">г. Королёв, Подмосковная ул., 7</div>
     </div>
   </footer>
@@ -1491,10 +1352,236 @@
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION -->
-  <div class="toast-notification" id="toastNotification">
-    <div class="toast-indicator"></div>
-    <span class="toast-text" id="toastText">Позиция добавлена</span>
+  <!-- ========================================================================= -->
+  <!-- ADMIN CONSOLE: CLOSED SYSTEM FOR OBSIDIAN // 07 ROASTERY -->
+  <!-- ========================================================================= -->
+
+  <!-- 1. SECURITY PIN AUTHENTICATION GATE (CLOSED ACCESS) -->
+  <div class="admin-modal-overlay" id="adminAuthOverlay" aria-hidden="true">
+    <div class="admin-auth-card" role="dialog" aria-modal="true" aria-labelledby="adminAuthTitle">
+      <button class="modal-close-btn" id="closeAdminAuthBtn" aria-label="Закрыть">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="admin-auth-header">
+        <div class="admin-lock-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <div class="admin-badge-secure">ЗАКРЫТЫЙ ДОСТУП · SECURITY PROTOCOL</div>
+        <h3 id="adminAuthTitle" class="admin-auth-title">АДМИН-КОНСОЛЬ // 07</h3>
+        <p class="admin-auth-sub">Введите мастер-код доступа для управления меню, ценами и фотографиями.</p>
+      </div>
+
+      <form id="adminPinForm" class="admin-pin-form">
+        <div class="admin-pin-input-group">
+          <input type="password" id="adminPinInput" class="admin-pin-input" maxlength="12" placeholder="••••" autocomplete="off" required autofocus>
+          <button type="button" id="togglePinVisibilityBtn" class="pin-toggle-btn" aria-label="Показать PIN">
+            <svg id="eyeIco" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div id="adminPinError" class="admin-error-msg" style="display:none;">Неверный код доступа</div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Войти в консоль</span>
+        </button>
+        
+        <div class="admin-hint-text">Мастер-код по умолчанию: <code>0707</code></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. FULL ADMIN DASHBOARD MODAL -->
+  <div class="admin-modal-overlay" id="adminDashboardOverlay" aria-hidden="true">
+    <div class="admin-dashboard-container" role="dialog" aria-modal="true">
+      
+      <!-- Dashboard Top Header -->
+      <div class="admin-dashboard-header">
+        <div class="admin-dash-brand">
+          <span class="admin-dot-live"></span>
+          <div>
+            <h2 class="admin-dash-title">OBSIDIAN // 07 · АДМИН-КОНСОЛЬ</h2>
+            <div class="admin-dash-subtitle">Управление каталогом в реальном времени · Изменения видны на сайте сразу</div>
+          </div>
+        </div>
+
+        <div class="admin-dash-header-actions">
+          <button class="btn btn-primary btn-sm" id="openAddProductModalBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>+ Добавить товар</span>
+          </button>
+          <button class="btn btn-outline btn-sm" id="adminResetMenuBtn" title="Сбросить до исходных 12 позиций">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            <span>Сброс меню</span>
+          </button>
+          <button class="btn btn-outline btn-sm" id="adminChangePinBtn" title="Сменить секретный PIN">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Сменить PIN</span>
+          </button>
+          <button class="btn btn-outline btn-sm" id="adminLogoutBtn" title="Заблокировать сессию">
+            <span>Выйти</span>
+          </button>
+          <button class="modal-close-btn" id="closeAdminDashboardBtn" aria-label="Закрыть консоль">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Controls: Category Filter & Search -->
+      <div class="admin-filter-bar">
+        <div class="admin-tabs-list">
+          <button class="admin-tab-btn active" data-cat="all">Все (<span id="adminCountAll">0</span>)</button>
+          <button class="admin-tab-btn" data-cat="coffee">Кофе (<span id="adminCountCoffee">0</span>)</button>
+          <button class="admin-tab-btn" data-cat="food">Еда (<span id="adminCountFood">0</span>)</button>
+          <button class="admin-tab-btn" data-cat="desserts">Десерты (<span id="adminCountDesserts">0</span>)</button>
+          <button class="admin-tab-btn" data-cat="beans">Зерно (<span id="adminCountBeans">0</span>)</button>
+        </div>
+        <div class="admin-search-wrapper">
+          <input type="text" id="adminSearchInput" placeholder="Поиск товара в каталоге...">
+        </div>
+      </div>
+
+      <!-- Product List Container -->
+      <div class="admin-products-table-wrap">
+        <div class="admin-products-grid" id="adminProductsList">
+          <!-- Dynamically populated via script.js -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. ADD / EDIT PRODUCT MODAL (ПОСТИТЬ ТОВАРЫ / МЕНЯТЬ ЦЕНЫ / КАРТИНКИ) -->
+  <div class="admin-modal-overlay" id="adminProductEditOverlay" aria-hidden="true">
+    <div class="admin-edit-modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeAdminEditBtn" aria-label="Закрыть">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="admin-edit-header">
+        <h3 id="adminEditModalTitle">ДОБАВИТЬ НОВЫЙ ТОВАР</h3>
+        <p>Заполните параметры позиции. Изменения сразу публикуются в меню кофейни.</p>
+      </div>
+
+      <form id="adminProductForm" class="admin-product-form">
+        <input type="hidden" id="editProductId" value="">
+
+        <div class="admin-form-grid">
+          
+          <div class="form-group">
+            <label for="editProductName">Название товара *</label>
+            <input type="text" id="editProductName" required placeholder="Например: Айс-латте Карамель">
+          </div>
+
+          <div class="form-group">
+            <label for="editProductCategory">Категория *</label>
+            <select id="editProductCategory" required>
+              <option value="coffee">Кофе и напитки</option>
+              <option value="food">Еда и завтраки</option>
+              <option value="desserts">Десерты и выпечка</option>
+              <option value="beans">Зерно для дома (Specialty)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="editProductPrice">Цена (₽) *</label>
+            <input type="number" id="editProductPrice" min="0" step="10" required placeholder="320">
+          </div>
+
+          <div class="form-group">
+            <label for="editProductVolume">Объем / Граммовка *</label>
+            <input type="text" id="editProductVolume" required placeholder="350 мл / 250 г">
+          </div>
+
+          <div class="form-group">
+            <label for="editProductTag">Бейдж / Тег</label>
+            <input type="text" id="editProductTag" placeholder="Хит сезона / Новинка / Спешелти">
+          </div>
+
+          <!-- PHOTO UPLOAD & URL SECTION -->
+          <div class="form-group full-width">
+            <label>Фотография товара *</label>
+            <div class="photo-input-tabs">
+              <div class="photo-uploader-box">
+                <label for="editProductFileInput" class="custom-file-upload-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Загрузить фото с телефона или ПК</span>
+                </label>
+                <input type="file" id="editProductFileInput" accept="image/*" style="display:none;">
+                <span class="upload-or-text">или ссылка:</span>
+                <input type="text" id="editProductImageUrl" placeholder="https://... или assets/images/..." class="image-url-input">
+              </div>
+            </div>
+
+            <!-- Live Image Preview -->
+            <div class="image-preview-container" id="imagePreviewContainer">
+              <img id="imagePreviewImg" src="" alt="Предпросмотр" style="display:none;">
+              <span id="imagePreviewPlaceholder">Фото не выбрано (будет показана заглушка)</span>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="editProductDesc">Описание позиции</label>
+            <textarea id="editProductDesc" rows="3" placeholder="Опишите вкусовой профиль, способ приготовления, сорт зерна..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="editProductIngredients">Состав</label>
+            <input type="text" id="editProductIngredients" placeholder="Эспрессо, цельное молоко, соленая карамель...">
+          </div>
+
+          <div class="form-group">
+            <label for="editProductKcal">Калорийность (ккал)</label>
+            <input type="number" id="editProductKcal" placeholder="135">
+          </div>
+
+          <div class="form-group">
+            <label for="editProductNutrition">БЖУ (Белки, Жиры, Углеводы)</label>
+            <input type="text" id="editProductNutrition" placeholder="6.2г / 6.8г / 11.4г">
+          </div>
+
+        </div>
+
+        <div class="admin-form-actions">
+          <button type="button" class="btn btn-outline" id="cancelAdminEditBtn">Отмена</button>
+          <button type="submit" class="btn btn-primary" id="saveProductBtn">
+            <span>Сохранить товар в каталог</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. CHANGE PIN MODAL -->
+  <div class="admin-modal-overlay" id="adminPinModalOverlay" aria-hidden="true">
+    <div class="admin-auth-card" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeAdminPinModalBtn" aria-label="Закрыть">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="admin-auth-header">
+        <h3 class="admin-auth-title">СМЕНА PIN-КОДА</h3>
+        <p class="admin-auth-sub">Задайте новый мастер-код доступа для защиты админ-консоли.</p>
+      </div>
+
+      <form id="changePinForm" class="admin-pin-form">
+        <div class="form-group">
+          <label for="newPinInput">Новый PIN (от 4 до 10 символов)</label>
+          <input type="password" id="newPinInput" class="admin-pin-input" required placeholder="••••">
+        </div>
+        <div class="form-group">
+          <label for="confirmPinInput">Повторите новый PIN</label>
+          <input type="password" id="confirmPinInput" class="admin-pin-input" required placeholder="••••">
+        </div>
+        <div id="changePinError" class="admin-error-msg" style="display:none;">PIN-коды не совпадают</div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>Сохранить новый PIN</span>
+        </button>
+      </form>
+    </div>
   </div>
 
   <script src="script.js"></script>
