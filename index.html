@@ -493,25 +493,45 @@
     <section class="reviews-section section-padding" id="reviews">
       <div class="container">
         
-        <div class="yandex-minimal-banner">
+        <div class="yandex-minimal-banner" id="yandexBanner">
           <div class="yandex-stat-col">
             <div class="yandex-brand-row">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
-              </svg>
+              <div class="yandex-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
+                </svg>
+                <span class="yandex-radar-wave"></span>
+              </div>
               <span class="yandex-brand-name">ЯНДЕКС КАРТЫ // ВЕРИФИЦИРОВАНО</span>
-            </div>
-            <div class="score-row-minimal">
-              <span class="rating-num-big">5.0</span>
-              <div class="rating-stars-clean">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <div class="live-status-pill-mini">
+                <span class="beacon-pulse-glow"></span>
+                <span>АКТУАЛЬНО 2026</span>
               </div>
             </div>
-            <div class="rating-sub-count">На основе 436 оценок гостей · Премия «Хорошее место 2026»</div>
+
+            <div class="score-row-minimal">
+              <div class="rating-counter-box">
+                <span class="rating-num-big" id="ratingCounter" data-target="5.0">5.0</span>
+              </div>
+              <div class="rating-stars-clean" id="ratingStars">
+                <svg class="star-svg" style="--i:1" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:2" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:3" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:4" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:5" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+            </div>
+
+            <div class="rating-sub-row">
+              <span class="reviews-count-text">На основе 436 проверенных оценок гостей</span>
+              <div class="award-laurel-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b">
+                  <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 2z"/>
+                </svg>
+                <span>Премия «Хорошее место 2026»</span>
+                <span class="award-shimmer-sweep"></span>
+              </div>
+            </div>
           </div>
 
           <div class="yandex-cta-col">
@@ -521,101 +541,379 @@
           </div>
         </div>
 
-        <!-- Real Reviews Minimal Grid -->
-        <div class="reviews-grid" id="reviewsGrid">
-          
-          <div class="review-card">
-            <div class="review-card-top">
-              <div class="author-info">
-                <div class="author-avatar-stub">E</div>
-                <div>
-                  <div class="author-name">evorlova15</div>
-                  <div class="author-level">Знаток города 12 уровня</div>
+        <!-- Reviews Carousel Bar: Auto-Scroll Indicator & Manual Shift Buttons -->
+        <div class="reviews-marquee-header">
+          <div class="marquee-indicator-pill">
+            <span class="marquee-pulse-dot"></span>
+            <span>АВТОПРОКРУТКА ВПРАВО · НАВЕДИТЕ КУРСОР ДЛЯ ПАУЗЫ</span>
+          </div>
+          <div class="marquee-control-buttons">
+            <button class="marquee-shift-btn" id="revPrevBtn" aria-label="Сдвинуть влево">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="marquee-shift-btn" id="revNextBtn" aria-label="Сдвинуть вправо">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reviews Marquee Viewport with Continuous Seamless Flow to the Right -->
+        <div class="reviews-marquee-viewport" id="reviewsMarquee">
+          <div class="marquee-edge-fade left-fade"></div>
+          <div class="marquee-edge-fade right-fade"></div>
+
+          <div class="reviews-marquee-track" id="reviewsTrack">
+            
+            <!-- CARD 1 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="evorlova15" class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">evorlova15</div>
+                    <div class="author-level">Знаток города 12 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
               </div>
-              <div class="stars-vector-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </div>
+              <p class="review-text">
+                «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
+              </p>
+              <div class="review-date">15 мая · Яндекс Карты</div>
             </div>
-            <p class="review-text">
-              «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
-            </p>
-            <div class="review-date">15 мая · Яндекс Карты</div>
-          </div>
 
-          <div class="review-card">
-            <div class="review-card-top">
-              <div class="author-info">
-                <div class="author-avatar-stub">Д</div>
-                <div>
-                  <div class="author-name">Дарья С.</div>
-                  <div class="author-level">Знаток города 7 уровня</div>
+            <!-- CARD 2 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_daria.jpg" alt="Дарья С." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Дарья С.</div>
+                    <div class="author-level">Знаток города 7 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
               </div>
-              <div class="stars-vector-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </div>
+              <p class="review-text">
+                «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
+              </p>
+              <div class="review-date">14 сентября · Яндекс Карты</div>
             </div>
-            <p class="review-text">
-              «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
-            </p>
-            <div class="review-date">14 сентября · Яндекс Карты</div>
-          </div>
 
-          <div class="review-card">
-            <div class="review-card-top">
-              <div class="author-info">
-                <div class="author-avatar-stub">М</div>
-                <div>
-                  <div class="author-name">Михаил К.</div>
-                  <div class="author-level">Знаток города 9 уровня</div>
+            <!-- CARD 3 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Михаил К." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Михаил К.</div>
+                    <div class="author-level">Знаток города 9 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
               </div>
-              <div class="stars-vector-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </div>
+              <p class="review-text">
+                «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
+              </p>
+              <div class="review-date">4 сентября · Яндекс Карты</div>
             </div>
-            <p class="review-text">
-              «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
-            </p>
-            <div class="review-date">4 сентября · Яндекс Карты</div>
-          </div>
 
-          <div class="review-card">
-            <div class="review-card-top">
-              <div class="author-info">
-                <div class="author-avatar-stub">А</div>
-                <div>
-                  <div class="author-name">Артем В.</div>
-                  <div class="author-level">Местный житель</div>
+            <!-- CARD 4 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_artem.jpg" alt="Артем В." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Артем В.</div>
+                    <div class="author-level">Местный житель</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
               </div>
-              <div class="stars-vector-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-              </div>
+              <p class="review-text">
+                «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
+              </p>
+              <div class="review-date">18 августа · Яндекс Карты</div>
             </div>
-            <p class="review-text">
-              «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
-            </p>
-            <div class="review-date">18 августа · Яндекс Карты</div>
-          </div>
 
+            <!-- CARD 5 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_sofia.jpg" alt="София Н." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">София Н.</div>
+                    <div class="author-level">Знаток города 10 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Безумно понравился баскский чизкейк и бриошь с авокадо! Атмосфера сдержанная, музыка не бьёт по ушам, бариста с душой рассказывают про регион произрастания зерен. Ставлю 5 из 5 без сомнений.»
+              </p>
+              <div class="review-date">22 июня · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_alexey.jpg" alt="Алексей Г." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Алексей Г.</div>
+                    <div class="author-level">Знаток города 8 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Заезжаю каждое утро за фильтром перед электричкой на Москву. Всегда стабильный яркий вкус, бариста работают четко и быстро. Приятно видеть в Королёве уровень спешелти кофеен Москвы.»
+              </p>
+              <div class="review-date">11 октября · Яндекс Карты</div>
+            </div>
+
+            <!-- DUPLICATE SET FOR SEAMLESS 100% INFINITE LOOP -->
+            <!-- CARD 1 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="evorlova15" class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">evorlova15</div>
+                    <div class="author-level">Знаток города 12 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
+              </p>
+              <div class="review-date">15 мая · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 2 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_daria.jpg" alt="Дарья С." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Дарья С.</div>
+                    <div class="author-level">Знаток города 7 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
+              </p>
+              <div class="review-date">14 сентября · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 3 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Михаил К." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Михаил К.</div>
+                    <div class="author-level">Знаток города 9 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
+              </p>
+              <div class="review-date">4 сентября · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 4 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_artem.jpg" alt="Артем В." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Артем В.</div>
+                    <div class="author-level">Местный житель</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
+              </p>
+              <div class="review-date">18 августа · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 5 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_sofia.jpg" alt="София Н." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">София Н.</div>
+                    <div class="author-level">Знаток города 10 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Безумно понравился баскский чизкейк и бриошь с авокадо! Атмосфера сдержанная, музыка не бьёт по ушам, бариста с душой рассказывают про регион произрастания зерен. Ставлю 5 из 5 без сомнений.»
+              </p>
+              <div class="review-date">22 июня · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 6 (COPY) -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_alexey.jpg" alt="Алексей Г." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Алексей Г.</div>
+                    <div class="author-level">Знаток города 8 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Заезжаю каждое утро за фильтром перед электричкой на Москву. Всегда стабильный яркий вкус, бариста работают четко и быстро. Приятно видеть в Королёве уровень спешелти кофеен Москвы.»
+              </p>
+              <div class="review-date">11 октября · Яндекс Карты</div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -759,59 +1057,222 @@
           </div>
 
           <!-- Custom Bespoke Dark Architectural Map (Индивидуальная карта) -->
-          <div class="bespoke-map-card">
-            <div class="map-visual-container">
-              <svg class="custom-vector-map" viewBox="0 0 600 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="bespoke-map-card" id="mapCard">
+            
+            <!-- Map Top Bar: Coordinates & View Switcher -->
+            <div class="map-top-bar">
+              <div class="map-coords-tag">
+                <span class="map-radar-pulse"></span>
+                <span class="map-coords-text">55°55′05″ N, 37°49′05″ E · КОРОЛЁВ</span>
+              </div>
+              
+              <div class="map-view-switcher">
+                <button class="map-tab-btn active" id="btnSvgMap" type="button" aria-label="Архитектурная схема">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                  <span>Схема</span>
+                </button>
+                <button class="map-tab-btn" id="btnLiveMap" type="button" aria-label="Яндекс Карты онлайн">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                  <span>Карты онлайн</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Visual Container -->
+            <div class="map-visual-container" id="mapVisualContainer">
+              
+              <!-- Bespoke Architectural Vector Blueprint -->
+              <svg class="custom-vector-map" id="customVectorMap" viewBox="0 0 700 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                  <!-- Delicate Technical CAD Grid -->
+                  <pattern id="archGrid" width="35" height="35" patternUnits="userSpaceOnUse">
+                    <path d="M 35 0 L 0 0 0 35" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+                    <circle cx="35" cy="35" r="1" fill="rgba(255,255,255,0.08)"/>
                   </pattern>
-                  <radialGradient id="beaconGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#ff5722" stop-opacity="0.5"/>
+
+                  <!-- Cafe Building Isometric Pattern -->
+                  <pattern id="buildingHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(255,87,34,0.12)" stroke-width="1.5" />
+                  </pattern>
+
+                  <!-- High-End Radial Beacon Glow -->
+                  <radialGradient id="beaconGlowCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ff5722" stop-opacity="0.85"/>
+                    <stop offset="30%" stop-color="#ff5722" stop-opacity="0.35"/>
+                    <stop offset="70%" stop-color="#ff5722" stop-opacity="0.08"/>
                     <stop offset="100%" stop-color="#ff5722" stop-opacity="0"/>
                   </radialGradient>
+
+                  <!-- Station Beacon Glow -->
+                  <radialGradient id="stationGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                  </radialGradient>
                 </defs>
-                <rect width="600" height="460" fill="#13110f"/>
-                <rect width="600" height="460" fill="url(#mapGrid)"/>
 
-                <!-- Arterial Roads & Streets -->
-                <path d="M-20 180 Q 250 200 620 170" stroke="rgba(255,255,255,0.14)" stroke-width="24" stroke-linecap="round"/>
-                <path d="M-20 180 Q 250 200 620 170" stroke="#1f1c19" stroke-width="20" stroke-linecap="round"/>
+                <!-- Deep Obsidian Base Layer -->
+                <rect width="700" height="500" fill="#0d0b0a"/>
+                <rect width="700" height="500" fill="url(#archGrid)"/>
 
-                <path d="M280 -20 L 320 480" stroke="rgba(255,255,255,0.14)" stroke-width="20" stroke-linecap="round"/>
-                <path d="M280 -20 L 320 480" stroke="#1f1c19" stroke-width="16" stroke-linecap="round"/>
+                <!-- Architectural District Blocks (Городские кварталы) -->
+                <rect x="40" y="40" width="180" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <rect x="250" y="30" width="220" height="120" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <rect x="500" y="40" width="160" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
 
-                <path d="M120 320 L 480 320" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-                <path d="M120 80 L 460 80" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                <rect x="40" y="240" width="160" height="120" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <rect x="440" y="240" width="220" height="110" rx="6" fill="#14110f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
 
-                <!-- Railway track -->
-                <path d="M-20 390 L 620 370" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8 6"/>
+                <!-- Building Footprints & Lit Windows (Архитектурные строения) -->
+                <g class="building-footprints" opacity="0.8">
+                  <!-- Block 1 Buildings -->
+                  <rect x="55" y="55" width="45" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="110" y="55" width="55" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="55" y="100" width="110" height="35" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
 
-                <!-- Street Labels -->
-                <text x="50" y="172" fill="rgba(255,255,255,0.3)" font-family="Manrope" font-size="11" font-weight="600" letter-spacing="1.5">ПОДМОСКОВНАЯ УЛИЦА</text>
-                <text x="330" y="60" fill="rgba(255,255,255,0.25)" font-family="Manrope" font-size="10" font-weight="600" letter-spacing="1.5">ОКТЯБРЬСКИЙ БУЛЬВАР</text>
-                <text x="40" y="415" fill="rgba(255,255,255,0.2)" font-family="Manrope" font-size="10" font-weight="600">ст. ПОДЛИПКИ ДАЧНЫЕ</text>
-                <text x="460" y="395" fill="rgba(255,255,255,0.2)" font-family="Manrope" font-size="10" font-weight="600">ст. БОЛШЕВО</text>
+                  <!-- Block 2 Buildings -->
+                  <rect x="265" y="45" width="80" height="40" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="360" y="45" width="95" height="40" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="265" y="95" width="190" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
 
-                <!-- Coffee Location Beacon Glow -->
-                <circle cx="300" cy="190" r="65" fill="url(#beaconGlow)"/>
-                <circle cx="300" cy="190" r="30" stroke="var(--accent-orange)" stroke-width="1.5" stroke-dasharray="4 4"/>
-                <circle cx="300" cy="190" r="16" fill="var(--accent-orange)"/>
-                <circle cx="300" cy="190" r="8" fill="#fff"/>
+                  <!-- South Block Buildings -->
+                  <rect x="55" y="255" width="65" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="130" y="255" width="55" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="455" y="255" width="95" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                  <rect x="560" y="255" width="85" height="45" rx="3" fill="#1b1815" stroke="rgba(255,255,255,0.08)"/>
+                </g>
+
+                <!-- Railroad Corridor (Ярославское направление МЖД) -->
+                <path d="M-20 420 L 720 400" stroke="#181512" stroke-width="26"/>
+                <path d="M-20 420 L 720 400" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-dasharray="8 8"/>
+                <path d="M-20 415 L 720 395" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                <path d="M-20 425 L 720 405" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+
+                <!-- Railway Stations -->
+                <!-- Station 1: Подлипки-Дачные -->
+                <circle cx="95" cy="417" r="28" fill="url(#stationGlow)"/>
+                <rect x="65" y="411" width="60" height="12" rx="3" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                <circle cx="95" cy="417" r="4" fill="#60a5fa"/>
+                <text x="95" y="445" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="Manrope" font-size="9" font-weight="700" letter-spacing="0.5">ст. ПОДЛИПКИ-ДАЧНЫЕ</text>
+
+                <!-- Station 2: Болшево (Ближайшая!) -->
+                <circle cx="560" cy="404" r="34" fill="url(#stationGlow)"/>
+                <rect x="525" y="398" width="70" height="12" rx="3" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+                <circle cx="560" cy="404" r="4" fill="#60a5fa"/>
+                <text x="560" y="432" text-anchor="middle" fill="#60a5fa" font-family="Manrope" font-size="9.5" font-weight="800" letter-spacing="0.5">ст. БОЛШЕВО (380 м)</text>
+
+                <!-- Main Roads Infrastructure -->
+                <!-- Secondary Cross Road (Грабина / Октябрьский б-р) -->
+                <path d="M 230 -20 L 230 520" stroke="#161311" stroke-width="32" stroke-linecap="round"/>
+                <path d="M 230 -20 L 230 520" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="10 8"/>
+
+                <!-- Central Arterial: ПОДМОСКОВНАЯ УЛИЦА -->
+                <path d="M-20 195 Q 350 205 720 185" stroke="#1e1a17" stroke-width="36" stroke-linecap="round"/>
+                <path d="M-20 195 Q 350 205 720 185" stroke="#2a2420" stroke-width="26" stroke-linecap="round"/>
+                <!-- Animated Road Dashline (Traffic Lane) -->
+                <path class="road-center-line" d="M-20 195 Q 350 205 720 185" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="8 10"/>
+
+                <!-- Animated Flowing Vehicle Particles -->
+                <circle class="traffic-particle p1" r="2.5" fill="#ffc107">
+                  <animateMotion path="M-20 191 Q 350 201 720 181" dur="7s" repeatCount="indefinite" />
+                </circle>
+                <circle class="traffic-particle p2" r="2.5" fill="#ff5722">
+                  <animateMotion path="M 720 199 Q 350 209 -20 199" dur="8.5s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- Connecting Driveway to Podmoskovnaya 7 -->
+                <path d="M 330 195 L 330 250" stroke="#2a2420" stroke-width="18" stroke-linecap="round"/>
+                <path d="M 330 195 L 330 250" stroke="rgba(255,87,34,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+
+                <!-- Street Typography Labels -->
+                <text x="75" y="186" fill="rgba(255,255,255,0.4)" font-family="Manrope" font-size="10.5" font-weight="700" letter-spacing="2">ПОДМОСКОВНАЯ УЛИЦА</text>
+                <text x="242" y="75" fill="rgba(255,255,255,0.25)" font-family="Manrope" font-size="9" font-weight="700" letter-spacing="1.5" transform="rotate(90 242 75)">ОКТЯБРЬСКИЙ БУЛЬВАР</text>
+                <text x="490" y="176" fill="rgba(255,255,255,0.35)" font-family="Manrope" font-size="10" font-weight="700" letter-spacing="1.5">В СТОРОНУ БОЛШЕВО →</text>
+
+                <!-- ANIMATED WALKING ROUTE FROM BOLSHEVO STATION TO OBSIDIAN (ст. Болшево ➔ Кофейня) -->
+                <!-- Dotted animated route path -->
+                <path class="walking-route-path" d="M 560 395 L 530 270 L 370 270 L 330 260" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/>
+                
+                <!-- Walking waypoint indicator -->
+                <rect x="420" y="278" width="94" height="18" rx="9" fill="rgba(255,87,34,0.18)" stroke="#ff5722" stroke-width="1"/>
+                <text x="467" y="290" text-anchor="middle" fill="#fff" font-family="Manrope" font-size="8.5" font-weight="800">🚶 4 МИН ПЕШКОМ</text>
+
+                <!-- ============================================== -->
+                <!-- OBSIDIAN // 07 COFFEE SHOP (ПОДМОСКОВНАЯ, 7)  -->
+                <!-- ============================================== -->
+                <!-- Concentric Radar Sonar Waves -->
+                <circle cx="330" cy="255" r="75" class="sonar-wave wave-3" fill="url(#beaconGlowCore)"/>
+                <circle cx="330" cy="255" r="50" class="sonar-ring ring-2" stroke="#ff5722" stroke-width="1.2" stroke-dasharray="4 4"/>
+                <circle cx="330" cy="255" r="28" class="sonar-ring ring-1" stroke="#ff5722" stroke-width="1.8"/>
+
+                <!-- Cafe Building Silhouette Footprint (Isometric Accent) -->
+                <rect x="305" y="235" width="50" height="40" rx="6" fill="#1b1410" stroke="#ff5722" stroke-width="2"/>
+                <rect x="305" y="235" width="50" height="40" rx="6" fill="url(#buildingHatch)"/>
+
+                <!-- Parking Bay Indicator -->
+                <rect x="275" y="242" width="22" height="26" rx="4" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
+                <text x="286" y="259" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Manrope" font-size="11" font-weight="800">P</text>
+
+                <!-- Center Obsidian Pin Marker -->
+                <g class="obsidian-pin-group">
+                  <circle cx="330" cy="255" r="14" fill="#ff5722"/>
+                  <circle cx="330" cy="255" r="7" fill="#fff"/>
+                  <!-- Mini Coffee Cup Vector in Pin -->
+                  <path d="M327 253 h6 v4 a3 3 0 0 1 -3 3 h0 a3 3 0 0 1 -3 -3 v-4 z M333 254 h1.5 a1.5 1.5 0 0 1 0 3 h-1.5" stroke="#161311" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                </g>
+
+                <!-- Floating Beacon Label -->
+                <g class="pin-floating-tag">
+                  <rect x="260" y="196" width="140" height="26" rx="13" fill="#14110e" stroke="#ff5722" stroke-width="1.5" filter="drop-shadow(0 4px 12px rgba(0,0,0,0.8))"/>
+                  <circle cx="274" cy="209" r="4" fill="#22c55e"/>
+                  <text x="330" y="213" text-anchor="middle" fill="#fff" font-family="Unbounded, sans-serif" font-size="9.5" font-weight="800" letter-spacing="0.5">OBSIDIAN // 07</text>
+                </g>
               </svg>
 
-              <!-- Map Overlay HUD Card -->
-              <div class="map-hud-overlay">
-                <div class="map-hud-badge">
-                  <div class="hud-dot-pulse"></div>
-                  <span>OBSIDIAN // 07</span>
-                </div>
-                <div class="map-hud-address">Подмосковная, 7 · г. Королёв</div>
-                <div class="map-hud-meta">5 мин от станции · Бесплатная парковка</div>
-                <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="map-hud-link">
-                  <span>Открыть в Яндекс Картах ↗</span>
-                </a>
+              <!-- Live Interactive Yandex Map Iframe (Switched via Tab) -->
+              <div class="yandex-live-map-wrap" id="yandexLiveWrap" style="display:none;">
+                <iframe class="yandex-live-iframe" id="yandexLiveIframe" src="about:blank" data-src="https://yandex.ru/map-widget/v1/?ll=37.818000%2C55.918000&z=16&pt=37.818000,55.918000,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" title="Интерактивная карта Яндекс"></iframe>
               </div>
+
+              <!-- Map Overlay HUD Card with Quick Route Info -->
+              <div class="map-hud-overlay">
+                <div class="hud-header-row">
+                  <div class="map-hud-badge">
+                    <div class="hud-dot-pulse"></div>
+                    <span class="hud-brand-title">OBSIDIAN // 07</span>
+                    <span class="hud-open-tag">ОТКРЫТО ДО 22:00</span>
+                  </div>
+                  <button class="hud-copy-btn" id="copyAddressBtn" title="Скопировать адрес">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    <span>Скопировать</span>
+                  </button>
+                </div>
+
+                <div class="map-hud-address" id="mapAddressText">г. Королёв, Подмосковная ул., 7</div>
+
+                <!-- Fast Transit Pills -->
+                <div class="hud-transit-pills">
+                  <div class="transit-pill">
+                    <span class="pill-ico">🚶</span>
+                    <span>4 мин от ст. Болшево (380 м)</span>
+                  </div>
+                  <div class="transit-pill">
+                    <span class="pill-ico">🚗</span>
+                    <span>1 мин с Октябрьского б-ра</span>
+                  </div>
+                  <div class="transit-pill">
+                    <span class="pill-ico">🅿️</span>
+                    <span>Бесплатная парковка</span>
+                  </div>
+                </div>
+
+                <div class="hud-actions-row">
+                  <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary hud-route-btn">
+                    <span>Маршрут в Яндекс Навигаторе</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
 

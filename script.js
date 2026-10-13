@@ -670,10 +670,145 @@ function checkOpeningHours() {
 }
 
 // ==========================================================================
-// 11. INITIALIZATION
+// 11. ANIMATED RATING 5.0 & STARS
+// ==========================================================================
+function initRatingAnimation() {
+  const ratingCounter = document.getElementById('ratingCounter');
+  const ratingStars = document.getElementById('ratingStars');
+  const yandexBanner = document.getElementById('yandexBanner');
+  if (!ratingCounter || !yandexBanner) return;
+
+  let hasAnimated = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        animateRatingCounter(ratingCounter);
+        if (ratingStars) {
+          ratingStars.classList.add('animate');
+        }
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(yandexBanner);
+}
+
+function animateRatingCounter(elem) {
+  const target = parseFloat(elem.getAttribute('data-target') || '5.0');
+  const duration = 1600;
+  const start = 0.0;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Smooth easeOutExpo curve
+    const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+    const currentVal = (start + (target - start) * ease).toFixed(1);
+    
+    elem.textContent = currentVal;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      elem.textContent = target.toFixed(1);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// ==========================================================================
+// 12. REVIEWS MARQUEE CAROUSEL INTERACTIVITY
+// ==========================================================================
+function initReviewsMarquee() {
+  const track = document.getElementById('reviewsTrack');
+  const viewport = document.getElementById('reviewsMarquee');
+  const prevBtn = document.getElementById('revPrevBtn');
+  const nextBtn = document.getElementById('revNextBtn');
+  if (!track || !viewport) return;
+
+  let manualOffset = 0;
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      manualOffset -= 320;
+      applyManualNudge();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      manualOffset += 320;
+      applyManualNudge();
+    });
+  }
+
+  function applyManualNudge() {
+    track.style.animationPlayState = 'paused';
+    track.style.transition = 'transform 0.4s ease';
+    track.style.transform = `translateX(calc(-50% + ${manualOffset}px))`;
+    
+    setTimeout(() => {
+      track.style.transition = '';
+      track.style.animationPlayState = 'running';
+    }, 1800);
+  }
+}
+
+// ==========================================================================
+// 13. MAP CONTROLS & LIVE SWITCHER
+// ==========================================================================
+function initMapControls() {
+  const btnSvg = document.getElementById('btnSvgMap');
+  const btnLive = document.getElementById('btnLiveMap');
+  const vectorMap = document.getElementById('customVectorMap');
+  const liveWrap = document.getElementById('yandexLiveWrap');
+  const liveIframe = document.getElementById('yandexLiveIframe');
+  const copyBtn = document.getElementById('copyAddressBtn');
+
+  if (btnSvg && btnLive && vectorMap && liveWrap) {
+    btnSvg.addEventListener('click', () => {
+      btnSvg.classList.add('active');
+      btnLive.classList.remove('active');
+      vectorMap.style.display = 'block';
+      liveWrap.style.display = 'none';
+    });
+
+    btnLive.addEventListener('click', () => {
+      btnLive.classList.add('active');
+      btnSvg.classList.remove('active');
+      vectorMap.style.display = 'none';
+      liveWrap.style.display = 'block';
+
+      // Lazy load live iframe src if not loaded yet
+      if (liveIframe && liveIframe.getAttribute('src') === 'about:blank') {
+        liveIframe.setAttribute('src', liveIframe.getAttribute('data-src'));
+      }
+    });
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const address = 'г. Королёв, Подмосковная ул., 7';
+      navigator.clipboard.writeText(address).then(() => {
+        showToast('Точный адрес скопирован в буфер обмена!');
+      }).catch(() => {
+        showToast('Подмосковная ул., 7');
+      });
+    });
+  }
+}
+
+// ==========================================================================
+// 14. INITIALIZATION
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
   updateCartUI();
   checkOpeningHours();
+  initRatingAnimation();
+  initReviewsMarquee();
+  initMapControls();
 });
