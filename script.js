@@ -1,6 +1,7 @@
 /**
  * HOT BLACK COFFEE — CORE INTERACTIVE CONTROLLER
  * Minimalist Specialty Coffee Website
+ * Clean Modern Architecture: No Emojis, Bespoke Vector Icons, Flawless Layout
  */
 
 // 1. MENU CATALOG DATABASE (По факту, без воды)
@@ -279,6 +280,7 @@ const burgerBtn = document.getElementById('burgerBtn');
 const navMenu = document.getElementById('navMenu');
 const toastNotification = document.getElementById('toastNotification');
 const toastText = document.getElementById('toastText');
+const bgVideo = document.getElementById('bgVideo');
 
 // ==========================================================================
 // 2. VIDEO SCROLL BLUR & PARALLAX ENGINE
@@ -297,14 +299,14 @@ function onScrollHandler() {
   }
 
   // Calculate blur and dark overlay progress
-  // 0 at top of hero screen, reaches max at 1 screen scroll
+  // 0 at top of hero screen, reaches max blur at 1 screen scroll
   const progress = Math.min(Math.max(scrollY / (vh * 0.85), 0), 1);
 
-  // Blur: 0px at hero -> 22px when scrolling down
+  // Dynamic blur: 0px at hero -> 22px when scrolling down
   const blurVal = (progress * 22).toFixed(1);
   // Overlay opacity: 0.38 at hero -> 0.88 when scrolling into catalog
   const overlayOpacity = (0.38 + progress * 0.50).toFixed(2);
-  // Subtle parallax translation of the video
+  // Parallax translation of the video
   const videoOffset = (scrollY * 0.12).toFixed(1);
 
   document.documentElement.style.setProperty('--scroll-blur', `${blurVal}px`);
@@ -324,8 +326,22 @@ window.addEventListener('scroll', () => {
 // Initial run
 onScrollHandler();
 
+// Ensure video plays continuously on touch / desktop
+if (bgVideo) {
+  bgVideo.play().catch(() => {
+    // Autoplay policy fallback: resume on first user interaction
+    const resumeVideo = () => {
+      bgVideo.play();
+      window.removeEventListener('click', resumeVideo);
+      window.removeEventListener('touchstart', resumeVideo);
+    };
+    window.addEventListener('click', resumeVideo);
+    window.addEventListener('touchstart', resumeVideo);
+  });
+}
+
 // ==========================================================================
-// 3. CATALOG RENDERING & FILTERING
+// 3. CATALOG RENDERING & FILTERING (NO EMOJIS, BESPOKE ICONS)
 // ==========================================================================
 function renderCatalog() {
   const filtered = MENU_DATA.filter(item => {
@@ -341,9 +357,14 @@ function renderCatalog() {
   if (filtered.length === 0) {
     catalogGrid.innerHTML = `
       <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-        <div style="font-size: 2.2rem; margin-bottom: 12px; opacity: 0.6;">🔍</div>
-        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; text-transform: uppercase;">Ничего не найдено</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">Попробуйте изменить поисковый запрос или выбрать другую категорию.</p>
+        <div style="margin-bottom: 16px; color: var(--text-dim); display: flex; justify-content: center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; text-transform: uppercase;">Позиций не найдено</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">Попробуйте скорректировать поисковый запрос или выбрать другую категорию.</p>
       </div>
     `;
     return;
@@ -365,7 +386,13 @@ function renderCatalog() {
           <div class="card-price">${item.price} ₽</div>
           <div class="card-actions">
             <button class="btn-card-details" onclick="openProductModal(${item.id})">Состав</button>
-            <button class="btn-card-add" onclick="addToCart(${item.id})">+ В заказ</button>
+            <button class="btn-card-add" onclick="addToCart(${item.id})">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>В заказ</span>
+            </button>
           </div>
         </div>
       </div>
@@ -391,7 +418,7 @@ if (categoryTabs) {
 if (catalogSearch) {
   catalogSearch.addEventListener('input', (e) => {
     searchQuery = e.target.value;
-    clearSearchBtn.style.display = searchQuery ? 'block' : 'none';
+    clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
     renderCatalog();
   });
 }
@@ -473,9 +500,18 @@ function updateCartUI() {
           <div class="cart-item-price">${item.price} ₽ · ${item.volume}</div>
         </div>
         <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+          <button class="qty-btn" onclick="changeQty(${item.id}, -1)" aria-label="Уменьшить">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
           <span class="qty-num">${item.quantity}</span>
-          <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+          <button class="qty-btn" onclick="changeQty(${item.id}, 1)" aria-label="Увеличить">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
         </div>
       </div>
     `).join('');
@@ -501,7 +537,7 @@ cartOverlay.addEventListener('click', (e) => {
 });
 
 // ==========================================================================
-// 5. PRODUCT DETAILS MODAL
+// 5. PRODUCT DETAILS MODAL (ACCURATE NUTRITION & INGREDIENTS)
 // ==========================================================================
 window.openProductModal = function(productId) {
   const product = MENU_DATA.find(p => p.id === productId);
@@ -514,7 +550,7 @@ window.openProductModal = function(productId) {
       <div class="modal-detail-specs">${product.volume} · ${product.price} ₽ · ${product.tag}</div>
       <p class="modal-detail-desc">${product.desc}</p>
       
-      <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">
+      <div style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 8px;">
         Пищевая ценность (на порцию):
       </div>
       <div class="modal-nutrition-grid">
@@ -537,14 +573,14 @@ window.openProductModal = function(productId) {
       </div>
 
       <div style="margin-bottom: 24px;">
-        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); display: block; margin-bottom: 4px;">
+        <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); display: block; margin-bottom: 4px;">
           Состав по факту:
         </span>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">${product.ingredients}</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${product.ingredients}</p>
       </div>
 
       <button class="btn btn-primary btn-block" onclick="addToCart(${product.id}); closeProductModal();">
-        Добавить в заказ · ${product.price} ₽
+        <span>Добавить в заказ · ${product.price} ₽</span>
       </button>
     </div>
   `;
@@ -572,11 +608,11 @@ proceedCheckoutBtn.addEventListener('click', () => {
 
   const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   orderSummaryBox.innerHTML = `
-    <div style="font-weight: 600; margin-bottom: 8px; color: var(--text-main);">Состав предзаказа:</div>
-    <ul style="list-style: none; margin-bottom: 10px; color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;">
-      ${cart.map(i => `<li>• ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)</li>`).join('')}
+    <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав предзаказа:</div>
+    <ul style="list-style: none; margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
+      ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)</li>`).join('')}
     </ul>
-    <div style="font-weight: 700; color: var(--accent-orange); font-size: 1rem;">
+    <div style="font-weight: 800; color: var(--accent-orange); font-size: 1.15rem; font-family: var(--font-heading);">
       Итого: ${totalSum.toLocaleString('ru-RU')} ₽
     </div>
   `;
@@ -599,9 +635,7 @@ checkoutModalOverlay.addEventListener('click', (e) => {
 checkoutForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.getElementById('orderName').value;
-  const phone = document.getElementById('orderPhone').value;
   const time = document.getElementById('orderTime').value;
-  const comment = document.getElementById('orderComment').value;
 
   // Clear cart
   cart = [];
@@ -610,8 +644,7 @@ checkoutForm.addEventListener('submit', (e) => {
   checkoutModalOverlay.classList.remove('active');
   document.body.style.overflow = '';
 
-  showToast(`Заказ принят! Ждём вас к: ${time}`);
-  alert(`Спасибо, ${name}! Предзаказ отправлен на бар Hot Black.\nГотовим к: ${time}.\nАдрес: Королёв, Подмосковная ул., 7.`);
+  showToast(`Заказ принят! Готовим для ${name} к: ${time}`);
 });
 
 // ==========================================================================
@@ -624,7 +657,7 @@ function showToast(msg) {
   toastNotification.classList.add('active');
   toastTimer = setTimeout(() => {
     toastNotification.classList.remove('active');
-  }, 2800);
+  }, 3200);
 }
 
 // ==========================================================================
@@ -659,11 +692,11 @@ function checkOpeningHours() {
 
   if (isOpen) {
     dot.style.backgroundColor = '#22c55e';
-    dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.8)';
+    dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.9)';
     text.textContent = 'Открыто до 22:00';
   } else {
     dot.style.backgroundColor = '#f59e0b';
-    dot.style.boxShadow = '0 0 10px rgba(245, 158, 11, 0.8)';
+    dot.style.boxShadow = '0 0 10px rgba(245, 158, 11, 0.9)';
     text.textContent = 'Откроемся в 08:00';
   }
 }

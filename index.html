@@ -4,39 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HOT BLACK — Спешелти кофейня в Королёве | Подмосковная 7</title>
-  <meta name="description" content="Минималистичная кофейня Hot Black: 100% спешелти арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 4.9 на Яндекс Картах.">
+  <meta name="description" content="Минималистичная кофейня Hot Black в Королёве: 100% спешелти арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 4.9 на Яндекс Картах.">
   
-  <!-- Preconnect & Fonts -->
+  <!-- Modern Editorial & Avant-Garde Fonts: Unbounded + Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Video Background with Dynamic Scroll Blur & Parallax -->
+  <!-- Video Background with Dynamic Hardware-Accelerated Scroll Blur & Parallax -->
   <div class="video-background-container" id="videoBgContainer" aria-hidden="true">
     <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
       <source src="gemini_generated_video_e50f7306.mp4" type="video/mp4">
     </video>
-    <!-- Vignette & Dark Tint -->
+    <!-- Vignette Tint -->
     <div class="video-overlay" id="videoOverlay"></div>
-    <!-- Blur backdrop overlay -->
+    <!-- Dynamic Blur Backdrop Filter Layer -->
     <div class="video-blur-layer" id="videoBlurLayer"></div>
   </div>
 
   <!-- Header / Navigation Bar -->
   <header class="header" id="header">
     <div class="header-inner container">
-      <!-- Logo -->
-      <a href="#hero" class="brand-logo">
-        <span class="logo-mark">●</span>
-        <span class="logo-name">HOT BLACK</span>
-        <span class="logo-city">КОРОЛЁВ</span>
+      <!-- Logo with Custom Vector Glyph -->
+      <a href="#hero" class="brand-logo" aria-label="HOT BLACK главная">
+        <span class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v-.07z" fill="var(--accent-orange)"/>
+          </svg>
+        </span>
+        <span class="logo-text">HOT BLACK</span>
+        <span class="logo-badge">СПЕШЕЛТИ</span>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav Menu -->
       <nav class="nav-menu" id="navMenu">
         <a href="#menu" class="nav-link">Меню</a>
         <a href="#facts" class="nav-link">Стандарты</a>
@@ -48,21 +53,25 @@
       <!-- Status & Cart CTA -->
       <div class="header-actions">
         <div class="live-status-badge" id="liveStatusBadge">
-          <span class="status-dot"></span>
-          <span class="status-text">08:00 – 22:00</span>
+          <span class="status-indicator-ring">
+            <span class="status-dot"></span>
+          </span>
+          <span class="status-text">Открыто до 22:00</span>
         </div>
 
         <button class="cart-trigger-btn" id="openCartBtn" aria-label="Открыть корзину">
-          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0"/>
+          <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
           <span class="cart-count" id="cartCount">0</span>
         </button>
 
         <!-- Burger Toggle for Mobile -->
         <button class="burger-btn" id="burgerBtn" aria-label="Меню навигации">
-          <span></span>
-          <span></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
         </button>
       </div>
     </div>
@@ -75,12 +84,16 @@
         
         <!-- Eyebrow label -->
         <div class="hero-top-eyebrow">
-          <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">HOT BLACK · SPECIALTY COFFEE & ROASTERY</span>
-          <span class="eyebrow-line"></span>
+          <span class="eyebrow-accent">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <rect width="12" height="12" fill="var(--accent-orange)"/>
+            </svg>
+          </span>
+          <span class="eyebrow-text">HOT BLACK // SPECIALTY ROASTERY & CAFE</span>
+          <span class="eyebrow-coords">55.9148° N, 37.8685° E</span>
         </div>
 
-        <!-- Main Big Bold Headline -->
+        <!-- Main Giant Monolithic Headline -->
         <div class="hero-title-wrapper">
           <h1 class="hero-title">
             КОФЕ,<br>
@@ -95,8 +108,13 @@
           <!-- Left Element (Reference left card) -->
           <a href="#menu" class="hero-card hero-card-left" id="heroMenuShortcut">
             <div class="hero-card-marker">
+              <!-- Technical Concentric Radar Glyph -->
               <div class="radar-circle">
-                <span class="radar-pulse"></span>
+                <svg class="radar-svg" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="24" cy="24" r="15" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                  <path d="M24 2 A 22 22 0 0 1 46 24" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
                 <span class="radar-num">01</span>
               </div>
             </div>
@@ -106,9 +124,10 @@
                 Айс-латте, фильтр, батч-брю, сырники и свежие чизкейки. Выбирайте онлайн или на баре.
               </p>
               <div class="hero-card-action">
-                <span>Перейти к позициям</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-icon">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                <span>Арсенал позиций</span>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </div>
             </div>
@@ -117,11 +136,19 @@
           <!-- Right Element (Reference right card) -->
           <a href="#reviews" class="hero-card hero-card-right" id="heroLocationShortcut">
             <div class="hero-card-marker">
-              <div class="grid-badge">
-                <span class="grid-dot"></span>
-                <span class="grid-dot"></span>
-                <span class="grid-dot"></span>
-                <span class="grid-dot active"></span>
+              <!-- Technical Precision Grid Glyph -->
+              <div class="matrix-badge">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <rect x="2" y="2" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="13" y="2" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="24" y="2" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="2" y="13" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="13" y="13" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="24" y="13" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="2" y="24" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="13" y="24" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="24" y="24" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                </svg>
               </div>
             </div>
             <div class="hero-card-content">
@@ -131,8 +158,9 @@
               </p>
               <div class="hero-card-action">
                 <span>Читать 436+ отзывов</span>
-                <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-icon">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </div>
             </div>
@@ -152,20 +180,20 @@
     <!-- Ticker / Quick Facts strip -->
     <section class="ticker-strip" aria-hidden="true">
       <div class="ticker-track">
-        <div class="ticker-item">● 100% СПЕШЕЛТИ АРАБИКА</div>
-        <div class="ticker-item">● ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
-        <div class="ticker-item">● БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item">● ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
-        <div class="ticker-item">● РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
-        <div class="ticker-item">● ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item">● PET-FRIENDLY</div>
-        <div class="ticker-item">● 100% СПЕШЕЛТИ АРАБИКА</div>
-        <div class="ticker-item">● ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
-        <div class="ticker-item">● БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item">● ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
-        <div class="ticker-item">● РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
-        <div class="ticker-item">● ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item">● PET-FRIENDLY</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY</div>
       </div>
     </section>
 
@@ -181,29 +209,62 @@
           </p>
         </div>
 
-        <!-- Controls: Category Filters & Live Search -->
+        <!-- Controls: Category Filters & Live Search with Custom Vector Icons -->
         <div class="catalog-controls">
           <div class="category-tabs" id="categoryTabs">
-            <button class="cat-btn active" data-category="all">Все (19)</button>
-            <button class="cat-btn" data-category="coffee">Кофе & Напитки (8)</button>
-            <button class="cat-btn" data-category="food">Блюда & Завтраки (5)</button>
-            <button class="cat-btn" data-category="desserts">Десерты (4)</button>
-            <button class="cat-btn" data-category="beans">Зерно с собой (2)</button>
+            <button class="cat-btn active" data-category="all">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              <span>Все (19)</span>
+            </button>
+            <button class="cat-btn" data-category="coffee">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+              </svg>
+              <span>Кофе & Напитки (8)</span>
+            </button>
+            <button class="cat-btn" data-category="food">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h-1a6 6 0 00-10 0H6a4 4 0 00-4 4v1h20v-1a4 4 0 00-4-4zM2 17h20v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z"/>
+              </svg>
+              <span>Блюда & Завтраки (5)</span>
+            </button>
+            <button class="cat-btn" data-category="desserts">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3 5h-6l3-5zM4 14l8-4 8 4v6H4v-6z"/>
+              </svg>
+              <span>Десерты (4)</span>
+            </button>
+            <button class="cat-btn" data-category="beans">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 3h12l2 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1V8l2-5zM4 8h16"/>
+              </svg>
+              <span>Зерно с собой (2)</span>
+            </button>
           </div>
 
           <div class="search-box">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
             <input type="text" id="catalogSearch" placeholder="Поиск напитка или блюда..." aria-label="Поиск по меню">
-            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display:none;">✕</button>
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display:none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
 
         <!-- Catalog Grid -->
         <div class="catalog-grid" id="catalogGrid">
-          <!-- Dynamically populated via script.js -->
+          <!-- Populated via script.js -->
         </div>
 
       </div>
@@ -229,12 +290,16 @@
                 <span class="spec-lbl">Q-Grade Score</span>
               </div>
               <div class="spec-col">
-                <span class="spec-val">каждую неделю</span>
+                <span class="spec-val">Каждую неделю</span>
                 <span class="spec-lbl">Свежая обжарка</span>
               </div>
             </div>
             <button class="btn btn-primary" onclick="document.querySelector('[data-category=\'beans\']').click(); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
-              Выбрать пачку зерна
+              <span>Выбрать пачку зерна</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </button>
           </div>
           <div class="beans-banner-image">
@@ -259,7 +324,15 @@
         <div class="standards-grid">
           
           <div class="standard-card">
-            <div class="standard-num">01</div>
+            <div class="standard-header-row">
+              <div class="standard-num">01</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="standard-title">ЗЕРНО И ОБЖАРКА</h3>
             <p class="standard-text">
               Используем исключительно зерно уровня Specialty с оценкой Q-Grader выше 84 баллов. Ротация сортов каждые две недели: яркая мытая Эфиопия под фильтр и плотная сладкая Колумбия под эспрессо.
@@ -271,7 +344,14 @@
           </div>
 
           <div class="standard-card">
-            <div class="standard-num">02</div>
+            <div class="standard-header-row">
+              <div class="standard-num">02</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="standard-title">ОБОРУДОВАНИЕ И ВОДА</h3>
             <p class="standard-text">
               Экстракция на двухгруппной итальянской машине с PID-контролем температуры до 0.1°C. Кофемолки с плоскими 98-мм жерновами. 4-ступенчатый обратный осмос с минерализацией (TDS 110 ppm).
@@ -283,7 +363,14 @@
           </div>
 
           <div class="standard-card">
-            <div class="standard-num">03</div>
+            <div class="standard-header-row">
+              <div class="standard-num">03</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="standard-title">КУХНЯ И ВЫПЕЧКА</h3>
             <p class="standard-text">
               Никаких замороженных полуфабрикатов. Свежие круассаны, баскские чизкейки и сырники из фермерского творога выпекаются утром. Завтраки готовим на протяжении всего рабочего дня.
@@ -295,7 +382,14 @@
           </div>
 
           <div class="standard-card">
-            <div class="standard-num">04</div>
+            <div class="standard-header-row">
+              <div class="standard-num">04</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="standard-title">ПРОСТРАНСТВО</h3>
             <p class="standard-text">
               Эргономичные посадочные места, стабильный Wi-Fi 150 Мбит/с, розетки у каждого столика для комфортной работы. Гостеприимны к четвероногим друзьям (полный pet-friendly).
@@ -318,20 +412,31 @@
         <div class="yandex-header-card">
           <div class="yandex-brand-col">
             <div class="yandex-maps-badge">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
               </svg>
-              <span>ЯНДЕКС КАРТЫ</span>
+              <span class="yandex-badge-text">ЯНДЕКС КАРТЫ</span>
             </div>
             <div class="yandex-award">
-              🏆 Победитель премии <strong>«Хорошее место 2026»</strong>
+              <svg class="award-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+              <span>Победитель премии <strong>«Хорошее место 2026»</strong></span>
             </div>
           </div>
 
           <div class="yandex-score-col">
-            <div class="big-score">4.9</div>
-            <div class="stars-row">
-              ★★★★★
+            <div class="score-display-wrapper">
+              <div class="big-score">4.9</div>
+              <div class="stars-vector-row">
+                <!-- 5 Vector Gold Stars -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
             </div>
             <div class="score-meta">
               На основе <strong>436 отзывов</strong> и 182 фотографий гостей
@@ -340,7 +445,7 @@
 
           <div class="yandex-action-col">
             <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-link-btn">
-              <span>Открыть карточку на Яндекс Картах</span>
+              <span>Открыть на Яндекс Картах</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
               </svg>
@@ -348,7 +453,7 @@
           </div>
         </div>
 
-        <!-- Real Reviews Carousel / Grid -->
+        <!-- Real Reviews Carousel / Grid with Vector Stars -->
         <div class="reviews-grid" id="reviewsGrid">
           
           <div class="review-card">
@@ -360,7 +465,13 @@
                   <div class="author-level">Знаток города 12 уровня</div>
                 </div>
               </div>
-              <div class="review-rating-stars">★★★★★</div>
+              <div class="stars-vector-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
             </div>
             <p class="review-text">
               «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
@@ -377,7 +488,13 @@
                   <div class="author-level">Знаток города 7 уровня</div>
                 </div>
               </div>
-              <div class="review-rating-stars">★★★★★</div>
+              <div class="stars-vector-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
             </div>
             <p class="review-text">
               «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
@@ -394,7 +511,13 @@
                   <div class="author-level">Знаток города 9 уровня</div>
                 </div>
               </div>
-              <div class="review-rating-stars">★★★★★</div>
+              <div class="stars-vector-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
             </div>
             <p class="review-text">
               «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
@@ -411,7 +534,13 @@
                   <div class="author-level">Местный житель</div>
                 </div>
               </div>
-              <div class="review-rating-stars">★★★★★</div>
+              <div class="stars-vector-row">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
             </div>
             <p class="review-text">
               «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
@@ -438,7 +567,7 @@
               
               <div class="info-item">
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
@@ -452,7 +581,7 @@
 
               <div class="info-item">
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10"/>
                     <polyline points="12 6 12 12 16 14"/>
                   </svg>
@@ -466,7 +595,7 @@
 
               <div class="info-item">
                 <div class="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
                   </svg>
                 </div>
@@ -480,10 +609,13 @@
 
             <div class="contacts-action-btns">
               <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Построить маршрут на Яндекс Картах
+                <span>Построить маршрут на Яндекс Картах</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
               </a>
               <a href="tel:+79252173915" class="btn btn-outline">
-                Позвонить на бар
+                <span>Позвонить на бар</span>
               </a>
             </div>
 
@@ -513,7 +645,10 @@
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-col">
-        <div class="footer-logo">HOT BLACK</div>
+        <div class="footer-logo">
+          <span class="footer-logo-dot"></span>
+          <span>HOT BLACK</span>
+        </div>
         <p class="footer-copy">
           Спешелти кофейня и обжарка в Королёве.<br>
           Честный кофе без компромиссов.
@@ -537,7 +672,7 @@
           Рейтинг: 4.9 из 5.0<br>
           «Хорошее место 2026»<br>
           <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
-            Перейти к профилю организации ↗
+            <span>Профиль организации ↗</span>
           </a>
         </p>
       </div>
@@ -557,13 +692,24 @@
           <span>ВАШ ВЫБОР</span>
           <span class="cart-title-count" id="cartHeaderCount">(0)</span>
         </h3>
-        <button class="cart-close-btn" id="closeCartBtn" aria-label="Закрыть корзину">✕</button>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Закрыть корзину">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
       <div class="cart-items-container" id="cartItemsList">
-        <!-- Rendered dynamically -->
+        <!-- Empty state vector illustration (No emojis!) -->
         <div class="empty-cart-state" id="emptyCartState">
-          <div class="empty-icon">☕</div>
+          <div class="empty-cart-vector">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+              <path d="M42 24h3a6 6 0 010 12h-3M16 24h26v16a6 6 0 01-6 6H22a6 6 0 01-6-6V24z" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 14v4M29 12v6M36 14v4" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="empty-title">В корзине пока пусто</div>
           <div class="empty-desc">Выберите понравившиеся позиции из меню, чтобы оформить предзаказ к нужному времени.</div>
           <button class="btn btn-outline" onclick="document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
@@ -578,7 +724,11 @@
           <span class="cart-total-sum" id="cartTotalSum">0 ₽</span>
         </div>
         <button class="btn btn-primary btn-block" id="proceedCheckoutBtn">
-          Оформить предзаказ на бар
+          <span>Оформить предзаказ на бар</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </button>
       </div>
     </aside>
@@ -587,7 +737,12 @@
   <!-- PRODUCT DETAIL MODAL -->
   <div class="modal-overlay" id="productModalOverlay">
     <div class="product-modal" id="productModal" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" id="closeModalBtn" aria-label="Закрыть окно">✕</button>
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       <div class="modal-body" id="modalBody">
         <!-- Injected via script.js -->
       </div>
@@ -597,7 +752,12 @@
   <!-- CHECKOUT MODAL -->
   <div class="modal-overlay" id="checkoutModalOverlay">
     <div class="checkout-modal" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Закрыть окно">✕</button>
+      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
       <div class="checkout-header">
         <h3>БЫСТРЫЙ ПРЕДЗАКАЗ</h3>
         <p>Готовим к вашему приходу — заберите без очереди на Подмосковной, 7</p>
@@ -631,7 +791,7 @@
 
         <div class="checkout-submit-buttons">
           <button type="submit" class="btn btn-primary btn-block">
-            Подтвердить предзаказ
+            <span>Подтвердить предзаказ</span>
           </button>
         </div>
       </form>
@@ -640,6 +800,7 @@
 
   <!-- TOAST NOTIFICATION -->
   <div class="toast-notification" id="toastNotification">
+    <div class="toast-indicator"></div>
     <span class="toast-text" id="toastText">Позиция добавлена</span>
   </div>
 
