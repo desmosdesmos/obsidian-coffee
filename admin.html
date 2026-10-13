@@ -497,6 +497,51 @@
               </div>
             </form>
           </div>
+
+          <!-- Telegram Bot Order Dispatcher Card -->
+          <div class="admin-card-container" style="padding: 28px; max-width: 860px; margin-top: 24px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+              <div>
+                <h3 style="font-size:1.05rem; font-family:var(--admin-font-heading); color:#fff;">Telegram Оповещения о заказах</h3>
+                <p style="font-size:0.8rem; color:var(--admin-text-muted); margin-top:4px;">
+                  Все входящие заявки отправляются в Telegram (только сумма и состав позиций, без персональных данных).
+                </p>
+              </div>
+              <span class="stock-badge-toggle in-stock" style="cursor:default;">
+                <span class="stock-dot"></span>
+                <span>Бот активен</span>
+              </span>
+            </div>
+
+            <div class="form-grid-2col">
+              <div class="admin-form-group">
+                <label>Telegram Бот</label>
+                <input type="text" value="@coffeetestwork_bot" class="admin-form-input" disabled style="opacity:0.8;">
+              </div>
+              <div class="admin-form-group">
+                <label for="set_tgChatId">Ваш Chat ID / ID группы для получения заявок</label>
+                <div style="display:flex; gap:8px;">
+                  <input type="text" id="set_tgChatId" class="admin-form-input" placeholder="Например: 123456789 или -100...">
+                  <button type="button" class="btn-admin btn-admin-secondary" id="btnDetectTgChat" title="Определить автоматически из последних сообщений боту">
+                    Определить
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; font-size:0.78rem; color:var(--admin-text-dim); line-height:1.5;">
+              💡 <strong>Как подключить:</strong> 1. Откройте в Telegram бота <a href="https://t.me/coffeetestwork_bot" target="_blank" style="color:var(--admin-accent-orange); text-decoration:underline;">@coffeetestwork_bot</a> и нажмите <strong>/start</strong> (или добавьте бота в вашу рабочую группу бариста). 2. Нажмите кнопку <strong>«Определить»</strong> выше или введите ID вручную.
+            </div>
+
+            <div style="margin-top:18px; display:flex; justify-content:flex-end; gap:10px;">
+              <button type="button" class="btn-admin btn-admin-secondary" id="btnTestTgNotify">
+                <span>Отправить тест в Telegram ✈</span>
+              </button>
+              <button type="button" class="btn-admin btn-admin-primary" id="btnSaveTgChat">
+                <span>Сохранить Chat ID</span>
+              </button>
+            </div>
+          </div>
         </section>
 
         <!-- ============================================================== -->

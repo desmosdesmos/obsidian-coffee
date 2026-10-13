@@ -820,6 +820,101 @@ function loadSettingsForm() {
   document.getElementById('set_kitchen').value = storeSettingsData.hoursKitchen || '';
   document.getElementById('set_statusMode').value = storeSettingsData.statusMode || 'auto';
   document.getElementById('set_heroTitle').value = storeSettingsData.heroTitle || '';
+
+  const tgInput = document.getElementById('set_tgChatId');
+  if (tgInput) {
+    tgInput.value = localStorage.getItem('obsidian_tg_chat_id') || '';
+  }
+}
+
+async function detectTelegramChatId() {
+  const btn = document.getElementById('btnDetectTgChat');
+  const input = document.getElementById('set_tgChatId');
+  if (btn) btn.textContent = 'Определяю...';
+
+  try {
+    const resp = await fetch('https://api.telegram.org/bot8650352781:AAERhPKs7TmBOEIftRO-y9O0Be18Cyiur28/getUpdates');
+    const json = await resp.json();
+    if (json && json.ok && Array.isArray(json.result) && json.result.length > 0) {
+      const ids = new Set();
+      json.result.forEach(upd => {
+        const cid = upd.message?.chat?.id || upd.channel_post?.chat?.id || upd.my_chat_member?.chat?.id;
+        if (cid) ids.add(String(cid));
+      });
+      if (ids.size > 0) {
+        const joined = Array.from(ids).join(', ');
+        if (input) input.value = joined;
+        localStorage.setItem('obsidian_tg_chat_id', joined);
+        logAudit(`Определен Telegram Chat ID: ${joined}`);
+        showAdminToast(`Chat ID успешно найден: ${joined}`);
+        return;
+      }
+    }
+    showAdminToast('Сообщений не найдено. Напишите /start боту @coffeetestwork_bot');
+  } catch (e) {
+    showAdminToast('Ошибка связи с Telegram API');
+  } finally {
+    if (btn) btn.textContent = 'Определить';
+  }
+}
+
+function saveTelegramChatId() {
+  const input = document.getElementById('set_tgChatId');
+  if (!input) return;
+  const val = input.value.trim();
+  localStorage.setItem('obsidian_tg_chat_id', val);
+  logAudit(`Сохранен Telegram Chat ID: ${val || 'Очищен'}`);
+  showAdminToast(val ? `Telegram Chat ID сохранен: ${val}` : 'Telegram Chat ID очищен');
+}
+
+async function sendTestTelegramNotification() {
+  const input = document.getElementById('set_tgChatId');
+  let chatId = input ? input.value.trim() : localStorage.getItem('obsidian_tg_chat_id');
+
+  if (!chatId) {
+    await detectTelegramChatId();
+    chatId = input ? input.value.trim() : localStorage.getItem('obsidian_tg_chat_id');
+  }
+
+  if (!chatId) {
+    showAdminToast('Сначала напишите /start боту @coffeetestwork_bot в Telegram');
+    return;
+  }
+
+  const token = '8650352781:AAERhPKs7TmBOEIftRO-y9O0Be18Cyiur28';
+  const testId = 'TEST-' + Math.floor(100 + Math.random() * 900);
+  const text = 
+`☕ <b>ТЕСТОВАЯ ЗАЯВКА [${testId}]</b>
+──────────────────
+📋 <b>Состав позиций (без ПД):</b>
+1. <b>Флэт Уайт</b> × 1 шт. — <i>280 ₽</i>
+2. <b>Круассан с лососем</b> × 1 шт. — <i>460 ₽</i>
+──────────────────
+💰 <b>Сумма заказа:</b> <b>740 ₽</b>
+⏱ <b>Время готовности:</b> Через 15 минут
+📌 <i>Пожелания:</i> Тест связи Obsidian // 07`;
+
+  const ids = chatId.split(',').map(s => s.trim()).filter(Boolean);
+  let okCount = 0;
+
+  for (const cid of ids) {
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: cid, text: text, parse_mode: 'HTML' })
+      });
+      const data = await res.json();
+      if (data.ok) okCount++;
+    } catch (e) {}
+  }
+
+  if (okCount > 0) {
+    logAudit('Отправлено тестовое оповещение в Telegram');
+    showAdminToast('Тестовое уведомление доставлено в Telegram!');
+  } else {
+    showAdminToast('Ошибка отправки. Проверьте, что нажали /start боту');
+  }
 }
 
 function saveSettingsForm(e) {
@@ -1176,8 +1271,11 @@ document.addEventListener('DOMContentLoaded', () => {
     reader.readAsDataURL(file);
   });
 
-  // Settings Form
+  // Settings Form & Telegram Bot Controls
   document.getElementById('settingsForm')?.addEventListener('submit', saveSettingsForm);
+  document.getElementById('btnDetectTgChat')?.addEventListener('click', detectTelegramChatId);
+  document.getElementById('btnSaveTgChat')?.addEventListener('click', saveTelegramChatId);
+  document.getElementById('btnTestTgNotify')?.addEventListener('click', sendTestTelegramNotification);
 
   // Security Form
   document.getElementById('pinChangeForm')?.addEventListener('submit', changeAdminPin);

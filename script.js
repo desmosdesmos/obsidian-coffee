@@ -695,6 +695,87 @@ checkoutModalOverlay.addEventListener('click', (e) => {
   }
 });
 
+// ==========================================================================
+// 7.1 TELEGRAM BOT ORDER DISPATCHER (STRICT PRIVACY — NO PERSONAL DATA)
+// ==========================================================================
+const TELEGRAM_CONFIG = {
+  token: '8650352781:AAERhPKs7TmBOEIftRO-y9O0Be18Cyiur28',
+  storageKey: 'obsidian_tg_chat_id'
+};
+
+async function getTelegramChatIds() {
+  const configured = localStorage.getItem(TELEGRAM_CONFIG.storageKey);
+  const ids = new Set();
+  
+  if (configured) {
+    configured.split(',').map(s => s.trim()).filter(Boolean).forEach(id => ids.add(id));
+  }
+
+  // If no configured chat ID, auto-detect from recent bot updates
+  if (ids.size === 0) {
+    try {
+      const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.token}/getUpdates`);
+      const json = await resp.json();
+      if (json && json.ok && Array.isArray(json.result) && json.result.length > 0) {
+        json.result.forEach(upd => {
+          const cid = upd.message?.chat?.id || upd.channel_post?.chat?.id || upd.my_chat_member?.chat?.id;
+          if (cid) ids.add(String(cid));
+        });
+        if (ids.size > 0) {
+          localStorage.setItem(TELEGRAM_CONFIG.storageKey, Array.from(ids).join(','));
+        }
+      }
+    } catch (e) {
+      console.warn('Auto-detect Telegram chat ID failed:', e);
+    }
+  }
+
+  return Array.from(ids);
+}
+
+async function sendOrderToTelegramBot(order) {
+  try {
+    const chatIds = await getTelegramChatIds();
+    if (!chatIds || chatIds.length === 0) {
+      console.info('Telegram Bot: No chat_id connected yet. Write /start to @coffeetestwork_bot in Telegram');
+      return;
+    }
+
+    // STRICT PRIVACY: ZERO personal data (no name, no phone)
+    const itemsLines = (order.items || []).map((item, idx) => {
+      const lineSum = (item.price || 0) * (item.qty || 1);
+      return `${idx + 1}. <b>${item.name}</b> × ${item.qty} шт. — <i>${lineSum} ₽</i>`;
+    }).join('\n');
+
+    const totalSum = (order.total || 0).toLocaleString('ru-RU');
+    const orderTime = order.readyTime || 'Как можно скорее';
+    const commentNote = order.comment ? `\n\n📌 <b>Пожелания к заказу:</b> ${order.comment}` : '';
+
+    const text = 
+`☕ <b>НОВЫЙ ЗАКАЗ [${order.id}]</b>
+──────────────────
+📋 <b>Состав позиций:</b>
+${itemsLines || '— Позиции не указаны'}
+──────────────────
+💰 <b>Сумма заказа:</b> <b>${totalSum} ₽</b>
+⏱ <b>Время готовности:</b> ${orderTime}${commentNote}`;
+
+    for (const chatId of chatIds) {
+      await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+          parse_mode: 'HTML'
+        })
+      });
+    }
+  } catch (err) {
+    console.error('Error dispatching order to Telegram:', err);
+  }
+}
+
 checkoutForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const nameInput = document.getElementById('orderName');
@@ -734,6 +815,9 @@ checkoutForm.addEventListener('submit', (e) => {
   } catch (err) {
     console.error('Error saving order to localStorage', err);
   }
+
+  // Duplicate to Telegram bot (no personal data)
+  sendOrderToTelegramBot(newOrder);
 
   cart = [];
   saveCart();
