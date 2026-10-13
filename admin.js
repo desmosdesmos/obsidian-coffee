@@ -298,29 +298,79 @@ let ordersData = getStoredData(STORAGE_KEYS.ORDERS, []);
 // ==========================================================================
 // 3. SECURITY GATE & ACCESS CONTROLLER
 // ==========================================================================
+// 3. SECURITY GATE & ACCESS CONTROLLER (CRYPTOGRAPHIC SHA-256)
+// ==========================================================================
 let lockoutUntil = 0;
 let failedAttempts = 0;
 
-function getMasterPin() {
-  const sec = getStoredData(STORAGE_KEYS.SECURITY, { pin: '0707' });
-  return sec.pin || '0707';
+// Master PIN SHA-256 hash (default corresponds to 0707)
+const DEFAULT_PIN_HASH = '6c25c8f454fea8dd5cd0b201b4f739993aebfc454de7b410ee9457c553699a85';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function getMasterPinHash() {
+  const sec = getStoredData(STORAGE_KEYS.SECURITY, {});
+  if (sec.pinHash) return sec.pinHash;
+  if (sec.pin) {
+    const h = await sha256(sec.pin);
+    sec.pinHash = h;
+    delete sec.pin;
+    setStoredData(STORAGE_KEYS.SECURITY, sec);
+    return h;
+  }
+  return DEFAULT_PIN_HASH;
 }
 
 function isSessionAuthorized() {
-  return sessionStorage.getItem('obsidian_admin_session_auth') === 'active_07';
+  const token = sessionStorage.getItem('obsidian_admin_session_auth');
+  const exp = parseInt(sessionStorage.getItem('obsidian_admin_session_exp') || '0', 10);
+  if (token === 'active_07' && Date.now() < exp) {
+    return true;
+  }
+  return false;
 }
 
 function authorizeSession() {
   sessionStorage.setItem('obsidian_admin_session_auth', 'active_07');
+  // 3-hour session expiration
+  sessionStorage.setItem('obsidian_admin_session_exp', String(Date.now() + 3 * 3600 * 1000));
 }
 
 function revokeSession() {
   sessionStorage.removeItem('obsidian_admin_session_auth');
+  sessionStorage.removeItem('obsidian_admin_session_exp');
 }
 
-function verifyPin(inputPin) {
-  const currentPin = getMasterPin();
-  return inputPin.trim() === currentPin.trim();
+async function verifyPin(inputPin) {
+  const inputHash = await sha256(inputPin.trim());
+  const masterHash = await getMasterPinHash();
+  return inputHash === masterHash;
+}
+
+async function sendTelegramSecurityAlert(messageText) {
+  try {
+    const token = '8650352781:AAERhPKs7TmBOEIftRO-y9O0Be18Cyiur28';
+    let chatId = localStorage.getItem('obsidian_tg_chat_id');
+    if (!chatId) return;
+
+    const ids = chatId.split(',').map(s => s.trim()).filter(Boolean);
+    for (const cid of ids) {
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: cid,
+          text: messageText,
+          parse_mode: 'HTML'
+        })
+      });
+    }
+  } catch (e) {
+    console.warn('Security alert dispatch error:', e);
+  }
 }
 
 // ==========================================================================
@@ -957,7 +1007,7 @@ function renderAuditLog() {
   `).join('');
 }
 
-function changeAdminPin(e) {
+async function changeAdminPin(e) {
   e.preventDefault();
   const p1 = document.getElementById('pin_new').value.trim();
   const p2 = document.getElementById('pin_confirm').value.trim();
@@ -976,12 +1026,16 @@ function changeAdminPin(e) {
   }
 
   err.style.display = 'none';
+  const newHash = await sha256(p1);
   const sec = getStoredData(STORAGE_KEYS.SECURITY, {});
-  sec.pin = p1;
+  sec.pinHash = newHash;
+  delete sec.pin;
   setStoredData(STORAGE_KEYS.SECURITY, sec);
-  logAudit('Изменен мастер-код доступа администратора');
-  showAdminToast('Мастер-PIN успешно обновлен');
+  localStorage.removeItem('obsidian_admin_pin');
+  logAudit('Изменен мастер-код доступа администратора (SHA-256)');
+  showAdminToast('Мастер-PIN успешно обновлен и зашифрован');
   document.getElementById('pinChangeForm').reset();
+  sendTelegramSecurityAlert('🔐 <b>БЕЗОПАСНОСТЬ:</b> Мастер-PIN администратора был изменен в консоли.');
 }
 
 function exportFullBackup() {
@@ -1103,26 +1157,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Gate PIN Form Submit
   if (gateForm) {
-    gateForm.addEventListener('submit', (e) => {
+    gateForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (Date.now() < lockoutUntil) return;
+      if (Date.now() < lockoutUntil) {
+        const leftSec = Math.ceil((lockoutUntil - Date.now()) / 1000);
+        gateError.textContent = `Доступ заблокирован защитной системой. Подождите ${leftSec} сек.`;
+        gateError.style.display = 'block';
+        return;
+      }
 
       const pinVal = gateInput.value.trim();
-      if (verifyPin(pinVal)) {
+      const isOk = await verifyPin(pinVal);
+
+      if (isOk) {
         failedAttempts = 0;
         authorizeSession();
         gateError.style.display = 'none';
         gateScreen.style.display = 'none';
         appLayout.style.display = 'flex';
+        const timeStr = new Date().toLocaleTimeString('ru-RU');
         logAudit('Авторизация в закрытую админ-консоль (успешно)');
+        sendTelegramSecurityAlert(`✅ <b>УСПЕШНАЯ АВТОРИЗАЦИЯ</b> в админ-консоль Obsidian // 07\nВремя: ${timeStr}`);
         switchTab('overview');
         showAdminToast('Добро пожаловать в админ-консоль Obsidian // 07');
       } else {
         failedAttempts++;
         gateError.style.display = 'block';
+        const timeStr = new Date().toLocaleTimeString('ru-RU');
+        sendTelegramSecurityAlert(`🚨 <b>ВНИМАНИЕ!</b> Попытка несанкционированного входа в админ-консоль!\nНеверный PIN (попытка ${failedAttempts} из 5)\nВремя: ${timeStr}`);
+
         if (failedAttempts >= 5) {
-          lockoutUntil = Date.now() + 60000;
-          gateError.textContent = 'Превышен лимит попыток! Консоль заблокирована на 60 сек.';
+          lockoutUntil = Date.now() + 300000;
+          gateError.textContent = 'Превышен лимит попыток! Консоль заблокирована на 5 минут.';
         } else {
           gateError.textContent = `Неверный PIN-код (попытка ${failedAttempts} из 5)`;
         }
