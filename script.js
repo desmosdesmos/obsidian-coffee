@@ -406,21 +406,74 @@ if (grindOptionsGrid) {
   });
 }
 
+function getFeaturedBeansData() {
+  try {
+    const raw = localStorage.getItem('obsidian_featured_beans_v1');
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return {
+    title: 'ЭФИОПИЯ ИРГАЧЕФФЕ // G1',
+    tag: 'ЛУЧШИЙ ВЫБОР ДЛЯ ВОРОНКИ И ФИЛЬТРА',
+    descriptors: 'Бергамот, Белый персик, Жасмин, Чёрный чай',
+    desc: 'Яркий искрящийся лот мытой обработки из региона Гедеб. Чистейшая кислотность тропических фруктов, нежное цветочное тело и сладкое медовое послевкусие.',
+    price: 850,
+    weight: '250 г',
+    roast: 'Omni-Roast / Каждую неделю',
+    qGrade: '86.25 баллов',
+    grindInfo: 'Бесплатно под ваш девайс',
+    image: 'assets/images/specialty_bean_bags.jpg'
+  };
+}
+
+function renderFeaturedBeansSection() {
+  const featured = getFeaturedBeansData();
+  const titleEl = document.querySelector('.beans-card-title');
+  const tagEl = document.querySelector('.beans-card-tag');
+  const descEl = document.querySelector('.beans-description');
+  const priceValEl = document.querySelector('.beans-price-value');
+  const priceMetaEl = document.querySelector('.beans-price-meta');
+  const imgEl = document.querySelector('.beans-image-wrap img');
+  const descriptorsEl = document.querySelector('.beans-descriptors');
+  const profileRow = document.querySelector('.beans-profile-row');
+
+  if (titleEl && featured.title) titleEl.textContent = featured.title;
+  if (tagEl && featured.tag) tagEl.textContent = featured.tag;
+  if (descEl && featured.desc) descEl.textContent = featured.desc;
+  if (priceValEl && featured.price) priceValEl.innerHTML = `${featured.price}&nbsp;₽`;
+  if (priceMetaEl && featured.weight) priceMetaEl.textContent = `/ ${featured.weight}`;
+  if (imgEl && featured.image) imgEl.src = featured.image;
+
+  if (descriptorsEl && featured.descriptors) {
+    const pills = featured.descriptors.split(',').map(s => s.trim()).filter(Boolean);
+    descriptorsEl.innerHTML = pills.map(p => `<span class="desc-pill">${p}</span>`).join('');
+  }
+
+  if (profileRow) {
+    const items = profileRow.querySelectorAll('.profile-item .profile-val');
+    if (items[0] && featured.roast) items[0].textContent = featured.roast;
+    if (items[1] && featured.qGrade) items[1].textContent = featured.qGrade;
+    if (items[2] && featured.grindInfo) items[2].textContent = featured.grindInfo;
+  }
+}
+
 if (addBeansToCartBtn) {
   addBeansToCartBtn.addEventListener('click', () => {
-    const beanItem = MENU_DATA.find(i => i.id === 12);
-    if (!beanItem) return;
+    const featured = getFeaturedBeansData();
+    const beanName = featured.title || 'Зерно: Эфиопия Иргачеффе G1';
+    const beanPrice = featured.price || 850;
+    const beanVolume = featured.weight || '250 г';
+    const beanImage = featured.image || 'assets/images/specialty_bean_bags.jpg';
 
     const existing = cart.find(item => item.id === 12 && item.grind === selectedGrind);
     if (existing) {
       existing.quantity += 1;
     } else {
       cart.push({
-        id: beanItem.id,
-        name: `${beanItem.name} (${selectedGrind})`,
-        price: beanItem.price,
-        volume: beanItem.volume,
-        image: beanItem.image,
+        id: 12,
+        name: `${beanName} (${selectedGrind})`,
+        price: beanPrice,
+        volume: beanVolume,
+        image: beanImage,
         grind: selectedGrind,
         quantity: 1
       });
@@ -644,8 +697,43 @@ checkoutModalOverlay.addEventListener('click', (e) => {
 
 checkoutForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const name = document.getElementById('orderName').value;
-  const time = document.getElementById('orderTime').value;
+  const nameInput = document.getElementById('orderName');
+  const phoneInput = document.getElementById('orderPhone');
+  const timeInput = document.getElementById('orderTime');
+  const commentInput = document.getElementById('orderComment');
+
+  const customerName = nameInput ? nameInput.value.trim() : 'Гость';
+  const customerPhone = phoneInput ? phoneInput.value.trim() : '';
+  const readyTime = timeInput ? timeInput.value : 'Через 15 минут';
+  const comment = commentInput ? commentInput.value.trim() : '';
+
+  const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const orderId = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
+
+  const newOrder = {
+    id: orderId,
+    timestamp: Date.now(),
+    customerName,
+    customerPhone,
+    readyTime,
+    comment,
+    items: cart.map(item => ({
+      name: item.name,
+      qty: item.quantity,
+      price: item.price
+    })),
+    total: totalSum,
+    status: 'new'
+  };
+
+  try {
+    const existingOrders = JSON.parse(localStorage.getItem('obsidian_orders_v1') || '[]');
+    existingOrders.unshift(newOrder);
+    localStorage.setItem('obsidian_orders_v1', JSON.stringify(existingOrders));
+    window.dispatchEvent(new Event('storage'));
+  } catch (err) {
+    console.error('Error saving order to localStorage', err);
+  }
 
   cart = [];
   saveCart();
@@ -653,7 +741,7 @@ checkoutForm.addEventListener('submit', (e) => {
   checkoutModalOverlay.classList.remove('active');
   document.body.style.overflow = '';
 
-  showToast(`Заказ принят! Готовим для ${name} к: ${time}`);
+  showToast(`Заказ #${orderId} принят! Готовим для ${customerName} к: ${readyTime}`);
 });
 
 // ==========================================================================
@@ -1095,24 +1183,40 @@ function initAdminConsole() {
   if (secretTrigger) {
     secretTrigger.addEventListener('click', (e) => {
       e.preventDefault();
-      openAdminAccess();
+      if (e.altKey || e.ctrlKey) {
+        window.open('admin.html', '_blank');
+      } else {
+        openAdminAccess();
+      }
+    });
+    secretTrigger.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      window.open('admin.html', '_blank');
     });
   }
 
-  // Keyboard shortcut Ctrl + Shift + A
+  // Keyboard shortcut Ctrl + Shift + A (Inline console) & Ctrl + Alt + A (Full Enterprise)
   window.addEventListener('keydown', (e) => {
     if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a' || e.code === 'KeyA')) {
       e.preventDefault();
       openAdminAccess();
     }
+    if ((e.ctrlKey || e.metaKey) && e.altKey && (e.key === 'A' || e.key === 'a' || e.code === 'KeyA')) {
+      e.preventDefault();
+      window.open('admin.html', '_blank');
+    }
   });
 
   // URL Hash check
-  if (window.location.hash === '#admin') {
+  if (window.location.hash === '#admin-full' || window.location.hash === '#admin-panel') {
+    window.location.href = 'admin.html';
+  } else if (window.location.hash === '#admin') {
     setTimeout(openAdminAccess, 300);
   }
   window.addEventListener('hashchange', () => {
-    if (window.location.hash === '#admin') {
+    if (window.location.hash === '#admin-full' || window.location.hash === '#admin-panel') {
+      window.location.href = 'admin.html';
+    } else if (window.location.hash === '#admin') {
       openAdminAccess();
     }
   });
@@ -1379,10 +1483,112 @@ function initAdminConsole() {
 }
 
 // ==========================================================================
-// 15. INITIALIZATION
+// 15. DYNAMIC STORE SETTINGS & REVIEWS RENDERER
+// ==========================================================================
+function applyStoreSettings() {
+  try {
+    const raw = localStorage.getItem('obsidian_store_settings_v1');
+    if (!raw) return;
+    const s = JSON.parse(raw);
+
+    if (s.phone) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+        a.href = `tel:${s.phone.replace(/[^+\d]/g, '')}`;
+        if (a.classList.contains('info-val') || a.textContent.includes('+7')) {
+          a.textContent = s.phone;
+        }
+      });
+    }
+
+    const badge = document.getElementById('liveStatusBadge');
+    if (badge && s.statusMode && s.statusMode !== 'auto') {
+      const dot = badge.querySelector('.status-dot');
+      const text = badge.querySelector('.status-text');
+      if (s.statusMode === 'open') {
+        if (dot) {
+          dot.style.backgroundColor = '#22c55e';
+          dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.9)';
+        }
+        if (text) text.textContent = s.hoursWeekdays || '08:00 – 22:00';
+      } else if (s.statusMode === 'closed') {
+        if (dot) {
+          dot.style.backgroundColor = '#ef4444';
+          dot.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.9)';
+        }
+        if (text) text.textContent = 'Сейчас закрыто';
+      }
+    }
+  } catch (e) {
+    console.warn('Could not apply store settings', e);
+  }
+}
+
+function renderDynamicReviews() {
+  const track = document.getElementById('reviewsTrack');
+  if (!track) return;
+  try {
+    const raw = localStorage.getItem('obsidian_reviews_v1');
+    if (!raw) return;
+    const list = JSON.parse(raw);
+    if (!Array.isArray(list) || list.length === 0) return;
+
+    const renderCard = (rev, isClone = false) => `
+      <div class="review-card" ${isClone ? 'aria-hidden="true"' : ''}>
+        <div class="review-card-top">
+          <div class="author-info">
+            <div class="author-avatar-wrap">
+              <img src="${rev.avatar || 'assets/images/avatar_sofia.jpg'}" alt="${rev.author}" class="author-avatar-img" loading="lazy" onerror="this.src='assets/images/avatar_sofia.jpg'">
+              <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+              </span>
+            </div>
+            <div>
+              <div class="author-name">${rev.author}</div>
+              <div class="author-level">${rev.role || 'Знаток города'}</div>
+            </div>
+          </div>
+          <div class="stars-vector-row">
+            ${Array.from({ length: rev.stars || 5 }).map(() => `
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            `).join('')}
+          </div>
+        </div>
+        <p class="review-text">«${rev.text}»</p>
+        <div class="review-date">${rev.date || 'Яндекс Карты'}</div>
+      </div>
+    `;
+
+    track.innerHTML = list.map(r => renderCard(r, false)).join('') + list.map(r => renderCard(r, true)).join('');
+  } catch (e) {
+    console.warn('Could not render dynamic reviews', e);
+  }
+}
+
+// Cross-tab real-time synchronization listener
+window.addEventListener('storage', (e) => {
+  if (!e.key || e.key === MENU_STORAGE_KEY) {
+    MENU_DATA = loadMenuData();
+    renderCatalog();
+  }
+  if (!e.key || e.key === 'obsidian_featured_beans_v1') {
+    renderFeaturedBeansSection();
+  }
+  if (!e.key || e.key === 'obsidian_store_settings_v1') {
+    applyStoreSettings();
+  }
+  if (!e.key || e.key === 'obsidian_reviews_v1') {
+    renderDynamicReviews();
+  }
+});
+
+// ==========================================================================
+// 16. INITIALIZATION
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
+  renderFeaturedBeansSection();
+  applyStoreSettings();
+  renderDynamicReviews();
   updateCartUI();
   checkOpeningHours();
   initRatingAnimation();
