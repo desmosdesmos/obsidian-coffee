@@ -1,10 +1,10 @@
 /**
- * HOT BLACK COFFEE — CORE INTERACTIVE CONTROLLER
- * Minimalist Specialty Coffee Website
- * Clean Modern Architecture: No Emojis, Bespoke Vector Icons, Flawless Layout
+ * OBSIDIAN // 07 — SPECIALTY COFFEE ROASTERS
+ * Interactive Core Controller
+ * Features: Seamless Scroll Blur, Dynamic Cart, Grind Selector, Hover Schedule
  */
 
-// 1. MENU CATALOG DATABASE (По факту, без воды)
+// 1. CURATED MENU DATA WITH CINEMATIC PHOTOGRAPHY
 const MENU_DATA = [
   // COFFEE & DRINKS
   {
@@ -14,7 +14,7 @@ const MENU_DATA = [
     tag: 'Хит сезона',
     volume: '350 мл',
     price: 290,
-    image: 'assets/images/cafe_photo_2.jpg',
+    image: 'assets/images/iced_latte.jpg',
     desc: 'Двойной шот спешелти эспрессо, отборное фермерское молоко 3.2% и чистый кусковой лёд. Плотный кофейный баланс без горечи.',
     nutrition: { kcal: 135, p: '6.2 г', f: '6.8 г', c: '11.4 г' },
     ingredients: 'Эспрессо (100% арабика), молоко цельное, лед очищенный.'
@@ -26,10 +26,10 @@ const MENU_DATA = [
     tag: 'Спешелти',
     volume: '250 мл',
     price: 220,
-    image: 'assets/images/cafe_photo_3.jpg',
-    desc: 'Заваривается на капельной кофеварке Moccamaster. Сорт недели: Эфиопия Иргачеффе мытой обработки. Дескрипторы: бергамот, белый персик, чёрный чай.',
+    image: 'assets/images/filter_coffee.jpg',
+    desc: 'Капельный метод Moccamaster на зерне мытой Эфиопии. Яркий чайный профиль с нотами бергамота, персика и жасмина.',
     nutrition: { kcal: 4, p: '0.2 г', f: '0.1 г', c: '0.6 г' },
-    ingredients: 'Зерно Specialty (Эфиопия), подготовленная вода TDS 110 ppm.'
+    ingredients: 'Зерно Specialty (Эфиопия Иргачеффе), минерализованная вода TDS 110 ppm.'
   },
   {
     id: 3,
@@ -38,10 +38,10 @@ const MENU_DATA = [
     tag: 'Интенсивный',
     volume: '200 мл',
     price: 280,
-    image: 'assets/images/cafe_photo_4.jpg',
-    desc: 'Двойной шот ристретто с глянцевой тонкой молочной пенкой. Яркий насыщенный вкус кофе на первом плане.',
+    image: 'assets/images/flat_white.jpg',
+    desc: 'Двойной ристретто с глянцевой тонкой микропенкой. Насыщенный глубокий вкус спешелти эспрессо на первом плане.',
     nutrition: { kcal: 110, p: '5.1 г', f: '5.4 г', c: '9.2 г' },
-    ingredients: 'Двойной шот ристретто, взбитое молоко 60°C.'
+    ingredients: 'Двойной ристретто (100% арабика), молоко цельное 60°C.'
   },
   {
     id: 4,
@@ -50,203 +50,120 @@ const MENU_DATA = [
     tag: 'Классика',
     volume: '250 мл',
     price: 250,
-    image: 'assets/images/cafe_photo_5.jpg',
-    desc: 'Гармония эспрессо и шелковистой микропены. Зерно средней обжарки (Колумбия). Орехово-шоколадный профиль.',
+    image: 'assets/images/cappuccino.jpg',
+    desc: 'Идеальный баланс эспрессо и шелковистой микропены. Зерно средней обжарки с орехово-шоколадным профилем.',
     nutrition: { kcal: 120, p: '5.8 г', f: '6.0 г', c: '10.5 г' },
-    ingredients: 'Спешелти эспрессо 36 мл, цельное молоко.'
+    ingredients: 'Эспрессо 36 мл, фермерское молоко цельное.'
   },
   {
     id: 5,
-    category: 'coffee',
-    name: 'Раф Цитрусовый',
-    tag: 'Авторский',
-    volume: '300 мл',
-    price: 340,
-    image: 'assets/images/cafe_photo_6.jpg',
-    desc: 'Эспрессо, взбитый вместе со сливками 10%, натуральной цедрой апельсина и тростниковым сахаром muscovado.',
-    nutrition: { kcal: 240, p: '4.2 г', f: '15.5 г', c: '21.0 г' },
-    ingredients: 'Эспрессо, сливки 10%, цедра апельсина, тростниковый сахар.'
-  },
-  {
-    id: 6,
-    category: 'coffee',
-    name: 'Cold Brew Тоник',
-    tag: 'Освежающий',
-    volume: '300 мл',
-    price: 310,
-    image: 'assets/images/cafe_photo_7.jpg',
-    desc: 'Колд-брю 18-часовой холодной экстракции, крафтовый тоник Indian, долька свежего лайма.',
-    nutrition: { kcal: 65, p: '0.4 г', f: '0.0 г', c: '16.0 г' },
-    ingredients: 'Колд-брю кофе, тоник, свежий лайм, лед.'
-  },
-  {
-    id: 7,
     category: 'coffee',
     name: 'Матча Латте (Удзи)',
     tag: 'Superfood',
     volume: '300 мл',
     price: 320,
-    image: 'assets/images/cafe_photo_8.jpg',
-    desc: 'Оригинальная японская церемониальная матча первого сбора из префектуры Киото. Мягкий травянисто-сливочный вкус.',
+    image: 'assets/images/matcha_latte.jpg',
+    desc: 'Церемониальная матча первого сбора из Киото на взбитом растительном или цельном молоке. Мягкий травянистый вкус.',
     nutrition: { kcal: 140, p: '6.0 г', f: '6.2 г', c: '12.0 г' },
-    ingredients: 'Матча церемониальная, молоко (классическое или растительное).'
-  },
-  {
-    id: 8,
-    category: 'coffee',
-    name: 'Двойной Эспрессо',
-    tag: 'Чистый вкус',
-    volume: '36 мл',
-    price: 180,
-    image: 'assets/images/cafe_photo_9.jpg',
-    desc: '19.5 г помола на 36 г напитка, время пролива 27 секунд. Чистая чашка с яркой кислотностью красных ягод и долгим карамельным послевкусием.',
-    nutrition: { kcal: 2, p: '0.2 г', f: '0.0 г', c: '0.3 г' },
-    ingredients: 'Спешелти зерно свежей обжарки, фильтрованная вода.'
+    ingredients: 'Матча японская церемониальная, молоко на выбор.'
   },
 
   // FOOD & BREAKFASTS
   {
-    id: 9,
+    id: 6,
     category: 'food',
     name: 'Круассан с лососем и крем-чизом',
-    tag: 'Весь день',
+    tag: 'Завтрак',
     volume: '210 г',
     price: 460,
-    image: 'assets/images/cafe_photo_10.jpg',
-    desc: 'Слоеный хрустящий круассан на сливочном масле 82.5%, филе слабосоленого лосося, творожный сыр с зеленью, слайсы огурца и свежая рукола.',
+    image: 'assets/images/salmon_croissant.jpg',
+    desc: 'Хрустящий круассан на новозеландском сливочном масле, ломтики слабосоленого лосося, творожный сыр и свежий огурец.',
     nutrition: { kcal: 480, p: '19.2 г', f: '28.4 г', c: '36.5 г' },
-    ingredients: 'Французский круассан, слабосоленый лосось, сливочный сыр, огурец, рукола.'
+    ingredients: 'Сливочный круассан, слабосоленый лосось, творожный сыр, свежий огурец, микрозелень.'
   },
   {
-    id: 10,
+    id: 7,
     category: 'food',
     name: 'Сырники из фермерского творога',
-    tag: 'Хит гостей',
+    tag: 'Хит кухни',
     volume: '240 г',
     price: 380,
-    image: 'assets/images/cafe_photo_11.jpg',
-    desc: 'Три нежных сырника из натурального творога 9% с минимальным добавлением муки. Подаются со сметаной 20% и брусничным конфитюром.',
+    image: 'assets/images/syrniki_breakfast.jpg',
+    desc: 'Три пышных нежных сырника из фермерского творога 9%. Подаются с густой деревенской сметаной и таёжной брусникой.',
     nutrition: { kcal: 395, p: '24.5 г', f: '16.8 г', c: '32.0 г' },
-    ingredients: 'Творог 9%, рисовая мука, яйцо фермерское, ваниль, сметана, брусника.'
+    ingredients: 'Творог 9%, рисовая мука, яйцо фермерское, сахар тростниковый, сметана, брусника.'
   },
   {
-    id: 11,
+    id: 8,
     category: 'food',
     name: 'Бриошь с авокадо и яйцом пашот',
-    tag: 'Завтрак',
+    tag: 'Бранч',
     volume: '260 г',
     price: 420,
-    image: 'assets/images/cafe_photo_12.jpg',
-    desc: 'Поджаренный ломоть сливочной бриоши, спелый авокадо Хасс, яйцо пашот с жидким желтком, соус голландез и семена льна.',
+    image: 'assets/images/avocado_brioche.jpg',
+    desc: 'Поджаренная сливочная бриошь, спелый авокадо Хасс, яйцо пашот с текучим желтком и теплый соус голландез.',
     nutrition: { kcal: 430, p: '14.0 г', f: '26.2 г', c: '34.0 г' },
-    ingredients: 'Бриошь, авокадо Хасс, яйцо куриное, соус голландез, микс семян.'
+    ingredients: 'Бриошь ремесленная, авокадо Хасс, яйцо пашот, соус голландез, микс трав.'
   },
   {
-    id: 12,
+    id: 9,
     category: 'food',
     name: 'Сэндвич с пастрами на тартине',
     tag: 'Сытный',
     volume: '280 г',
     price: 490,
-    image: 'assets/images/cafe_photo_13.jpg',
-    desc: 'Ремесленный тартин на закваске, тонко нарезанная томленая говядина пастрами, корнишоны, сыр чеддер и зернистая дижонская горчица.',
+    image: 'assets/images/pastrami_sandwich.jpg',
+    desc: 'Тартин на закваске, щедрая порция томленой говядины пастрами, сыр чеддер, корнишоны и дижонская горчица.',
     nutrition: { kcal: 540, p: '29.5 г', f: '22.0 г', c: '51.0 г' },
-    ingredients: 'Хлеб тартин, пастрами из говядины, чеддер, корнишоны, горчица.'
-  },
-  {
-    id: 13,
-    category: 'food',
-    name: 'Зеленый боул с киноа и эдамаме',
-    tag: 'Healthy',
-    volume: '310 г',
-    price: 440,
-    image: 'assets/images/cafe_photo_14.jpg',
-    desc: 'Киноа аль денте, бобы эдамаме, авокадо, бланшированный шпинат, яйцо пашот, заправка на основе оливкового масла extra virgin и кунжута.',
-    nutrition: { kcal: 370, p: '16.8 г', f: '18.2 г', c: '33.4 г' },
-    ingredients: 'Киноа, эдамаме, авокадо, шпинат, яйцо, кунжутная заправка.'
+    ingredients: 'Хлеб тартин, говядина пастрами, чеддер, маринованные корнишоны, зернистая горчица.'
   },
 
   // DESSERTS & BAKERY
   {
-    id: 14,
-    category: 'desserts',
-    name: 'Медовик с брусникой',
-    tag: 'Фирменный',
-    volume: '160 г',
-    price: 320,
-    image: 'assets/images/cafe_photo_15.jpg',
-    desc: 'Тончайшие медовые коржи на натуральном гречишном меду, легкий сметанно-сливочный крем и прослойка из таежной брусники с кислинкой.',
-    nutrition: { kcal: 360, p: '5.2 г', f: '17.4 г', c: '46.0 г' },
-    ingredients: 'Мед натуральный, мука пшеничная, сметана, сливки, брусника, сахар.'
-  },
-  {
-    id: 15,
+    id: 10,
     category: 'desserts',
     name: 'Баскский обожженный чизкейк',
     tag: 'Бестселлер',
     volume: '175 г',
     price: 350,
-    image: 'assets/images/cafe_photo_16.jpg',
-    desc: 'Испанский чизкейк San Sebastian. Нежнейшая кремовая текстура внутри и характерная карамелизованная запеченная корочка снаружи.',
+    image: 'assets/images/basque_cheesecake.jpg',
+    desc: 'Испанский чизкейк San Sebastian. Нежнейшая шелковистая кремовая текстура и карамелизированная обожженная корочка.',
     nutrition: { kcal: 410, p: '7.8 г', f: '29.0 г', c: '28.5 г' },
-    ingredients: 'Сливочный сыр Cremette, сливки 33%, яйца, сахар, мадагаскарская ваниль.'
+    ingredients: 'Сливочный сыр Cremette, сливки 33%, яйца, тростниковый сахар, натуральная ваниль.'
   },
   {
-    id: 16,
+    id: 11,
     category: 'desserts',
-    name: 'Миндальный круассан',
-    tag: 'Свежая выпечка',
-    volume: '140 г',
-    price: 260,
-    image: 'assets/images/cafe_photo_1.jpg',
-    desc: 'Пропитанный сиропом круассан с начинкой из французского миндального крема франжипан, посыпанный лепестками калифорнийского миндаля.',
-    nutrition: { kcal: 450, p: '9.4 г', f: '25.6 г', c: '44.8 г' },
-    ingredients: 'Круассан сливочный, миндальная мука, масло сливочное, лепестки миндаля.'
-  },
-  {
-    id: 17,
-    category: 'desserts',
-    name: 'Тарталетка с пеканом и карамелью',
-    tag: 'Десерт',
-    volume: '130 г',
-    price: 310,
-    image: 'assets/images/cafe_photo_2.jpg',
-    desc: 'Хрустящее песочное сабле, домашняя соленая карамель и отборный обжаренный орех пекан.',
-    nutrition: { kcal: 390, p: '5.1 г', f: '23.8 г', c: '38.0 г' },
-    ingredients: 'Песочное тесто, орех пекан, карамель, морская соль Fleur de Sel.'
+    name: 'Медовик с брусникой',
+    tag: 'Фирменный',
+    volume: '160 г',
+    price: 320,
+    image: 'assets/images/medovik_cake.jpg',
+    desc: 'Тончайшие карамельно-медовые коржи, воздушный сметанный крем и сочные ягоды таежной брусники с приятной кислинкой.',
+    nutrition: { kcal: 360, p: '5.2 г', f: '17.4 г', c: '46.0 г' },
+    ingredients: 'Гречишный мед, мука пшеничная, сметана, сливки, ягоды брусники, сахарная пудра.'
   },
 
   // BEANS TO GO
   {
-    id: 18,
+    id: 12,
     category: 'beans',
-    name: 'Зерно: Эфиопия Иргачеффе (250г)',
-    tag: 'Q-Score 86',
+    name: 'Зерно: Эфиопия Иргачеффе G1',
+    tag: 'Q-Score 86.2',
     volume: '250 г',
     price: 850,
-    image: 'assets/images/cafe_photo_3.jpg',
-    desc: 'Светлая обжарка под фильтр и воронку V60. Мытая обработка. Яркий букет: бергамот, спелый персик, жасмин и лемонграсс.',
+    image: 'assets/images/specialty_bean_bags.jpg',
+    desc: 'Мытая обработка, светлая обжарка под фильтр. Высота произрастания 1950–2100м. Ноты бергамота, белого персика и жасмина.',
     nutrition: { kcal: 0, p: '0 г', f: '0 г', c: '0 г' },
-    ingredients: '100% арабика specialty в зернах. Бесплатный помол по запросу.'
-  },
-  {
-    id: 19,
-    category: 'beans',
-    name: 'Зерно: Колумбия Уила (250г)',
-    tag: 'Q-Score 85',
-    volume: '250 г',
-    price: 790,
-    image: 'assets/images/cafe_photo_4.jpg',
-    desc: 'Средняя обжарка под эспрессо, гейзер и турку. Мытая обработка. Сладкий баланс: молочный шоколад, красное яблоко, карамель.',
-    nutrition: { kcal: 0, p: '0 г', f: '0 г', c: '0 г' },
-    ingredients: '100% арабика specialty в зернах. Бесплатный помол по запросу.'
+    ingredients: '100% арабика specialty в зернах. Бесплатный помол под любой девайс.'
   }
 ];
 
 // STATE
 let currentCategory = 'all';
 let searchQuery = '';
-let cart = JSON.parse(localStorage.getItem('hotblack_cart') || '[]');
+let selectedGrind = 'В зёрнах';
+let cart = JSON.parse(localStorage.getItem('obsidian_cart') || '[]');
 
 // DOM ELEMENTS
 const catalogGrid = document.getElementById('catalogGrid');
@@ -281,6 +198,9 @@ const navMenu = document.getElementById('navMenu');
 const toastNotification = document.getElementById('toastNotification');
 const toastText = document.getElementById('toastText');
 const bgVideo = document.getElementById('bgVideo');
+
+const grindOptionsGrid = document.getElementById('grindOptionsGrid');
+const addBeansToCartBtn = document.getElementById('addBeansToCartBtn');
 
 // ==========================================================================
 // 2. VIDEO SCROLL BLUR & PARALLAX ENGINE
@@ -323,13 +243,11 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Initial run
 onScrollHandler();
 
-// Ensure video plays continuously on touch / desktop
+// Ensure video plays continuously
 if (bgVideo) {
   bgVideo.play().catch(() => {
-    // Autoplay policy fallback: resume on first user interaction
     const resumeVideo = () => {
       bgVideo.play();
       window.removeEventListener('click', resumeVideo);
@@ -341,7 +259,7 @@ if (bgVideo) {
 }
 
 // ==========================================================================
-// 3. CATALOG RENDERING & FILTERING (NO EMOJIS, BESPOKE ICONS)
+// 3. CATALOG RENDERING & PREVENT TEXT OVERFLOW (NO RUBLE SIGN WRAPPING)
 // ==========================================================================
 function renderCatalog() {
   const filtered = MENU_DATA.filter(item => {
@@ -383,7 +301,7 @@ function renderCatalog() {
         <div class="card-specs">${item.volume} · ${item.category === 'coffee' ? 'Спешелти' : (item.category === 'beans' ? 'Зерно 250г' : 'Кухня')}</div>
         <p class="card-desc">${item.desc}</p>
         <div class="card-footer">
-          <div class="card-price">${item.price} ₽</div>
+          <div class="card-price"><span class="price-val">${item.price}</span>&nbsp;<span class="price-curr">₽</span></div>
           <div class="card-actions">
             <button class="btn-card-details" onclick="openProductModal(${item.id})">Состав</button>
             <button class="btn-card-add" onclick="addToCart(${item.id})">
@@ -391,7 +309,7 @@ function renderCatalog() {
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
-              <span>В заказ</span>
+              <span>В&nbsp;заказ</span>
             </button>
           </div>
         </div>
@@ -434,10 +352,49 @@ if (clearSearchBtn) {
 }
 
 // ==========================================================================
-// 4. CART & ORDER STATE MANAGEMENT
+// 4. BEANS GRIND SELECTOR INTERACTIVITY
+// ==========================================================================
+if (grindOptionsGrid) {
+  grindOptionsGrid.addEventListener('click', (e) => {
+    const pill = e.target.closest('.grind-pill');
+    if (!pill) return;
+
+    grindOptionsGrid.querySelectorAll('.grind-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    selectedGrind = pill.getAttribute('data-grind');
+  });
+}
+
+if (addBeansToCartBtn) {
+  addBeansToCartBtn.addEventListener('click', () => {
+    const beanItem = MENU_DATA.find(i => i.id === 12);
+    if (!beanItem) return;
+
+    const existing = cart.find(item => item.id === 12 && item.grind === selectedGrind);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        id: beanItem.id,
+        name: `${beanItem.name} (${selectedGrind})`,
+        price: beanItem.price,
+        volume: beanItem.volume,
+        image: beanItem.image,
+        grind: selectedGrind,
+        quantity: 1
+      });
+    }
+
+    saveCart();
+    showToast(`Пачка кофе (${selectedGrind}) добавлена в заказ!`);
+  });
+}
+
+// ==========================================================================
+// 5. CART & ORDER STATE MANAGEMENT
 // ==========================================================================
 function saveCart() {
-  localStorage.setItem('hotblack_cart', JSON.stringify(cart));
+  localStorage.setItem('obsidian_cart', JSON.stringify(cart));
   updateCartUI();
 }
 
@@ -445,7 +402,7 @@ function addToCart(productId) {
   const product = MENU_DATA.find(p => p.id === productId);
   if (!product) return;
 
-  const existing = cart.find(item => item.id === productId);
+  const existing = cart.find(item => item.id === productId && !item.grind);
   if (existing) {
     existing.quantity += 1;
   } else {
@@ -463,13 +420,12 @@ function addToCart(productId) {
   showToast(`«${product.name}» добавлен в заказ`);
 }
 
-function changeQty(productId, delta) {
-  const itemIndex = cart.findIndex(item => item.id === productId);
-  if (itemIndex === -1) return;
+function changeQty(index, delta) {
+  if (index < 0 || index >= cart.length) return;
 
-  cart[itemIndex].quantity += delta;
-  if (cart[itemIndex].quantity <= 0) {
-    cart.splice(itemIndex, 1);
+  cart[index].quantity += delta;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
   }
 
   saveCart();
@@ -490,23 +446,23 @@ function updateCartUI() {
   } else {
     emptyCartState.style.display = 'none';
     cartFooter.style.display = 'block';
-    cartTotalSum.textContent = `${totalSum.toLocaleString('ru-RU')} ₽`;
+    cartTotalSum.innerHTML = `${totalSum.toLocaleString('ru-RU')}&nbsp;₽`;
 
-    cartItemsList.innerHTML = cart.map(item => `
+    cartItemsList.innerHTML = cart.map((item, idx) => `
       <div class="cart-item-row">
         <img src="${item.image}" alt="${item.name}" class="cart-item-thumb">
         <div class="cart-item-info">
           <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">${item.price} ₽ · ${item.volume}</div>
+          <div class="cart-item-price">${item.price}&nbsp;₽ · ${item.volume}</div>
         </div>
         <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty(${item.id}, -1)" aria-label="Уменьшить">
+          <button class="qty-btn" onclick="changeQty(${idx}, -1)" aria-label="Уменьшить">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
           </button>
           <span class="qty-num">${item.quantity}</span>
-          <button class="qty-btn" onclick="changeQty(${item.id}, 1)" aria-label="Увеличить">
+          <button class="qty-btn" onclick="changeQty(${idx}, 1)" aria-label="Увеличить">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -537,7 +493,7 @@ cartOverlay.addEventListener('click', (e) => {
 });
 
 // ==========================================================================
-// 5. PRODUCT DETAILS MODAL (ACCURATE NUTRITION & INGREDIENTS)
+// 6. PRODUCT DETAILS MODAL
 // ==========================================================================
 window.openProductModal = function(productId) {
   const product = MENU_DATA.find(p => p.id === productId);
@@ -547,7 +503,7 @@ window.openProductModal = function(productId) {
     <img src="${product.image}" alt="${product.name}" class="modal-detail-img">
     <div class="modal-detail-content">
       <h3 class="modal-detail-title">${product.name}</h3>
-      <div class="modal-detail-specs">${product.volume} · ${product.price} ₽ · ${product.tag}</div>
+      <div class="modal-detail-specs">${product.volume} · ${product.price}&nbsp;₽ · ${product.tag}</div>
       <p class="modal-detail-desc">${product.desc}</p>
       
       <div style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 8px;">
@@ -580,7 +536,7 @@ window.openProductModal = function(productId) {
       </div>
 
       <button class="btn btn-primary btn-block" onclick="addToCart(${product.id}); closeProductModal();">
-        <span>Добавить в заказ · ${product.price} ₽</span>
+        <span>Добавить в заказ · ${product.price}&nbsp;₽</span>
       </button>
     </div>
   `;
@@ -600,7 +556,7 @@ productModalOverlay.addEventListener('click', (e) => {
 });
 
 // ==========================================================================
-// 6. CHECKOUT MODAL
+// 7. CHECKOUT MODAL
 // ==========================================================================
 proceedCheckoutBtn.addEventListener('click', () => {
   if (cart.length === 0) return;
@@ -610,10 +566,10 @@ proceedCheckoutBtn.addEventListener('click', () => {
   orderSummaryBox.innerHTML = `
     <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав предзаказа:</div>
     <ul style="list-style: none; margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
-      ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)</li>`).join('')}
+      ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${i.price * i.quantity}&nbsp;₽)</li>`).join('')}
     </ul>
     <div style="font-weight: 800; color: var(--accent-orange); font-size: 1.15rem; font-family: var(--font-heading);">
-      Итого: ${totalSum.toLocaleString('ru-RU')} ₽
+      Итого: ${totalSum.toLocaleString('ru-RU')}&nbsp;₽
     </div>
   `;
 
@@ -637,7 +593,6 @@ checkoutForm.addEventListener('submit', (e) => {
   const name = document.getElementById('orderName').value;
   const time = document.getElementById('orderTime').value;
 
-  // Clear cart
   cart = [];
   saveCart();
 
@@ -648,7 +603,7 @@ checkoutForm.addEventListener('submit', (e) => {
 });
 
 // ==========================================================================
-// 7. TOAST HELPER
+// 8. TOAST HELPER
 // ==========================================================================
 let toastTimer = null;
 function showToast(msg) {
@@ -661,7 +616,7 @@ function showToast(msg) {
 }
 
 // ==========================================================================
-// 8. MOBILE MENU TOGGLE
+// 9. MOBILE MENU TOGGLE
 // ==========================================================================
 if (burgerBtn && navMenu) {
   burgerBtn.addEventListener('click', () => {
@@ -676,7 +631,7 @@ if (burgerBtn && navMenu) {
 }
 
 // ==========================================================================
-// 9. OPENING HOURS DYNAMIC CHECK
+// 10. OPENING HOURS DYNAMIC CHECK
 // ==========================================================================
 function checkOpeningHours() {
   const badge = document.getElementById('liveStatusBadge');
@@ -693,7 +648,7 @@ function checkOpeningHours() {
   if (isOpen) {
     dot.style.backgroundColor = '#22c55e';
     dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.9)';
-    text.textContent = 'Открыто до 22:00';
+    text.textContent = '08:00 – 22:00';
   } else {
     dot.style.backgroundColor = '#f59e0b';
     dot.style.boxShadow = '0 0 10px rgba(245, 158, 11, 0.9)';
@@ -702,7 +657,7 @@ function checkOpeningHours() {
 }
 
 // ==========================================================================
-// 10. INITIALIZATION
+// 11. INITIALIZATION
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();

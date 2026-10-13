@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOT BLACK — Спешелти кофейня в Королёве | Подмосковная 7</title>
-  <meta name="description" content="Минималистичная кофейня Hot Black в Королёве: 100% спешелти арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 4.9 на Яндекс Картах.">
+  <title>OBSIDIAN // 07 — Спешелти кофейня и обжарка | Королёв, Подмосковная 7</title>
+  <meta name="description" content="Минималистичная спешелти кофейня Obsidian // 07 в Королёве: 100% арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 5.0 на Яндекс Картах.">
   
   <!-- Modern Editorial & Avant-Garde Fonts: Unbounded + Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,41 +26,81 @@
     <div class="video-blur-layer" id="videoBlurLayer"></div>
   </div>
 
-  <!-- Header / Navigation Bar -->
+  <!-- Header / Navigation Bar with Hover Schedule Popup -->
   <header class="header" id="header">
     <div class="header-inner container">
-      <!-- Logo with Custom Vector Glyph -->
-      <a href="#hero" class="brand-logo" aria-label="HOT BLACK главная">
+      <!-- Luxury Brand Logo: OBSIDIAN // 07 -->
+      <a href="#hero" class="brand-logo" aria-label="OBSIDIAN главная">
         <span class="logo-symbol">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v-.07z" fill="var(--accent-orange)"/>
+            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="currentColor" stroke-width="2"/>
+            <polygon points="12,6 18,10 18,14 12,18 6,14 6,10" fill="var(--accent-orange)"/>
           </svg>
         </span>
-        <span class="logo-text">HOT BLACK</span>
-        <span class="logo-badge">СПЕШЕЛТИ</span>
+        <span class="logo-text">OBSIDIAN<span class="logo-accent">// 07</span></span>
+        <span class="logo-badge">ROASTERY</span>
       </a>
 
       <!-- Desktop Nav Menu -->
       <nav class="nav-menu" id="navMenu">
         <a href="#menu" class="nav-link">Меню</a>
-        <a href="#facts" class="nav-link">Стандарты</a>
         <a href="#beans" class="nav-link">Зерно</a>
-        <a href="#reviews" class="nav-link">Отзывы 4.9</a>
+        <a href="#facts" class="nav-link">Стандарты</a>
+        <a href="#reviews" class="nav-link">Отзывы 5.0</a>
         <a href="#contacts" class="nav-link">Локация</a>
       </nav>
 
-      <!-- Status & Cart CTA -->
+      <!-- Status (with Hover Dropdown for schedule) & Cart Trigger -->
       <div class="header-actions">
-        <div class="live-status-badge" id="liveStatusBadge">
-          <span class="status-indicator-ring">
-            <span class="status-dot"></span>
-          </span>
-          <span class="status-text">Открыто до 22:00</span>
+        
+        <!-- Live Status Trigger with Hover Schedule Popover -->
+        <div class="schedule-trigger-wrapper" id="scheduleTriggerWrapper">
+          <div class="live-status-badge" id="liveStatusBadge">
+            <span class="status-indicator-ring">
+              <span class="status-dot"></span>
+            </span>
+            <span class="status-text">08:00 – 22:00</span>
+            <svg class="chevron-micro" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+          <!-- Schedule Dropdown Card (Появляется при наведении) -->
+          <div class="schedule-dropdown" id="scheduleDropdown">
+            <div class="schedule-dropdown-header">
+              <div class="dropdown-title">РЕЖИМ РАБОТЫ</div>
+              <div class="dropdown-live-status">
+                <span class="status-dot-mini"></span>
+                <span>Сейчас открыто</span>
+              </div>
+            </div>
+            <div class="schedule-table">
+              <div class="schedule-row">
+                <span class="schedule-days">Понедельник — Пятница</span>
+                <span class="schedule-hours">08:00 — 22:00</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-days">Суббота — Воскресенье</span>
+                <span class="schedule-hours">08:00 — 22:00</span>
+              </div>
+              <div class="schedule-row sub-row">
+                <span class="schedule-days">Кухня и горячий бар</span>
+                <span class="schedule-hours">до 21:45</span>
+              </div>
+            </div>
+            <div class="schedule-dropdown-footer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Королёв, Подмосковная ул., 7</span>
+            </div>
+          </div>
         </div>
 
+        <!-- Cart Button -->
         <button class="cart-trigger-btn" id="openCartBtn" aria-label="Открыть корзину">
-          <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="cart-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
@@ -85,11 +125,11 @@
         <!-- Eyebrow label -->
         <div class="hero-top-eyebrow">
           <span class="eyebrow-accent">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <rect width="12" height="12" fill="var(--accent-orange)"/>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <polygon points="5,0 10,5 5,10 0,5" fill="var(--accent-orange)"/>
             </svg>
           </span>
-          <span class="eyebrow-text">HOT BLACK // SPECIALTY ROASTERY & CAFE</span>
+          <span class="eyebrow-text">OBSIDIAN // 07 · ARCHITECTURAL COFFEE ROASTERS</span>
           <span class="eyebrow-coords">55.9148° N, 37.8685° E</span>
         </div>
 
@@ -108,7 +148,6 @@
           <!-- Left Element (Reference left card) -->
           <a href="#menu" class="hero-card hero-card-left" id="heroMenuShortcut">
             <div class="hero-card-marker">
-              <!-- Technical Concentric Radar Glyph -->
               <div class="radar-circle">
                 <svg class="radar-svg" viewBox="0 0 48 48" fill="none">
                   <circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
@@ -136,7 +175,6 @@
           <!-- Right Element (Reference right card) -->
           <a href="#reviews" class="hero-card hero-card-right" id="heroLocationShortcut">
             <div class="hero-card-marker">
-              <!-- Technical Precision Grid Glyph -->
               <div class="matrix-badge">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <rect x="2" y="2" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
@@ -152,7 +190,7 @@
               </div>
             </div>
             <div class="hero-card-content">
-              <h2 class="hero-card-title">РЕЙТИНГ 4.9 В ЯНДЕКС КАРТАХ</h2>
+              <h2 class="hero-card-title">РЕЙТИНГ 5.0 В ЯНДЕКС КАРТАХ</h2>
               <p class="hero-card-desc">
                 Победитель премии «Хорошее место 2026». Королёв, Подмосковная ул., 7.
               </p>
@@ -177,23 +215,23 @@
       </div>
     </section>
 
-    <!-- Ticker / Quick Facts strip -->
+    <!-- Ticker Strip -->
     <section class="ticker-strip" aria-hidden="true">
       <div class="ticker-track">
-        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА Q-86</div>
         <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
         <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 «ХОРОШЕЕ МЕСТО 2026»</div>
         <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
         <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY SPACE</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА Q-86</div>
         <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
         <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ПРЕМИЯ «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 «ХОРОШЕЕ МЕСТО 2026»</div>
         <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
         <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY SPACE</div>
       </div>
     </section>
 
@@ -209,7 +247,7 @@
           </p>
         </div>
 
-        <!-- Controls: Category Filters & Live Search with Custom Vector Icons -->
+        <!-- Controls: Category Filters & Live Search -->
         <div class="catalog-controls">
           <div class="category-tabs" id="categoryTabs">
             <button class="cat-btn active" data-category="all">
@@ -219,31 +257,31 @@
                 <rect x="14" y="14" width="7" height="7"/>
                 <rect x="3" y="14" width="7" height="7"/>
               </svg>
-              <span>Все (19)</span>
+              <span>Все (12)</span>
             </button>
             <button class="cat-btn" data-category="coffee">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
               </svg>
-              <span>Кофе & Напитки (8)</span>
+              <span>Кофе & Напитки (5)</span>
             </button>
             <button class="cat-btn" data-category="food">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 8h-1a6 6 0 00-10 0H6a4 4 0 00-4 4v1h20v-1a4 4 0 00-4-4zM2 17h20v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z"/>
               </svg>
-              <span>Блюда & Завтраки (5)</span>
+              <span>Блюда & Завтраки (4)</span>
             </button>
             <button class="cat-btn" data-category="desserts">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2l3 5h-6l3-5zM4 14l8-4 8 4v6H4v-6z"/>
               </svg>
-              <span>Десерты (4)</span>
+              <span>Десерты (2)</span>
             </button>
             <button class="cat-btn" data-category="beans">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 3h12l2 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1V8l2-5zM4 8h16"/>
               </svg>
-              <span>Зерно с собой (2)</span>
+              <span>Зерно с собой (1)</span>
             </button>
           </div>
 
@@ -264,47 +302,93 @@
 
         <!-- Catalog Grid -->
         <div class="catalog-grid" id="catalogGrid">
-          <!-- Populated via script.js -->
+          <!-- Dynamically populated via script.js -->
         </div>
 
       </div>
     </section>
 
-    <!-- BEANS & ROASTING SECTION -->
-    <section class="beans-highlight-section section-padding" id="beans">
+    <!-- ELEVATED LUXURY BEANS SHOWCASE (ЗЕРНО ДЛЯ ДОМА И ОФИСА) -->
+    <section class="beans-showcase-section section-padding" id="beans">
       <div class="container">
-        <div class="beans-card-banner">
-          <div class="beans-banner-info">
-            <div class="section-label">СВЕЖАЯ ОБЖАРКА</div>
-            <h3 class="banner-title">ЗЕРНО ДЛЯ ДОМА И ОФИСА</h3>
-            <p class="banner-desc">
-              Обжариваем небольшими батчами. Помолем под ваш способ заваривания бесплатно (фильтр, воронка V60, гейзер, турка или эспрессо).
-            </p>
-            <div class="banner-specs">
-              <div class="spec-col">
-                <span class="spec-val">100%</span>
-                <span class="spec-lbl">Арабика Specialty</span>
-              </div>
-              <div class="spec-col">
-                <span class="spec-val">84+</span>
-                <span class="spec-lbl">Q-Grade Score</span>
-              </div>
-              <div class="spec-col">
-                <span class="spec-val">Каждую неделю</span>
-                <span class="spec-lbl">Свежая обжарка</span>
+        <div class="section-header">
+          <div class="section-label">МИКРО-ОБЖАРКА // BATCH ROASTING</div>
+          <h2 class="section-title">ЗЕРНО ДЛЯ ДОМА И ОФИСА</h2>
+          <p class="section-subtitle">
+            Мы отбираем исключительно 100% арабику свежего урожая с оценкой Q-Grader от 85 баллов. Каждая пачка снабжена дегазационным клапаном и zip-lock замком.
+          </p>
+        </div>
+
+        <div class="beans-editorial-grid">
+          
+          <!-- Large Visual Card -->
+          <div class="beans-media-card">
+            <div class="beans-image-wrap">
+              <img src="assets/images/specialty_bean_bags.jpg" alt="Пачки спешелти кофе Obsidian // 07" loading="lazy">
+              <div class="beans-float-badge">
+                <span class="badge-dot"></span>
+                <span>СВЕЖИЙ УРОЖАЙ 2026</span>
               </div>
             </div>
-            <button class="btn btn-primary" onclick="document.querySelector('[data-category=\'beans\']').click(); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
-              <span>Выбрать пачку зерна</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
+            <div class="beans-profile-row">
+              <div class="profile-item">
+                <div class="profile-label">ОБЖАРКА</div>
+                <div class="profile-val">Omni-Roast / Каждую неделю</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-label">Q-GRADE</div>
+                <div class="profile-val">86.25 баллов</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-label">ПОМОЛ</div>
+                <div class="profile-val">Бесплатно под ваш девайс</div>
+              </div>
+            </div>
           </div>
-          <div class="beans-banner-image">
-            <img src="assets/images/cafe_photo_1.jpg" alt="Пачки спешелти кофе Hot Black" loading="lazy">
+
+          <!-- Interactive Bean Selection Card -->
+          <div class="beans-config-card">
+            <div class="beans-card-tag">ЛУЧШИЙ ВЫБОР ДЛЯ ВОРОНКИ И ФИЛЬТРА</div>
+            <h3 class="beans-card-title">ЭФИОПИЯ ИРГАЧЕФФЕ // G1</h3>
+            <div class="beans-descriptors">
+              <span class="desc-pill">Бергамот</span>
+              <span class="desc-pill">Белый персик</span>
+              <span class="desc-pill">Жасмин</span>
+              <span class="desc-pill">Чёрный чай</span>
+            </div>
+
+            <p class="beans-description">
+              Яркий искрящийся лот мытой обработки из региона Гедеб. Чистейшая кислотность тропических фруктов, нежное цветочное тело и сладкое медовое послевкусие.
+            </p>
+
+            <!-- Grind Selector Tool -->
+            <div class="grind-selector-box">
+              <div class="selector-title">ВЫБЕРИТЕ СПОСОБ ПОМОЛА:</div>
+              <div class="grind-options-grid" id="grindOptionsGrid">
+                <button class="grind-pill active" data-grind="В зёрнах">В зёрнах</button>
+                <button class="grind-pill" data-grind="Фильтр / V60">Фильтр / V60</button>
+                <button class="grind-pill" data-grind="Эспрессо">Эспрессо</button>
+                <button class="grind-pill" data-grind="Гейзер / Турка">Гейзер / Турка</button>
+              </div>
+            </div>
+
+            <!-- Price & Order Bar -->
+            <div class="beans-order-bar">
+              <div class="beans-price-box">
+                <span class="beans-price-value">850 ₽</span>
+                <span class="beans-price-meta">/ 250 г</span>
+              </div>
+              <button class="btn btn-primary" id="addBeansToCartBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span>Добавить пачку в заказ</span>
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -315,7 +399,7 @@
         
         <div class="section-header">
           <div class="section-label">КАЧЕСТВО БЕЗ КОМПРОМИССОВ</div>
-          <h2 class="section-title">СТАНДАРТЫ HOT BLACK</h2>
+          <h2 class="section-title">СТАНДАРТЫ OBSIDIAN // 07</h2>
           <p class="section-subtitle">
             Только факты и прозрачные цифры. Почему наш кофе держит высокую планку каждый день.
           </p>
@@ -335,7 +419,7 @@
             </div>
             <h3 class="standard-title">ЗЕРНО И ОБЖАРКА</h3>
             <p class="standard-text">
-              Используем исключительно зерно уровня Specialty с оценкой Q-Grader выше 84 баллов. Ротация сортов каждые две недели: яркая мытая Эфиопия под фильтр и плотная сладкая Колумбия под эспрессо.
+              Используем исключительно зерно уровня Specialty с оценкой Q-Grader выше 85 баллов. Ротация сортов каждые две недели: яркая мытая Эфиопия под фильтр и плотная сладкая Колумбия под эспрессо.
             </p>
             <div class="standard-tags">
               <span>Мытая обработка</span>
@@ -405,55 +489,39 @@
       </div>
     </section>
 
-    <!-- REVIEWS SECTION (С ЯНДЕКС КАРТ) -->
+    <!-- REVIEWS SECTION (УЛЬТРА-МИНИМАЛИСТИЧНЫЙ ЯНДЕКС 5.0) -->
     <section class="reviews-section section-padding" id="reviews">
       <div class="container">
         
-        <div class="yandex-header-card">
-          <div class="yandex-brand-col">
-            <div class="yandex-maps-badge">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <div class="yandex-minimal-banner">
+          <div class="yandex-stat-col">
+            <div class="yandex-brand-row">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
               </svg>
-              <span class="yandex-badge-text">ЯНДЕКС КАРТЫ</span>
+              <span class="yandex-brand-name">ЯНДЕКС КАРТЫ // ВЕРИФИЦИРОВАНО</span>
             </div>
-            <div class="yandex-award">
-              <svg class="award-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="8" r="7"/>
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-              </svg>
-              <span>Победитель премии <strong>«Хорошее место 2026»</strong></span>
-            </div>
-          </div>
-
-          <div class="yandex-score-col">
-            <div class="score-display-wrapper">
-              <div class="big-score">4.9</div>
-              <div class="stars-vector-row">
-                <!-- 5 Vector Gold Stars -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <div class="score-row-minimal">
+              <span class="rating-num-big">5.0</span>
+              <div class="rating-stars-clean">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
               </div>
             </div>
-            <div class="score-meta">
-              На основе <strong>436 отзывов</strong> и 182 фотографий гостей
-            </div>
+            <div class="rating-sub-count">На основе 436 оценок гостей · Премия «Хорошее место 2026»</div>
           </div>
 
-          <div class="yandex-action-col">
-            <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-link-btn">
-              <span>Открыть на Яндекс Картах</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
+          <div class="yandex-cta-col">
+            <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-direct-btn">
+              <span>Смотреть все отзывы ↗</span>
             </a>
           </div>
         </div>
 
-        <!-- Real Reviews Carousel / Grid with Vector Stars -->
+        <!-- Real Reviews Minimal Grid -->
         <div class="reviews-grid" id="reviewsGrid">
           
           <div class="review-card">
@@ -476,7 +544,7 @@
             <p class="review-text">
               «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
             </p>
-            <div class="review-date">15 мая · Источник: Яндекс Карты</div>
+            <div class="review-date">15 мая · Яндекс Карты</div>
           </div>
 
           <div class="review-card">
@@ -499,7 +567,7 @@
             <p class="review-text">
               «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
             </p>
-            <div class="review-date">14 сентября · Источник: Яндекс Карты</div>
+            <div class="review-date">14 сентября · Яндекс Карты</div>
           </div>
 
           <div class="review-card">
@@ -522,7 +590,7 @@
             <p class="review-text">
               «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
             </p>
-            <div class="review-date">4 сентября · Источник: Яндекс Карты</div>
+            <div class="review-date">4 сентября · Яндекс Карты</div>
           </div>
 
           <div class="review-card">
@@ -545,7 +613,7 @@
             <p class="review-text">
               «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
             </p>
-            <div class="review-date">18 августа · Источник: Яндекс Карты</div>
+            <div class="review-date">18 августа · Яндекс Карты</div>
           </div>
 
         </div>
@@ -553,7 +621,7 @@
       </div>
     </section>
 
-    <!-- LOCATION & CONTACTS SECTION -->
+    <!-- BESPOKE ARCHITECTURAL MAP & LOCATION SECTION (ИНДИВИДУАЛЬНАЯ КАРТА) -->
     <section class="contacts-section section-padding" id="contacts">
       <div class="container">
         
@@ -575,7 +643,7 @@
                 <div>
                   <div class="info-title">Адрес</div>
                   <div class="info-val">Московская обл., г. Королёв, Подмосковная ул., 7</div>
-                  <div class="info-sub">Ориентир: рядом со станциями Болшево и Подлипки</div>
+                  <div class="info-sub">Ориентир: рядом со станциями Болшево и Подлипки Дачные</div>
                 </div>
               </div>
 
@@ -589,7 +657,7 @@
                 <div>
                   <div class="info-title">Режим работы</div>
                   <div class="info-val">Ежедневно: 08:00 — 22:00</div>
-                  <div class="info-sub">Кухня и бар работают до закрытия</div>
+                  <div class="info-sub">Кухня и горячий бар работают до 21:45</div>
                 </div>
               </div>
 
@@ -609,7 +677,7 @@
 
             <div class="contacts-action-btns">
               <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span>Построить маршрут на Яндекс Картах</span>
+                <span>Проложить маршрут на Яндекс Картах</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
                 </svg>
@@ -621,17 +689,63 @@
 
           </div>
 
-          <!-- Yandex Maps Embedded Frame -->
-          <div class="contacts-map-wrapper">
-            <iframe 
-              src="https://yandex.ru/map-widget/v1/?ll=37.868484%2C55.914760&z=16&pt=37.868484,55.914760,pm2rdm"
-              width="100%" 
-              height="100%" 
-              frameborder="0" 
-              allowfullscreen="true" 
-              title="Hot Black на Яндекс Картах"
-              class="yandex-map-frame">
-            </iframe>
+          <!-- Custom Bespoke Dark Architectural Map (Индивидуальная карта) -->
+          <div class="bespoke-map-card">
+            <!-- Custom Styled Dark Map Canvas/SVG Interface -->
+            <div class="map-visual-container">
+              <svg class="custom-vector-map" viewBox="0 0 600 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Grid -->
+                <defs>
+                  <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                  </pattern>
+                  <radialGradient id="beaconGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ff5722" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#ff5722" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="600" height="460" fill="#13110f"/>
+                <rect width="600" height="460" fill="url(#mapGrid)"/>
+
+                <!-- Arterial Roads & Streets -->
+                <path d="M-20 180 Q 250 200 620 170" stroke="rgba(255,255,255,0.14)" stroke-width="24" stroke-linecap="round"/>
+                <path d="M-20 180 Q 250 200 620 170" stroke="#1f1c19" stroke-width="20" stroke-linecap="round"/>
+
+                <path d="M280 -20 L 320 480" stroke="rgba(255,255,255,0.14)" stroke-width="20" stroke-linecap="round"/>
+                <path d="M280 -20 L 320 480" stroke="#1f1c19" stroke-width="16" stroke-linecap="round"/>
+
+                <path d="M120 320 L 480 320" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                <path d="M120 80 L 460 80" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+
+                <!-- Railway track (станция Болшево / Подлипки) -->
+                <path d="M-20 390 L 620 370" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8 6"/>
+
+                <!-- Street Labels -->
+                <text x="50" y="172" fill="rgba(255,255,255,0.3)" font-family="Manrope" font-size="11" font-weight="600" letter-spacing="1.5">ПОДМОСКОВНАЯ УЛИЦА</text>
+                <text x="330" y="60" fill="rgba(255,255,255,0.25)" font-family="Manrope" font-size="10" font-weight="600" letter-spacing="1.5">ОКТЯБРЬСКИЙ БУЛЬВАР</text>
+                <text x="40" y="415" fill="rgba(255,255,255,0.2)" font-family="Manrope" font-size="10" font-weight="600">ст. ПОДЛИПКИ ДАЧНЫЕ</text>
+                <text x="460" y="395" fill="rgba(255,255,255,0.2)" font-family="Manrope" font-size="10" font-weight="600">ст. БОЛШЕВО</text>
+
+                <!-- Coffee Location Beacon Glow -->
+                <circle cx="300" cy="190" r="65" fill="url(#beaconGlow)"/>
+                <circle cx="300" cy="190" r="30" stroke="var(--accent-orange)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <circle cx="300" cy="190" r="16" fill="var(--accent-orange)"/>
+                <circle cx="300" cy="190" r="8" fill="#fff"/>
+              </svg>
+
+              <!-- Map Overlay HUD Card -->
+              <div class="map-hud-overlay">
+                <div class="map-hud-badge">
+                  <div class="hud-dot-pulse"></div>
+                  <span>OBSIDIAN // 07</span>
+                </div>
+                <div class="map-hud-address">Подмосковная, 7 · г. Королёв</div>
+                <div class="map-hud-meta">5 мин от станции · Бесплатная парковка</div>
+                <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="map-hud-link">
+                  <span>Открыть в Яндекс Картах ↗</span>
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -647,7 +761,7 @@
       <div class="footer-col">
         <div class="footer-logo">
           <span class="footer-logo-dot"></span>
-          <span>HOT BLACK</span>
+          <span>OBSIDIAN<span class="logo-accent">// 07</span></span>
         </div>
         <p class="footer-copy">
           Спешелти кофейня и обжарка в Королёве.<br>
@@ -659,9 +773,9 @@
         <div class="footer-heading">НАВИГАЦИЯ</div>
         <ul class="footer-links">
           <li><a href="#menu">Каталог меню</a></li>
-          <li><a href="#facts">Стандарты качества</a></li>
           <li><a href="#beans">Зерно для дома</a></li>
-          <li><a href="#reviews">Отзывы гостей</a></li>
+          <li><a href="#facts">Стандарты качества</a></li>
+          <li><a href="#reviews">Отзывы гостей 5.0</a></li>
           <li><a href="#contacts">Локация и контакты</a></li>
         </ul>
       </div>
@@ -669,7 +783,7 @@
       <div class="footer-col">
         <div class="footer-heading">ЯНДЕКС КАРТЫ</div>
         <p class="footer-yandex-info">
-          Рейтинг: 4.9 из 5.0<br>
+          Рейтинг: 5.0 из 5.0<br>
           «Хорошее место 2026»<br>
           <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
             <span>Профиль организации ↗</span>
@@ -679,19 +793,19 @@
     </div>
     
     <div class="footer-bottom container">
-      <div class="copyright">© 2026 HOT BLACK COFFEE. Все права защищены.</div>
-      <div class="dev-badge">Подмосковная ул., 7, г. Королёв</div>
+      <div class="copyright">© 2026 OBSIDIAN // 07 SPECIALTY COFFEE. Все права защищены.</div>
+      <div class="dev-badge">г. Королёв, Подмосковная ул., 7</div>
     </div>
   </footer>
 
-  <!-- CART SLIDE-OVER DRAWER -->
+  <!-- ELEVATED LUXURY CART DRAWER -->
   <div class="cart-drawer-overlay" id="cartOverlay">
     <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Корзина заказа">
       <div class="cart-drawer-header">
-        <h3 class="cart-title">
-          <span>ВАШ ВЫБОР</span>
+        <div class="cart-header-title-box">
+          <h3 class="cart-title">ВАШ ЗАКАЗ</h3>
           <span class="cart-title-count" id="cartHeaderCount">(0)</span>
-        </h3>
+        </div>
         <button class="cart-close-btn" id="closeCartBtn" aria-label="Закрыть корзину">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -700,8 +814,19 @@
         </button>
       </div>
 
+      <!-- Free Gift Progress Bar -->
+      <div class="cart-gift-meter" id="cartGiftMeter">
+        <div class="meter-text-row">
+          <span>Свежее зерно и авторская кухня</span>
+          <span class="meter-highlight">Готовим на баре</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
       <div class="cart-items-container" id="cartItemsList">
-        <!-- Empty state vector illustration (No emojis!) -->
+        <!-- Rendered dynamically -->
         <div class="empty-cart-state" id="emptyCartState">
           <div class="empty-cart-vector">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
@@ -720,10 +845,10 @@
 
       <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
         <div class="cart-summary-row">
-          <span>Итого к оплате:</span>
-          <span class="cart-total-sum" id="cartTotalSum">0 ₽</span>
+          <span class="summary-label">Итого к оплате:</span>
+          <span class="cart-total-sum" id="cartTotalSum">0&nbsp;₽</span>
         </div>
-        <button class="btn btn-primary btn-block" id="proceedCheckoutBtn">
+        <button class="btn btn-primary btn-block checkout-btn-styled" id="proceedCheckoutBtn">
           <span>Оформить предзаказ на бар</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -781,8 +906,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="orderComment">Пожелания к заказу (альтернативное молоко, без сахара и т.д.)</label>
-          <input type="text" id="orderComment" placeholder="Например: в свою кружку / овсяное молоко">
+          <label for="orderComment">Пожелания к заказу (помол зерна, альтернативное молоко, без сахара)</label>
+          <input type="text" id="orderComment" placeholder="Например: овсяное молоко / без сахара">
         </div>
 
         <div class="order-summary-box" id="orderSummaryBox">
