@@ -202,11 +202,11 @@ const DEFAULT_FEATURED_BEANS = {
 
 const DEFAULT_STORE_SETTINGS = {
   cafeName: 'БИКА',
-  phone: '+7 (925) 217-39-15',
-  address: 'г. Королёв, Подмосковная ул., 7',
+  phone: '+7 (910) 347-22-60',
+  address: 'Москва, Енисейская ул., 17, корп. 2',
   telegramUrl: 'https://t.me/3_bika_coffee_coffee_07',
-  whatsappUrl: 'https://wa.me/79252173915',
-  yandexMapsUrl: 'https://yandex.ru/maps/-/CXBAZVzO',
+  whatsappUrl: 'https://wa.me/79103472260',
+  yandexMapsUrl: 'https://yandex.ru/maps/-/CXRAFR8n',
   hoursWeekdays: '08:00 — 22:00',
   hoursWeekends: '08:00 — 22:00',
   hoursKitchen: 'до 21:45',

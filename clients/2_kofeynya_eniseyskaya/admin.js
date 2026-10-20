@@ -202,11 +202,11 @@ const DEFAULT_FEATURED_BEANS = {
 
 const DEFAULT_STORE_SETTINGS = {
   cafeName: 'КОФЕЙНЯ',
-  phone: '+7 (925) 217-39-15',
-  address: 'г. Королёв, Подмосковная ул., 7',
+  phone: '+7 (916) 823-08-78',
+  address: 'Москва, Енисейская ул., 19 (м. Бабушкинская)',
   telegramUrl: 'https://t.me/2_kofeynya_eniseyskaya_coffee_07',
-  whatsappUrl: 'https://wa.me/79252173915',
-  yandexMapsUrl: 'https://yandex.ru/maps/-/CXBAZVzO',
+  whatsappUrl: 'https://wa.me/79168230878',
+  yandexMapsUrl: 'https://yandex.ru/maps/org/kofeynya/200785723692',
   hoursWeekdays: '08:00 — 22:00',
   hoursWeekends: '08:00 — 22:00',
   hoursKitchen: 'до 21:45',

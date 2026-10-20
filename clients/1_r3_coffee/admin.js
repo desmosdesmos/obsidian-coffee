@@ -202,11 +202,11 @@ const DEFAULT_FEATURED_BEANS = {
 
 const DEFAULT_STORE_SETTINGS = {
   cafeName: 'Р³ КОФЕ',
-  phone: '+7 (925) 217-39-15',
-  address: 'г. Королёв, Подмосковная ул., 7',
+  phone: '+7 (915) 112-58-71',
+  address: 'Москва, ЖК «Ты и Я», ул. Лётчика Бабушкина, к. 1',
   telegramUrl: 'https://t.me/1_r3_coffee_coffee_07',
-  whatsappUrl: 'https://wa.me/79252173915',
-  yandexMapsUrl: 'https://yandex.ru/maps/-/CXBAZVzO',
+  whatsappUrl: 'https://wa.me/79151125871',
+  yandexMapsUrl: 'https://yandex.ru/maps/-/CXRAFI5h',
   hoursWeekdays: '08:00 — 22:00',
   hoursWeekends: '08:00 — 22:00',
   hoursKitchen: 'до 21:45',

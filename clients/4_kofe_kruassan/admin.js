@@ -202,11 +202,11 @@ const DEFAULT_FEATURED_BEANS = {
 
 const DEFAULT_STORE_SETTINGS = {
   cafeName: 'КОФЕ & КРУАССАН',
-  phone: '+7 (925) 217-39-15',
-  address: 'г. Королёв, Подмосковная ул., 7',
+  phone: '+7 (926) 035-89-00',
+  address: 'г. Королёв, ул. Калинина, 3',
   telegramUrl: 'https://t.me/4_kofe_kruassan_coffee_07',
-  whatsappUrl: 'https://wa.me/79252173915',
-  yandexMapsUrl: 'https://yandex.ru/maps/-/CXBAZVzO',
+  whatsappUrl: 'https://wa.me/79260358900',
+  yandexMapsUrl: 'https://yandex.ru/maps/-/CXRAF0pI',
   hoursWeekdays: '08:00 — 22:00',
   hoursWeekends: '08:00 — 22:00',
   hoursKitchen: 'до 21:45',
