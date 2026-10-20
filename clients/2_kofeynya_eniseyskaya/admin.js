@@ -203,7 +203,7 @@ const DEFAULT_FEATURED_BEANS = {
 const DEFAULT_STORE_SETTINGS = {
   cafeName: 'КОФЕЙНЯ',
   phone: '+7 (916) 823-08-78',
-  address: 'Москва, Енисейская ул., 19 (м. Бабушкинская)',
+  address: 'Москва, Енисейская ул., 19',
   telegramUrl: 'https://t.me/2_kofeynya_eniseyskaya_coffee_07',
   whatsappUrl: 'https://wa.me/79168230878',
   yandexMapsUrl: 'https://yandex.ru/maps/org/kofeynya/200785723692',
@@ -250,7 +250,7 @@ const DEFAULT_REVIEWS = [
     avatar: 'assets/images/avatar_artem.jpg',
     stars: 5,
     date: '18 августа · Яндекс Карты',
-    text: 'Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.'
+    text: 'Лучший айс-латте и фильтр-кофе на Енисейской. Уютное лаконичное место без лишнего пафоса, отличный персонал. Завтраки подают оперативно, выпечка всегда свежайшая.'
   }
 ];
 

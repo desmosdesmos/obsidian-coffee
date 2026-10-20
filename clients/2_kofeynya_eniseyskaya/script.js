@@ -1010,7 +1010,7 @@ function initMapControls() {
   const copyBtn = document.getElementById('copyAddressBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      const address = 'Москва, Енисейская ул., 19 (м. Бабушкинская)';
+      const address = 'Москва, Енисейская ул., 19';
       navigator.clipboard.writeText(address).then(() => {
         showToast('Точный адрес скопирован в буфер обмена!');
       }).catch(() => {

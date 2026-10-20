@@ -1014,7 +1014,7 @@ function initMapControls() {
       navigator.clipboard.writeText(address).then(() => {
         showToast('Точный адрес скопирован в буфер обмена!');
       }).catch(() => {
-        showToast('ЖК «Ты и Я», к. 1');
+        showToast('ЖК «Ты и Я», ул. Лётчика Бабушкина, к. 1');
       });
     });
   }
