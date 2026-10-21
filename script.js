@@ -452,6 +452,7 @@ if (categoryTabs) {
     btn.classList.add('active');
     
     currentCategory = btn.getAttribute('data-category');
+    if (navigator.vibrate) try { navigator.vibrate(15); } catch(e){}
     renderCatalog();
   });
 }
@@ -539,6 +540,7 @@ if (grindOptionsGrid) {
     pill.classList.add('active');
     
     const pkgName = pill.getAttribute('data-grind');
+    if (navigator.vibrate) try { navigator.vibrate(15); } catch(e){}
     updatePackagingDisplay(pkgName);
   });
 }
@@ -576,7 +578,8 @@ if (addBeansToCartBtn) {
 // 5. CART & FLY-TO-CART ANIMATION ENGINE
 // ==========================================================================
 function triggerFlyToCartAnimation(sourceElement, imageUrl) {
-  const cartTarget = window.innerWidth <= 768 
+  const isMobile = window.innerWidth <= 768;
+  const cartTarget = isMobile 
     ? document.getElementById('mobileCartTrigger') 
     : document.getElementById('openCartBtn');
   
@@ -586,11 +589,14 @@ function triggerFlyToCartAnimation(sourceElement, imageUrl) {
   const startRect = btn ? btn.getBoundingClientRect() : { top: window.innerHeight / 2, left: window.innerWidth / 2, width: 40, height: 40 };
   const endRect = cartTarget.getBoundingClientRect();
 
+  const cloneSize = isMobile ? 42 : 58;
   const flying = document.createElement('img');
   flying.src = imageUrl || 'assets/images/flowers/flower_1.jpg';
   flying.className = 'fly-to-cart-clone';
-  flying.style.top = `${startRect.top + startRect.height / 2 - 29}px`;
-  flying.style.left = `${startRect.left + startRect.width / 2 - 29}px`;
+  flying.style.width = `${cloneSize}px`;
+  flying.style.height = `${cloneSize}px`;
+  flying.style.top = `${startRect.top + startRect.height / 2 - cloneSize / 2}px`;
+  flying.style.left = `${startRect.left + startRect.width / 2 - cloneSize / 2}px`;
   flying.style.transform = 'scale(0.5)';
   document.body.appendChild(flying);
 
@@ -598,9 +604,9 @@ function triggerFlyToCartAnimation(sourceElement, imageUrl) {
   void flying.offsetWidth;
 
   // Animate arc to cart target
-  flying.style.transform = 'scale(1.15)';
-  flying.style.top = `${endRect.top + endRect.height / 2 - 29}px`;
-  flying.style.left = `${endRect.left + endRect.width / 2 - 29}px`;
+  flying.style.transform = 'scale(1.12)';
+  flying.style.top = `${endRect.top + endRect.height / 2 - cloneSize / 2}px`;
+  flying.style.left = `${endRect.left + endRect.width / 2 - cloneSize / 2}px`;
   flying.style.opacity = '0.15';
 
   setTimeout(() => {
@@ -608,7 +614,10 @@ function triggerFlyToCartAnimation(sourceElement, imageUrl) {
     cartTarget.classList.remove('cart-bump');
     void cartTarget.offsetWidth;
     cartTarget.classList.add('cart-bump');
-  }, 700);
+    if (navigator.vibrate) {
+      try { navigator.vibrate(25); } catch(e){}
+    }
+  }, 680);
 }
 
 function animateButtonSuccess(btn) {
@@ -646,6 +655,7 @@ function handleAddToCart(productId, event) {
   }
 
   saveCart();
+  if (navigator.vibrate) try { navigator.vibrate(25); } catch(e){}
 
   const btn = event?.target?.closest('button');
   if (btn) {
@@ -977,14 +987,23 @@ if (copyAddressBtn) {
 // Mobile burger
 if (burgerBtn && navMenu) {
   burgerBtn.addEventListener('click', () => {
-    burgerBtn.classList.toggle('active');
-    navMenu.classList.toggle('mobile-open');
+    const isOpen = burgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('mobile-open', isOpen);
+    navMenu.classList.toggle('open', isOpen);
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      if (navigator.vibrate) try { navigator.vibrate(20); } catch(e){}
+    } else {
+      document.body.style.overflow = '';
+    }
   });
 
-  navMenu.querySelectorAll('.nav-link').forEach(link => {
+  navMenu.querySelectorAll('.nav-link, .mobile-nav-phone-btn, .mobile-nav-wa-btn').forEach(link => {
     link.addEventListener('click', () => {
       burgerBtn.classList.remove('active');
       navMenu.classList.remove('mobile-open');
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
     });
   });
 }
