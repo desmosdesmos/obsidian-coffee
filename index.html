@@ -330,7 +330,7 @@
           <!-- Large Visual Card -->
           <div class="beans-media-card">
             <div class="beans-image-wrap">
-              <img src="assets/images/flowers/flower_3.jpg" alt="Шляпная коробка Royal Blush в салоне Роза роз" loading="lazy">
+              <img id="beansShowcaseImg" src="assets/images/curated/catalog_5_hatbox_royal.jpg" alt="Шляпная коробка Royal Blush в салоне Роза роз" loading="lazy">
               <div class="beans-float-badge">
                 <span class="badge-dot"></span>
                 <span>СВЕЖИЙ ПРИВОЗ СЕГОДНЯ</span>
@@ -346,8 +346,8 @@
                 <div class="profile-val">10–14 дней в оазисе</div>
               </div>
               <div class="profile-item">
-                <div class="profile-label">СБОРКА</div>
-                <div class="profile-val">25 минут флористом</div>
+                <div class="profile-label">ФОРМАТ</div>
+                <div class="profile-val" id="beansProfileFormat">Оазис Oasis · Без вазы</div>
               </div>
             </div>
           </div>
@@ -357,14 +357,14 @@
             <div class="beans-card-tag">ЛУЧШИЙ ВЫБОР ДЛЯ ПРАЗДНИКА И ПОДАРКА</div>
             <h3 class="beans-card-title">ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»</h3>
             <div class="beans-descriptors">
-              <span class="desc-pill">Пионовидная роза Kahala</span>
-              <span class="desc-pill">Белая эустома</span>
-              <span class="desc-pill">Эвкалипт цинерея</span>
+              <span class="desc-pill">Орхидея Ванда</span>
+              <span class="desc-pill">Гортензия</span>
+              <span class="desc-pill">Роза кустовая</span>
               <span class="desc-pill">Диантус</span>
             </div>
 
             <p class="beans-description">
-              Идеальный подарок без забот: цветы не нужно подрезать и искать подходящую вазу. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.
+              Фирменная шляпная коробка не требует поиска вазы и подрезки стеблей. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.
             </p>
 
             <!-- Packaging Selector Tool -->
@@ -376,9 +376,18 @@
                 <button class="grind-pill" data-grind="Классический крафт">Классический крафт</button>
                 <button class="grind-pill" data-grind="Стеклянная ваза">Стеклянная ваза</button>
               </div>
-              <div class="packaging-note-badge" id="packagingNoteBadge">
-                <span class="pnb-dot"></span>
-                <span id="packagingNoteText">Не требует вазы · Собрано на оазисе с питанием</span>
+            </div>
+
+            <!-- Dedicated Format Feature Strip (fixed height, zero layout shift) -->
+            <div class="packaging-feature-card">
+              <div class="pfc-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="pfc-content">
+                <span class="pfc-label">ОСОБЕННОСТЬ ФОРМАТА</span>
+                <span class="pfc-text" id="packagingNoteText">Не требует вазы · Собрано на влажном оазисе с питанием</span>
               </div>
             </div>
 
@@ -814,147 +823,122 @@
       </div>
     </section>
 
-    <!-- CONTACTS & MESSENGERS -->
+    <!-- CONTACTS & BOUTIQUE LOCATION -->
     <section class="contacts-section section-padding" id="contacts">
       <div class="container">
         
         <div class="section-header">
-          <div class="section-label">СВЯЗЬ И ЛОКАЦИЯ</div>
-          <h2 class="section-title">КОНТАКТЫ & МЕССЕНДЖЕРЫ</h2>
+          <div class="section-label">СВЯЗЬ И ЛОКАЦИЯ // BOUTIQUE & CONCIERGE</div>
+          <h2 class="section-title">КОНТАКТЫ & БУТИК «РОЗА РОЗ»</h2>
           <p class="section-subtitle">
-            Мы на связи 24/7. Напишите дежурному флористу в WhatsApp или Telegram, чтобы заказать индивидуальный букет с фотоотчетом, или проложите маршрут в салон.
+            Флагманский цветочный салон в Мытищах открыт 24/7. Забронируйте букет онлайн с фотоотчетом в WhatsApp, позвоните дежурному флористу или приезжайте в любое удобное время.
           </p>
         </div>
 
-        <!-- Quick Messengers Interactive Grid -->
-        <div class="messengers-grid">
-          
-          <!-- WhatsApp Card -->
-          <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="messenger-card wa-card">
-            <div class="messenger-icon-wrap">
-              <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 10a1.5 1.5 0 0 0 3 3l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="messenger-info">
-              <div class="messenger-tag">ОТВЕТ ЗА 2 МИНУТЫ · ФОТО БУКЕТА</div>
-              <h3 class="messenger-name">WhatsApp</h3>
-              <p class="messenger-sub">+7 (925) 290-55-50 · Чат с флористом и согласование</p>
-            </div>
-            <div class="messenger-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </div>
-          </a>
-
-          <!-- Telegram Card -->
-          <a href="https://t.me/roza_roz_mytischi" target="_blank" rel="noopener noreferrer" class="messenger-card tg-card">
-            <div class="messenger-icon-wrap">
-              <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="messenger-info">
-              <div class="messenger-tag">БЫСТРЫЙ ОНЛАЙН-ЗАКАЗ</div>
-              <h3 class="messenger-name">Telegram</h3>
-              <p class="messenger-sub">@roza_roz_mytischi · Консультация и доставка</p>
-            </div>
-            <div class="messenger-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </div>
-          </a>
-
-          <!-- Yandex Maps Card -->
-          <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="messenger-card maps-card">
-            <div class="messenger-icon-wrap">
-              <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="messenger-info">
-              <div class="messenger-tag">НАВИГАТОР & МАРШРУТ</div>
-              <h3 class="messenger-name">Яндекс Карты</h3>
-              <p class="messenger-sub">Рождественская, 11 · Рейтинг 4.9 · Построить маршрут</p>
-            </div>
-            <div class="messenger-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Location Layout with Architectural Vector Map -->
+        <!-- Location Layout with Salon Showcase & Interactive Map -->
         <div class="contacts-layout">
           
-          <div class="contacts-info-card">
-            <div class="info-items-list">
-              
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                  </svg>
-                </div>
-                <div>
-                  <div class="info-title">Адрес салона</div>
-                  <div class="info-val">Московская обл., г. Мытищи, Рождественская ул., 11</div>
-                  <div class="info-sub">Отдельный вход, этаж 1 · 470 м от станции Мытищи</div>
-                </div>
+          <!-- Left: Salon Boutique Identity Card -->
+          <div class="salon-identity-card">
+            <div class="salon-facade-banner">
+              <img src="assets/images/curated/salon_facade.jpg" alt="Фасад цветочного салона Роза роз в Мытищах" loading="lazy">
+              <div class="facade-status-badge">
+                <span class="fsb-dot"></span>
+                <span>ОТКРЫТО СЕЙЧАС · КРУГЛОСУТОЧНО 24/7</span>
+              </div>
+            </div>
+
+            <div class="salon-card-body">
+              <div class="salon-brand-header">
+                <div class="salon-brand-pre">СЕТЬ ЦВЕТОЧНЫХ БАЗ В МЫТИЩАХ</div>
+                <h3 class="salon-brand-name">САЛОН «РОЗА РОЗ»</h3>
               </div>
 
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                  </svg>
+              <div class="info-items-list">
+                
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Адрес салона</div>
+                    <div class="info-val">г. Мытищи, Рождественская ул., 11</div>
+                    <div class="info-sub">Отдельный фасадный вход, 1 этаж · Вывеска «Цветы Роза Роз»</div>
+                  </div>
                 </div>
-                <div>
-                  <div class="info-title">Режим работы</div>
-                  <div class="info-val">Круглосуточно · 24/7 без выходных</div>
-                  <div class="info-sub">Курьерская доставка по Мытищам и Москве в любое время</div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Как добраться и парковка</div>
+                    <div class="info-val">470 м от станции Мытищи (5 мин пешком)</div>
+                    <div class="info-sub">Бесплатная парковка для гостей прямо перед входом в салон</div>
+                  </div>
                 </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Режим работы</div>
+                    <div class="info-val">Круглосуточно 24/7 без перерывов</div>
+                    <div class="info-sub">Ночная выдача и экспресс-бронирование без очередей</div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Прямой телефон салона</div>
+                    <a href="tel:+79252905550" class="info-val info-link">+7 (925) 290-55-50</a>
+                  </div>
+                </div>
+
               </div>
 
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              <div class="salon-contact-actions">
+                <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="btn btn-primary salon-btn-wa">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    <path d="M9 10a1.5 1.5 0 0 0 3 3l1.5-1.5"/>
                   </svg>
-                </div>
-                <div>
-                  <div class="info-title">Прямой телефон салона</div>
-                  <a href="tel:+79252905550" class="info-val info-link">+7 (925) 290-55-50</a>
+                  <span>WhatsApp (фото букета)</span>
+                </a>
+                <div class="salon-sub-actions">
+                  <a href="tel:+79252905550" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    <span>Позвонить</span>
+                  </a>
+                  <a href="https://t.me/roza_roz_mytischi" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z"/>
+                    </svg>
+                    <span>Telegram</span>
+                  </a>
                 </div>
               </div>
 
             </div>
-
-            <div class="contacts-action-btns">
-              <a href="tel:+79252905550" class="btn btn-outline">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                </svg>
-                <span>Позвонить флористу</span>
-              </a>
-              <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span>Написать в WhatsApp</span>
-              </a>
-            </div>
-
           </div>
 
-          <!-- Minimalist Dark Online Map -->
+          <!-- Right: Minimalist Dark Online Map -->
           <div class="bespoke-map-card minimal-dark-map-card" id="mapCard">
             
             <!-- Map Top Bar: Coordinates & Status -->
@@ -1013,13 +997,58 @@
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                       <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span>Яндекс Карты</span>
+                    <span>Яндекс Карты (4.9 ★)</span>
                   </a>
                 </div>
               </div>
             </div>
 
           </div>
+
+        </div>
+
+        <!-- Salon Boutique Guarantees / Perks Strip -->
+        <div class="contacts-perks-row">
+          
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Готовность брони за 15 минут</div>
+              <div class="cpc-desc">Забронируйте любимый букет онлайн — дежурный флорист соберёт его к вашему приезду без ожидания в очереди.</div>
+            </div>
+          </div>
+
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Фотоконтроль в WhatsApp</div>
+              <div class="cpc-desc">Перед выдачей или отправкой присылаем честное фото собранного букета в мессенджер со всех ракурсов.</div>
+            </div>
+          </div>
+
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Кризал и открытка в подарок</div>
+              <div class="cpc-desc">К каждой композиции бесплатно прилагаем порошок Chrysal для стойкости и стильную открытку с вашим текстом.</div>
+            </div>
+          </div>
+
+        </div>
 
         </div>
 
