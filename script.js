@@ -1,166 +1,192 @@
 /**
- * OBSIDIAN // 07 — SPECIALTY COFFEE ROASTERS
- * Interactive Core Controller
- * Features: Seamless Scroll Blur, Dynamic Cart, Grind Selector, Hover Schedule
+ * РОЗА РОЗ // FLORAL STUDIO & BOUTIQUE
+ * Core Interactive Controller
+ * Features: Video Parallax & Scroll Blur, Live Catalog, Dynamic Cart, Modal Details, WhatsApp Order Dispatch
  */
 
-// 1. CURATED MENU DATA WITH CINEMATIC PHOTOGRAPHY (DEFAULT PRESET)
+// 1. CURATED FLORAL CATALOG DATA
 const DEFAULT_MENU_DATA = [
-  // COFFEE & DRINKS
+  // AUTHOR BOUQUETS
   {
     id: 1,
-    category: 'coffee',
-    name: 'Айс-латте',
+    category: 'author',
+    name: 'Букет «Французский поцелуй»',
     tag: 'Хит сезона',
-    volume: '350 мл',
-    price: 290,
-    image: 'assets/images/iced_latte.jpg',
-    desc: 'Двойной шот спешелти эспрессо, отборное фермерское молоко 3.2% и чистый кусковой лёд. Плотный кофейный баланс без горечи.',
-    nutrition: { kcal: 135, p: '6.2 г', f: '6.8 г', c: '11.4 г' },
-    ingredients: 'Эспрессо (100% арабика), молоко цельное, лед очищенный.'
+    volume: 'Высота 50 см · Ø 38 см',
+    price: 4900,
+    image: 'assets/images/flowers/flower_1.jpg',
+    desc: 'Нежный авторский букет с французскими пионовидными розами Kahala, кремовой эустомой и веточками эвкалипта в матовой дизайнерской бумаге.',
+    specs: { height: '50 см', diam: '38 см', life: '10–12 дней', aroma: 'Тонкий цветочный' },
+    ingredients: 'Роза пионовидная Kahala (7 шт.), эустома кремовая (5 шт.), диантус пудровый (5 шт.), озотамнус, эвкалипт цинерея, матовая дизайнерская бумага, шелковая лента.'
   },
   {
     id: 2,
-    category: 'coffee',
-    name: 'Фильтр-кофе (Батч-брю)',
-    tag: 'Спешелти',
-    volume: '250 мл',
-    price: 220,
-    image: 'assets/images/filter_coffee.jpg',
-    desc: 'Капельный метод Moccamaster на зерне мытой Эфиопии. Яркий чайный профиль с нотами бергамота, персика и жасмина.',
-    nutrition: { kcal: 4, p: '0.2 г', f: '0.1 г', c: '0.6 г' },
-    ingredients: 'Зерно Specialty (Эфиопия Иргачеффе), минерализованная вода TDS 110 ppm.'
+    category: 'author',
+    name: 'Авторский букет «Малиновый рассвет»',
+    tag: 'Премиум',
+    volume: 'Высота 55 см · Ø 42 см',
+    price: 5400,
+    image: 'assets/images/flowers/flower_6.jpg',
+    desc: 'Насыщенная ягодная гамма: бархатные кустовые розы, сочная малиновая альстромерия и веточки эвкалипта. Идеально для признаний и праздников.',
+    specs: { height: '55 см', diam: '42 см', life: '10–14 дней', aroma: 'Сладковатый ягодный' },
+    ingredients: 'Кустовая роза малиновая (5 шт.), роза Explorer (5 шт.), эустома розовая (4 шт.), альстромерия, эвкалипт, авторская упаковка, атласная лента.'
   },
   {
     id: 3,
-    category: 'coffee',
-    name: 'Флэт Уайт',
-    tag: 'Интенсивный',
-    volume: '200 мл',
-    price: 280,
-    image: 'assets/images/flat_white.jpg',
-    desc: 'Двойной ристретто с глянцевой тонкой микропенкой. Насыщенный глубокий вкус спешелти эспрессо на первом плане.',
-    nutrition: { kcal: 110, p: '5.1 г', f: '5.4 г', c: '9.2 г' },
-    ingredients: 'Двойной ристретто (100% арабика), молоко цельное 60°C.'
+    category: 'author',
+    name: 'Букет «Лавандовое утро»',
+    tag: 'Нежный',
+    volume: 'Высота 45 см · Ø 35 см',
+    price: 3900,
+    image: 'assets/images/flowers/flower_10.jpg',
+    desc: 'Утонченное сочетание сиреневых и лавандовых оттенков с пудровыми диантусами и кружевной статицей. Свежий весенний аромат.',
+    specs: { height: '45 см', diam: '35 см', life: '12–14 дней', aroma: 'Легкий свежий' },
+    ingredients: 'Эустома лавандовая (5 шт.), диантус сиреневый (7 шт.), кустовая хризантема Сантини, статица, матовая бумага, атласная лента.'
   },
   {
     id: 4,
-    category: 'coffee',
-    name: 'Капучино',
-    tag: 'Классика',
-    volume: '250 мл',
-    price: 250,
-    image: 'assets/images/cappuccino.jpg',
-    desc: 'Идеальный баланс эспрессо и шелковистой микропены. Зерно средней обжарки с орехово-шоколадным профилем.',
-    nutrition: { kcal: 120, p: '5.8 г', f: '6.0 г', c: '10.5 г' },
-    ingredients: 'Эспрессо 36 мл, фермерское молоко цельное.'
-  },
-  {
-    id: 5,
-    category: 'coffee',
-    name: 'Матча Латте (Удзи)',
-    tag: 'Superfood',
-    volume: '300 мл',
-    price: 320,
-    image: 'assets/images/matcha_latte.jpg',
-    desc: 'Церемониальная матча первого сбора из Киото на взбитом растительном или цельном молоке. Мягкий травянистый вкус.',
-    nutrition: { kcal: 140, p: '6.0 г', f: '6.2 г', c: '12.0 г' },
-    ingredients: 'Матча японская церемониальная, молоко на выбор.'
+    category: 'author',
+    name: 'Авторская охапка «Пастельный саунд»',
+    tag: 'WOW-эффект',
+    volume: 'Высота 60 см · Ø 48 см',
+    price: 6200,
+    image: 'assets/images/flowers/flower_7.jpg',
+    desc: 'Объемный роскошный букет в кремово-персиковых тонах с крупными розами Shimmer, французской эустомой и пушистой зеленью.',
+    specs: { height: '60 см', diam: '48 см', life: '10–14 дней', aroma: 'Цветочно-медовый' },
+    ingredients: 'Пионовидные розы Shimmer (9 шт.), кустовые розы Cream Gracia (6 шт.), озотамнус, эустома, эвкалипт Populus, многослойная дизайнерская упаковка.'
   },
 
-  // FOOD & BREAKFASTS
+  // ROSES & MONO BOUQUETS
+  {
+    id: 5,
+    category: 'roses',
+    name: 'Монобукет из 25 роз Explorer (60 см)',
+    tag: 'Эквадор',
+    volume: 'Высота 60 см · Ø 40 см',
+    price: 5900,
+    image: 'assets/images/flowers/flower_2.jpg',
+    desc: 'Классические темно-красные розы премиального сорта Explorer из высокогорного Эквадора. Высокий плотный бокал и исключительная стойкость.',
+    specs: { height: '60 см', diam: '40 см', life: '12–14 дней', aroma: 'Благородный розовый' },
+    ingredients: '25 отборных роз сорта Explorer (Эквадор 60 см), крафт или атласная лента в тон лепестков.'
+  },
   {
     id: 6,
-    category: 'food',
-    name: 'Круассан с лососем и крем-чизом',
-    tag: 'Завтрак',
-    volume: '210 г',
-    price: 460,
-    image: 'assets/images/salmon_croissant.jpg',
-    desc: 'Хрустящий круассан на новозеландском сливочном масле, ломтики слабосоленого лосося, творожный сыр и свежий огурец.',
-    nutrition: { kcal: 480, p: '19.2 г', f: '28.4 г', c: '36.5 г' },
-    ingredients: 'Сливочный круассан, слабосоленый лосось, творожный сыр, свежий огурец, микрозелень.'
+    category: 'roses',
+    name: '19 пионовидных роз White O\'Hara',
+    tag: 'Французский сорт',
+    volume: 'Высота 50 см · Ø 42 см',
+    price: 6800,
+    image: 'assets/images/flowers/flower_5.jpg',
+    desc: 'Легендарный сорт с головокружительным парфюмерным ароматом французского сада. Бутон раскрывается пышной чашей диаметром до 12 см.',
+    specs: { height: '50 см', diam: '42 см', life: '9–12 дней', aroma: 'Яркий парфюмерный' },
+    ingredients: '19 пионовидных роз White O\'Hara высшего качества, матовая дизайнерская калька, атласная лента.'
   },
   {
     id: 7,
-    category: 'food',
-    name: 'Сырники из фермерского творога',
-    tag: 'Хит кухни',
-    volume: '240 г',
-    price: 380,
-    image: 'assets/images/syrniki_breakfast.jpg',
-    desc: 'Три пышных нежных сырника из фермерского творога 9%. Подаются с густой деревенской сметаной и таёжной брусникой.',
-    nutrition: { kcal: 395, p: '24.5 г', f: '16.8 г', c: '32.0 г' },
-    ingredients: 'Творог 9%, рисовая мука, яйцо фермерское, сахар тростниковый, сметана, брусника.'
+    category: 'roses',
+    name: 'Монобукет из 35 роз Red Piano',
+    tag: 'Кения',
+    volume: 'Высота 40 см · Ø 36 см',
+    price: 4600,
+    image: 'assets/images/flowers/flower_8.jpg',
+    desc: 'Пышная стойкая охапка шаровидных алых роз из Кении. Устойчивы к перепадам температур и долго стоят в вазе.',
+    specs: { height: '40 см', diam: '36 см', life: '14 дней', aroma: 'Легкий травянистый' },
+    ingredients: '35 роз сорта Red Piano (Кения 40 см), фирменная лента с логотипом.'
   },
   {
     id: 8,
-    category: 'food',
-    name: 'Бриошь с авокадо и яйцом пашот',
-    tag: 'Бранч',
-    volume: '260 г',
-    price: 420,
-    image: 'assets/images/avocado_brioche.jpg',
-    desc: 'Поджаренная сливочная бриошь, спелый авокадо Хасс, яйцо пашот с текучим желтком и теплый соус голландез.',
-    nutrition: { kcal: 430, p: '14.0 г', f: '26.2 г', c: '34.0 г' },
-    ingredients: 'Бриошь ремесленная, авокадо Хасс, яйцо пашот, соус голландез, микс трав.'
-  },
-  {
-    id: 9,
-    category: 'food',
-    name: 'Сэндвич с пастрами на тартине',
-    tag: 'Сытный',
-    volume: '280 г',
-    price: 490,
-    image: 'assets/images/pastrami_sandwich.jpg',
-    desc: 'Тартин на закваске, щедрая порция томленой говядины пастрами, сыр чеддер, корнишоны и дижонская горчица.',
-    nutrition: { kcal: 540, p: '29.5 г', f: '22.0 г', c: '51.0 г' },
-    ingredients: 'Хлеб тартин, говядина пастрами, чеддер, маринованные корнишоны, зернистая горчица.'
+    category: 'roses',
+    name: 'Букет-гигант из 51 розы Explorer (70 см)',
+    tag: 'Гранд-букет',
+    volume: 'Высота 70 см · Ø 60 см',
+    price: 11900,
+    image: 'assets/images/flowers/flower_12.jpg',
+    desc: 'Внушительный монобукет из 51 крупной розы высотой 70 см. Плотная тяжелая охапка для самых особенных и незабываемых поводов.',
+    specs: { height: '70 см', diam: '60 см', life: '12–14 дней', aroma: 'Глубокий розовый' },
+    ingredients: '51 роза сорта Explorer высшей категории (Эквадор 70 см), атласные ленты.'
   },
 
-  // DESSERTS & BAKERY
+  // BOXES & BASKETS
+  {
+    id: 9,
+    category: 'boxes',
+    name: 'Шляпная коробка «Royal Blush»',
+    tag: 'Бестселлер',
+    volume: 'Коробка M · Ø 32 см',
+    price: 4800,
+    image: 'assets/images/flowers/flower_3.jpg',
+    desc: 'Композиция в бархатной шляпной коробке на флористической губке Oasis. Не требует вазы — достаточно подливать 100 мл воды раз в день.',
+    specs: { height: '35 см', diam: '32 см', life: '10–14 дней', aroma: 'Нежный цветочный' },
+    ingredients: 'Пионовидные розы Kahala, белая эустома, диантусы, эвкалипт, шляпная коробка, оазис с питательным раствором.'
+  },
   {
     id: 10,
-    category: 'desserts',
-    name: 'Баскский обожженный чизкейк',
-    tag: 'Бестселлер',
-    volume: '175 г',
-    price: 350,
-    image: 'assets/images/basque_cheesecake.jpg',
-    desc: 'Испанский чизкейк San Sebastian. Нежнейшая шелковистая кремовая текстура и карамелизированная обожженная корочка.',
-    nutrition: { kcal: 410, p: '7.8 г', f: '29.0 г', c: '28.5 г' },
-    ingredients: 'Сливочный сыр Cremette, сливки 33%, яйца, тростниковый сахар, натуральная ваниль.'
+    category: 'boxes',
+    name: 'Шляпная коробка «Бархатный пион»',
+    tag: 'Премиум бокс',
+    volume: 'Коробка L · Ø 40 см',
+    price: 6900,
+    image: 'assets/images/flowers/flower_9.jpg',
+    desc: 'Большая шляпная коробка с пышными розами сорта Pink Mondial, кустовой эустомой и ароматным эвкалиптом. Стильный подарок без хлопот.',
+    specs: { height: '42 см', diam: '40 см', life: '10–14 дней', aroma: 'Сладковатый пудровый' },
+    ingredients: 'Розы Pink Mondial (15 шт.), эустома (7 шт.), эвкалипт, премиальная коробка с золотым тиснением, оазис Oasis.'
   },
   {
     id: 11,
-    category: 'desserts',
-    name: 'Медовик с брусникой',
-    tag: 'Фирменный',
-    volume: '160 г',
-    price: 320,
-    image: 'assets/images/medovik_cake.jpg',
-    desc: 'Тончайшие карамельно-медовые коржи, воздушный сметанный крем и сочные ягоды таежной брусники с приятной кислинкой.',
-    nutrition: { kcal: 360, p: '5.2 г', f: '17.4 г', c: '46.0 г' },
-    ingredients: 'Гречишный мед, мука пшеничная, сметана, сливки, ягоды брусники, сахарная пудра.'
+    category: 'boxes',
+    name: 'Цветочная корзина «Лесная поляна»',
+    tag: 'В корзине',
+    volume: 'Корзина L · Ø 48 см',
+    price: 7800,
+    image: 'assets/images/flowers/flower_13.jpg',
+    desc: 'Большая плетеная корзина из натуральной ивы, наполненная гортензиями, розами и фактурной зеленью. Сохраняет свежесть до 2 недель.',
+    specs: { height: '45 см', diam: '48 см', life: '10–14 дней', aroma: 'Свежий луговой' },
+    ingredients: 'Гортензия (2 шт.), розы Эквадор (11 шт.), кустовая роза (5 шт.), эвкалипт, корзина ручной работы, оазис.'
   },
 
-  // BEANS TO GO
+  // SEASONAL & HYDRANGEAS
   {
     id: 12,
-    category: 'beans',
-    name: 'Зерно: Эфиопия Иргачеффе G1',
-    tag: 'Q-Score 86.2',
-    volume: '250 г',
-    price: 850,
-    image: 'assets/images/specialty_bean_bags.jpg',
-    desc: 'Мытая обработка, светлая обжарка под фильтр. Высота произрастания 1950–2100м. Ноты бергамота, белого персика и жасмина.',
-    nutrition: { kcal: 0, p: '0 г', f: '0 г', c: '0 г' },
-    ingredients: '100% арабика specialty в зернах. Бесплатный помол под любой девайс.'
+    category: 'seasonal',
+    name: 'Букет «Нежное облако» с гортензией',
+    tag: 'Пышный',
+    volume: 'Высота 45 см · Ø 38 см',
+    price: 3600,
+    image: 'assets/images/flowers/flower_4.jpg',
+    desc: 'Воздушный объемный букет с крупной пудровой гортензией, кустовыми розами и веточками эвкалипта. Легкость и гармония.',
+    specs: { height: '45 см', diam: '38 см', life: '8–12 дней', aroma: 'Легкий свежий' },
+    ingredients: 'Гортензия крупноцветковая пудровая (1 шт.), кустовая роза (4 шт.), эвкалипт, матовая дизайнерская бумага.'
+  },
+  {
+    id: 13,
+    category: 'seasonal',
+    name: 'Дуэт гортензий «Небесная лазурь»',
+    tag: 'Сезонный хит',
+    volume: 'Высота 50 см · Ø 40 см',
+    price: 4200,
+    image: 'assets/images/flowers/flower_11.jpg',
+    desc: 'Две пышные гортензии небесно-голубого и белого оттенка в обрамлении зелени фисташки и матовой полупрозрачной кальки.',
+    specs: { height: '50 см', diam: '40 см', life: '8–12 дней', aroma: 'Чистый свежий' },
+    ingredients: 'Гортензия голубая (1 шт.), гортензия белая (1 шт.), веточки фисташки, упаковка, атласная лента.'
+  },
+  {
+    id: 14,
+    category: 'seasonal',
+    name: 'Охапка разноцветных хризантем',
+    tag: 'Макс. стойкость',
+    volume: 'Высота 55 см · Ø 45 см',
+    price: 2800,
+    image: 'assets/images/flowers/flower_16.jpg',
+    desc: 'Пышная объемная охапка стойких кустовых хризантем сочных оттенков. Стоит в вазе до 3 недель при регулярной смене воды.',
+    specs: { height: '55 см', diam: '45 см', life: '18–21 день', aroma: 'Свежий терпкий' },
+    ingredients: 'Кустовая хризантема микс (7 пышных веток), матовая упаковка, атласная лента.'
   }
 ];
 
-// DYNAMIC STORAGE & CATALOG PERSISTENCE (ADMIN POWERED)
-const MENU_STORAGE_KEY = 'obsidian_menu_items_v2';
+// DYNAMIC STORAGE & CATALOG PERSISTENCE
+const MENU_STORAGE_KEY = 'roza_roz_catalog_v2';
+const CART_STORAGE_KEY = 'roza_roz_cart_v2';
+const FEATURED_STORAGE_KEY = 'roza_roz_featured_v2';
 
 function loadMenuData() {
   try {
@@ -172,7 +198,7 @@ function loadMenuData() {
       }
     }
   } catch (e) {
-    console.warn('Could not read menu from localStorage', e);
+    console.warn('Could not read catalog from localStorage', e);
   }
   return JSON.parse(JSON.stringify(DEFAULT_MENU_DATA));
 }
@@ -184,7 +210,7 @@ function saveMenuData(data, notify = true) {
   try {
     localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(data));
   } catch (e) {
-    console.error('Error saving menu to localStorage', e);
+    console.error('Error saving catalog to localStorage', e);
   }
   renderCatalog();
   if (notify) {
@@ -195,8 +221,8 @@ function saveMenuData(data, notify = true) {
 // STATE
 let currentCategory = 'all';
 let searchQuery = '';
-let selectedGrind = 'В зёрнах';
-let cart = JSON.parse(localStorage.getItem('obsidian_cart') || '[]');
+let selectedPackaging = 'Шляпная коробка';
+let cart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
 
 // DOM ELEMENTS
 const catalogGrid = document.getElementById('catalogGrid');
@@ -252,11 +278,10 @@ function onScrollHandler() {
   }
 
   // Calculate blur and dark overlay progress
-  // 0 at top of hero screen, reaches max blur at 1 screen scroll
   const progress = Math.min(Math.max(scrollY / (vh * 0.85), 0), 1);
 
-  // Dynamic blur: 0px at hero -> 22px when scrolling down
-  const blurVal = (progress * 22).toFixed(1);
+  // Dynamic blur: 0px at hero -> 20px when scrolling down
+  const blurVal = (progress * 20).toFixed(1);
   // Overlay opacity: 0.38 at hero -> 0.88 when scrolling into catalog
   const overlayOpacity = (0.38 + progress * 0.50).toFixed(2);
   // Parallax translation of the video
@@ -292,9 +317,11 @@ if (bgVideo) {
 }
 
 // ==========================================================================
-// 3. CATALOG RENDERING & PREVENT TEXT OVERFLOW (NO RUBLE SIGN WRAPPING)
+// 3. CATALOG RENDERING
 // ==========================================================================
 function renderCatalog() {
+  if (!catalogGrid) return;
+
   const filtered = MENU_DATA.filter(item => {
     const matchesCat = currentCategory === 'all' || item.category === currentCategory;
     const query = searchQuery.trim().toLowerCase();
@@ -314,33 +341,42 @@ function renderCatalog() {
             <line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         </div>
-        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; text-transform: uppercase;">Позиций не найдено</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">Попробуйте скорректировать поисковый запрос или выбрать другую категорию.</p>
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; text-transform: uppercase;">Композиций не найдено</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 6px;">Попробуйте скорректировать поисковый запрос или выбрать другую категорию букетов.</p>
       </div>
     `;
     return;
   }
 
+  const categoryNameMap = {
+    'author': 'Авторский букет',
+    'roses': 'Розы & Моно',
+    'boxes': 'В коробке / Корзине',
+    'seasonal': 'Сезонные цветы'
+  };
+
   catalogGrid.innerHTML = filtered.map(item => {
     const isOut = item.outOfStock === true;
+    const catLabel = categoryNameMap[item.category] || 'Цветочная композиция';
+
     return `
     <article class="product-card ${isOut ? 'item-out-of-stock' : ''}" data-id="${item.id}">
-      <div class="card-img-wrapper">
-        <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='assets/images/cappuccino.jpg'">
-        <span class="product-tag" ${isOut ? 'style="background:rgba(239,68,68,0.85); color:#fff;"' : ''}>${isOut ? 'На стопе' : item.tag}</span>
+      <div class="card-img-wrapper" onclick="openProductModal(${item.id})">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='assets/images/flowers/flower_1.jpg'">
+        <span class="product-tag" ${isOut ? 'style="background:rgba(239,68,68,0.85); color:#fff;"' : ''}>${isOut ? 'Под заказ' : item.tag}</span>
       </div>
       <div class="card-body">
         <div class="card-title-row">
-          <h3 class="card-title">${item.name}</h3>
+          <h3 class="card-title" onclick="openProductModal(${item.id})">${item.name}</h3>
         </div>
-        <div class="card-specs">${item.volume || ''} · ${item.category === 'coffee' ? 'Спешелти' : (item.category === 'beans' ? 'Зерно 250г' : (item.category === 'desserts' ? 'Кондитерская' : 'Кухня'))}</div>
+        <div class="card-specs">${item.volume || ''} · ${catLabel}</div>
         <p class="card-desc">${item.desc || ''}</p>
         <div class="card-footer">
-          <div class="card-price"><span class="price-val">${item.price}</span>&nbsp;<span class="price-curr">₽</span></div>
+          <div class="card-price"><span class="price-val">${item.price.toLocaleString('ru-RU')}</span>&nbsp;<span class="price-curr">₽</span></div>
           <div class="card-actions">
             <button class="btn-card-details" onclick="openProductModal(${item.id})">Состав</button>
             <button class="btn-card-add ${isOut ? 'btn-disabled' : ''}" ${isOut ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : `onclick="addToCart(${item.id})"`}>
-              ${isOut ? '<span>На стопе</span>' : `
+              ${isOut ? '<span>Под заказ</span>' : `
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -374,7 +410,7 @@ if (categoryTabs) {
 if (catalogSearch) {
   catalogSearch.addEventListener('input', (e) => {
     searchQuery = e.target.value;
-    clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+    if (clearSearchBtn) clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
     renderCatalog();
   });
 }
@@ -390,7 +426,7 @@ if (clearSearchBtn) {
 }
 
 // ==========================================================================
-// 4. BEANS GRIND SELECTOR INTERACTIVITY
+// 4. FEATURED SIGNATURE BOUQUET & PACKAGING SELECTOR
 // ==========================================================================
 if (grindOptionsGrid) {
   grindOptionsGrid.addEventListener('click', (e) => {
@@ -399,85 +435,51 @@ if (grindOptionsGrid) {
 
     grindOptionsGrid.querySelectorAll('.grind-pill').forEach(p => p.classList.remove('active'));
     pill.classList.add('active');
-    selectedGrind = pill.getAttribute('data-grind');
+    selectedPackaging = pill.getAttribute('data-grind');
   });
 }
 
-function getFeaturedBeansData() {
+function getFeaturedBouquetData() {
   try {
-    const raw = localStorage.getItem('obsidian_featured_beans_v1');
+    const raw = localStorage.getItem(FEATURED_STORAGE_KEY);
     if (raw) return JSON.parse(raw);
   } catch (e) {}
   return {
-    title: 'ЭФИОПИЯ ИРГАЧЕФФЕ // G1',
-    tag: 'ЛУЧШИЙ ВЫБОР ДЛЯ ВОРОНКИ И ФИЛЬТРА',
-    descriptors: 'Бергамот, Белый персик, Жасмин, Чёрный чай',
-    desc: 'Яркий искрящийся лот мытой обработки из региона Гедеб. Чистейшая кислотность тропических фруктов, нежное цветочное тело и сладкое медовое послевкусие.',
-    price: 850,
-    weight: '250 г',
-    roast: 'Omni-Roast / Каждую неделю',
-    qGrade: '86.25 баллов',
-    grindInfo: 'Бесплатно под ваш девайс',
-    image: 'assets/images/specialty_bean_bags.jpg'
+    title: 'ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»',
+    tag: 'ЛУЧШИЙ ВЫБОР ДЛЯ ПРАЗДНИКА И ПОДАРКА',
+    descriptors: 'Пионовидная роза Kahala, Белая эустома, Эвкалипт цинерея, Диантус',
+    desc: 'Идеальный подарок без забот: цветы не нужно подрезать и искать подходящую вазу. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.',
+    price: 4800,
+    volume: 'композиция',
+    image: 'assets/images/flowers/flower_3.jpg'
   };
-}
-
-function renderFeaturedBeansSection() {
-  const featured = getFeaturedBeansData();
-  const titleEl = document.querySelector('.beans-card-title');
-  const tagEl = document.querySelector('.beans-card-tag');
-  const descEl = document.querySelector('.beans-description');
-  const priceValEl = document.querySelector('.beans-price-value');
-  const priceMetaEl = document.querySelector('.beans-price-meta');
-  const imgEl = document.querySelector('.beans-image-wrap img');
-  const descriptorsEl = document.querySelector('.beans-descriptors');
-  const profileRow = document.querySelector('.beans-profile-row');
-
-  if (titleEl && featured.title) titleEl.textContent = featured.title;
-  if (tagEl && featured.tag) tagEl.textContent = featured.tag;
-  if (descEl && featured.desc) descEl.textContent = featured.desc;
-  if (priceValEl && featured.price) priceValEl.innerHTML = `${featured.price}&nbsp;₽`;
-  if (priceMetaEl && featured.weight) priceMetaEl.textContent = `/ ${featured.weight}`;
-  if (imgEl && featured.image) imgEl.src = featured.image;
-
-  if (descriptorsEl && featured.descriptors) {
-    const pills = featured.descriptors.split(',').map(s => s.trim()).filter(Boolean);
-    descriptorsEl.innerHTML = pills.map(p => `<span class="desc-pill">${p}</span>`).join('');
-  }
-
-  if (profileRow) {
-    const items = profileRow.querySelectorAll('.profile-item .profile-val');
-    if (items[0] && featured.roast) items[0].textContent = featured.roast;
-    if (items[1] && featured.qGrade) items[1].textContent = featured.qGrade;
-    if (items[2] && featured.grindInfo) items[2].textContent = featured.grindInfo;
-  }
 }
 
 if (addBeansToCartBtn) {
   addBeansToCartBtn.addEventListener('click', () => {
-    const featured = getFeaturedBeansData();
-    const beanName = featured.title || 'Зерно: Эфиопия Иргачеффе G1';
-    const beanPrice = featured.price || 850;
-    const beanVolume = featured.weight || '250 г';
-    const beanImage = featured.image || 'assets/images/specialty_bean_bags.jpg';
+    const featured = getFeaturedBouquetData();
+    const bouquetName = `${featured.title} (${selectedPackaging})`;
+    const bouquetPrice = featured.price || 4800;
+    const bouquetVolume = featured.volume || 'композиция';
+    const bouquetImage = featured.image || 'assets/images/flowers/flower_3.jpg';
 
-    const existing = cart.find(item => item.id === 12 && item.grind === selectedGrind);
+    const existing = cart.find(item => item.id === 999 && item.packaging === selectedPackaging);
     if (existing) {
       existing.quantity += 1;
     } else {
       cart.push({
-        id: 12,
-        name: `${beanName} (${selectedGrind})`,
-        price: beanPrice,
-        volume: beanVolume,
-        image: beanImage,
-        grind: selectedGrind,
+        id: 999,
+        name: bouquetName,
+        price: bouquetPrice,
+        volume: selectedPackaging,
+        image: bouquetImage,
+        packaging: selectedPackaging,
         quantity: 1
       });
     }
 
     saveCart();
-    showToast(`Пачка кофе (${selectedGrind}) добавлена в заказ!`);
+    showToast(`Композиция (${selectedPackaging}) добавлена в заказ!`);
   });
 }
 
@@ -485,7 +487,7 @@ if (addBeansToCartBtn) {
 // 5. CART & ORDER STATE MANAGEMENT
 // ==========================================================================
 function saveCart() {
-  localStorage.setItem('obsidian_cart', JSON.stringify(cart));
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
   updateCartUI();
 }
 
@@ -493,7 +495,7 @@ function addToCart(productId) {
   const product = MENU_DATA.find(p => p.id === productId);
   if (!product) return;
 
-  const existing = cart.find(item => item.id === productId && !item.grind);
+  const existing = cart.find(item => item.id === productId && !item.packaging);
   if (existing) {
     existing.quantity += 1;
   } else {
@@ -526,8 +528,8 @@ function updateCartUI() {
   const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  cartCount.textContent = totalCount;
-  cartHeaderCount.textContent = `(${totalCount})`;
+  if (cartCount) cartCount.textContent = totalCount;
+  if (cartHeaderCount) cartHeaderCount.textContent = `(${totalCount})`;
 
   const dockCartCount = document.getElementById('dockCartCount');
   if (dockCartCount) {
@@ -535,112 +537,135 @@ function updateCartUI() {
   }
 
   if (cart.length === 0) {
-    cartItemsList.innerHTML = '';
-    cartItemsList.appendChild(emptyCartState);
-    emptyCartState.style.display = 'flex';
-    cartFooter.style.display = 'none';
+    if (cartItemsList) {
+      cartItemsList.innerHTML = '';
+      if (emptyCartState) {
+        cartItemsList.appendChild(emptyCartState);
+        emptyCartState.style.display = 'flex';
+      }
+    }
+    if (cartFooter) cartFooter.style.display = 'none';
   } else {
-    emptyCartState.style.display = 'none';
-    cartFooter.style.display = 'block';
-    cartTotalSum.innerHTML = `${totalSum.toLocaleString('ru-RU')}&nbsp;₽`;
+    if (emptyCartState) emptyCartState.style.display = 'none';
+    if (cartFooter) cartFooter.style.display = 'block';
+    if (cartTotalSum) cartTotalSum.innerHTML = `${totalSum.toLocaleString('ru-RU')}&nbsp;₽`;
 
-    cartItemsList.innerHTML = cart.map((item, idx) => `
-      <div class="cart-item-row">
-        <img src="${item.image}" alt="${item.name}" class="cart-item-thumb">
-        <div class="cart-item-info">
-          <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">${item.price}&nbsp;₽ · ${item.volume}</div>
+    if (cartItemsList) {
+      cartItemsList.innerHTML = cart.map((item, idx) => `
+        <div class="cart-item-row">
+          <img src="${item.image}" alt="${item.name}" class="cart-item-thumb">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">${item.price.toLocaleString('ru-RU')}&nbsp;₽ · ${item.volume}</div>
+          </div>
+          <div class="cart-item-controls">
+            <button class="qty-btn" onclick="changeQty(${idx}, -1)" aria-label="Уменьшить">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <span class="qty-num">${item.quantity}</span>
+            <button class="qty-btn" onclick="changeQty(${idx}, 1)" aria-label="Увеличить">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty(${idx}, -1)" aria-label="Уменьшить">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-          </button>
-          <span class="qty-num">${item.quantity}</span>
-          <button class="qty-btn" onclick="changeQty(${idx}, 1)" aria-label="Увеличить">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-          </button>
-        </div>
-      </div>
-    `).join('');
+      `).join('');
+    }
   }
 }
 
 // Drawer Open/Close
-openCartBtn.addEventListener('click', () => {
-  cartOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-});
+if (openCartBtn && cartOverlay) {
+  openCartBtn.addEventListener('click', () => {
+    cartOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
 
 const mobileCartTrigger = document.getElementById('mobileCartTrigger');
-if (mobileCartTrigger) {
+if (mobileCartTrigger && cartOverlay) {
   mobileCartTrigger.addEventListener('click', () => {
     cartOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
 }
 
-closeCartBtn.addEventListener('click', () => {
-  cartOverlay.classList.remove('active');
-  document.body.style.overflow = '';
-});
-
-cartOverlay.addEventListener('click', (e) => {
-  if (e.target === cartOverlay) {
+if (closeCartBtn && cartOverlay) {
+  closeCartBtn.addEventListener('click', () => {
     cartOverlay.classList.remove('active');
     document.body.style.overflow = '';
-  }
-});
+  });
+}
+
+if (cartOverlay) {
+  cartOverlay.addEventListener('click', (e) => {
+    if (e.target === cartOverlay) {
+      cartOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
 
 // ==========================================================================
-// 6. PRODUCT DETAILS MODAL
+// 6. PRODUCT DETAILS MODAL (FLOWER SPECIFICATIONS & CARE GUIDE)
 // ==========================================================================
 window.openProductModal = function(productId) {
   const product = MENU_DATA.find(p => p.id === productId);
-  if (!product) return;
+  if (!product || !modalBody || !productModalOverlay) return;
+
+  const specs = product.specs || { height: '50 см', diam: '38 см', life: '10–12 дней', aroma: 'Нежный' };
 
   modalBody.innerHTML = `
     <img src="${product.image}" alt="${product.name}" class="modal-detail-img">
     <div class="modal-detail-content">
       <h3 class="modal-detail-title">${product.name}</h3>
-      <div class="modal-detail-specs">${product.volume} · ${product.price}&nbsp;₽ · ${product.tag}</div>
+      <div class="modal-detail-specs">${product.volume} · ${product.price.toLocaleString('ru-RU')}&nbsp;₽ · ${product.tag}</div>
       <p class="modal-detail-desc">${product.desc}</p>
       
       <div style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 8px;">
-        Пищевая ценность (на порцию):
+        Характеристики композиции:
       </div>
       <div class="modal-nutrition-grid">
         <div>
-          <span class="nutri-val">${product.nutrition.kcal}</span>
-          <span class="nutri-lbl">ккал</span>
+          <span class="nutri-val">${specs.height}</span>
+          <span class="nutri-lbl">Высота</span>
         </div>
         <div>
-          <span class="nutri-val">${product.nutrition.p}</span>
-          <span class="nutri-lbl">белки</span>
+          <span class="nutri-val">${specs.diam}</span>
+          <span class="nutri-lbl">Диаметр</span>
         </div>
         <div>
-          <span class="nutri-val">${product.nutrition.f}</span>
-          <span class="nutri-lbl">жиры</span>
+          <span class="nutri-val">${specs.life}</span>
+          <span class="nutri-lbl">Стойкость</span>
         </div>
         <div>
-          <span class="nutri-val">${product.nutrition.c}</span>
-          <span class="nutri-lbl">углеводы</span>
+          <span class="nutri-val">${specs.aroma}</span>
+          <span class="nutri-lbl">Аромат</span>
         </div>
       </div>
 
-      <div style="margin-bottom: 24px;">
+      <div style="margin-bottom: 18px;">
         <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); display: block; margin-bottom: 4px;">
-          Состав по факту:
+          Точный состав букета:
         </span>
         <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">${product.ingredients}</p>
       </div>
 
+      <div style="margin-bottom: 24px; padding: 12px 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 2px solid var(--accent-orange);">
+        <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-orange); display: block; margin-bottom: 3px;">
+          Бесплатный комплект к букету:
+        </span>
+        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
+          Транспортировочный аквабокс с водой, порошок Chrysal для вазы и дизайнерская открытка с вашим текстом.
+        </p>
+      </div>
+
       <button class="btn btn-primary btn-block" onclick="addToCart(${product.id}); closeProductModal();">
-        <span>Добавить в заказ · ${product.price}&nbsp;₽</span>
+        <span>Добавить в заказ · ${product.price.toLocaleString('ru-RU')}&nbsp;₽</span>
       </button>
     </div>
   `;
@@ -650,486 +675,193 @@ window.openProductModal = function(productId) {
 };
 
 window.closeProductModal = function() {
+  if (!productModalOverlay) return;
   productModalOverlay.classList.remove('active');
   document.body.style.overflow = '';
 };
 
-closeModalBtn.addEventListener('click', closeProductModal);
-productModalOverlay.addEventListener('click', (e) => {
-  if (e.target === productModalOverlay) closeProductModal();
-});
+if (closeModalBtn) closeModalBtn.addEventListener('click', closeProductModal);
+if (productModalOverlay) {
+  productModalOverlay.addEventListener('click', (e) => {
+    if (e.target === productModalOverlay) closeProductModal();
+  });
+}
 
 // ==========================================================================
-// 7. CHECKOUT MODAL
+// 7. CHECKOUT MODAL & DIRECT WHATSAPP DISPATCH
 // ==========================================================================
-proceedCheckoutBtn.addEventListener('click', () => {
-  if (cart.length === 0) return;
-  cartOverlay.classList.remove('active');
+if (proceedCheckoutBtn && checkoutModalOverlay) {
+  proceedCheckoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) return;
+    if (cartOverlay) cartOverlay.classList.remove('active');
 
-  const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  orderSummaryBox.innerHTML = `
-    <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав предзаказа:</div>
-    <ul style="list-style: none; margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
-      ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${i.price * i.quantity}&nbsp;₽)</li>`).join('')}
-    </ul>
-    <div style="font-weight: 800; color: var(--accent-orange); font-size: 1.15rem; font-family: var(--font-heading);">
-      Итого: ${totalSum.toLocaleString('ru-RU')}&nbsp;₽
-    </div>
-  `;
+    const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    if (orderSummaryBox) {
+      orderSummaryBox.innerHTML = `
+        <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав заказа:</div>
+        <ul style="list-style: none; margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
+          ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${(i.price * i.quantity).toLocaleString('ru-RU')}&nbsp;₽)</li>`).join('')}
+        </ul>
+        <div style="font-weight: 800; color: var(--accent-orange); font-size: 1.15rem; font-family: var(--font-heading);">
+          Итого: ${totalSum.toLocaleString('ru-RU')}&nbsp;₽
+        </div>
+      `;
+    }
 
-  checkoutModalOverlay.classList.add('active');
-});
+    checkoutModalOverlay.classList.add('active');
+  });
+}
 
-closeCheckoutBtn.addEventListener('click', () => {
-  checkoutModalOverlay.classList.remove('active');
-  document.body.style.overflow = '';
-});
-
-checkoutModalOverlay.addEventListener('click', (e) => {
-  if (e.target === checkoutModalOverlay) {
+if (closeCheckoutBtn && checkoutModalOverlay) {
+  closeCheckoutBtn.addEventListener('click', () => {
     checkoutModalOverlay.classList.remove('active');
     document.body.style.overflow = '';
-  }
-});
-
-// ==========================================================================
-// 7.1 TELEGRAM BOT ORDER DISPATCHER (STRICT PRIVACY — NO PERSONAL DATA)
-// ==========================================================================
-const TELEGRAM_CONFIG = {
-  token: '8650352781:AAERhPKs7TmBOEIftRO-y9O0Be18Cyiur28',
-  storageKey: 'obsidian_tg_chat_id'
-};
-
-async function getTelegramChatIds() {
-  const configured = localStorage.getItem(TELEGRAM_CONFIG.storageKey);
-  const ids = new Set();
-  
-  if (configured) {
-    configured.split(',').map(s => s.trim()).filter(Boolean).forEach(id => ids.add(id));
-  }
-
-  // If no configured chat ID, auto-detect from recent bot updates
-  if (ids.size === 0) {
-    try {
-      const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.token}/getUpdates`);
-      const json = await resp.json();
-      if (json && json.ok && Array.isArray(json.result) && json.result.length > 0) {
-        json.result.forEach(upd => {
-          const cid = upd.message?.chat?.id || upd.channel_post?.chat?.id || upd.my_chat_member?.chat?.id;
-          if (cid) ids.add(String(cid));
-        });
-        if (ids.size > 0) {
-          localStorage.setItem(TELEGRAM_CONFIG.storageKey, Array.from(ids).join(','));
-        }
-      }
-    } catch (e) {
-      console.warn('Auto-detect Telegram chat ID failed:', e);
-    }
-  }
-
-  return Array.from(ids);
+  });
 }
 
-async function sendOrderToTelegramBot(order) {
-  try {
-    const chatIds = await getTelegramChatIds();
-    if (!chatIds || chatIds.length === 0) {
-      console.info('Telegram Bot: No chat_id connected yet. Write /start to @coffeetestwork_bot in Telegram');
-      return;
-    }
-
-    // STRICT PRIVACY: ZERO personal data (no name, no phone)
-    const itemsLines = (order.items || []).map((item, idx) => {
-      const lineSum = (item.price || 0) * (item.qty || 1);
-      return `${idx + 1}. <b>${item.name}</b> × ${item.qty} шт. — <i>${lineSum} ₽</i>`;
-    }).join('\n');
-
-    const totalSum = (order.total || 0).toLocaleString('ru-RU');
-    const orderTime = order.readyTime || 'Как можно скорее';
-    const commentNote = order.comment ? `\n\n📌 <b>Пожелания к заказу:</b> ${order.comment}` : '';
-
-    const text = 
-`☕ <b>НОВЫЙ ЗАКАЗ [${order.id}]</b>
-──────────────────
-📋 <b>Состав позиций:</b>
-${itemsLines || '— Позиции не указаны'}
-──────────────────
-💰 <b>Сумма заказа:</b> <b>${totalSum} ₽</b>
-⏱ <b>Время готовности:</b> ${orderTime}${commentNote}`;
-
-    for (const chatId of chatIds) {
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.token}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: text,
-          parse_mode: 'HTML'
-        })
-      });
-    }
-  } catch (err) {
-    console.error('Error dispatching order to Telegram:', err);
-  }
-}
-
-checkoutForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const nameInput = document.getElementById('orderName');
-  const phoneInput = document.getElementById('orderPhone');
-  const timeInput = document.getElementById('orderTime');
-  const commentInput = document.getElementById('orderComment');
-
-  const customerName = nameInput ? nameInput.value.trim() : 'Гость';
-  const customerPhone = phoneInput ? phoneInput.value.trim() : '';
-  const readyTime = timeInput ? timeInput.value : 'Через 15 минут';
-  const comment = commentInput ? commentInput.value.trim() : '';
-
-  const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const orderId = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
-
-  const newOrder = {
-    id: orderId,
-    timestamp: Date.now(),
-    customerName,
-    customerPhone,
-    readyTime,
-    comment,
-    items: cart.map(item => ({
-      name: item.name,
-      qty: item.quantity,
-      price: item.price
-    })),
-    total: totalSum,
-    status: 'new'
-  };
-
-  try {
-    const existingOrders = JSON.parse(localStorage.getItem('obsidian_orders_v1') || '[]');
-    existingOrders.unshift(newOrder);
-    localStorage.setItem('obsidian_orders_v1', JSON.stringify(existingOrders));
-    window.dispatchEvent(new Event('storage'));
-  } catch (err) {
-    console.error('Error saving order to localStorage', err);
-  }
-
-  // Duplicate to Telegram bot (no personal data)
-  sendOrderToTelegramBot(newOrder);
-
-  cart = [];
-  saveCart();
-
-  checkoutModalOverlay.classList.remove('active');
-  document.body.style.overflow = '';
-
-  showToast(`Заказ #${orderId} принят! Готовим для ${customerName} к: ${readyTime}`);
-});
-
-// ==========================================================================
-// 8. TOAST NOTIFICATION ENGINE
-// ==========================================================================
-let toastTimer = null;
-function showToast(msg) {
-  let toast = document.getElementById('toastNotification');
-  let text = document.getElementById('toastText');
-
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.className = 'toast-notification';
-    toast.id = 'toastNotification';
-    toast.setAttribute('role', 'status');
-    toast.setAttribute('aria-live', 'polite');
-    toast.innerHTML = `<span class="toast-indicator"></span><span class="toast-text" id="toastText"></span>`;
-    document.body.appendChild(toast);
-    text = document.getElementById('toastText');
-  }
-
-  if (toastTimer) clearTimeout(toastTimer);
-
-  if (text) {
-    text.textContent = msg;
-  } else {
-    toast.textContent = msg;
-  }
-
-  toast.classList.add('active');
-
-  // Interactive haptic bump on cart badges
-  const headerBadge = document.getElementById('cartCount');
-  const dockBadge = document.getElementById('dockCartCount');
-  [headerBadge, dockBadge].forEach(b => {
-    if (b) {
-      b.classList.remove('badge-pop');
-      void b.offsetWidth;
-      b.classList.add('badge-pop');
+if (checkoutModalOverlay) {
+  checkoutModalOverlay.addEventListener('click', (e) => {
+    if (e.target === checkoutModalOverlay) {
+      checkoutModalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
     }
   });
-
-  toastTimer = setTimeout(() => {
-    if (toast) toast.classList.remove('active');
-  }, 3000);
 }
 
-window.showToast = showToast;
-window.addToCart = addToCart;
-window.changeQty = changeQty;
+// Toggle address field depending on delivery type
+const deliveryTypeSelect = document.getElementById('deliveryType');
+const addressGroup = document.getElementById('addressGroup');
+if (deliveryTypeSelect && addressGroup) {
+  deliveryTypeSelect.addEventListener('change', (e) => {
+    if (e.target.value === 'Самовывоз') {
+      addressGroup.style.display = 'none';
+    } else {
+      addressGroup.style.display = 'block';
+    }
+  });
+}
+
+if (checkoutForm) {
+  checkoutForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameInput = document.getElementById('orderName');
+    const phoneInput = document.getElementById('orderPhone');
+    const typeInput = document.getElementById('deliveryType');
+    const addressInput = document.getElementById('orderAddress');
+    const timeInput = document.getElementById('orderTime');
+    const cardInput = document.getElementById('cardText');
+    const commentInput = document.getElementById('orderComment');
+
+    const customerName = nameInput ? nameInput.value.trim() : 'Покупатель';
+    const customerPhone = phoneInput ? phoneInput.value.trim() : '';
+    const deliveryType = typeInput ? typeInput.value : 'Доставка курьером';
+    const address = addressInput ? addressInput.value.trim() : '';
+    const readyTime = timeInput ? timeInput.value : 'Как можно скорее';
+    const cardText = cardInput ? cardInput.value.trim() : '';
+    const comment = commentInput ? commentInput.value.trim() : '';
+
+    const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const orderId = 'FLW-' + Math.floor(1000 + Math.random() * 9000);
+
+    const itemsSummary = cart.map((i, idx) => `${idx + 1}. ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)`).join('\n');
+
+    // Build friendly WhatsApp message
+    const waText = encodeURIComponent(
+`Здравствуйте! Хочу оформить заказ в салоне «Роза роз» [${orderId}]:
+
+Состав заказа:
+${itemsSummary}
+
+Сумма: ${totalSum.toLocaleString('ru-RU')} ₽
+Способ: ${deliveryType}${address ? ` (${address})` : ''}
+Время: ${readyTime}
+Имя: ${customerName}
+Телефон: ${customerPhone}
+${cardText ? `Текст для открытки: «${cardText}»\n` : ''}${comment ? `Пожелания: ${comment}` : ''}`
+    );
+
+    // Clear cart and close modal
+    cart = [];
+    saveCart();
+
+    if (checkoutModalOverlay) {
+      checkoutModalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    showToast(`Заказ ${orderId} принят! Открываем WhatsApp для согласования...`);
+
+    // Open WhatsApp to florist +7 925 290-55-50
+    setTimeout(() => {
+      window.open(`https://wa.me/79252905550?text=${waText}`, '_blank');
+    }, 1200);
+  });
+}
 
 // ==========================================================================
-// 9. MOBILE MENU TOGGLE
+// 8. TOAST NOTIFICATION UTILITY
 // ==========================================================================
+let toastTimer = null;
+function showToast(message) {
+  if (!toastNotification || !toastText) return;
+  toastText.textContent = message;
+  toastNotification.classList.add('show');
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toastNotification.classList.remove('show');
+  }, 3500);
+}
+
+// Copy address button
+const copyAddressBtn = document.getElementById('copyAddressBtn');
+if (copyAddressBtn) {
+  copyAddressBtn.addEventListener('click', () => {
+    const address = 'Московская область, г. Мытищи, Рождественская ул., 11';
+    navigator.clipboard.writeText(address).then(() => {
+      showToast('Адрес скопирован в буфер обмена');
+    }).catch(() => {
+      showToast('г. Мытищи, Рождественская ул., 11');
+    });
+  });
+}
+
+// Mobile burger
 if (burgerBtn && navMenu) {
   burgerBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
+    burgerBtn.classList.toggle('active');
+    navMenu.classList.toggle('mobile-open');
   });
 
   navMenu.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
+      burgerBtn.classList.remove('active');
+      navMenu.classList.remove('mobile-open');
     });
   });
 }
 
-// ==========================================================================
-// 10. OPENING HOURS DYNAMIC CHECK
-// ==========================================================================
-function checkOpeningHours() {
-  const badge = document.getElementById('liveStatusBadge');
-  if (!badge) return;
+// Reviews marquee buttons
+const revPrevBtn = document.getElementById('revPrevBtn');
+const revNextBtn = document.getElementById('revNextBtn');
+const reviewsMarquee = document.getElementById('reviewsMarquee');
 
-  const now = new Date();
-  const hours = now.getHours();
-  // Open 08:00 to 22:00
-  const isOpen = hours >= 8 && hours < 22;
-
-  const dot = badge.querySelector('.status-dot');
-  const text = badge.querySelector('.status-text');
-
-  if (isOpen) {
-    dot.style.backgroundColor = '#22c55e';
-    dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.9)';
-    text.textContent = '08:00 – 22:00';
-  } else {
-    dot.style.backgroundColor = '#f59e0b';
-    dot.style.boxShadow = '0 0 10px rgba(245, 158, 11, 0.9)';
-    text.textContent = 'Откроемся в 08:00';
-  }
+if (revPrevBtn && reviewsMarquee) {
+  revPrevBtn.addEventListener('click', () => {
+    reviewsMarquee.scrollBy({ left: -340, behavior: 'smooth' });
+  });
+}
+if (revNextBtn && reviewsMarquee) {
+  revNextBtn.addEventListener('click', () => {
+    reviewsMarquee.scrollBy({ left: 340, behavior: 'smooth' });
+  });
 }
 
-// ==========================================================================
-// 11. ANIMATED RATING 5.0 & STARS
-// ==========================================================================
-function initRatingAnimation() {
-  const ratingCounter = document.getElementById('ratingCounter');
-  const ratingStars = document.getElementById('ratingStars');
-  const yandexBanner = document.getElementById('yandexBanner');
-  if (!ratingCounter || !yandexBanner) return;
-
-  let hasAnimated = false;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimated) {
-        hasAnimated = true;
-        animateRatingCounter(ratingCounter);
-        if (ratingStars) {
-          ratingStars.classList.add('animate');
-        }
-      }
-    });
-  }, { threshold: 0.35 });
-
-  observer.observe(yandexBanner);
-}
-
-function animateRatingCounter(elem) {
-  const target = parseFloat(elem.getAttribute('data-target') || '5.0');
-  const duration = 1600;
-  const start = 0.0;
-  const startTime = performance.now();
-
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    
-    // Smooth easeOutExpo curve
-    const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-    const currentVal = (start + (target - start) * ease).toFixed(1);
-    
-    elem.textContent = currentVal;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      elem.textContent = target.toFixed(1);
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
-// ==========================================================================
-// 12. REVIEWS MARQUEE CAROUSEL INTERACTIVITY
-// ==========================================================================
-function initReviewsMarquee() {
-  const track = document.getElementById('reviewsTrack');
-  const viewport = document.getElementById('reviewsMarquee');
-  const prevBtn = document.getElementById('revPrevBtn');
-  const nextBtn = document.getElementById('revNextBtn');
-  if (!track || !viewport) return;
-
-  let manualOffset = 0;
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      manualOffset -= 320;
-      applyManualNudge();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      manualOffset += 320;
-      applyManualNudge();
-    });
-  }
-
-  function applyManualNudge() {
-    track.style.animationPlayState = 'paused';
-    track.style.transition = 'transform 0.4s ease';
-    track.style.transform = `translateX(calc(-50% + ${manualOffset}px))`;
-    
-    setTimeout(() => {
-      track.style.transition = '';
-      track.style.animationPlayState = 'running';
-    }, 1800);
-  }
-}
-
-// ==========================================================================
-// 13. MINIMALIST MAP CONTROLS
-// ==========================================================================
-function initMapControls() {
-  const copyBtn = document.getElementById('copyAddressBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const address = 'г. Королёв, Подмосковная ул., 7';
-      navigator.clipboard.writeText(address).then(() => {
-        showToast('Точный адрес скопирован в буфер обмена!');
-      }).catch(() => {
-        showToast('Подмосковная ул., 7');
-      });
-    });
-  }
-}
-
-// ==========================================================================
-// 15. DYNAMIC STORE SETTINGS & REVIEWS RENDERER
-// ==========================================================================
-function applyStoreSettings() {
-  try {
-    const raw = localStorage.getItem('obsidian_store_settings_v1');
-    if (!raw) return;
-    const s = JSON.parse(raw);
-
-    if (s.phone) {
-      document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-        a.href = `tel:${s.phone.replace(/[^+\d]/g, '')}`;
-        if (a.classList.contains('info-val') || a.textContent.includes('+7')) {
-          a.textContent = s.phone;
-        }
-      });
-    }
-
-    const badge = document.getElementById('liveStatusBadge');
-    if (badge && s.statusMode && s.statusMode !== 'auto') {
-      const dot = badge.querySelector('.status-dot');
-      const text = badge.querySelector('.status-text');
-      if (s.statusMode === 'open') {
-        if (dot) {
-          dot.style.backgroundColor = '#22c55e';
-          dot.style.boxShadow = '0 0 10px rgba(34, 197, 94, 0.9)';
-        }
-        if (text) text.textContent = s.hoursWeekdays || '08:00 – 22:00';
-      } else if (s.statusMode === 'closed') {
-        if (dot) {
-          dot.style.backgroundColor = '#ef4444';
-          dot.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.9)';
-        }
-        if (text) text.textContent = 'Сейчас закрыто';
-      }
-    }
-  } catch (e) {
-    console.warn('Could not apply store settings', e);
-  }
-}
-
-function renderDynamicReviews() {
-  const track = document.getElementById('reviewsTrack');
-  if (!track) return;
-  try {
-    const raw = localStorage.getItem('obsidian_reviews_v1');
-    if (!raw) return;
-    const list = JSON.parse(raw);
-    if (!Array.isArray(list) || list.length === 0) return;
-
-    const renderCard = (rev, isClone = false) => `
-      <div class="review-card" ${isClone ? 'aria-hidden="true"' : ''}>
-        <div class="review-card-top">
-          <div class="author-info">
-            <div class="author-avatar-wrap">
-              <img src="${rev.avatar || 'assets/images/avatar_sofia.jpg'}" alt="${rev.author}" class="author-avatar-img" loading="lazy" onerror="this.src='assets/images/avatar_sofia.jpg'">
-              <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
-                <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-              </span>
-            </div>
-            <div>
-              <div class="author-name">${rev.author}</div>
-              <div class="author-level">${rev.role || 'Знаток города'}</div>
-            </div>
-          </div>
-          <div class="stars-vector-row">
-            ${Array.from({ length: rev.stars || 5 }).map(() => `
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            `).join('')}
-          </div>
-        </div>
-        <p class="review-text">«${rev.text}»</p>
-        <div class="review-date">${rev.date || 'Яндекс Карты'}</div>
-      </div>
-    `;
-
-    track.innerHTML = list.map(r => renderCard(r, false)).join('') + list.map(r => renderCard(r, true)).join('');
-  } catch (e) {
-    console.warn('Could not render dynamic reviews', e);
-  }
-}
-
-// Cross-tab real-time synchronization listener
-window.addEventListener('storage', (e) => {
-  if (!e.key || e.key === MENU_STORAGE_KEY) {
-    MENU_DATA = loadMenuData();
-    renderCatalog();
-  }
-  if (!e.key || e.key === 'obsidian_featured_beans_v1') {
-    renderFeaturedBeansSection();
-  }
-  if (!e.key || e.key === 'obsidian_store_settings_v1') {
-    applyStoreSettings();
-  }
-  if (!e.key || e.key === 'obsidian_reviews_v1') {
-    renderDynamicReviews();
-  }
-});
-
-// ==========================================================================
-// 16. INITIALIZATION
-// ==========================================================================
+// Initial render
 document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
-  renderFeaturedBeansSection();
-  applyStoreSettings();
-  renderDynamicReviews();
   updateCartUI();
-  checkOpeningHours();
-  initRatingAnimation();
-  initReviewsMarquee();
-  initMapControls();
 });
+
+renderCatalog();
+updateCartUI();

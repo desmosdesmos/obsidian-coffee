@@ -1,31 +1,34 @@
 /* ==========================================================================
-   OBSIDIAN // 07 — ARCHITECTURAL SPECIALTY COFFEE ROASTERS
-   Design: Cyber-Brutalism / Avant-Garde Swiss Typography / Deep Cinema Blur
-   Fonts: Unbounded (Headings & Display) + Manrope (Clean Interface)
+   РОЗА РОЗ // 11 — САЛОН ЦВЕТОВ & КРУГЛОСУТОЧНАЯ ДОСТАВКА В МЫТИЩАХ
+   Design: Modern Dark Floral Editorial / Bespoke Glassmorphism / Cinema Blur
+   Fonts: Unbounded (Headings) + Manrope (Clean Interface) + Cormorant Accent
    ========================================================================== */
 
 :root {
   --font-heading: 'Unbounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
 
-  /* Colors */
-  --bg-deep: #090807;
-  --bg-surface: #12100f;
-  --bg-surface-elevated: #1a1715;
-  --bg-card: rgba(18, 16, 14, 0.78);
-  --bg-card-hover: rgba(26, 23, 20, 0.94);
+  /* Colors: Velvet Midnight + Dusty Rose & Champagne Gold */
+  --bg-deep: #090b0c;
+  --bg-surface: #101214;
+  --bg-surface-elevated: #171a1c;
+  --bg-card: rgba(16, 19, 21, 0.78);
+  --bg-card-hover: rgba(24, 28, 31, 0.94);
   
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-medium: rgba(255, 255, 255, 0.16);
-  --border-active: rgba(255, 255, 255, 0.35);
+  --border-active: rgba(214, 117, 132, 0.45);
 
-  --accent-orange: #ff5722;
-  --accent-orange-hover: #ff6e3d;
-  --accent-amber: #f59e0b;
+  --accent-orange: #d67584; /* Soft dusty rose / petals */
+  --accent-orange-hover: #e28a97;
+  --accent-rose: #d67584;
+  --accent-amber: #d8af65; /* Champagne gold */
+  --accent-emerald: #3fa576; /* Botanical green */
   
-  --text-main: #f5f3ef;
-  --text-muted: #a39c94;
-  --text-dim: #6e6761;
+  --text-main: #faf7f4;
+  --text-muted: #a69f99;
+  --text-dim: #706963;
 
   /* Dynamic scroll blur & parallax */
   --scroll-blur: 0px;
@@ -140,7 +143,7 @@ button, input, select {
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 45%, rgba(12, 10, 8, 0.1) 0%, rgba(9, 8, 7, 0.72) 70%, rgba(6, 5, 5, 0.94) 100%);
+  background: radial-gradient(circle at 50% 45%, rgba(10, 12, 14, 0.12) 0%, rgba(8, 10, 11, 0.70) 70%, rgba(5, 6, 7, 0.94) 100%);
   opacity: var(--overlay-opacity, 0.38);
   transition: opacity 0.08s linear;
   will-change: opacity;

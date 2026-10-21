@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>OBSIDIAN // 07 — Спешелти кофейня и обжарка | Королёв, Подмосковная 7</title>
-  <meta name="description" content="Минималистичная спешелти кофейня Obsidian // 07 в Королёве: 100% арабика, свежая обжарка, айс-латте, завтраки весь день и авторские десерты. Рейтинг 5.0 на Яндекс Картах.">
+  <title>РОЗА РОЗ — Салон цветов и круглосуточная доставка | Мытищи, Рождественская 11</title>
+  <meta name="description" content="Флористический салон «Роза роз» в Мытищах: свежие розы Эквадора и Кении, авторские букеты, композиции в шляпных коробках. Доставка от 45 минут 24/7. Рейтинг 4.9 на Яндекс Картах.">
   
-  <!-- Modern Editorial & Avant-Garde Fonts: Unbounded + Manrope -->
+  <!-- Editorial & Avant-Garde Fonts: Unbounded + Manrope + Cormorant Garamond -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,7 +18,7 @@
   <!-- Video Background with Dynamic Hardware-Accelerated Scroll Blur & Parallax -->
   <div class="video-background-container" id="videoBgContainer" aria-hidden="true">
     <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
-      <source src="gemini_generated_video_e50f7306.mp4" type="video/mp4">
+      <source src="gemini_generated_video_e9bfe32d.mp4" type="video/mp4">
     </video>
     <!-- Vignette Tint -->
     <div class="video-overlay" id="videoOverlay"></div>
@@ -29,24 +29,25 @@
   <!-- Header / Navigation Bar with Hover Schedule Popup -->
   <header class="header" id="header">
     <div class="header-inner container">
-      <!-- Luxury Brand Logo: OBSIDIAN // 07 -->
-      <a href="#hero" class="brand-logo" aria-label="OBSIDIAN главная">
+      <!-- Luxury Brand Logo: РОЗА РОЗ // 11 -->
+      <a href="#hero" class="brand-logo" aria-label="РОЗА РОЗ главная">
         <span class="logo-symbol">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="currentColor" stroke-width="2"/>
-            <polygon points="12,6 18,10 18,14 12,18 6,14 6,10" fill="var(--accent-orange)"/>
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 4 C14 8, 16 10, 16 12 C16 14.5, 14 16.5, 12 16.5 C10 16.5, 8 14.5, 8 12 C8 10, 10 8, 12 4 Z" fill="var(--accent-orange)" opacity="0.85"/>
+            <circle cx="12" cy="12" r="2.5" fill="#faf7f4"/>
           </svg>
         </span>
-        <span class="logo-text">OBSIDIAN<span class="logo-accent">// 07</span></span>
-        <span class="logo-badge">ROASTERY</span>
+        <span class="logo-text">РОЗА РОЗ<span class="logo-accent">// 11</span></span>
+        <span class="logo-badge">FLORAL STUDIO</span>
       </a>
 
       <!-- Desktop Nav Menu -->
       <nav class="nav-menu" id="navMenu">
-        <a href="#menu" class="nav-link">Меню</a>
-        <a href="#beans" class="nav-link">Зерно</a>
+        <a href="#menu" class="nav-link">Каталог</a>
+        <a href="#showcase" class="nav-link">Флагман</a>
         <a href="#facts" class="nav-link">Стандарты</a>
-        <a href="#reviews" class="nav-link">Отзывы 5.0</a>
+        <a href="#reviews" class="nav-link">Отзывы 4.9</a>
         <a href="#contacts" class="nav-link">Контакты</a>
       </nav>
 
@@ -59,13 +60,13 @@
             <span class="status-indicator-ring">
               <span class="status-dot"></span>
             </span>
-            <span class="status-text">08:00 – 22:00</span>
+            <span class="status-text">Круглосуточно · 24/7</span>
             <svg class="chevron-micro" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
 
-          <!-- Schedule Dropdown Card (Появляется при наведении) -->
+          <!-- Schedule Dropdown Card -->
           <div class="schedule-dropdown" id="scheduleDropdown">
             <div class="schedule-dropdown-header">
               <div class="dropdown-title">РЕЖИМ РАБОТЫ</div>
@@ -76,16 +77,16 @@
             </div>
             <div class="schedule-table">
               <div class="schedule-row">
-                <span class="schedule-days">Понедельник — Пятница</span>
-                <span class="schedule-hours">08:00 — 22:00</span>
+                <span class="schedule-days">Салон на Рождественской, 11</span>
+                <span class="schedule-hours">Круглосуточно</span>
               </div>
               <div class="schedule-row">
-                <span class="schedule-days">Суббота — Воскресенье</span>
-                <span class="schedule-hours">08:00 — 22:00</span>
+                <span class="schedule-days">Курьерская доставка</span>
+                <span class="schedule-hours">24/7 от 45 мин</span>
               </div>
               <div class="schedule-row sub-row">
-                <span class="schedule-days">Кухня и горячий бар</span>
-                <span class="schedule-hours">до 21:45</span>
+                <span class="schedule-days">Сборка авторских букетов</span>
+                <span class="schedule-hours">от 20 минут</span>
               </div>
             </div>
             <div class="schedule-dropdown-footer">
@@ -93,7 +94,7 @@
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                 <circle cx="12" cy="10" r="3"/>
               </svg>
-              <span>г. Королёв, Подмосковная ул., 7</span>
+              <span>г. Мытищи, Рождественская ул., 11</span>
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@
   </header>
 
   <main>
-    <!-- HERO SECTION (Строго по референсу) -->
+    <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="container hero-container">
         
@@ -129,23 +130,23 @@
               <polygon points="5,0 10,5 5,10 0,5" fill="var(--accent-orange)"/>
             </svg>
           </span>
-          <span class="eyebrow-text">OBSIDIAN // 07 · ARCHITECTURAL COFFEE ROASTERS</span>
-          <span class="eyebrow-coords">55.9148° N, 37.8685° E</span>
+          <span class="eyebrow-text">РОЗА РОЗ · САЛОН ЦВЕТОВ И ДОСТАВКА В МЫТИЩАХ</span>
+          <span class="eyebrow-coords">55.9176° N, 37.7600° E</span>
         </div>
 
         <!-- Main Giant Monolithic Headline -->
         <div class="hero-title-wrapper">
           <h1 class="hero-title">
-            КОФЕ,<br>
-            КОТОРЫЙ РАБОТАЕТ<br>
-            ТАК ЖЕ ЧЕСТНО, КАК ВЫ.
+            ЦВЕТЫ,<br>
+            КОТОРЫЕ ГОВОРЯТ<br>
+            БЕЗ ЛИШНИХ СЛОВ.
           </h1>
         </div>
 
-        <!-- Lower Interactive Blocks (As in reference screenshot: left & right) -->
+        <!-- Lower Interactive Blocks -->
         <div class="hero-bottom-grid">
           
-          <!-- Left Element (Reference left card) -->
+          <!-- Left Element -->
           <a href="#menu" class="hero-card hero-card-left" id="heroMenuShortcut">
             <div class="hero-card-marker">
               <div class="radar-circle">
@@ -158,12 +159,12 @@
               </div>
             </div>
             <div class="hero-card-content">
-              <h2 class="hero-card-title">ОТКРЫТЬ МЕНЮ</h2>
+              <h2 class="hero-card-title">ВЫБРАТЬ БУКЕТ</h2>
               <p class="hero-card-desc">
-                Айс-латте, фильтр, батч-брю, сырники и свежие чизкейки. Выбирайте онлайн или на баре.
+                Пионовидные розы, гортензии, шляпные коробки и авторские охапки со стойкостью от 10 дней.
               </p>
               <div class="hero-card-action">
-                <span>Арсенал позиций</span>
+                <span>Каталог композиций</span>
                 <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -172,7 +173,7 @@
             </div>
           </a>
 
-          <!-- Right Element (Reference right card) -->
+          <!-- Right Element -->
           <a href="#reviews" class="hero-card hero-card-right" id="heroLocationShortcut">
             <div class="hero-card-marker">
               <div class="matrix-badge">
@@ -190,12 +191,12 @@
               </div>
             </div>
             <div class="hero-card-content">
-              <h2 class="hero-card-title">РЕЙТИНГ 5.0 В ЯНДЕКС КАРТАХ</h2>
+              <h2 class="hero-card-title">РЕЙТИНГ 4.9 В ЯНДЕКС КАРТАХ</h2>
               <p class="hero-card-desc">
-                Победитель премии «Хорошее место 2026». Королёв, Подмосковная ул., 7.
+                127+ проверенных отзывов. Мытищи, Рождественская ул., 11 (470 м от станции).
               </p>
               <div class="hero-card-action">
-                <span>Читать 436+ отзывов</span>
+                <span>Читать отзывы гостей</span>
                 <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -218,20 +219,20 @@
     <!-- Ticker Strip -->
     <section class="ticker-strip" aria-hidden="true">
       <div class="ticker-track">
-        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА Q-86</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 «ХОРОШЕЕ МЕСТО 2026»</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY SPACE</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> 100% СПЕШЕЛТИ АРАБИКА Q-86</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ВЫПЕЧКА КАЖДОЕ УТРО К 08:00</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> БАТЧ-БРЮ НА ЗЕРНЕ ЭФИОПИИ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 «ХОРОШЕЕ МЕСТО 2026»</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> РОЗЕТКИ У КАЖДОГО СТОЛИКА</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> ЗАВТРАКИ ВЕСЬ ДЕНЬ</div>
-        <div class="ticker-item"><span class="ticker-dot"></span> PET-FRIENDLY SPACE</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СВЕЖИЕ ПОСТАВКИ ИЗ ЭКВАДОРА И ГОЛЛАНДИИ 3 РАЗА В НЕДЕЛЮ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ФОТО БУКЕТА В WHATSAPP ПЕРЕД ОТПРАВКОЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> АКВАБОКС И КРИЗАЛ В ПОДАРОК К КАЖДОМУ ЗАКАЗУ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> КРУГЛОСУТОЧНАЯ ДОСТАВКА 24/7 ОТ 45 МИНУТ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 4.9 В ЯНДЕКС КАРТАХ · 127 ОТЗЫВОВ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ОТКРЫТКА С ВАШИМ ТЕКСТОМ БЕСПЛАТНО</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СТОЙКОСТЬ ЦВЕТОВ ОТ 10 ДО 14 ДНЕЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СВЕЖИЕ ПОСТАВКИ ИЗ ЭКВАДОРА И ГОЛЛАНДИИ 3 РАЗА В НЕДЕЛЮ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ФОТО БУКЕТА В WHATSAPP ПЕРЕД ОТПРАВКОЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> АКВАБОКС И КРИЗАЛ В ПОДАРОК К КАЖДОМУ ЗАКАЗУ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> КРУГЛОСУТОЧНАЯ ДОСТАВКА 24/7 ОТ 45 МИНУТ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 4.9 В ЯНДЕКС КАРТАХ · 127 ОТЗЫВОВ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ОТКРЫТКА С ВАШИМ ТЕКСТОМ БЕСПЛАТНО</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СТОЙКОСТЬ ЦВЕТОВ ОТ 10 ДО 14 ДНЕЙ</div>
       </div>
     </section>
 
@@ -240,10 +241,10 @@
       <div class="container">
         
         <div class="section-header">
-          <div class="section-label">АРСЕНАЛ ТОВАРОВ</div>
-          <h2 class="section-title">МЕНЮ КОФЕЙНИ</h2>
+          <div class="section-label">АССОРТИМЕНТ САЛОНА</div>
+          <h2 class="section-title">КАТАЛОГ БУКЕТОВ</h2>
           <p class="section-subtitle">
-            Всё по факту: точный граммаж, свежая обжарка, стабильный рецепт и чистый вкус без компромиссов.
+            Только свежий срез: плотные тугие бутоны, честный стебель, бережная сборка и доставка на воде в аквабоксе.
           </p>
         </div>
 
@@ -257,31 +258,33 @@
                 <rect x="14" y="14" width="7" height="7"/>
                 <rect x="3" y="14" width="7" height="7"/>
               </svg>
-              <span>Все (12)</span>
+              <span>Все (14)</span>
             </button>
-            <button class="cat-btn" data-category="coffee">
+            <button class="cat-btn" data-category="author">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+                <path d="M12 2C7 6 7 12 12 16 C17 12 17 6 12 2 Z"/>
+                <path d="M12 16 L12 22"/>
               </svg>
-              <span>Кофе & Напитки (5)</span>
+              <span>Авторские букеты (4)</span>
             </button>
-            <button class="cat-btn" data-category="food">
+            <button class="cat-btn" data-category="roses">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 8h-1a6 6 0 00-10 0H6a4 4 0 00-4 4v1h20v-1a4 4 0 00-4-4zM2 17h20v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2z"/>
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M12 8c2 2 2 6 0 8"/>
               </svg>
-              <span>Блюда & Завтраки (4)</span>
+              <span>Розы & Моно (4)</span>
             </button>
-            <button class="cat-btn" data-category="desserts">
+            <button class="cat-btn" data-category="boxes">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l3 5h-6l3-5zM4 14l8-4 8 4v6H4v-6z"/>
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
               </svg>
-              <span>Десерты (2)</span>
+              <span>В коробках & Корзинах (3)</span>
             </button>
-            <button class="cat-btn" data-category="beans">
+            <button class="cat-btn" data-category="seasonal">
               <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 3h12l2 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1V8l2-5zM4 8h16"/>
+                <path d="M12 3a9 9 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
               </svg>
-              <span>Зерно с собой (1)</span>
+              <span>Гортензии & Сезонные (3)</span>
             </button>
           </div>
 
@@ -290,7 +293,7 @@
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <input type="text" id="catalogSearch" placeholder="Поиск напитка или блюда..." aria-label="Поиск по меню">
+            <input type="text" id="catalogSearch" placeholder="Поиск букета (розы, гортензии, пионы, коробка)..." aria-label="Поиск по каталогу цветов">
             <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display:none;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -308,14 +311,14 @@
       </div>
     </section>
 
-    <!-- BEANS SHOWCASE (ЗЕРНО ДЛЯ ДОМА И ОФИСА) -->
-    <section class="beans-showcase-section section-padding" id="beans">
+    <!-- FLAGSHIP SHOWCASE (ФЛАГМАНСКАЯ КОМПОЗИЦИЯ) -->
+    <section class="beans-showcase-section section-padding" id="showcase">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">МИКРО-ОБЖАРКА // BATCH ROASTING</div>
-          <h2 class="section-title">ЗЕРНО ДЛЯ ДОМА И ОФИСА</h2>
+          <div class="section-label">ФЛАГМАНСКАЯ КОМПОЗИЦИЯ // SIGNATURE ARRANGEMENT</div>
+          <h2 class="section-title">ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»</h2>
           <p class="section-subtitle">
-            Мы отбираем исключительно 100% арабику свежего урожая с оценкой Q-Grader от 85 баллов. Каждая пачка снабжена дегазационным клапаном и zip-lock замком.
+            Пышная гармония премиальных роз Эквадора, французской эустомы и веточек ароматного эвкалипта. Композиция собрана на влажном флористическом оазисе и не требует вазы.
           </p>
         </div>
 
@@ -324,59 +327,59 @@
           <!-- Large Visual Card -->
           <div class="beans-media-card">
             <div class="beans-image-wrap">
-              <img src="assets/images/specialty_bean_bags.jpg" alt="Пачки спешелти кофе Obsidian // 07" loading="lazy">
+              <img src="assets/images/flowers/flower_3.jpg" alt="Шляпная коробка Royal Blush в салоне Роза роз" loading="lazy">
               <div class="beans-float-badge">
                 <span class="badge-dot"></span>
-                <span>СВЕЖИЙ УРОЖАЙ 2026</span>
+                <span>СВЕЖИЙ ПРИВОЗ СЕГОДНЯ</span>
               </div>
             </div>
             <div class="beans-profile-row">
               <div class="profile-item">
-                <div class="profile-label">ОБЖАРКА</div>
-                <div class="profile-val">Omni-Roast / Каждую неделю</div>
+                <div class="profile-label">ПОСТАВКА</div>
+                <div class="profile-val">Плантации Эквадора</div>
               </div>
               <div class="profile-item">
-                <div class="profile-label">Q-GRADE</div>
-                <div class="profile-val">86.25 баллов</div>
+                <div class="profile-label">СТОЙКОСТЬ</div>
+                <div class="profile-val">10–14 дней в оазисе</div>
               </div>
               <div class="profile-item">
-                <div class="profile-label">ПОМОЛ</div>
-                <div class="profile-val">Бесплатно под ваш девайс</div>
+                <div class="profile-label">СБОРКА</div>
+                <div class="profile-val">25 минут флористом</div>
               </div>
             </div>
           </div>
 
-          <!-- Interactive Bean Selection Card -->
+          <!-- Interactive Selection Card -->
           <div class="beans-config-card">
-            <div class="beans-card-tag">ЛУЧШИЙ ВЫБОР ДЛЯ ВОРОНКИ И ФИЛЬТРА</div>
-            <h3 class="beans-card-title">ЭФИОПИЯ ИРГАЧЕФФЕ // G1</h3>
+            <div class="beans-card-tag">ЛУЧШИЙ ВЫБОР ДЛЯ ПРАЗДНИКА И ПОДАРКА</div>
+            <h3 class="beans-card-title">ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»</h3>
             <div class="beans-descriptors">
-              <span class="desc-pill">Бергамот</span>
-              <span class="desc-pill">Белый персик</span>
-              <span class="desc-pill">Жасмин</span>
-              <span class="desc-pill">Чёрный чай</span>
+              <span class="desc-pill">Пионовидная роза Kahala</span>
+              <span class="desc-pill">Белая эустома</span>
+              <span class="desc-pill">Эвкалипт цинерея</span>
+              <span class="desc-pill">Диантус</span>
             </div>
 
             <p class="beans-description">
-              Яркий искрящийся лот мытой обработки из региона Гедеб. Чистейшая кислотность тропических фруктов, нежное цветочное тело и сладкое медовое послевкусие.
+              Идеальный подарок без забот: цветы не нужно подрезать и искать подходящую вазу. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.
             </p>
 
-            <!-- Grind Selector Tool -->
+            <!-- Packaging Selector Tool -->
             <div class="grind-selector-box">
-              <div class="selector-title">ВЫБЕРИТЕ СПОСОБ ПОМОЛА:</div>
+              <div class="selector-title">ВЫБЕРИТЕ ФОРМАТ ОФОРМЛЕНИЯ:</div>
               <div class="grind-options-grid" id="grindOptionsGrid">
-                <button class="grind-pill active" data-grind="В зёрнах">В зёрнах</button>
-                <button class="grind-pill" data-grind="Фильтр / V60">Фильтр / V60</button>
-                <button class="grind-pill" data-grind="Эспрессо">Эспрессо</button>
-                <button class="grind-pill" data-grind="Гейзер / Турка">Гейзер / Турка</button>
+                <button class="grind-pill active" data-grind="Шляпная коробка">Шляпная коробка</button>
+                <button class="grind-pill" data-grind="Дизайнерская бумага">Дизайнерская бумага</button>
+                <button class="grind-pill" data-grind="Классический крафт">Классический крафт</button>
+                <button class="grind-pill" data-grind="Стеклянная ваза">Стеклянная ваза</button>
               </div>
             </div>
 
             <!-- Price & Order Bar -->
             <div class="beans-order-bar">
               <div class="beans-price-box">
-                <span class="beans-price-value">850&nbsp;₽</span>
-                <span class="beans-price-meta">/ 250 г</span>
+                <span class="beans-price-value">4 800&nbsp;₽</span>
+                <span class="beans-price-meta">/ композиция</span>
               </div>
               <button class="btn btn-primary" id="addBeansToCartBtn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -393,15 +396,15 @@
       </div>
     </section>
 
-    <!-- FACTS & STANDARDS (БЕЗ ВОДЫ) -->
+    <!-- FACTS & STANDARDS -->
     <section class="standards-section section-padding" id="facts">
       <div class="container">
         
         <div class="section-header">
-          <div class="section-label">КАЧЕСТВО БЕЗ КОМПРОМИССОВ</div>
-          <h2 class="section-title">СТАНДАРТЫ OBSIDIAN // 07</h2>
+          <div class="section-label">ПРИНЦИПЫ РАБОТЫ</div>
+          <h2 class="section-title">СТАНДАРТЫ САЛОНА «РОЗА РОЗ»</h2>
           <p class="section-subtitle">
-            Только факты и прозрачные цифры. Почему наш кофе держит высокую планку каждый день.
+            Факты о нашем подходе к цветам. Почему наши букеты стоят дома до двух недель и дарят чистую радость.
           </p>
         </div>
 
@@ -412,18 +415,17 @@
               <div class="standard-num">01</div>
               <div class="standard-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
                 </svg>
               </div>
             </div>
-            <h3 class="standard-title">ЗЕРНО И ОБЖАРКА</h3>
+            <h3 class="standard-title">ХОЛОДНАЯ ЦЕПЬ И СВЕЖЕСТЬ</h3>
             <p class="standard-text">
-              Используем исключительно зерно уровня Specialty с оценкой Q-Grader выше 85 баллов. Ротация сортов каждые две недели: яркая мытая Эфиопия под фильтр и плотная сладкая Колумбия под эспрессо.
+              Все цветы хранятся в профессиональной холодильной камере при температуре +4...+6°C и влажности 85%. Мы получаем свежие поставки с плантаций Эквадора, Голландии и Кении трижды в неделю.
             </p>
             <div class="standard-tags">
-              <span>Мытая обработка</span>
-              <span>Свежий урожай</span>
+              <span>Климат-контроль +4°C</span>
+              <span>Поставки 3 раза в неделю</span>
             </div>
           </div>
 
@@ -432,17 +434,18 @@
               <div class="standard-num">02</div>
               <div class="standard-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M9 12l2 2 4-4"/>
                 </svg>
               </div>
             </div>
-            <h3 class="standard-title">ОБОРУДОВАНИЕ И ВОДА</h3>
+            <h3 class="standard-title">ЧЕСТНЫЙ СРЕЗ БЕЗ МАСКИРОВКИ</h3>
             <p class="standard-text">
-              Экстракция на двухгруппной итальянской машине с PID-контролем температуры до 0.1°C. Кофемолки с плоскими 98-мм жерновами. 4-ступенчатый обратный осмос с минерализацией (TDS 110 ppm).
+              Мы никогда не прячем несвежие стебли в середину букета. Каждый цветок проходит строгий осмотр: упругий бутон, плотный зеленый лист и чистый срез без бактериального налета.
             </p>
             <div class="standard-tags">
-              <span>TDS 110 ppm</span>
-              <span>PID контроль</span>
+              <span>Ручной отбор стеблей</span>
+              <span>Стойкость от 10 дней</span>
             </div>
           </div>
 
@@ -451,17 +454,17 @@
               <div class="standard-num">03</div>
               <div class="standard-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
                 </svg>
               </div>
             </div>
-            <h3 class="standard-title">КУХНЯ И ВЫПЕЧКА</h3>
+            <h3 class="standard-title">АКВАБОКС И КРИЗАЛ В ПОДАРОК</h3>
             <p class="standard-text">
-              Никаких замороженных полуфабрикатов. Свежие круассаны, баскские чизкейки и сырники из фермерского творога выпекаются утром. Завтраки готовим на протяжении всего рабочего дня.
+              Каждый букет упаковывается во временный аквабокс с водой, чтобы не испытывать стресс при транспортировке. В комплект вкладываем пакетик профессионального кризала Chrysal и памятку по уходу.
             </p>
             <div class="standard-tags">
-              <span>К открытию 08:00</span>
-              <span>Фермерский творог</span>
+              <span>Доставка на воде</span>
+              <span>Подкормка Chrysal бесплатно</span>
             </div>
           </div>
 
@@ -470,17 +473,20 @@
               <div class="standard-num">04</div>
               <div class="standard-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
               </div>
             </div>
-            <h3 class="standard-title">ПРОСТРАНСТВО</h3>
+            <h3 class="standard-title">ФОТООТЧЕТ И СЕРВИС 24/7</h3>
             <p class="standard-text">
-              Эргономичные посадочные места, стабильный Wi-Fi 150 Мбит/с, розетки у каждого столика для комфортной работы. Гостеприимны к четвероногим друзьям (полный pet-friendly).
+              Принимаем заказы круглосуточно. Перед выездом курьера отправляем реальное фото и видео готового букета в WhatsApp или Telegram, чтобы вы были уверены в безупречном результате.
             </p>
             <div class="standard-tags">
-              <span>Wi-Fi 150 Mb/s</span>
-              <span>Pet-friendly</span>
+              <span>Фото перед отправкой</span>
+              <span>Доставка 24 часа</span>
             </div>
           </div>
 
@@ -489,7 +495,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS SECTION (УЛЬТРА-МИНИМАЛИСТИЧНЫЙ ЯНДЕКС 5.0) -->
+    <!-- REVIEWS SECTION -->
     <section class="reviews-section section-padding" id="reviews">
       <div class="container">
         
@@ -511,7 +517,7 @@
 
             <div class="score-row-minimal">
               <div class="rating-counter-box">
-                <span class="rating-num-big" id="ratingCounter" data-target="5.0">5.0</span>
+                <span class="rating-num-big" id="ratingCounter" data-target="4.9">4.9</span>
               </div>
               <div class="rating-stars-clean" id="ratingStars">
                 <svg class="star-svg" style="--i:1" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -523,25 +529,25 @@
             </div>
 
             <div class="rating-sub-row">
-              <span class="reviews-count-text">На основе 436 проверенных оценок гостей</span>
+              <span class="reviews-count-text">На основе 127 проверенных отзывов гостей</span>
               <div class="award-laurel-badge">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b">
                   <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 2z"/>
                 </svg>
-                <span>Премия «Хорошее место 2026»</span>
+                <span>Высокая оценка покупателей 2026</span>
                 <span class="award-shimmer-sweep"></span>
               </div>
             </div>
           </div>
 
           <div class="yandex-cta-col">
-            <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-direct-btn">
+            <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-direct-btn">
               <span>Смотреть все отзывы ↗</span>
             </a>
           </div>
         </div>
 
-        <!-- Reviews Carousel Bar: Auto-Scroll Indicator & Manual Shift Buttons -->
+        <!-- Reviews Carousel Bar -->
         <div class="reviews-marquee-header">
           <div class="marquee-indicator-pill">
             <span class="marquee-pulse-dot"></span>
@@ -557,7 +563,7 @@
           </div>
         </div>
 
-        <!-- Reviews Marquee Viewport with Continuous Seamless Flow to the Right -->
+        <!-- Reviews Marquee Viewport with Continuous Seamless Flow -->
         <div class="reviews-marquee-viewport" id="reviewsMarquee">
           <div class="marquee-edge-fade left-fade"></div>
           <div class="marquee-edge-fade right-fade"></div>
@@ -569,14 +575,14 @@
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_evorlova.jpg" alt="evorlova15" class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="Елена В." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">evorlova15</div>
-                    <div class="author-level">Знаток города 12 уровня</div>
+                    <div class="author-name">Елена В.</div>
+                    <div class="author-level">Знаток города 11 уровня</div>
                   </div>
                 </div>
                 <div class="stars-vector-row">
@@ -588,9 +594,9 @@
                 </div>
               </div>
               <p class="review-text">
-                «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
+                «Магазин «Роза Роз» — это настоящая находка в Мытищах! Цветы всегда свежайшие и стоят очень долго. Покупала здесь и розы, и сборные букеты, и открытки. Отдельное спасибо флористу Ирине за безупречный вкус и душевное отношение.»
               </p>
-              <div class="review-date">15 мая · Яндекс Карты</div>
+              <div class="review-date">18 сентября · Яндекс Карты</div>
             </div>
 
             <!-- CARD 2 -->
@@ -598,14 +604,14 @@
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_daria.jpg" alt="Дарья С." class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Дмитрий К." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">Дарья С.</div>
-                    <div class="author-level">Знаток города 7 уровня</div>
+                    <div class="author-name">Дмитрий К.</div>
+                    <div class="author-level">Местный житель</div>
                   </div>
                 </div>
                 <div class="stars-vector-row">
@@ -617,9 +623,9 @@
                 </div>
               </div>
               <p class="review-text">
-                «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
+                «Заказывал букет жене на годовщину ночью. Невероятно удобно, что работают круглосуточно! Написал в WhatsApp, согласовали состав по фото, через 40 минут курьер уже привёз цветы в аквабоксе. Супруга в полном восторге.»
               </p>
-              <div class="review-date">14 сентября · Яндекс Карты</div>
+              <div class="review-date">4 октября · Яндекс Карты</div>
             </div>
 
             <!-- CARD 3 -->
@@ -627,14 +633,14 @@
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_mikhail.jpg" alt="Михаил К." class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_daria.jpg" alt="Юлия М." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">Михаил К.</div>
-                    <div class="author-level">Знаток города 9 уровня</div>
+                    <div class="author-name">Юлия М.</div>
+                    <div class="author-level">Знаток города 8 уровня</div>
                   </div>
                 </div>
                 <div class="stars-vector-row">
@@ -646,9 +652,9 @@
                 </div>
               </div>
               <p class="review-text">
-                «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
+                «Флорист очень чутко помогла определиться с композицией под мой бюджет. Розы простояли почти две недели, ни один бутон не поник! Приятно, что бесплатно положили красивую открытку и кризал.»
               </p>
-              <div class="review-date">4 сентября · Яндекс Карты</div>
+              <div class="review-date">12 августа · Яндекс Карты</div>
             </div>
 
             <!-- CARD 4 -->
@@ -656,159 +662,13 @@
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_artem.jpg" alt="Артем В." class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_artem.jpg" alt="Алексей С." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">Артем В.</div>
-                    <div class="author-level">Местный житель</div>
-                  </div>
-                </div>
-                <div class="stars-vector-row">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-              </div>
-              <p class="review-text">
-                «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
-              </p>
-              <div class="review-date">18 августа · Яндекс Карты</div>
-            </div>
-
-            <!-- CARD 5 -->
-            <div class="review-card">
-              <div class="review-card-top">
-                <div class="author-info">
-                  <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_sofia.jpg" alt="София Н." class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="author-name">София Н.</div>
-                    <div class="author-level">Знаток города 10 уровня</div>
-                  </div>
-                </div>
-                <div class="stars-vector-row">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-              </div>
-              <p class="review-text">
-                «Безумно понравился баскский чизкейк и бриошь с авокадо! Атмосфера сдержанная, музыка не бьёт по ушам, бариста с душой рассказывают про регион произрастания зерен. Ставлю 5 из 5 без сомнений.»
-              </p>
-              <div class="review-date">22 июня · Яндекс Карты</div>
-            </div>
-
-            <!-- CARD 6 -->
-            <div class="review-card">
-              <div class="review-card-top">
-                <div class="author-info">
-                  <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_alexey.jpg" alt="Алексей Г." class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="author-name">Алексей Г.</div>
-                    <div class="author-level">Знаток города 8 уровня</div>
-                  </div>
-                </div>
-                <div class="stars-vector-row">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-              </div>
-              <p class="review-text">
-                «Заезжаю каждое утро за фильтром перед электричкой на Москву. Всегда стабильный яркий вкус, бариста работают четко и быстро. Приятно видеть в Королёве уровень спешелти кофеен Москвы.»
-              </p>
-              <div class="review-date">11 октября · Яндекс Карты</div>
-            </div>
-
-            <!-- DUPLICATE SET FOR SEAMLESS 100% INFINITE LOOP -->
-            <!-- CARD 1 (COPY) -->
-            <div class="review-card" aria-hidden="true">
-              <div class="review-card-top">
-                <div class="author-info">
-                  <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_evorlova.jpg" alt="evorlova15" class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex">
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="author-name">evorlova15</div>
-                    <div class="author-level">Знаток города 12 уровня</div>
-                  </div>
-                </div>
-                <div class="stars-vector-row">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-              </div>
-              <p class="review-text">
-                «Приятная атмосфера в заведении, всё чисто и аккуратно. Качество, подача и вкус блюд на высоте. Неплохой кофе, хорошие десерты. Периодически ходим на обед, отличное место, чтобы отвлечься и почитать книгу за чашкой кофе.»
-              </p>
-              <div class="review-date">15 мая · Яндекс Карты</div>
-            </div>
-
-            <!-- CARD 2 (COPY) -->
-            <div class="review-card" aria-hidden="true">
-              <div class="review-card-top">
-                <div class="author-info">
-                  <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_daria.jpg" alt="Дарья С." class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex">
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="author-name">Дарья С.</div>
-                    <div class="author-level">Знаток города 7 уровня</div>
-                  </div>
-                </div>
-                <div class="stars-vector-row">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                </div>
-              </div>
-              <p class="review-text">
-                «Часто заходим в эту кофейню с молодым человеком и остаёмся очень довольны! Хочется выделить замечательный персонал, готовый помочь сориентироваться по меню и подобрать нужный напиток. Очень вкусный медовик с брусникой!»
-              </p>
-              <div class="review-date">14 сентября · Яндекс Карты</div>
-            </div>
-
-            <!-- CARD 3 (COPY) -->
-            <div class="review-card" aria-hidden="true">
-              <div class="review-card-top">
-                <div class="author-info">
-                  <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_mikhail.jpg" alt="Михаил К." class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex">
-                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                    </span>
-                  </div>
-                  <div>
-                    <div class="author-name">Михаил К.</div>
+                    <div class="author-name">Алексей С.</div>
                     <div class="author-level">Знаток города 9 уровня</div>
                   </div>
                 </div>
@@ -821,23 +681,52 @@
                 </div>
               </div>
               <p class="review-text">
-                «Кофе здесь вкусный, в другие места в округе заходить не могу. Тут ещё и своё спешелти зерно продают — видно, что людям важен правильный рецепт и стабильная экстракция. Флэт уайт готовят превосходно.»
+                «Беру цветы только здесь, когда нужно поздравить маму или коллег. Свежая роза из Эквадора с крупным плотным бутоном. Цены честные и адекватные, без накрутки как в переходах.»
               </p>
-              <div class="review-date">4 сентября · Яндекс Карты</div>
+              <div class="review-date">29 июля · Яндекс Карты</div>
             </div>
 
-            <!-- CARD 4 (COPY) -->
-            <div class="review-card" aria-hidden="true">
+            <!-- CARD 5 -->
+            <div class="review-card">
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_artem.jpg" alt="Артем В." class="author-avatar-img" loading="lazy">
-                    <span class="avatar-badge-yandex">
+                    <img src="assets/images/avatar_sofia.jpg" alt="Анастасия Т." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">Артем В.</div>
+                    <div class="author-name">Анастасия Т.</div>
+                    <div class="author-level">Знаток города 6 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Очень стильная подарочная упаковка в матовую бумагу и атласные ленты. Никакого пластикового блеска, все сдержанно и со вкусом. Брала композицию в шляпной коробке для подруги — восторг!»
+              </p>
+              <div class="review-date">16 июня · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_alexey.jpg" alt="Сергей П." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Сергей П.</div>
                     <div class="author-level">Местный житель</div>
                   </div>
                 </div>
@@ -850,24 +739,24 @@
                 </div>
               </div>
               <p class="review-text">
-                «Лучший айс-латте и батч-брю в Королёве. Уютное лаконичное место без лишнего пафоса, удобные розетки, чтобы поработать с макбуком час-другой. Завтраки подают оперативно, сырники плотные и не приторные.»
+                «Удобная локация на Рождественской прямо рядом со станцией Мытищи, всегда есть где припарковаться. Девушки-флористы быстро собрали великолепный букет на выписку из роддома.»
               </p>
-              <div class="review-date">18 августа · Яндекс Карты</div>
+              <div class="review-date">10 октября · Яндекс Карты</div>
             </div>
 
-            <!-- CARD 5 (COPY) -->
+            <!-- DUPLICATE SET FOR SEAMLESS 100% INFINITE LOOP -->
             <div class="review-card" aria-hidden="true">
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_sofia.jpg" alt="София Н." class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="Елена В." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">София Н.</div>
-                    <div class="author-level">Знаток города 10 уровня</div>
+                    <div class="author-name">Елена В.</div>
+                    <div class="author-level">Знаток города 11 уровня</div>
                   </div>
                 </div>
                 <div class="stars-vector-row">
@@ -879,24 +768,23 @@
                 </div>
               </div>
               <p class="review-text">
-                «Безумно понравился баскский чизкейк и бриошь с авокадо! Атмосфера сдержанная, музыка не бьёт по ушам, бариста с душой рассказывают про регион произрастания зерен. Ставлю 5 из 5 без сомнений.»
+                «Магазин «Роза Роз» — это настоящая находка в Мытищах! Цветы всегда свежайшие и стоят очень долго. Покупала здесь и розы, и сборные букеты, и открытки. Отдельное спасибо флористу Ирине за безупречный вкус и душевное отношение.»
               </p>
-              <div class="review-date">22 июня · Яндекс Карты</div>
+              <div class="review-date">18 сентября · Яндекс Карты</div>
             </div>
 
-            <!-- CARD 6 (COPY) -->
             <div class="review-card" aria-hidden="true">
               <div class="review-card-top">
                 <div class="author-info">
                   <div class="author-avatar-wrap">
-                    <img src="assets/images/avatar_alexey.jpg" alt="Алексей Г." class="author-avatar-img" loading="lazy">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Дмитрий К." class="author-avatar-img" loading="lazy">
                     <span class="avatar-badge-yandex">
                       <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                     </span>
                   </div>
                   <div>
-                    <div class="author-name">Алексей Г.</div>
-                    <div class="author-level">Знаток города 8 уровня</div>
+                    <div class="author-name">Дмитрий К.</div>
+                    <div class="author-level">Местный житель</div>
                   </div>
                 </div>
                 <div class="stars-vector-row">
@@ -908,9 +796,9 @@
                 </div>
               </div>
               <p class="review-text">
-                «Заезжаю каждое утро за фильтром перед электричкой на Москву. Всегда стабильный яркий вкус, бариста работают четко и быстро. Приятно видеть в Королёве уровень спешелти кофеен Москвы.»
+                «Заказывал букет жене на годовщину ночью. Невероятно удобно, что работают круглосуточно! Написал в WhatsApp, согласовали состав по фото, через 40 минут курьер уже привёз цветы в аквабоксе. Супруга в полном восторге.»
               </p>
-              <div class="review-date">11 октября · Яндекс Карты</div>
+              <div class="review-date">4 октября · Яндекс Карты</div>
             </div>
 
           </div>
@@ -919,7 +807,7 @@
       </div>
     </section>
 
-    <!-- REVAMPED CONTACTS & MESSENGERS SECTION (TELEGRAM, WHATSAPP, MAPS, PHONE) -->
+    <!-- CONTACTS & MESSENGERS -->
     <section class="contacts-section section-padding" id="contacts">
       <div class="container">
         
@@ -927,35 +815,15 @@
           <div class="section-label">СВЯЗЬ И ЛОКАЦИЯ</div>
           <h2 class="section-title">КОНТАКТЫ & МЕССЕНДЖЕРЫ</h2>
           <p class="section-subtitle">
-            Мы всегда на связи. Задайте вопрос бариста в Telegram или WhatsApp, оформите предзаказ или проложите маршрут в Яндекс Картах.
+            Мы на связи 24/7. Напишите дежурному флористу в WhatsApp или Telegram, чтобы заказать индивидуальный букет с фотоотчетом, или проложите маршрут в салон.
           </p>
         </div>
 
-        <!-- Quick Messengers Interactive Grid (Телеграм, Ватсап, Карты / Мэпс) -->
+        <!-- Quick Messengers Interactive Grid -->
         <div class="messengers-grid">
           
-          <!-- Telegram Card -->
-          <a href="https://t.me/obsidian_coffee_07" target="_blank" rel="noopener noreferrer" class="messenger-card tg-card">
-            <div class="messenger-icon-wrap">
-              <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="messenger-info">
-              <div class="messenger-tag">ОТВЕТ ЗА 2 МИНУТЫ</div>
-              <h3 class="messenger-name">Telegram</h3>
-              <p class="messenger-sub">@obsidian_coffee_07 · Чат с бариста и предзаказ</p>
-            </div>
-            <div class="messenger-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </div>
-          </a>
-
           <!-- WhatsApp Card -->
-          <a href="https://wa.me/79252173915" target="_blank" rel="noopener noreferrer" class="messenger-card wa-card">
+          <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="messenger-card wa-card">
             <div class="messenger-icon-wrap">
               <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -963,9 +831,9 @@
               </svg>
             </div>
             <div class="messenger-info">
-              <div class="messenger-tag">БЫСТРЫЙ ЧАТ</div>
+              <div class="messenger-tag">ОТВЕТ ЗА 2 МИНУТЫ · ФОТО БУКЕТА</div>
               <h3 class="messenger-name">WhatsApp</h3>
-              <p class="messenger-sub">+7 (925) 217-39-15 · Написать на бар</p>
+              <p class="messenger-sub">+7 (925) 290-55-50 · Чат с флористом и согласование</p>
             </div>
             <div class="messenger-arrow">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -975,8 +843,28 @@
             </div>
           </a>
 
-          <!-- Yandex Maps / Maps (Мэпс / Макс) Card -->
-          <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="messenger-card maps-card">
+          <!-- Telegram Card -->
+          <a href="https://t.me/roza_roz_mytischi" target="_blank" rel="noopener noreferrer" class="messenger-card tg-card">
+            <div class="messenger-icon-wrap">
+              <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="messenger-info">
+              <div class="messenger-tag">БЫСТРЫЙ ОНЛАЙН-ЗАКАЗ</div>
+              <h3 class="messenger-name">Telegram</h3>
+              <p class="messenger-sub">@roza_roz_mytischi · Консультация и доставка</p>
+            </div>
+            <div class="messenger-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Yandex Maps Card -->
+          <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="messenger-card maps-card">
             <div class="messenger-icon-wrap">
               <svg class="messenger-svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" stroke="currentColor" stroke-width="2"/>
@@ -985,7 +873,7 @@
             <div class="messenger-info">
               <div class="messenger-tag">НАВИГАТОР & МАРШРУТ</div>
               <h3 class="messenger-name">Яндекс Карты</h3>
-              <p class="messenger-sub">Подмосковная, 7 · Построить маршрут</p>
+              <p class="messenger-sub">Рождественская, 11 · Рейтинг 4.9 · Построить маршрут</p>
             </div>
             <div class="messenger-arrow">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -1011,9 +899,9 @@
                   </svg>
                 </div>
                 <div>
-                  <div class="info-title">Адрес</div>
-                  <div class="info-val">г. Королёв, Подмосковная ул., 7</div>
-                  <div class="info-sub">Ориентир: рядом со станциями Болшево и Подлипки Дачные</div>
+                  <div class="info-title">Адрес салона</div>
+                  <div class="info-val">Московская обл., г. Мытищи, Рождественская ул., 11</div>
+                  <div class="info-sub">Отдельный вход, этаж 1 · 470 м от станции Мытищи</div>
                 </div>
               </div>
 
@@ -1026,8 +914,8 @@
                 </div>
                 <div>
                   <div class="info-title">Режим работы</div>
-                  <div class="info-val">Ежедневно: 08:00 — 22:00</div>
-                  <div class="info-sub">Кухня и горячий бар работают до 21:45</div>
+                  <div class="info-val">Круглосуточно · 24/7 без выходных</div>
+                  <div class="info-sub">Курьерская доставка по Мытищам и Москве в любое время</div>
                 </div>
               </div>
 
@@ -1038,32 +926,35 @@
                   </svg>
                 </div>
                 <div>
-                  <div class="info-title">Прямой телефон стойки</div>
-                  <a href="tel:+79252173915" class="info-val info-link">+7 (925) 217-39-15</a>
+                  <div class="info-title">Прямой телефон салона</div>
+                  <a href="tel:+79252905550" class="info-val info-link">+7 (925) 290-55-50</a>
                 </div>
               </div>
 
             </div>
 
             <div class="contacts-action-btns">
-              <a href="tel:+79252173915" class="btn btn-outline">
+              <a href="tel:+79252905550" class="btn btn-outline">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
                 </svg>
-                <span>Позвонить бариста</span>
+                <span>Позвонить флористу</span>
+              </a>
+              <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>Написать в WhatsApp</span>
               </a>
             </div>
 
           </div>
 
-          <!-- Minimalist Dark Online Map (Ночная тема, без перегруженности и эмодзи) -->
+          <!-- Minimalist Dark Online Map -->
           <div class="bespoke-map-card minimal-dark-map-card" id="mapCard">
             
             <!-- Map Top Bar: Coordinates & Status -->
             <div class="map-top-bar">
               <div class="map-coords-tag">
                 <span class="map-radar-pulse"></span>
-                <span class="map-coords-text">55°55′05″ N, 37°49′05″ E · КОРОЛЁВ</span>
+                <span class="map-coords-text">55°55′03″ N, 37°45′36″ E · МЫТИЩИ</span>
               </div>
               
               <div class="map-top-actions">
@@ -1082,35 +973,35 @@
               <iframe 
                 class="dark-online-map-iframe" 
                 id="onlineMapIframe" 
-                src="https://yandex.ru/map-widget/v1/?ll=37.8685%2C55.9148&z=16&pt=37.8685,55.9148,pm2rdm" 
+                src="https://yandex.ru/map-widget/v1/?ll=37.760050%2C55.917571&z=16&pt=37.760050,55.917571,pm2rdm" 
                 width="100%" 
                 height="100%" 
                 frameborder="0" 
                 allowfullscreen="true" 
                 loading="lazy"
-                title="Интерактивная ночная карта кофейни Obsidian // 07">
+                title="Интерактивная карта салона цветов Роза роз в Мытищах">
               </iframe>
 
-              <!-- Sleek Minimalist Map HUD Footer -->
+              <!-- Map HUD Footer -->
               <div class="map-hud-overlay minimal-hud">
                 <div class="hud-main-info">
                   <div class="hud-brand-row">
                     <span class="hud-status-dot"></span>
-                    <span class="hud-brand-title">OBSIDIAN // 07</span>
-                    <span class="hud-hours-pill">Ежедневно 08:00 – 22:00</span>
+                    <span class="hud-brand-title">РОЗА РОЗ // 11</span>
+                    <span class="hud-hours-pill">Круглосуточно 24/7</span>
                   </div>
-                  <div class="hud-address-text">г. Королёв, Подмосковная ул., 7</div>
-                  <div class="hud-meta-info">380 м от ст. Болшево · Бесплатная парковка перед кофейней</div>
+                  <div class="hud-address-text">г. Мытищи, Рождественская ул., 11</div>
+                  <div class="hud-meta-info">470 м от станции Мытищи · Удобный подъезд и парковка</div>
                 </div>
 
                 <div class="hud-actions-row">
-                  <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-primary hud-route-btn">
+                  <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hud-route-btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                       <polygon points="3 11 22 2 13 21 11 13 3 11"/>
                     </svg>
                     <span>Маршрут в Яндекс Навигаторе</span>
                   </a>
-                  <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="btn btn-outline hud-maps-btn">
+                  <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="btn btn-outline hud-maps-btn">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                       <circle cx="12" cy="10" r="3"/>
@@ -1130,7 +1021,7 @@
 
   </main>
 
-  <!-- STICKY MOBILE BOTTOM ACTION DOCK (УЛЬТРА-УДОБНО ДЛЯ СМАРТФОНОВ) -->
+  <!-- STICKY MOBILE BOTTOM ACTION DOCK -->
   <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Быстрая мобильная навигация">
     <a href="#menu" class="dock-item">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1139,7 +1030,7 @@
         <rect x="14" y="14" width="7" height="7"/>
         <rect x="3" y="14" width="7" height="7"/>
       </svg>
-      <span>Меню</span>
+      <span>Каталог</span>
     </a>
 
     <button class="dock-item" id="mobileCartTrigger">
@@ -1154,7 +1045,7 @@
       <span>Корзина</span>
     </button>
 
-    <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="dock-item">
+    <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="dock-item">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
         <circle cx="12" cy="10" r="3"/>
@@ -1162,11 +1053,11 @@
       <span>Карты</span>
     </a>
 
-    <a href="https://t.me/obsidian_coffee_07" target="_blank" rel="noopener noreferrer" class="dock-item dock-accent">
+    <a href="https://wa.me/79252905550" target="_blank" rel="noopener noreferrer" class="dock-item dock-accent">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z"/>
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
       </svg>
-      <span>Telegram</span>
+      <span>WhatsApp</span>
     </a>
   </nav>
 
@@ -1176,21 +1067,21 @@
       <div class="footer-col">
         <div class="footer-logo">
           <span class="footer-logo-dot"></span>
-          <span>OBSIDIAN<span class="logo-accent">// 07</span></span>
+          <span>РОЗА РОЗ<span class="logo-accent">// 11</span></span>
         </div>
         <p class="footer-copy">
-          Спешелти кофейня и обжарка в Королёве.<br>
-          Честный кофе без компромиссов.
+          Салон цветов и круглосуточная доставка в Мытищах.<br>
+          Свежие поставки роз из Эквадора и Голландии.
         </p>
       </div>
 
       <div class="footer-col">
         <div class="footer-heading">НАВИГАЦИЯ</div>
         <ul class="footer-links">
-          <li><a href="#menu">Каталог меню</a></li>
-          <li><a href="#beans">Зерно для дома</a></li>
+          <li><a href="#menu">Каталог букетов</a></li>
+          <li><a href="#showcase">Флагманская коробка</a></li>
           <li><a href="#facts">Стандарты качества</a></li>
-          <li><a href="#reviews">Отзывы гостей 5.0</a></li>
+          <li><a href="#reviews">Отзывы гостей 4.9</a></li>
           <li><a href="#contacts">Контакты и мессенджеры</a></li>
         </ul>
       </div>
@@ -1198,10 +1089,10 @@
       <div class="footer-col">
         <div class="footer-heading">ЯНДЕКС КАРТЫ</div>
         <p class="footer-yandex-info">
-          Рейтинг: 5.0 из 5.0<br>
-          «Хорошее место 2026»<br>
-          <a href="https://yandex.ru/maps/-/CXBAZVzO" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
-            <span>Профиль организации ↗</span>
+          Рейтинг: 4.9 из 5.0<br>
+          127+ проверенных отзывов<br>
+          <a href="https://yandex.ru/maps/org/roza_roz/96483127133/" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
+            <span>Карточка организации ↗</span>
           </a>
         </p>
       </div>
@@ -1209,15 +1100,15 @@
     
     <div class="footer-bottom container">
       <div class="copyright">
-        <span>© 2026 OBSIDIAN // 07 SPECIALTY COFFEE. Все права защищены.</span>
+        <span>© 2026 САЛОН ЦВЕТОВ «РОЗА РОЗ». Все права защищены.</span>
       </div>
-      <div class="dev-badge">г. Королёв, Подмосковная ул., 7</div>
+      <div class="dev-badge">г. Мытищи, Рождественская ул., 11 · +7 (925) 290-55-50</div>
     </div>
   </footer>
 
   <!-- ELEVATED LUXURY CART DRAWER -->
   <div class="cart-drawer-overlay" id="cartOverlay">
-    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Корзина заказа">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Корзина заказа цветов">
       <div class="cart-drawer-header">
         <div class="cart-header-title-box">
           <h3 class="cart-title">ВАШ ЗАКАЗ</h3>
@@ -1234,8 +1125,8 @@
       <!-- Free Gift Progress Bar -->
       <div class="cart-gift-meter" id="cartGiftMeter">
         <div class="meter-text-row">
-          <span>Свежее зерно и авторская кухня</span>
-          <span class="meter-highlight">Готовим на баре</span>
+          <span>Аквабокс, кризал и открытка</span>
+          <span class="meter-highlight">В подарок к букету</span>
         </div>
         <div class="meter-track">
           <div class="meter-bar" style="width: 100%;"></div>
@@ -1248,14 +1139,14 @@
           <div class="empty-cart-vector">
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
               <circle cx="32" cy="32" r="30" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
-              <path d="M42 24h3a6 6 0 010 12h-3M16 24h26v16a6 6 0 01-6 6H22a6 6 0 01-6-6V24z" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22 14v4M29 12v6M36 14v4" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M32 16 C36 24, 42 28, 42 34 C42 40, 37.5 45, 32 45 C26.5 45, 22 40, 22 34 C22 28, 28 24, 32 16 Z" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 45 L32 54" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="empty-title">В корзине пока пусто</div>
-          <div class="empty-desc">Выберите понравившиеся позиции из меню, чтобы оформить предзаказ к нужному времени.</div>
+          <div class="empty-desc">Выберите понравившиеся букеты или композиции в каталоге, чтобы оформить заказ с доставкой.</div>
           <button class="btn btn-outline" onclick="document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
-            Перейти в меню
+            Перейти в каталог
           </button>
         </div>
       </div>
@@ -1266,7 +1157,7 @@
           <span class="cart-total-sum" id="cartTotalSum">0&nbsp;₽</span>
         </div>
         <button class="btn btn-primary btn-block checkout-btn-styled" id="proceedCheckoutBtn">
-          <span>Оформить предзаказ на бар</span>
+          <span>Оформить доставку или самовывоз</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -1301,8 +1192,8 @@
         </svg>
       </button>
       <div class="checkout-header">
-        <h3>БЫСТРЫЙ ПРЕДЗАКАЗ</h3>
-        <p>Готовим к вашему приходу — заберите без очереди на Подмосковной, 7</p>
+        <h3>ОФОРМЛЕНИЕ ЗАКАЗА</h3>
+        <p>Доставка от 45 минут по Мытищам или самовывоз на ул. Рождественская, 11</p>
       </div>
       <form id="checkoutForm" class="checkout-form">
         <div class="form-group">
@@ -1310,21 +1201,35 @@
           <input type="text" id="orderName" required placeholder="Например, Александр">
         </div>
         <div class="form-group">
-          <label for="orderPhone">Телефон</label>
+          <label for="orderPhone">Телефон для связи</label>
           <input type="tel" id="orderPhone" required placeholder="+7 (999) 000-00-00">
         </div>
         <div class="form-group">
-          <label for="orderTime">К какому времени приготовить?</label>
+          <label for="deliveryType">Способ получения</label>
+          <select id="deliveryType">
+            <option value="Доставка курьером">Доставка курьером (Мытищи и МО)</option>
+            <option value="Самовывоз">Самовывоз (Мытищи, Рождественская ул., 11)</option>
+          </select>
+        </div>
+        <div class="form-group" id="addressGroup">
+          <label for="orderAddress">Адрес доставки</label>
+          <input type="text" id="orderAddress" placeholder="Улица, дом, подъезд, квартира">
+        </div>
+        <div class="form-group">
+          <label for="orderTime">Желаемое время</label>
           <select id="orderTime">
-            <option value="Через 10-15 минут">Через 10–15 минут</option>
-            <option value="Через 20-30 минут">Через 20–30 минут</option>
-            <option value="Через 45 минут">Через 45 минут</option>
+            <option value="Как можно скорее (45-60 минут)">Как можно скорее (от 45–60 минут)</option>
+            <option value="В течение 2 часов">В течение 2 часов</option>
             <option value="К определенному времени">К определенному времени (укажите в комментарии)</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="orderComment">Пожелания к заказу (помол зерна, альтернативное молоко, без сахара)</label>
-          <input type="text" id="orderComment" placeholder="Например: овсяное молоко / без сахара">
+          <label for="cardText">Текст для бесплатной открытки</label>
+          <input type="text" id="cardText" placeholder="Напишите пару тёплых строк (подпишем от руки)">
+        </div>
+        <div class="form-group">
+          <label for="orderComment">Пожелания флористу</label>
+          <input type="text" id="orderComment" placeholder="Например: прислать фото букета в WhatsApp">
         </div>
 
         <div class="order-summary-box" id="orderSummaryBox">
@@ -1333,18 +1238,17 @@
 
         <div class="checkout-submit-buttons">
           <button type="submit" class="btn btn-primary btn-block">
-            <span>Подтвердить предзаказ</span>
+            <span>Подтвердить заказ</span>
           </button>
         </div>
       </form>
     </div>
   </div>
 
-
   <!-- TOAST NOTIFICATION POPUP -->
   <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
     <span class="toast-indicator"></span>
-    <span class="toast-text" id="toastText">Товар добавлен в заказ</span>
+    <span class="toast-text" id="toastText">Букет добавлен в заказ</span>
   </div>
 
   <script src="script.js"></script>
