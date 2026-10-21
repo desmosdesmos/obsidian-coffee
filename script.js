@@ -1,7 +1,7 @@
 /**
  * РОЗА РОЗ // FLORAL STUDIO & BOUTIQUE
  * Core Interactive Controller
- * Features: Video Parallax & Scroll Blur, Live Catalog, Dynamic Cart, Modal Details, WhatsApp Order Dispatch
+ * Features: High-Contrast Scroll Dimming, Packaging Switcher, Fly-to-Cart Animation, Online Bouquet Booking
  */
 
 // 1. CURATED FLORAL CATALOG DATA
@@ -12,6 +12,7 @@ const DEFAULT_MENU_DATA = [
     category: 'author',
     name: 'Букет «Французский поцелуй»',
     tag: 'Хит сезона',
+    badge: 'Свежий срез',
     volume: 'Высота 50 см · Ø 38 см',
     price: 4900,
     image: 'assets/images/flowers/flower_1.jpg',
@@ -24,6 +25,7 @@ const DEFAULT_MENU_DATA = [
     category: 'author',
     name: 'Авторский букет «Малиновый рассвет»',
     tag: 'Премиум',
+    badge: 'Яркий акцент',
     volume: 'Высота 55 см · Ø 42 см',
     price: 5400,
     image: 'assets/images/flowers/flower_6.jpg',
@@ -36,6 +38,7 @@ const DEFAULT_MENU_DATA = [
     category: 'author',
     name: 'Букет «Лавандовое утро»',
     tag: 'Нежный',
+    badge: 'Стойкость 14 дней',
     volume: 'Высота 45 см · Ø 35 см',
     price: 3900,
     image: 'assets/images/flowers/flower_10.jpg',
@@ -48,6 +51,7 @@ const DEFAULT_MENU_DATA = [
     category: 'author',
     name: 'Авторская охапка «Пастельный саунд»',
     tag: 'WOW-эффект',
+    badge: 'Пышный объем',
     volume: 'Высота 60 см · Ø 48 см',
     price: 6200,
     image: 'assets/images/flowers/flower_7.jpg',
@@ -62,6 +66,7 @@ const DEFAULT_MENU_DATA = [
     category: 'roses',
     name: 'Монобукет из 25 роз Explorer (60 см)',
     tag: 'Эквадор',
+    badge: 'Крупный бокал',
     volume: 'Высота 60 см · Ø 40 см',
     price: 5900,
     image: 'assets/images/flowers/flower_2.jpg',
@@ -74,6 +79,7 @@ const DEFAULT_MENU_DATA = [
     category: 'roses',
     name: '19 пионовидных роз White O\'Hara',
     tag: 'Французский сорт',
+    badge: 'Парфюм-аромат',
     volume: 'Высота 50 см · Ø 42 см',
     price: 6800,
     image: 'assets/images/flowers/flower_5.jpg',
@@ -86,18 +92,20 @@ const DEFAULT_MENU_DATA = [
     category: 'roses',
     name: 'Монобукет из 35 роз Red Piano',
     tag: 'Кения',
+    badge: 'Плотный бутон',
     volume: 'Высота 40 см · Ø 36 см',
     price: 4600,
     image: 'assets/images/flowers/flower_8.jpg',
     desc: 'Пышная стойкая охапка шаровидных алых роз из Кении. Устойчивы к перепадам температур и долго стоят в вазе.',
     specs: { height: '40 см', diam: '36 см', life: '14 дней', aroma: 'Легкий травянистый' },
-    ingredients: '35 роз сорта Red Piano (Кения 40 см), фирменная лента с логотипом.'
+    ingredients: '35 роз сорта Red Piano (Кения 40 см), фирменная атласная лента.'
   },
   {
     id: 8,
     category: 'roses',
     name: 'Букет-гигант из 51 розы Explorer (70 см)',
     tag: 'Гранд-букет',
+    badge: '70 см стебель',
     volume: 'Высота 70 см · Ø 60 см',
     price: 11900,
     image: 'assets/images/flowers/flower_12.jpg',
@@ -112,6 +120,7 @@ const DEFAULT_MENU_DATA = [
     category: 'boxes',
     name: 'Шляпная коробка «Royal Blush»',
     tag: 'Бестселлер',
+    badge: 'Не требует вазы',
     volume: 'Коробка M · Ø 32 см',
     price: 4800,
     image: 'assets/images/flowers/flower_3.jpg',
@@ -124,18 +133,20 @@ const DEFAULT_MENU_DATA = [
     category: 'boxes',
     name: 'Шляпная коробка «Бархатный пион»',
     tag: 'Премиум бокс',
+    badge: 'Коробка L',
     volume: 'Коробка L · Ø 40 см',
     price: 6900,
     image: 'assets/images/flowers/flower_9.jpg',
     desc: 'Большая шляпная коробка с пышными розами сорта Pink Mondial, кустовой эустомой и ароматным эвкалиптом. Стильный подарок без хлопот.',
     specs: { height: '42 см', diam: '40 см', life: '10–14 дней', aroma: 'Сладковатый пудровый' },
-    ingredients: 'Розы Pink Mondial (15 шт.), эустома (7 шт.), эвкалипт, премиальная коробка с золотым тиснением, оазис Oasis.'
+    ingredients: 'Розы Pink Mondial (15 шт.), эустома (7 шт.), эвкалипт, премиальная коробка с тиснением, оазис Oasis.'
   },
   {
     id: 11,
     category: 'boxes',
     name: 'Цветочная корзина «Лесная поляна»',
     tag: 'В корзине',
+    badge: 'Плетеная ива',
     volume: 'Корзина L · Ø 48 см',
     price: 7800,
     image: 'assets/images/flowers/flower_13.jpg',
@@ -150,6 +161,7 @@ const DEFAULT_MENU_DATA = [
     category: 'seasonal',
     name: 'Букет «Нежное облако» с гортензией',
     tag: 'Пышный',
+    badge: 'Шапка 22 см',
     volume: 'Высота 45 см · Ø 38 см',
     price: 3600,
     image: 'assets/images/flowers/flower_4.jpg',
@@ -162,6 +174,7 @@ const DEFAULT_MENU_DATA = [
     category: 'seasonal',
     name: 'Дуэт гортензий «Небесная лазурь»',
     tag: 'Сезонный хит',
+    badge: '2 гортензии',
     volume: 'Высота 50 см · Ø 40 см',
     price: 4200,
     image: 'assets/images/flowers/flower_11.jpg',
@@ -174,6 +187,7 @@ const DEFAULT_MENU_DATA = [
     category: 'seasonal',
     name: 'Охапка разноцветных хризантем',
     tag: 'Макс. стойкость',
+    badge: 'До 3 недель',
     volume: 'Высота 55 см · Ø 45 см',
     price: 2800,
     image: 'assets/images/flowers/flower_16.jpg',
@@ -183,10 +197,53 @@ const DEFAULT_MENU_DATA = [
   }
 ];
 
+// PACKAGING VARIANTS FOR FLAGSHIP SHOWCASE (ROYAL BLUSH)
+const PACKAGING_VARIANTS = {
+  'Шляпная коробка': {
+    title: 'ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»',
+    tag: 'ПРЕМИАЛЬНЫЙ БАРХАТНЫЙ БОКС',
+    price: 4800,
+    image: 'assets/images/flowers/flower_3.jpg',
+    note: 'Не требует вазы · Собрано на оазисе с питанием',
+    descriptors: ['Пионовидная роза Kahala', 'Белая эустома', 'Эвкалипт цинерея', 'Диантус'],
+    desc: 'Идеальный подарок без забот: цветы не нужно подрезать и искать вазу. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.',
+    profile: ['Шляпная коробка M', '10–14 дней в оазисе', 'Подливать воду в центр']
+  },
+  'Дизайнерская бумага': {
+    title: 'АВТОРСКИЙ БУКЕТ «ROYAL BLUSH»',
+    tag: 'МАТОВАЯ ДИЗАЙНЕРСКАЯ БУМАГА',
+    price: 4400,
+    image: 'assets/images/flowers/flower_1.jpg',
+    note: 'Французская многослойная упаковка · Аквабокс',
+    descriptors: ['Пионовидная роза Kahala', 'Эустома кремовая', 'Озотамнус', 'Шелковая лента'],
+    desc: 'Воздушный многослойный букет в пудровой матовой упаковке с шелковыми лентами. Стебли профессионально подрезаны под 45° и упакованы в аквабокс с водой.',
+    profile: ['Дизайнерская бумага', '10–12 дней в вазе', 'Смена воды раз в 2 дня']
+  },
+  'Классический крафт': {
+    title: 'ОХАПКА В КРАФТЕ «ROYAL BLUSH»',
+    tag: 'ЭКО-КРАФТ И ДЖУТОВЫЙ ШНУР',
+    price: 3900,
+    image: 'assets/images/flowers/flower_7.jpg',
+    note: 'Натуральный эко-стиль · Плотный крафт',
+    descriptors: ['Французские розы', 'Эвкалипт', 'Натуральный крафт', 'Джут'],
+    desc: 'Лаконичная эстетика плотного крафта подчеркивает природную грацию свежего среза. Букет на гидропитании готов к бережной транспортировке.',
+    profile: ['Эко-крафт плотный', '10–12 дней', 'Чистая холодная вода']
+  },
+  'Стеклянная ваза': {
+    title: 'КОМПОЗИЦИЯ В ВАЗЕ «ROYAL BLUSH»',
+    tag: 'С РЕЛЬЕФНОЙ ВАЗОЙ В КОМПЛЕКТЕ',
+    price: 5900,
+    image: 'assets/images/flowers/flower_11.jpg',
+    note: 'Готовый подарок «под ключ» · С вазой из стекла',
+    descriptors: ['Букет на воде', 'Интерьерная ваза', 'Порошок Chrysal', 'Открытка'],
+    desc: 'Готовый подарок «под ключ»: букет уже профессионально подрезан и собран прямо в стильной стеклянной вазе с кризалом. Получателю ничего не нужно переставлять.',
+    profile: ['Стеклянная ваза в комплекте', '12–14 дней', 'Готовое решение на воде']
+  }
+};
+
 // DYNAMIC STORAGE & CATALOG PERSISTENCE
 const MENU_STORAGE_KEY = 'roza_roz_catalog_v2';
 const CART_STORAGE_KEY = 'roza_roz_cart_v2';
-const FEATURED_STORAGE_KEY = 'roza_roz_featured_v2';
 
 function loadMenuData() {
   try {
@@ -204,19 +261,6 @@ function loadMenuData() {
 }
 
 let MENU_DATA = loadMenuData();
-
-function saveMenuData(data, notify = true) {
-  MENU_DATA = data;
-  try {
-    localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(data));
-  } catch (e) {
-    console.error('Error saving catalog to localStorage', e);
-  }
-  renderCatalog();
-  if (notify) {
-    showToast('Каталог успешно обновлен');
-  }
-}
 
 // STATE
 let currentCategory = 'all';
@@ -262,7 +306,7 @@ const grindOptionsGrid = document.getElementById('grindOptionsGrid');
 const addBeansToCartBtn = document.getElementById('addBeansToCartBtn');
 
 // ==========================================================================
-// 2. VIDEO SCROLL BLUR & PARALLAX ENGINE
+// 2. VIDEO SCROLL BLUR & HIGH-CONTRAST DARKENING ENGINE
 // ==========================================================================
 let isTicking = false;
 
@@ -271,20 +315,18 @@ function onScrollHandler() {
   const vh = window.innerHeight;
 
   // Header background toggle
-  if (scrollY > 50) {
+  if (scrollY > 35) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
 
   // Calculate blur and dark overlay progress
-  const progress = Math.min(Math.max(scrollY / (vh * 0.85), 0), 1);
-
-  // Dynamic blur: 0px at hero -> 20px when scrolling down
-  const blurVal = (progress * 20).toFixed(1);
-  // Overlay opacity: 0.38 at hero -> 0.88 when scrolling into catalog
-  const overlayOpacity = (0.38 + progress * 0.50).toFixed(2);
-  // Parallax translation of the video
+  // At top of hero: overlay is 0.65 (video softly visible behind content)
+  // When scrolling down into catalog: overlay deepens to 0.96 (dark velvet midnight)
+  const progress = Math.min(Math.max(scrollY / (vh * 0.70), 0), 1);
+  const blurVal = (progress * 24).toFixed(1);
+  const overlayOpacity = (0.65 + progress * 0.31).toFixed(2);
   const videoOffset = (scrollY * 0.12).toFixed(1);
 
   document.documentElement.style.setProperty('--scroll-blur', `${blurVal}px`);
@@ -317,7 +359,7 @@ if (bgVideo) {
 }
 
 // ==========================================================================
-// 3. CATALOG RENDERING
+// 3. CATALOG RENDERING & BADGES
 // ==========================================================================
 function renderCatalog() {
   if (!catalogGrid) return;
@@ -358,12 +400,14 @@ function renderCatalog() {
   catalogGrid.innerHTML = filtered.map(item => {
     const isOut = item.outOfStock === true;
     const catLabel = categoryNameMap[item.category] || 'Цветочная композиция';
+    const badgeText = item.badge || 'Свежий срез';
 
     return `
     <article class="product-card ${isOut ? 'item-out-of-stock' : ''}" data-id="${item.id}">
       <div class="card-img-wrapper" onclick="openProductModal(${item.id})">
         <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.src='assets/images/flowers/flower_1.jpg'">
         <span class="product-tag" ${isOut ? 'style="background:rgba(239,68,68,0.85); color:#fff;"' : ''}>${isOut ? 'Под заказ' : item.tag}</span>
+        <span style="position:absolute; bottom:10px; right:10px; padding:3px 8px; border-radius:4px; font-size:0.65rem; font-weight:700; background:rgba(12,15,18,0.88); border:1px solid rgba(255,255,255,0.12); color:var(--text-main);">${badgeText}</span>
       </div>
       <div class="card-body">
         <div class="card-title-row">
@@ -375,13 +419,13 @@ function renderCatalog() {
           <div class="card-price"><span class="price-val">${item.price.toLocaleString('ru-RU')}</span>&nbsp;<span class="price-curr">₽</span></div>
           <div class="card-actions">
             <button class="btn-card-details" onclick="openProductModal(${item.id})">Состав</button>
-            <button class="btn-card-add ${isOut ? 'btn-disabled' : ''}" ${isOut ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : `onclick="addToCart(${item.id})"`}>
+            <button class="btn-card-add ${isOut ? 'btn-disabled' : ''}" ${isOut ? 'disabled style="opacity:0.5; cursor:not-allowed;"' : `onclick="handleAddToCart(${item.id}, event)"`}>
               ${isOut ? '<span>Под заказ</span>' : `
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
-              <span>В&nbsp;заказ</span>
+              <span>В&nbsp;бронь</span>
               `}
             </button>
           </div>
@@ -426,8 +470,50 @@ if (clearSearchBtn) {
 }
 
 // ==========================================================================
-// 4. FEATURED SIGNATURE BOUQUET & PACKAGING SELECTOR
+// 4. ANIMATED PACKAGING SWITCHER FOR SIGNATURE BOUQUET (ROYAL BLUSH)
 // ==========================================================================
+function updatePackagingDisplay(pkgKey) {
+  const variant = PACKAGING_VARIANTS[pkgKey] || PACKAGING_VARIANTS['Шляпная коробка'];
+  selectedPackaging = pkgKey;
+
+  const titleEl = document.querySelector('.beans-card-title');
+  const tagEl = document.querySelector('.beans-card-tag');
+  const descEl = document.querySelector('.beans-description');
+  const priceValEl = document.querySelector('.beans-price-value');
+  const descriptorsEl = document.querySelector('.beans-descriptors');
+  const imgEl = document.querySelector('.beans-image-wrap img');
+  const noteTextEl = document.getElementById('packagingNoteText');
+  const profileRow = document.querySelector('.beans-profile-row');
+
+  // Smooth image cross-fade
+  if (imgEl) {
+    imgEl.style.opacity = '0.3';
+    imgEl.style.transform = 'scale(0.97)';
+    setTimeout(() => {
+      imgEl.src = variant.image;
+      imgEl.style.opacity = '1';
+      imgEl.style.transform = 'scale(1)';
+    }, 180);
+  }
+
+  if (titleEl) titleEl.textContent = variant.title;
+  if (tagEl) tagEl.textContent = variant.tag;
+  if (descEl) descEl.textContent = variant.desc;
+  if (priceValEl) priceValEl.innerHTML = `${variant.price.toLocaleString('ru-RU')}&nbsp;₽`;
+  if (noteTextEl) noteTextEl.textContent = variant.note;
+
+  if (descriptorsEl && Array.isArray(variant.descriptors)) {
+    descriptorsEl.innerHTML = variant.descriptors.map(d => `<span class="desc-pill">${d}</span>`).join('');
+  }
+
+  if (profileRow && Array.isArray(variant.profile)) {
+    const valItems = profileRow.querySelectorAll('.profile-item .profile-val');
+    variant.profile.forEach((text, i) => {
+      if (valItems[i]) valItems[i].textContent = text;
+    });
+  }
+}
+
 if (grindOptionsGrid) {
   grindOptionsGrid.addEventListener('click', (e) => {
     const pill = e.target.closest('.grind-pill');
@@ -435,33 +521,18 @@ if (grindOptionsGrid) {
 
     grindOptionsGrid.querySelectorAll('.grind-pill').forEach(p => p.classList.remove('active'));
     pill.classList.add('active');
-    selectedPackaging = pill.getAttribute('data-grind');
+    
+    const pkgName = pill.getAttribute('data-grind');
+    updatePackagingDisplay(pkgName);
   });
 }
 
-function getFeaturedBouquetData() {
-  try {
-    const raw = localStorage.getItem(FEATURED_STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {}
-  return {
-    title: 'ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»',
-    tag: 'ЛУЧШИЙ ВЫБОР ДЛЯ ПРАЗДНИКА И ПОДАРКА',
-    descriptors: 'Пионовидная роза Kahala, Белая эустома, Эвкалипт цинерея, Диантус',
-    desc: 'Идеальный подарок без забот: цветы не нужно подрезать и искать подходящую вазу. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.',
-    price: 4800,
-    volume: 'композиция',
-    image: 'assets/images/flowers/flower_3.jpg'
-  };
-}
-
 if (addBeansToCartBtn) {
-  addBeansToCartBtn.addEventListener('click', () => {
-    const featured = getFeaturedBouquetData();
-    const bouquetName = `${featured.title} (${selectedPackaging})`;
-    const bouquetPrice = featured.price || 4800;
-    const bouquetVolume = featured.volume || 'композиция';
-    const bouquetImage = featured.image || 'assets/images/flowers/flower_3.jpg';
+  addBeansToCartBtn.addEventListener('click', (e) => {
+    const variant = PACKAGING_VARIANTS[selectedPackaging] || PACKAGING_VARIANTS['Шляпная коробка'];
+    const bouquetName = `${variant.title} (${selectedPackaging})`;
+    const bouquetPrice = variant.price;
+    const bouquetImage = variant.image;
 
     const existing = cart.find(item => item.id === 999 && item.packaging === selectedPackaging);
     if (existing) {
@@ -479,19 +550,68 @@ if (addBeansToCartBtn) {
     }
 
     saveCart();
-    showToast(`Композиция (${selectedPackaging}) добавлена в заказ!`);
+    triggerFlyToCartAnimation(addBeansToCartBtn, bouquetImage);
+    animateButtonSuccess(addBeansToCartBtn);
+    showToast(`«${variant.title}» забронирован!`);
   });
 }
 
 // ==========================================================================
-// 5. CART & ORDER STATE MANAGEMENT
+// 5. CART & FLY-TO-CART ANIMATION ENGINE
 // ==========================================================================
-function saveCart() {
-  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
-  updateCartUI();
+function triggerFlyToCartAnimation(sourceElement, imageUrl) {
+  const cartTarget = window.innerWidth <= 768 
+    ? document.getElementById('mobileCartTrigger') 
+    : document.getElementById('openCartBtn');
+  
+  if (!cartTarget) return;
+
+  const btn = sourceElement ? (sourceElement.closest('button') || sourceElement) : null;
+  const startRect = btn ? btn.getBoundingClientRect() : { top: window.innerHeight / 2, left: window.innerWidth / 2, width: 40, height: 40 };
+  const endRect = cartTarget.getBoundingClientRect();
+
+  const flying = document.createElement('img');
+  flying.src = imageUrl || 'assets/images/flowers/flower_1.jpg';
+  flying.className = 'fly-to-cart-clone';
+  flying.style.top = `${startRect.top + startRect.height / 2 - 29}px`;
+  flying.style.left = `${startRect.left + startRect.width / 2 - 29}px`;
+  flying.style.transform = 'scale(0.5)';
+  document.body.appendChild(flying);
+
+  // Force reflow
+  void flying.offsetWidth;
+
+  // Animate arc to cart target
+  flying.style.transform = 'scale(1.15)';
+  flying.style.top = `${endRect.top + endRect.height / 2 - 29}px`;
+  flying.style.left = `${endRect.left + endRect.width / 2 - 29}px`;
+  flying.style.opacity = '0.15';
+
+  setTimeout(() => {
+    flying.remove();
+    cartTarget.classList.remove('cart-bump');
+    void cartTarget.offsetWidth;
+    cartTarget.classList.add('cart-bump');
+  }, 700);
 }
 
-function addToCart(productId) {
+function animateButtonSuccess(btn) {
+  if (!btn) return;
+  btn.classList.add('btn-added');
+  const originalHtml = btn.innerHTML;
+  btn.innerHTML = `
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>В брони ✓</span>
+  `;
+  setTimeout(() => {
+    btn.innerHTML = originalHtml;
+    btn.classList.remove('btn-added');
+  }, 1600);
+}
+
+function handleAddToCart(productId, event) {
   const product = MENU_DATA.find(p => p.id === productId);
   if (!product) return;
 
@@ -510,7 +630,19 @@ function addToCart(productId) {
   }
 
   saveCart();
-  showToast(`«${product.name}» добавлен в заказ`);
+
+  const btn = event?.target?.closest('button');
+  if (btn) {
+    animateButtonSuccess(btn);
+    triggerFlyToCartAnimation(btn, product.image);
+  }
+
+  showToast(`Букет «${product.name}» добавлен в бронь`);
+}
+
+function saveCart() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  updateCartUI();
 }
 
 function changeQty(index, delta) {
@@ -657,15 +789,15 @@ window.openProductModal = function(productId) {
 
       <div style="margin-bottom: 24px; padding: 12px 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 2px solid var(--accent-orange);">
         <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-orange); display: block; margin-bottom: 3px;">
-          Бесплатный комплект к букету:
+          Бесплатный комплект к бронированию:
         </span>
         <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">
-          Транспортировочный аквабокс с водой, порошок Chrysal для вазы и дизайнерская открытка с вашим текстом.
+          Транспортировочный аквабокс с водой, средство Chrysal для вазы и дизайнерская открытка с вашим текстом.
         </p>
       </div>
 
-      <button class="btn btn-primary btn-block" onclick="addToCart(${product.id}); closeProductModal();">
-        <span>Добавить в заказ · ${product.price.toLocaleString('ru-RU')}&nbsp;₽</span>
+      <button class="btn btn-primary btn-block" onclick="handleAddToCart(${product.id}, event); closeProductModal();">
+        <span>Забронировать букет · ${product.price.toLocaleString('ru-RU')}&nbsp;₽</span>
       </button>
     </div>
   `;
@@ -688,7 +820,7 @@ if (productModalOverlay) {
 }
 
 // ==========================================================================
-// 7. CHECKOUT MODAL & DIRECT WHATSAPP DISPATCH
+// 7. RESERVATION CHECKOUT MODAL & DIRECT WHATSAPP DISPATCH
 // ==========================================================================
 if (proceedCheckoutBtn && checkoutModalOverlay) {
   proceedCheckoutBtn.addEventListener('click', () => {
@@ -698,12 +830,12 @@ if (proceedCheckoutBtn && checkoutModalOverlay) {
     const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     if (orderSummaryBox) {
       orderSummaryBox.innerHTML = `
-        <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав заказа:</div>
+        <div style="font-weight: 700; margin-bottom: 8px; color: var(--text-main); font-family: var(--font-heading); font-size: 0.9rem;">Состав бронирования:</div>
         <ul style="list-style: none; margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
           ${cart.map(i => `<li>— ${i.name} × ${i.quantity} шт. (${(i.price * i.quantity).toLocaleString('ru-RU')}&nbsp;₽)</li>`).join('')}
         </ul>
         <div style="font-weight: 800; color: var(--accent-orange); font-size: 1.15rem; font-family: var(--font-heading);">
-          Итого: ${totalSum.toLocaleString('ru-RU')}&nbsp;₽
+          Итого по брони: ${totalSum.toLocaleString('ru-RU')}&nbsp;₽
         </div>
       `;
     }
@@ -752,9 +884,9 @@ if (checkoutForm) {
     const cardInput = document.getElementById('cardText');
     const commentInput = document.getElementById('orderComment');
 
-    const customerName = nameInput ? nameInput.value.trim() : 'Покупатель';
+    const customerName = nameInput ? nameInput.value.trim() : 'Гость';
     const customerPhone = phoneInput ? phoneInput.value.trim() : '';
-    const deliveryType = typeInput ? typeInput.value : 'Доставка курьером';
+    const deliveryType = typeInput ? typeInput.value : 'Самовывоз';
     const address = addressInput ? addressInput.value.trim() : '';
     const readyTime = timeInput ? timeInput.value : 'Как можно скорее';
     const cardText = cardInput ? cardInput.value.trim() : '';
@@ -765,16 +897,16 @@ if (checkoutForm) {
 
     const itemsSummary = cart.map((i, idx) => `${idx + 1}. ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)`).join('\n');
 
-    // Build friendly WhatsApp message
+    // Build friendly WhatsApp booking message
     const waText = encodeURIComponent(
-`Здравствуйте! Хочу оформить заказ в салоне «Роза роз» [${orderId}]:
+`Здравствуйте! Оформляю бронь букетов в салоне «Роза роз» [${orderId}]:
 
-Состав заказа:
+Состав брони:
 ${itemsSummary}
 
 Сумма: ${totalSum.toLocaleString('ru-RU')} ₽
-Способ: ${deliveryType}${address ? ` (${address})` : ''}
-Время: ${readyTime}
+Получение: ${deliveryType}${address ? ` (Адрес: ${address})` : ' (Салон на ул. Рождественская, 11)'}
+Время готовности: ${readyTime}
 Имя: ${customerName}
 Телефон: ${customerPhone}
 ${cardText ? `Текст для открытки: «${cardText}»\n` : ''}${comment ? `Пожелания: ${comment}` : ''}`
@@ -789,12 +921,12 @@ ${cardText ? `Текст для открытки: «${cardText}»\n` : ''}${comm
       document.body.style.overflow = '';
     }
 
-    showToast(`Заказ ${orderId} принят! Открываем WhatsApp для согласования...`);
+    showToast(`Бронь ${orderId} принята! Открываем WhatsApp для подтверждения...`);
 
     // Open WhatsApp to florist +7 925 290-55-50
     setTimeout(() => {
       window.open(`https://wa.me/79252905550?text=${waText}`, '_blank');
-    }, 1200);
+    }, 1100);
   });
 }
 
@@ -861,7 +993,9 @@ if (revNextBtn && reviewsMarquee) {
 document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
   updateCartUI();
+  updatePackagingDisplay('Шляпная коробка');
 });
 
 renderCatalog();
 updateCartUI();
+updatePackagingDisplay('Шляпная коробка');
