@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>ЦВЕТЫ 24 — Салон цветов и круглосуточное бронирование | Королёв, просп. Космонавтов 39</title>
+  <meta name="description" content="Флористический салон «Цветы 24» в Королёве: свежие розы Эквадора и Кении, авторские букеты, композиции в шляпных коробках. Круглосуточно 24/7. Рейтинг 5.0 на Яндекс Картах (Хорошее место 2026).">
+  
+  <!-- Editorial & Avant-Garde Fonts: Unbounded + Manrope + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Video Background with Dynamic Hardware-Accelerated Scroll Blur & Parallax -->
+  <div class="video-background-container" id="videoBgContainer" aria-hidden="true">
+    <video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto">
+      <source src="gemini_generated_video_e9bfe32d.mp4" type="video/mp4">
+    </video>
+    <!-- Vignette Tint -->
+    <div class="video-overlay" id="videoOverlay"></div>
+    <!-- Dynamic Blur Backdrop Filter Layer -->
+    <div class="video-blur-layer" id="videoBlurLayer"></div>
+  </div>
+
+  <!-- Header / Navigation Bar with Hover Schedule Popup -->
+  <header class="header" id="header">
+    <div class="header-inner container">
+      <!-- Luxury Brand Logo: ЦВЕТЫ 24 // 39 -->
+      <a href="#hero" class="brand-logo" aria-label="ЦВЕТЫ 24 главная">
+        <span class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 4 C14 8, 16 10, 16 12 C16 14.5, 14 16.5, 12 16.5 C10 16.5, 8 14.5, 8 12 C8 10, 10 8, 12 4 Z" fill="var(--accent-orange)" opacity="0.85"/>
+            <circle cx="12" cy="12" r="2.5" fill="#faf7f4"/>
+          </svg>
+        </span>
+        <span class="logo-text">ЦВЕТЫ 24<span class="logo-accent">// 39</span></span>
+        <span class="logo-badge">FLORAL STUDIO</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#menu" class="nav-link">Каталог</a>
+        <a href="#showcase" class="nav-link">Флагман</a>
+        <a href="#facts" class="nav-link">Стандарты</a>
+        <a href="#reviews" class="nav-link">Отзывы 5.0</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+
+        <div class="mobile-nav-quick-actions">
+          <a href="tel:+79299020207" class="mobile-nav-phone-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <span>+7 (929) 902-02-07</span>
+          </a>
+          <a href="https://wa.me/79299020207" target="_blank" rel="noopener noreferrer" class="mobile-nav-wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            <span>Написать в WhatsApp</span>
+          </a>
+          <div class="mobile-nav-badge">
+            <span class="status-dot-mini"></span>
+            <span>Королёв, просп. Космонавтов 39 · 24/7</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Status (with Hover Dropdown for schedule) & Cart Trigger -->
+      <div class="header-actions">
+        
+        <!-- Live Status Trigger with Hover Schedule Popover -->
+        <div class="schedule-trigger-wrapper" id="scheduleTriggerWrapper">
+          <div class="live-status-badge" id="liveStatusBadge">
+            <span class="status-indicator-ring">
+              <span class="status-dot"></span>
+            </span>
+            <span class="status-text">Круглосуточно · 24/7</span>
+            <svg class="chevron-micro" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+          <!-- Schedule Dropdown Card -->
+          <div class="schedule-dropdown" id="scheduleDropdown">
+            <div class="schedule-dropdown-header">
+              <div class="dropdown-title">РЕЖИМ РАБОТЫ</div>
+              <div class="dropdown-live-status">
+                <span class="status-dot-mini"></span>
+                <span>Сейчас открыто</span>
+              </div>
+            </div>
+            <div class="schedule-table">
+              <div class="schedule-row">
+                <span class="schedule-days">Салон на Космонавтов, 39</span>
+                <span class="schedule-hours">Круглосуточно</span>
+              </div>
+              <div class="schedule-row">
+                <span class="schedule-days">Курьерская доставка</span>
+                <span class="schedule-hours">24/7 от 45 мин</span>
+              </div>
+              <div class="schedule-row sub-row">
+                <span class="schedule-days">Сборка авторских букетов</span>
+                <span class="schedule-hours">от 20 минут</span>
+              </div>
+            </div>
+            <div class="schedule-dropdown-footer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Королёв, просп. Космонавтов, 39</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <button class="cart-trigger-btn" id="openCartBtn" aria-label="Открыть корзину">
+          <svg class="cart-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Burger Toggle for Mobile -->
+        <button class="burger-btn" id="burgerBtn" aria-label="Меню навигации">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Eyebrow label -->
+        <div class="hero-top-eyebrow">
+          <span class="eyebrow-accent">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <polygon points="5,0 10,5 5,10 0,5" fill="var(--accent-orange)"/>
+            </svg>
+          </span>
+          <span class="eyebrow-text">ЦВЕТЫ 24 · САЛОН ЦВЕТОВ И БРОНИРОВАНИЕ В КОРОЛЁВЕ</span>
+          <span class="eyebrow-coords">55.9091° N, 37.8701° E</span>
+        </div>
+
+        <!-- Main Giant Monolithic Headline -->
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            ЦВЕТЫ,<br>
+            КОТОРЫЕ ГОВОРЯТ<br>
+            БЕЗ ЛИШНИХ СЛОВ.
+          </h1>
+          <p class="hero-description" style="max-width: 660px; margin: 18px auto 0; font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; text-shadow: 0 2px 14px rgba(0,0,0,0.95);">
+            Бронирование авторских букетов и свежих роз в Королёве. Свежий срез резервируем в холодильной камере специально под ваш визит. Сборка от 20 минут без очередей.
+          </p>
+        </div>
+
+        <!-- Lower Interactive Blocks -->
+        <div class="hero-bottom-grid">
+          
+          <!-- Left Element -->
+          <a href="#menu" class="hero-card hero-card-left" id="heroMenuShortcut">
+            <div class="hero-card-marker">
+              <div class="radar-circle">
+                <svg class="radar-svg" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <circle cx="24" cy="24" r="15" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                  <path d="M24 2 A 22 22 0 0 1 46 24" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="radar-num">01</span>
+              </div>
+            </div>
+            <div class="hero-card-content">
+              <h2 class="hero-card-title">КАТАЛОГ ДЛЯ БРОНИ</h2>
+              <p class="hero-card-desc">
+                Пионовидные розы, гортензии, шляпные коробки и авторские охапки со стойкостью от 10 дней.
+              </p>
+              <div class="hero-card-action">
+                <span>Выбрать композицию</span>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Right Element -->
+          <a href="#reviews" class="hero-card hero-card-right" id="heroLocationShortcut">
+            <div class="hero-card-marker">
+              <div class="matrix-badge">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <rect x="2" y="2" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="13" y="2" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="24" y="2" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="2" y="13" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="13" y="13" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="24" y="13" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="2" y="24" width="6" height="6" fill="var(--accent-orange)"/>
+                  <rect x="13" y="24" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="24" y="24" width="6" height="6" fill="rgba(255,255,255,0.3)"/>
+                </svg>
+              </div>
+            </div>
+            <div class="hero-card-content">
+              <h2 class="hero-card-title">РЕЙТИНГ 5.0 В ЯНДЕКС КАРТАХ</h2>
+              <p class="hero-card-desc">
+                64+ проверенных отзыва · Награда «Хорошее место 2026». Королёв, просп. Космонавтов, 39.
+              </p>
+              <div class="hero-card-action">
+                <span>Читать отзывы гостей</span>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="hero-scroll-cue">
+          <span class="scroll-cue-text">ЛИСТАТЬ ВНИЗ</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ticker Strip -->
+    <section class="ticker-strip" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="ticker-dot"></span> СВЕЖИЕ ПОСТАВКИ ИЗ ЭКВАДОРА И ГОЛЛАНДИИ 3 РАЗА В НЕДЕЛЮ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ФОТО БУКЕТА В WHATSAPP ПЕРЕД ОТПРАВКОЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> АКВАБОКС И КРИЗАЛ В ПОДАРОК К КАЖДОМУ ЗАКАЗУ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> КРУГЛОСУТОЧНАЯ ДОСТАВКА 24/7 ОТ 45 МИНУТ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 В ЯНДЕКС КАРТАХ · НАГРАДА «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ОТКРЫТКА С ВАШИМ ТЕКСТОМ БЕСПЛАТНО</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СТОЙКОСТЬ ЦВЕТОВ ОТ 10 ДО 14 ДНЕЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СВЕЖИЕ ПОСТАВКИ ИЗ ЭКВАДОРА И ГОЛЛАНДИИ 3 РАЗА В НЕДЕЛЮ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ФОТО БУКЕТА В WHATSAPP ПЕРЕД ОТПРАВКОЙ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> АКВАБОКС И КРИЗАЛ В ПОДАРОК К КАЖДОМУ ЗАКАЗУ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> КРУГЛОСУТОЧНАЯ ДОСТАВКА 24/7 ОТ 45 МИНУТ</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> РЕЙТИНГ 5.0 В ЯНДЕКС КАРТАХ · НАГРАДА «ХОРОШЕЕ МЕСТО 2026»</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> ОТКРЫТКА С ВАШИМ ТЕКСТОМ БЕСПЛАТНО</div>
+        <div class="ticker-item"><span class="ticker-dot"></span> СТОЙКОСТЬ ЦВЕТОВ ОТ 10 ДО 14 ДНЕЙ</div>
+      </div>
+    </section>
+
+    <!-- MENU / CATALOG SECTION -->
+    <section class="menu-section section-padding" id="menu">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-label">АССОРТИМЕНТ САЛОНА</div>
+          <h2 class="section-title">КАТАЛОГ БУКЕТОВ</h2>
+          <p class="section-subtitle">
+            Только свежий срез: плотные тугие бутоны, честный стебель, бережная сборка и доставка на воде в аквабоксе.
+          </p>
+        </div>
+
+        <!-- Controls: Category Filters & Live Search -->
+        <div class="catalog-controls">
+          <div class="category-tabs" id="categoryTabs">
+            <button class="cat-btn active" data-category="all">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              <span>Все (14)</span>
+            </button>
+            <button class="cat-btn" data-category="author">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C7 6 7 12 12 16 C17 12 17 6 12 2 Z"/>
+                <path d="M12 16 L12 22"/>
+              </svg>
+              <span>Авторские букеты (4)</span>
+            </button>
+            <button class="cat-btn" data-category="roses">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M12 8c2 2 2 6 0 8"/>
+              </svg>
+              <span>Розы & Моно (4)</span>
+            </button>
+            <button class="cat-btn" data-category="boxes">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/>
+              </svg>
+              <span>В коробках & Корзинах (3)</span>
+            </button>
+            <button class="cat-btn" data-category="seasonal">
+              <svg class="cat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3a9 9 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+              <span>Гортензии & Сезонные (3)</span>
+            </button>
+          </div>
+
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="catalogSearch" placeholder="Поиск букета (розы, гортензии, пионы, коробка)..." aria-label="Поиск по каталогу цветов">
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Очистить поиск" style="display:none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid" id="catalogGrid">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FLAGSHIP SHOWCASE (ФЛАГМАНСКАЯ КОМПОЗИЦИЯ) -->
+    <section class="beans-showcase-section section-padding" id="showcase">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">ФЛАГМАНСКАЯ КОМПОЗИЦИЯ // SIGNATURE ARRANGEMENT</div>
+          <h2 class="section-title">ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»</h2>
+          <p class="section-subtitle">
+            Пышная гармония премиальных роз Эквадора, французской эустомы и веточек ароматного эвкалипта. Композиция собрана на влажном флористическом оазисе и не требует вазы.
+          </p>
+        </div>
+
+        <div class="beans-editorial-grid">
+          
+          <!-- Large Visual Card -->
+          <div class="beans-media-card">
+            <div class="beans-image-wrap">
+              <img id="beansShowcaseImg" src="assets/images/curated/catalog_5_hatbox_royal.jpg" alt="Шляпная коробка Royal Blush в салоне Цветы 24" loading="lazy">
+              <div class="beans-float-badge">
+                <span class="badge-dot"></span>
+                <span>СВЕЖИЙ ПРИВОЗ СЕГОДНЯ</span>
+              </div>
+            </div>
+            <div class="beans-profile-row">
+              <div class="profile-item">
+                <div class="profile-label">ПОСТАВКА</div>
+                <div class="profile-val">Плантации Эквадора</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-label">СТОЙКОСТЬ</div>
+                <div class="profile-val">10–14 дней в оазисе</div>
+              </div>
+              <div class="profile-item">
+                <div class="profile-label">ФОРМАТ</div>
+                <div class="profile-val" id="beansProfileFormat">Оазис Oasis · Без вазы</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Selection Card -->
+          <div class="beans-config-card">
+            <div class="beans-card-tag">ЛУЧШИЙ ВЫБОР ДЛЯ ПРАЗДНИКА И ПОДАРКА</div>
+            <h3 class="beans-card-title">ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»</h3>
+            <div class="beans-descriptors">
+              <span class="desc-pill">Орхидея Ванда</span>
+              <span class="desc-pill">Гортензия</span>
+              <span class="desc-pill">Роза кустовая</span>
+              <span class="desc-pill">Диантус</span>
+            </div>
+
+            <p class="beans-description">
+              Фирменная шляпная коробка не требует поиска вазы и подрезки стеблей. Достаточно раз в день подливать 100 мл прохладной воды в центр композиции. В комплекте фирменная открытка с вашим текстом.
+            </p>
+
+            <!-- Packaging Selector Tool -->
+            <div class="grind-selector-box">
+              <div class="selector-title">ВЫБЕРИТЕ ФОРМАТ ОФОРМЛЕНИЯ:</div>
+              <div class="grind-options-grid" id="grindOptionsGrid">
+                <button class="grind-pill active" data-grind="Шляпная коробка">Шляпная коробка</button>
+                <button class="grind-pill" data-grind="Дизайнерская бумага">Дизайнерская бумага</button>
+                <button class="grind-pill" data-grind="Классический крафт">Классический крафт</button>
+                <button class="grind-pill" data-grind="Стеклянная ваза">Стеклянная ваза</button>
+              </div>
+            </div>
+
+            <!-- Dedicated Format Feature Strip (fixed height, zero layout shift) -->
+            <div class="packaging-feature-card">
+              <div class="pfc-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="pfc-content">
+                <span class="pfc-label">ОСОБЕННОСТЬ ФОРМАТА</span>
+                <span class="pfc-text" id="packagingNoteText">Не требует вазы · Собрано на влажном оазисе с питанием</span>
+              </div>
+            </div>
+
+            <!-- Price & Order Bar -->
+            <div class="beans-order-bar">
+              <div class="beans-price-box">
+                <span class="beans-price-value">4 800&nbsp;₽</span>
+                <span class="beans-price-meta">/ композиция</span>
+              </div>
+              <button class="btn btn-primary" id="addBeansToCartBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span>Забронировать</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FACTS & STANDARDS -->
+    <section class="standards-section section-padding" id="facts">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-label">ПРИНЦИПЫ РАБОТЫ</div>
+          <h2 class="section-title">СТАНДАРТЫ САЛОНА «ЦВЕТЫ 24»</h2>
+          <p class="section-subtitle">
+            Факты о нашем подходе к цветам. Почему наши букеты стоят дома до двух недель и дарят чистую радость.
+          </p>
+        </div>
+
+        <div class="standards-grid">
+          
+          <div class="standard-card">
+            <div class="standard-header-row">
+              <div class="standard-num">01</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="standard-title">ХОЛОДНАЯ ЦЕПЬ И СВЕЖЕСТЬ</h3>
+            <p class="standard-text">
+              Все цветы хранятся в профессиональной холодильной камере при температуре +4...+6°C и влажности 85%. Мы получаем свежие поставки с плантаций Эквадора, Голландии и Кении трижды в неделю.
+            </p>
+            <div class="standard-tags">
+              <span>Климат-контроль +4°C</span>
+              <span>Поставки 3 раза в неделю</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-header-row">
+              <div class="standard-num">02</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="standard-title">ЧЕСТНЫЙ СРЕЗ БЕЗ МАСКИРОВКИ</h3>
+            <p class="standard-text">
+              Мы никогда не прячем несвежие стебли в середину букета. Каждый цветок проходит строгий осмотр: упругий бутон, плотный зеленый лист и чистый срез без бактериального налета.
+            </p>
+            <div class="standard-tags">
+              <span>Ручной отбор стеблей</span>
+              <span>Стойкость от 10 дней</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-header-row">
+              <div class="standard-num">03</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="standard-title">АКВАБОКС И КРИЗАЛ В ПОДАРОК</h3>
+            <p class="standard-text">
+              Каждый букет упаковывается во временный аквабокс с водой, чтобы не испытывать стресс при транспортировке. В комплект вкладываем пакетик профессионального кризала Chrysal и памятку по уходу.
+            </p>
+            <div class="standard-tags">
+              <span>Доставка на воде</span>
+              <span>Подкормка Chrysal бесплатно</span>
+            </div>
+          </div>
+
+          <div class="standard-card">
+            <div class="standard-header-row">
+              <div class="standard-num">04</div>
+              <div class="standard-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="standard-title">ФОТООТЧЕТ И СЕРВИС 24/7</h3>
+            <p class="standard-text">
+              Принимаем заказы круглосуточно. Перед выездом курьера отправляем реальное фото и видео готового букета в WhatsApp или Telegram, чтобы вы были уверены в безупречном результате.
+            </p>
+            <div class="standard-tags">
+              <span>Фото перед отправкой</span>
+              <span>Доставка 24 часа</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews-section section-padding" id="reviews">
+      <div class="container">
+        
+        <div class="yandex-minimal-banner" id="yandexBanner">
+          <div class="yandex-stat-col">
+            <div class="yandex-brand-row">
+              <div class="yandex-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#FC3F1D"/>
+                </svg>
+                <span class="yandex-radar-wave"></span>
+              </div>
+              <span class="yandex-brand-name">ЯНДЕКС КАРТЫ // ВЕРИФИЦИРОВАНО</span>
+              <div class="live-status-pill-mini">
+                <span class="beacon-pulse-glow"></span>
+                <span>АКТУАЛЬНО 2026</span>
+              </div>
+            </div>
+
+            <div class="score-row-minimal">
+              <div class="rating-counter-box">
+                <span class="rating-num-big" id="ratingCounter" data-target="5.0">5.0</span>
+              </div>
+              <div class="rating-stars-clean" id="ratingStars">
+                <svg class="star-svg" style="--i:1" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:2" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:3" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:4" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg class="star-svg" style="--i:5" width="24" height="24" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+            </div>
+
+            <div class="rating-sub-row">
+              <span class="reviews-count-text">На основе 64 проверенных отзывов гостей</span>
+              <div class="award-laurel-badge">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#f59e0b">
+                  <path d="M12 2l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 2z"/>
+                </svg>
+                <span>Награда «Хорошее место — 2026»</span>
+                <span class="award-shimmer-sweep"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="yandex-cta-col">
+            <a href="https://yandex.ru/maps/org/tsvety_24/221385564177/" target="_blank" rel="noopener noreferrer" class="btn btn-outline yandex-direct-btn">
+              <span>Смотреть все отзывы ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Reviews Carousel Bar -->
+        <div class="reviews-marquee-header">
+          <div class="marquee-indicator-pill">
+            <span class="marquee-pulse-dot"></span>
+            <span>АВТОПРОКРУТКА ВПРАВО · НАВЕДИТЕ КУРСОР ДЛЯ ПАУЗЫ</span>
+          </div>
+          <div class="marquee-control-buttons">
+            <button class="marquee-shift-btn" id="revPrevBtn" aria-label="Сдвинуть влево">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="marquee-shift-btn" id="revNextBtn" aria-label="Сдвинуть вправо">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Reviews Marquee Viewport with Continuous Seamless Flow -->
+        <div class="reviews-marquee-viewport" id="reviewsMarquee">
+          <div class="marquee-edge-fade left-fade"></div>
+          <div class="marquee-edge-fade right-fade"></div>
+
+          <div class="reviews-marquee-track" id="reviewsTrack">
+            
+            <!-- CARD 1 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="Елена В." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Елена В.</div>
+                    <div class="author-level">Знаток города 11 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Салон «Цветы 24» — это настоящая находка в Королёве! Цветы всегда свежайшие и стоят очень долго. Покупала здесь и розы, и сборные букеты, и открытки. Отдельное спасибо флористу Ирине за безупречный вкус и душевное отношение.»
+              </p>
+              <div class="review-date">18 сентября · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Дмитрий К." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Дмитрий К.</div>
+                    <div class="author-level">Местный житель</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Заказывал букет жене на годовщину ночью. Невероятно удобно, что работают круглосуточно! Написал в WhatsApp, согласовали состав по фото, через 40 минут курьер уже привёз цветы в аквабоксе. Супруга в полном восторге.»
+              </p>
+              <div class="review-date">4 октября · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_daria.jpg" alt="Юлия М." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Юлия М.</div>
+                    <div class="author-level">Знаток города 8 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Флорист очень чутко помогла определиться с композицией под мой бюджет. Розы простояли почти две недели, ни один бутон не поник! Приятно, что бесплатно положили красивую открытку и кризал.»
+              </p>
+              <div class="review-date">12 августа · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_artem.jpg" alt="Алексей С." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Алексей С.</div>
+                    <div class="author-level">Знаток города 9 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Беру цветы только здесь, когда нужно поздравить маму или коллег. Свежая роза из Эквадора с крупным плотным бутоном. Цены честные и адекватные, без накрутки как в переходах.»
+              </p>
+              <div class="review-date">29 июля · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_sofia.jpg" alt="Анастасия Т." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Анастасия Т.</div>
+                    <div class="author-level">Знаток города 6 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Очень стильная подарочная упаковка в матовую бумагу и атласные ленты. Никакого пластикового блеска, все сдержанно и со вкусом. Брала композицию в шляпной коробке для подруги — восторг!»
+              </p>
+              <div class="review-date">16 июня · Яндекс Карты</div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="review-card">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_alexey.jpg" alt="Сергей П." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex" title="Проверен Яндекс Картами">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Сергей П.</div>
+                    <div class="author-level">Местный житель</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Удобная локация на проспекте Космонавтов в Королёве, всегда есть где припарковаться. Девушки-флористы быстро собрали великолепный букет на выписку из роддома.»
+              </p>
+              <div class="review-date">10 октября · Яндекс Карты</div>
+            </div>
+
+            <!-- DUPLICATE SET FOR SEAMLESS 100% INFINITE LOOP -->
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_evorlova.jpg" alt="Елена В." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Елена В.</div>
+                    <div class="author-level">Знаток города 11 уровня</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Салон «Цветы 24» — это настоящая находка в Королёве! Цветы всегда свежайшие и стоят очень долго. Покупала здесь и розы, и сборные букеты, и открытки. Отдельное спасибо флористу Ирине за безупречный вкус и душевное отношение.»
+              </p>
+              <div class="review-date">18 сентября · Яндекс Карты</div>
+            </div>
+
+            <div class="review-card" aria-hidden="true">
+              <div class="review-card-top">
+                <div class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="assets/images/avatar_mikhail.jpg" alt="Дмитрий К." class="author-avatar-img" loading="lazy">
+                    <span class="avatar-badge-yandex">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="#fc3f1d"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <div class="author-name">Дмитрий К.</div>
+                    <div class="author-level">Местный житель</div>
+                  </div>
+                </div>
+                <div class="stars-vector-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#fc0"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+              </div>
+              <p class="review-text">
+                «Заказывал букет жене на годовщину ночью. Невероятно удобно, что работают круглосуточно! Написал в WhatsApp, согласовали состав по фото, через 40 минут курьер уже привёз цветы в аквабоксе. Супруга в полном восторге.»
+              </p>
+              <div class="review-date">4 октября · Яндекс Карты</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACTS & BOUTIQUE LOCATION -->
+    <section class="contacts-section section-padding" id="contacts">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-label">СВЯЗЬ И ЛОКАЦИЯ // BOUTIQUE & CONCIERGE</div>
+          <h2 class="section-title">КОНТАКТЫ & БУТИК «ЦВЕТЫ 24»</h2>
+          <p class="section-subtitle">
+            Флагманский цветочный салон в Королёве открыт 24/7. Забронируйте букет онлайн с фотоотчетом в WhatsApp, позвоните дежурному флористу или приезжайте в любое удобное время.
+          </p>
+        </div>
+
+        <!-- Location Layout with Salon Showcase & Interactive Map -->
+        <div class="contacts-layout">
+          
+          <!-- Left: Salon Boutique Identity Card -->
+          <div class="salon-identity-card">
+            <div class="salon-facade-banner">
+              <img src="assets/images/curated/salon_coldroom.jpg" alt="Флористический салон Цветы 24 в Королёве" loading="lazy">
+              <div class="facade-status-badge">
+                <span class="fsb-dot"></span>
+                <span>ОТКРЫТО СЕЙЧАС · КРУГЛОСУТОЧНО 24/7</span>
+              </div>
+            </div>
+
+            <div class="salon-card-body">
+              <div class="salon-brand-header">
+                <div class="salon-brand-pre">КРУГЛОСУТОЧНЫЙ ЦВЕТОЧНЫЙ САЛОН В КОРОЛЁВЕ</div>
+                <h3 class="salon-brand-name">САЛОН «ЦВЕТЫ 24»</h3>
+              </div>
+
+              <div class="info-items-list">
+                
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Адрес салона</div>
+                    <div class="info-val">г. Королёв, просп. Космонавтов, 39</div>
+                    <div class="info-sub">Отдельный вход, 1 этаж · Вывеска «Цветы 24»</div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Как добраться и парковка</div>
+                    <div class="info-val">Центр Королёва · просп. Космонавтов, 39</div>
+                    <div class="info-sub">Бесплатная парковка для гостей прямо перед входом в салон</div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Режим работы</div>
+                    <div class="info-val">Круглосуточно 24/7 без перерывов</div>
+                    <div class="info-sub">Ночная выдача и экспресс-бронирование без очередей</div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="info-title">Прямой телефон салона</div>
+                    <a href="tel:+79299020207" class="info-val info-link">+7 (929) 902-02-07</a>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="salon-contact-actions">
+                <a href="https://wa.me/79299020207" target="_blank" rel="noopener noreferrer" class="btn btn-primary salon-btn-wa">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    <path d="M9 10a1.5 1.5 0 0 0 3 3l1.5-1.5"/>
+                  </svg>
+                  <span>WhatsApp (фото букета)</span>
+                </a>
+                <div class="salon-sub-actions">
+                  <a href="tel:+79299020207" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    <span>Позвонить</span>
+                  </a>
+                  <a href="https://wa.me/79299020207" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21.5 2.5L2 10.5L9.5 13.5L18 7.5L11.5 15L11 21.5L14.5 17.5L19 20.5L21.5 2.5Z"/>
+                    </svg>
+                    <span>Telegram</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Minimalist Dark Online Map -->
+          <div class="bespoke-map-card minimal-dark-map-card" id="mapCard">
+            
+            <!-- Map Top Bar: Coordinates & Status -->
+            <div class="map-top-bar">
+              <div class="map-coords-tag">
+                <span class="map-radar-pulse"></span>
+                <span class="map-coords-text">55°54′33″ N, 37°52′12″ E · КОРОЛЁВ</span>
+              </div>
+              
+              <div class="map-top-actions">
+                <button class="map-copy-btn" id="copyAddressBtn" type="button" title="Скопировать точный адрес">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                  </svg>
+                  <span>Скопировать адрес</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dark Online Map Container -->
+            <div class="dark-map-viewport">
+              <iframe 
+                class="dark-online-map-iframe" 
+                id="onlineMapIframe" 
+                src="https://yandex.ru/map-widget/v1/?ll=37.870113%2C55.909119&z=16&pt=37.870113,55.909119,pm2rdm" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                loading="lazy"
+                title="Интерактивная карта салона Цветы 24 в Королёве">
+              </iframe>
+
+              <!-- Map HUD Footer -->
+              <div class="map-hud-overlay minimal-hud">
+                <div class="hud-main-info">
+                  <div class="hud-brand-row">
+                    <span class="hud-status-dot"></span>
+                    <span class="hud-brand-title">ЦВЕТЫ 24 // 39</span>
+                    <span class="hud-hours-pill">Круглосуточно 24/7</span>
+                  </div>
+                  <div class="hud-address-text">г. Королёв, просп. Космонавтов, 39</div>
+                  <div class="hud-meta-info">Проспект Космонавтов, 39 · Удобный подъезд и парковка</div>
+                </div>
+
+                <div class="hud-actions-row">
+                  <a href="https://yandex.ru/maps/org/tsvety_24/221385564177/" target="_blank" rel="noopener noreferrer" class="btn btn-primary hud-route-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                    </svg>
+                    <span>Маршрут в Яндекс Навигаторе</span>
+                  </a>
+                  <a href="https://yandex.ru/maps/org/tsvety_24/221385564177/" target="_blank" rel="noopener noreferrer" class="btn btn-outline hud-maps-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>Яндекс Карты (5.0 ★)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Salon Boutique Guarantees / Perks Strip -->
+        <div class="contacts-perks-row">
+          
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Готовность брони за 15 минут</div>
+              <div class="cpc-desc">Забронируйте любимый букет онлайн — дежурный флорист соберёт его к вашему приезду без ожидания в очереди.</div>
+            </div>
+          </div>
+
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Фотоконтроль в WhatsApp</div>
+              <div class="cpc-desc">Перед выдачей или отправкой присылаем честное фото собранного букета в мессенджер со всех ракурсов.</div>
+            </div>
+          </div>
+
+          <div class="contact-perk-card">
+            <div class="cpc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div class="cpc-text">
+              <div class="cpc-title">Кризал и открытка в подарок</div>
+              <div class="cpc-desc">К каждой композиции бесплатно прилагаем порошок Chrysal для стойкости и стильную открытку с вашим текстом.</div>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STICKY MOBILE BOTTOM ACTION DOCK -->
+  <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Быстрая мобильная навигация">
+    <a href="#menu" class="dock-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      <span>Каталог</span>
+    </a>
+
+    <button class="dock-item" id="mobileCartTrigger">
+      <div class="dock-badge-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="dock-cart-count" id="dockCartCount">0</span>
+      </div>
+      <span>Бронь</span>
+    </button>
+
+    <a href="https://yandex.ru/maps/org/tsvety_24/221385564177/" target="_blank" rel="noopener noreferrer" class="dock-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>Карты</span>
+    </a>
+
+    <a href="https://wa.me/79299020207" target="_blank" rel="noopener noreferrer" class="dock-item dock-accent">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <span class="footer-logo-dot"></span>
+          <span>ЦВЕТЫ 24<span class="logo-accent">// 39</span></span>
+        </div>
+        <p class="footer-copy">
+          Салон цветов и круглосуточное бронирование свежего среза в Королёве.<br>
+          Прямые поставки роз из Эквадора и Голландии.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-heading">НАВИГАЦИЯ</div>
+        <ul class="footer-links">
+          <li><a href="#menu">Каталог букетов</a></li>
+          <li><a href="#showcase">Флагманская коробка</a></li>
+          <li><a href="#facts">Стандарты качества</a></li>
+          <li><a href="#reviews">Отзывы гостей 5.0</a></li>
+          <li><a href="#contacts">Контакты и мессенджеры</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-heading">ЯНДЕКС КАРТЫ</div>
+        <p class="footer-yandex-info">
+          Рейтинг: 5.0 из 5.0<br>
+          64+ проверенных отзыва · Хорошее место<br>
+          <a href="https://yandex.ru/maps/org/tsvety_24/221385564177/" target="_blank" rel="noopener noreferrer" class="footer-yandex-link">
+            <span>Карточка организации ↗</span>
+          </a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom container">
+      <div class="copyright">
+        <span>© 2026 САЛОН ЦВЕТОВ «ЦВЕТЫ 24». Все права защищены.</span>
+      </div>
+      <div class="dev-badge">г. Королёв, просп. Космонавтов, 39 · +7 (929) 902-02-07</div>
+    </div>
+  </footer>
+
+  <!-- ELEVATED LUXURY CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Корзина бронирования цветов">
+      <div class="cart-drawer-header">
+        <div class="cart-header-title-box">
+          <h3 class="cart-title">ВАША БРОНЬ</h3>
+          <span class="cart-title-count" id="cartHeaderCount">(0)</span>
+        </div>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Закрыть корзину">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Free Gift Progress Bar -->
+      <div class="cart-gift-meter" id="cartGiftMeter">
+        <div class="meter-text-row">
+          <span>Аквабокс, кризал и открытка</span>
+          <span class="meter-highlight">Бронируются бесплатно</span>
+        </div>
+        <div class="meter-track">
+          <div class="meter-bar" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-container" id="cartItemsList">
+        <!-- Rendered dynamically -->
+        <div class="empty-cart-state" id="emptyCartState">
+          <div class="empty-cart-vector">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+              <path d="M32 16 C36 24, 42 28, 42 34 C42 40, 37.5 45, 32 45 C26.5 45, 22 40, 22 34 C22 28, 28 24, 32 16 Z" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 45 L32 54" stroke="var(--accent-orange)" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="empty-title">В списке брони пока пусто</div>
+          <div class="empty-desc">Выберите понравившиеся букеты или композиции в каталоге, чтобы забронировать их к вашему визиту.</div>
+          <button class="btn btn-outline" onclick="document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
+            Перейти в каталог
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+        <div class="cart-summary-row">
+          <span class="summary-label">Итого по брони:</span>
+          <span class="cart-total-sum" id="cartTotalSum">0&nbsp;₽</span>
+        </div>
+        <button class="btn btn-primary btn-block checkout-btn-styled" id="proceedCheckoutBtn">
+          <span>Оформить бронирование</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal-overlay" id="productModalOverlay">
+    <div class="product-modal" id="productModal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT / RESERVATION MODAL -->
+  <div class="modal-overlay" id="checkoutModalOverlay">
+    <div class="checkout-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Закрыть окно">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="checkout-header">
+        <h3>БРОНИРОВАНИЕ БУКЕТА</h3>
+        <p>Зарезервируем свежие цветы в холодильной камере и бережно соберём к нужному времени на просп. Космонавтов, 39</p>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-group">
+          <label for="orderName">Ваше имя</label>
+          <input type="text" id="orderName" required placeholder="Например, Александр">
+        </div>
+        <div class="form-group">
+          <label for="orderPhone">Телефон для подтверждения</label>
+          <input type="tel" id="orderPhone" required placeholder="+7 (999) 000-00-00">
+        </div>
+        <div class="form-group">
+          <label for="deliveryType">Способ получения</label>
+          <select id="deliveryType">
+            <option value="Самовывоз">Заберу лично в салоне (Королёв, просп. Космонавтов, 39)</option>
+            <option value="Доставка курьером">Нужна отправка курьером (Королёв и МО)</option>
+          </select>
+        </div>
+        <div class="form-group" id="addressGroup" style="display:none;">
+          <label for="orderAddress">Адрес доставки</label>
+          <input type="text" id="orderAddress" placeholder="Улица, дом, подъезд, квартира">
+        </div>
+        <div class="form-group">
+          <label for="orderTime">Желаемое время готовности</label>
+          <select id="orderTime">
+            <option value="Через 20–30 минут (срочно к приходу)">Через 20–30 минут (к приходу в салон)</option>
+            <option value="Сегодня к определенному времени">Сегодня к определенному времени</option>
+            <option value="Завтра утром к открытию">Завтра утром к открытию</option>
+            <option value="Другая дата">Другая дата (укажите в пожеланиях)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cardText">Текст для бесплатной открытки</label>
+          <input type="text" id="cardText" placeholder="Напишите тёплые строки (подпишем от руки)">
+        </div>
+        <div class="form-group">
+          <label for="orderComment">Пожелания к бронированию</label>
+          <input type="text" id="orderComment" placeholder="Например: прислать фото готового букета в WhatsApp">
+        </div>
+
+        <div class="order-summary-box" id="orderSummaryBox">
+          <!-- Summary list -->
+        </div>
+
+        <div class="checkout-submit-buttons">
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>Подтвердить бронирование</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
+    <span class="toast-indicator"></span>
+    <span class="toast-text" id="toastText">Букет добавлен в заказ</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
