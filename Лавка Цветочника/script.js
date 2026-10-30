@@ -921,6 +921,22 @@ if (checkoutForm) {
     const totalSum = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const orderId = 'FLW-' + Math.floor(1000 + Math.random() * 9000);
 
+    try {
+      const existingOrders = JSON.parse(localStorage.getItem('obsidian_orders_v1') || '[]');
+      existingOrders.unshift({
+        id: orderId,
+        customerName: customerName,
+        customerPhone: customerPhone,
+        readyTime: readyTime,
+        comment: (cardText ? 'Открытка: «' + cardText + '». ' : '') + (comment || deliveryType),
+        total: totalSum,
+        status: 'new',
+        timestamp: Date.now(),
+        items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, qty: i.quantity }))
+      });
+      localStorage.setItem('obsidian_orders_v1', JSON.stringify(existingOrders));
+    } catch (err) {}
+
     const itemsSummary = cart.map((i, idx) => `${idx + 1}. ${i.name} × ${i.quantity} шт. (${i.price * i.quantity} ₽)`).join('\n');
 
     // Build friendly WhatsApp booking message
@@ -951,7 +967,7 @@ ${cardText ? `Текст для открытки: «${cardText}»\n` : ''}${comm
 
     // Open WhatsApp to florist +7 985 760-25-15
     setTimeout(() => {
-      window.open(`https://wa.me/79857602515?text=${waText}`, '_blank');
+      if (!window.__suppressWaRedirect) window.open(`https://wa.me/79857602515?text=${waText}`, '_blank');
     }, 1100);
   });
 }

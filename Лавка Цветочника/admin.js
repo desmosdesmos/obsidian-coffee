@@ -19,199 +19,199 @@ const STORAGE_KEYS = {
 const DEFAULT_PRODUCTS = [
   {
     id: 1,
-    category: 'coffee',
-    name: 'Айс-латте',
-    tag: 'Хит сезона',
-    volume: '350 мл',
-    price: 290,
+    category: 'author',
+    name: 'Гранд-букет «Малиновый рассвет»',
+    tag: 'WOW-эффект',
+    volume: 'Высота 55 см · Ø 45 см',
+    price: 6500,
     oldPrice: null,
-    image: 'assets/images/iced_latte.jpg',
-    desc: 'Двойной шот спешелти эспрессо, отборное фермерское молоко 3.2% и чистый кусковой лёд. Плотный кофейный баланс без горечи.',
-    nutrition: { kcal: 135, p: '6.2 г', f: '6.8 г', c: '11.4 г' },
-    ingredients: 'Эспрессо (100% арабика), молоко цельное, лед очищенный.',
+    image: 'assets/images/curated/catalog_1_author_grand.jpg',
+    desc: 'Роскошный объемный авторский букет в ягодно-малиновых тонах: французские пионовидные розы, пудровые диантусы и эвкалипт.',
+    nutrition: { kcal: 55, p: '45 см', f: '14 дней', c: 'Ягодный' },
+    ingredients: 'Пионовидные розы (7 шт.), диантус сортовой (7 шт.), альстромерия (5 шт.), эустома, эвкалипт цинерея.',
     outOfStock: false
   },
   {
     id: 2,
-    category: 'coffee',
-    name: 'Фильтр-кофе (Батч-брю)',
-    tag: 'Спешелти',
-    volume: '250 мл',
-    price: 220,
+    category: 'author',
+    name: 'Авторский букет «Африканская королева»',
+    tag: 'Экзотика',
+    volume: 'Высота 50 см · Ø 40 см',
+    price: 5900,
     oldPrice: null,
-    image: 'assets/images/filter_coffee.jpg',
-    desc: 'Капельный метод Moccamaster на зерне мытой Эфиопии. Яркий чайный профиль с нотами бергамота, персика и жасмина.',
-    nutrition: { kcal: 4, p: '0.2 г', f: '0.1 г', c: '0.6 г' },
-    ingredients: 'Зерно Specialty (Эфиопия Иргачеффе), минерализованная вода TDS 110 ppm.',
+    image: 'assets/images/curated/catalog_2_protea.jpg',
+    desc: 'Редкая экзотическая розовая протея в окружении нежных кремово-розовых роз и белого воскового хамелациума.',
+    nutrition: { kcal: 50, p: '40 см', f: '14 дней', c: 'Пряный' },
+    ingredients: 'Королевская протея (2 шт.), сортовая эквадорская роза (7 шт.), хамелациум, альстромерия.',
     outOfStock: false
   },
   {
     id: 3,
-    category: 'coffee',
-    name: 'Флэт Уайт',
-    tag: 'Интенсивный',
-    volume: '200 мл',
-    price: 280,
+    category: 'author',
+    name: 'Букет «Лавандовое утро» с эустомой',
+    tag: 'Нежный хит',
+    volume: 'Высота 50 см · Ø 36 см',
+    price: 4200,
     oldPrice: null,
-    image: 'assets/images/flat_white.jpg',
-    desc: 'Двойной ристретто с глянцевой тонкой микропенкой. Насыщенный глубокий вкус спешелти эспрессо на первом плане.',
-    nutrition: { kcal: 110, p: '5.1 г', f: '5.4 г', c: '9.2 г' },
-    ingredients: 'Двойной ристретто (100% арабика), молоко цельное 60°C.',
+    image: 'assets/images/curated/catalog_4_eustoma_field.jpg',
+    desc: 'Воздушный полевой шарм: махровая сиреневая эустома, кустовая матрикария (ромашки) и ажурная зелень.',
+    nutrition: { kcal: 50, p: '36 см', f: '12 дней', c: 'Свежий' },
+    ingredients: 'Эустома махровая лавандовая (7 веток), ромашка матрикария (5 веток), гринбелл, мятная калька.',
     outOfStock: false
   },
   {
     id: 4,
-    category: 'coffee',
-    name: 'Капучино',
-    tag: 'Классика',
-    volume: '250 мл',
-    price: 250,
+    category: 'author',
+    name: 'Букет «Мятный бриз» с кустовой розой',
+    tag: 'Свежий срез',
+    volume: 'Высота 48 см · Ø 38 см',
+    price: 4150,
     oldPrice: null,
-    image: 'assets/images/cappuccino.jpg',
-    desc: 'Идеальный баланс эспрессо и шелковистой микропены. Зерно средней обжарки с орехово-шоколадным профилем.',
-    nutrition: { kcal: 120, p: '5.8 г', f: '6.0 г', c: '10.5 г' },
-    ingredients: 'Эспрессо 36 мл, фермерское молоко цельное.',
+    image: 'assets/images/curated/catalog_12_mint_spray.jpg',
+    desc: 'Бархатные кустовые розы цвета фуксии, белоснежная альстромерия и ароматные побеги эвкалипта.',
+    nutrition: { kcal: 48, p: '38 см', f: '12 дней', c: 'Эвкалипт' },
+    ingredients: 'Кустовая роза малиновая (5 веток), альстромерия белая (4 ветки), эвкалипт цинерея.',
     outOfStock: false
   },
   {
     id: 5,
-    category: 'coffee',
-    name: 'Матча Латте (Удзи)',
-    tag: 'Superfood',
-    volume: '300 мл',
-    price: 320,
+    category: 'roses',
+    name: '25 роз «Miss Piggy» в матовой кальке',
+    tag: 'Эквадор 50 см',
+    volume: 'Высота 50 см · Ø 38 см',
+    price: 5400,
     oldPrice: null,
-    image: 'assets/images/matcha_latte.jpg',
-    desc: 'Церемониальная матча первого сбора из Киото на взбитом растительном или цельном молоке. Мягкий травянистый вкус.',
-    nutrition: { kcal: 140, p: '6.0 г', f: '6.2 г', c: '12.0 г' },
-    ingredients: 'Матча японская церемониальная, молоко на выбор.',
+    image: 'assets/images/curated/catalog_3_miss_piggy.jpg',
+    desc: 'Знаменитый сорт с градиентным переходом: персиково-коралловый центр бутона и нежно-розовые лепестки.',
+    nutrition: { kcal: 50, p: '38 см', f: '14 дней', c: 'Розовый' },
+    ingredients: '25 отборных роз Miss Piggy (Эквадор 50 см), матовая калька, атласная лента.',
     outOfStock: false
   },
   {
     id: 6,
-    category: 'food',
-    name: 'Круассан с лососем и крем-чизом',
-    tag: 'Завтрак',
-    volume: '210 г',
-    price: 460,
+    category: 'roses',
+    name: '25 роз «Pink Mondial» (Эквадор)',
+    tag: 'Премиум срез',
+    volume: 'Высота 60 см · Ø 40 см',
+    price: 5800,
     oldPrice: null,
-    image: 'assets/images/salmon_croissant.jpg',
-    desc: 'Хрустящий круассан на новозеландском сливочном масле, ломтики слабосоленого лосося, творожный сыр и свежий огурец.',
-    nutrition: { kcal: 480, p: '19.2 г', f: '28.4 г', c: '36.5 г' },
-    ingredients: 'Сливочный круассан, слабосоленый лосось, творожный сыр, свежий огурец, микрозелень.',
+    image: 'assets/images/curated/catalog_8_blush_roses.jpg',
+    desc: 'Пудрово-розовые розы с зеленоватым оттенком крайних лепестков — раскрываются в пышные бокалы до 10 см.',
+    nutrition: { kcal: 60, p: '40 см', f: '14 дней', c: 'Тонкий' },
+    ingredients: '25 роз сорта Pink Mondial (Эквадор 60 см), фирменная лента.',
     outOfStock: false
   },
   {
     id: 7,
-    category: 'food',
-    name: 'Сырники из фермерского творога',
-    tag: 'Хит кухни',
-    volume: '240 г',
-    price: 380,
+    category: 'roses',
+    name: 'Гранд-охапка из 101 красной розы',
+    tag: '101 роза Эквадор',
+    volume: 'Высота 60 см · Ø 65 см',
+    price: 19500,
     oldPrice: null,
-    image: 'assets/images/syrniki_breakfast.jpg',
-    desc: 'Три пышных нежных сырника из фермерского творога 9%. Подаются с густой деревенской сметаной и таёжной брусникой.',
-    nutrition: { kcal: 395, p: '24.5 г', f: '16.8 г', c: '32.0 г' },
-    ingredients: 'Творог 9%, рисовая мука, яйцо фермерское, сахар тростниковый, сметана, брусника.',
+    image: 'assets/images/curated/catalog_7_101_roses.jpg',
+    desc: 'Внушительный гранд-букет из 101 алой розы Explorer в благородном крафте с атласным бантом.',
+    nutrition: { kcal: 60, p: '65 см', f: '14 дней', c: 'Глубокий' },
+    ingredients: '101 роза Explorer (Эквадор 60 см), крафтовая бумага, двойной атласный бант.',
     outOfStock: false
   },
   {
     id: 8,
-    category: 'food',
-    name: 'Бриошь с авокадо и яйцом пашот',
-    tag: 'Бранч',
-    volume: '260 г',
-    price: 420,
+    category: 'roses',
+    name: 'Авторский букет «Розовый шелк» с брассикой',
+    tag: 'Флористический тренд',
+    volume: 'Высота 48 см · Ø 40 см',
+    price: 4900,
     oldPrice: null,
-    image: 'assets/images/avocado_brioche.jpg',
-    desc: 'Поджаренная сливочная бриошь, спелый авокадо Хасс, яйцо пашот с текучим желтком и теплый соус голландез.',
-    nutrition: { kcal: 430, p: '14.0 г', f: '26.2 г', c: '34.0 г' },
-    ingredients: 'Бриошь ремесленная, авокадо Хасс, яйцо пашот, соус голландез, микс трав.',
+    image: 'assets/images/curated/catalog_14_duet_blush.jpg',
+    desc: 'Декоративная кружевная брассика, пудровые садовые розы, махровые хризантемы и веточки хамелациума.',
+    nutrition: { kcal: 48, p: '40 см', f: '12 дней', c: 'Нежный' },
+    ingredients: 'Брассика сортовая, розы пудровые (5 шт.), хризантема кустовая, хамелациум.',
     outOfStock: false
   },
   {
     id: 9,
-    category: 'food',
-    name: 'Сэндвич с пастрами на тартине',
-    tag: 'Сытный',
-    volume: '280 г',
-    price: 490,
+    category: 'boxes',
+    name: 'Шляпная коробка «Royal Blush»',
+    tag: 'Бестселлер',
+    volume: 'Высота 35 см · Ø 32 см',
+    price: 4850,
     oldPrice: null,
-    image: 'assets/images/pastrami_sandwich.jpg',
-    desc: 'Тартин на закваске, щедрая порция томленой говядины пастрами, сыр чеддер, корнишоны и дижонская горчица.',
-    nutrition: { kcal: 540, p: '29.5 г', f: '22.0 г', c: '51.0 г' },
-    ingredients: 'Хлеб тартин, говядина пастрами, чеддер, маринованные корнишоны, зернистая горчица.',
+    image: 'assets/images/curated/catalog_5_hatbox_royal.jpg',
+    desc: 'Нежнейшая композиция в бархатной пудровой коробке на флористическом оазисе с кустовыми пионовидными розами.',
+    nutrition: { kcal: 35, p: '32 см', f: '14 дней', c: 'Пудровый' },
+    ingredients: 'Кустовая пионовидная роза, одноголовая роза Pink Ohara, белая эустома, оазис, коробка.',
     outOfStock: false
   },
   {
     id: 10,
-    category: 'desserts',
-    name: 'Баскский обожженный чизкейк',
-    tag: 'Бестселлер',
-    volume: '175 г',
-    price: 350,
+    category: 'boxes',
+    name: 'Деревянное кашпо «Прованс» с орхидеей',
+    tag: 'Подарочный бокс',
+    volume: 'Высота 32 см · Ø 30 см',
+    price: 4600,
     oldPrice: null,
-    image: 'assets/images/basque_cheesecake.jpg',
-    desc: 'Испанский чизкейк San Sebastian. Нежнейшая шелковистая кремовая текстура и карамелизированная обожженная корочка.',
-    nutrition: { kcal: 410, p: '7.8 г', f: '29.0 г', c: '28.5 г' },
-    ingredients: 'Сливочный сыр Cremette, сливки 33%, яйца, тростниковый сахар, натуральная ваниль.',
+    image: 'assets/images/curated/catalog_6_wooden_basket.jpg',
+    desc: 'Уютная композиция в реечном деревянном ящичке: королевская орхидея цимбидиум, кустовые розы и веточки лаванды.',
+    nutrition: { kcal: 32, p: '30 см', f: '14 дней', c: 'Лаванда' },
+    ingredients: 'Орхидея цимбидиум, кустовая роза кремовая, хризантема, натуральная лаванда, деревянное кашпо.',
     outOfStock: false
   },
   {
     id: 11,
-    category: 'desserts',
-    name: 'Медовик с брусникой',
-    tag: 'Фирменный',
-    volume: '160 г',
-    price: 320,
+    category: 'boxes',
+    name: 'Композиция «Сердце океана» с гортензией',
+    tag: 'Эксклюзив',
+    volume: 'Высота 38 см · Ø 35 см',
+    price: 5300,
     oldPrice: null,
-    image: 'assets/images/medovik_cake.jpg',
-    desc: 'Тончайшие карамельно-медовые коржи, воздушный сметанный крем и сочные ягоды таежной брусники с приятной кислинкой.',
-    nutrition: { kcal: 360, p: '5.2 г', f: '17.4 г', c: '46.0 г' },
-    ingredients: 'Гречишный мед, мука пшеничная, сметана, сливки, ягоды брусники, сахарная пудра.',
+    image: 'assets/images/curated/catalog_9_orchid_hydrangea.jpg',
+    desc: 'Пышная шапка небесно-голубой гортензии в сочетании с тигровыми орхидеями, кремовыми розами и эвкалиптом.',
+    nutrition: { kcal: 38, p: '35 см', f: '12 дней', c: 'Свежий' },
+    ingredients: 'Голубая гортензия (гидрангия), орхидея цимбидиум (3 цветка), роза кремовая (5 шт.), эвкалипт.',
     outOfStock: false
   },
   {
     id: 12,
-    category: 'beans',
-    name: 'Зерно: Эфиопия Иргачеффе G1',
-    tag: 'Q-Score 86.2',
-    volume: '250 г',
-    price: 850,
+    category: 'boxes',
+    name: 'Сумочка «Сладкий комплимент»',
+    tag: 'Готовый подарок',
+    volume: 'Высота 28 см · Ø 26 см',
+    price: 3800,
     oldPrice: null,
-    image: 'assets/images/specialty_bean_bags.jpg',
-    desc: 'Мытая обработка, светлая обжарка под фильтр. Высота произрастания 1950–2100м. Ноты бергамота, белого персика и жасмина.',
-    nutrition: { kcal: 0, p: '0 г', f: '0 г', c: '0 г' },
-    ingredients: '100% арабика specialty в зернах. Бесплатный помол под любой девайс.',
+    image: 'assets/images/curated/catalog_13_box_love.jpg',
+    desc: 'Очаровательная цветочная сумочка на оазисе из нежно-розовых роз, белых хризантем и пушистого хлопка.',
+    nutrition: { kcal: 28, p: '26 см', f: '12 дней', c: 'Ванильный' },
+    ingredients: 'Роза розовая (5 шт.), хризантема кустовая, коробочки натурального хлопка, сумочка с лентами.',
     outOfStock: false
   }
 ];
 
 const DEFAULT_FEATURED_BEANS = {
-  title: 'ЭФИОПИЯ ИРГАЧЕФФЕ // G1',
-  tag: 'ЛУЧШИЙ ВЫБОР ДЛЯ ВОРОНКИ И ФИЛЬТРА',
-  roast: 'Omni-Roast / Каждую неделю',
-  qGrade: '86.25 баллов',
-  grindInfo: 'Бесплатно под ваш девайс',
-  descriptors: ['Бергамот', 'Белый персик', 'Жасмин', 'Чёрный чай'],
-  desc: 'Яркий искрящийся лот мытой обработки из региона Гедеб. Чистейшая кислотность тропических фруктов, нежное цветочное тело и сладкое медовое послевкусие.',
-  price: 850,
-  weight: '250 г',
-  image: 'assets/images/specialty_bean_bags.jpg'
+  title: 'ШЛЯПНАЯ КОРОБКА «ROYAL BLUSH»',
+  tag: 'БЕСТСЕЛЛЕР МЕСЯЦА // ВЫБОР ФЛОРИСТОВ',
+  roast: 'Прямая поставка Эквадор / Голландия',
+  qGrade: 'Стойкость до 14 дней',
+  grindInfo: 'Аквабокс + подкормка Chrysal в комплекте',
+  descriptors: ['Пионовидная роза', 'Pink Ohara', 'Белая эустома', 'Эвкалипт Cinerea'],
+  desc: 'Флагманская композиция салона: бархатные бутоны роз Pink Ohara и нежнейшей эустомы в пудровой шляпной коробке на влажном флористическом оазисе.',
+  price: 4850,
+  weight: 'Высота 35 см · Ø 32 см',
+  image: 'assets/images/curated/catalog_5_hatbox_royal.jpg'
 };
 
 const DEFAULT_STORE_SETTINGS = {
-  cafeName: 'OBSIDIAN // 07',
-  phone: '+7 (925) 217-39-15',
-  address: 'г. Королёв, Подмосковная ул., 7',
-  telegramUrl: 'https://t.me/obsidian_coffee_07',
-  whatsappUrl: 'https://wa.me/79252173915',
-  yandexMapsUrl: 'https://yandex.ru/maps/-/CXBAZVzO',
-  hoursWeekdays: '08:00 — 22:00',
-  hoursWeekends: '08:00 — 22:00',
-  hoursKitchen: 'до 21:45',
-  statusMode: 'auto', // 'auto', 'open', 'closed'
-  heroTitle: 'КОФЕ,\nКОТОРЫЙ РАБОТАЕТ\nТАК ЖЕ ЧЕСТНО, КАК ВЫ.',
+  cafeName: 'ЛАВКА ЦВЕТОЧНИКА',
+  phone: '+7 (985) 760-25-15',
+  address: 'г. Мытищи, Шараповская ул., 4, корп. 1',
+  telegramUrl: 'https://t.me/+79857602515',
+  whatsappUrl: 'https://wa.me/79857602515',
+  yandexMapsUrl: 'https://yandex.ru/maps/org/lavka_tsvetochnika/1035849393/',
+  hoursWeekdays: '09:00 — 21:00',
+  hoursWeekends: '09:00 — 21:00',
+  hoursKitchen: '09:00 — 21:00',
+  statusMode: 'open',
+  heroTitle: 'ЦВЕТЫ, КОТОРЫЕ ГОВОРЯТ БЕЗ ЛИШНИХ СЛОВ.',
   promoBannerText: ''
 };
 
@@ -495,10 +495,9 @@ function renderProductsTable() {
   if (!tbody) return;
 
   const categoryNames = {
-    coffee: 'Кофе',
-    food: 'Еда',
-    desserts: 'Десерты',
-    beans: 'Зерно'
+    author: 'Авторские букеты',
+    roses: 'Розы & Моно',
+    boxes: 'Коробки & Корзины'
   };
 
   const filtered = productsData.filter(item => {
@@ -512,11 +511,14 @@ function renderProductsTable() {
   });
 
   // Update pills count
-  document.getElementById('countPill_all').textContent = productsData.length;
-  document.getElementById('countPill_coffee').textContent = productsData.filter(p => p.category === 'coffee').length;
-  document.getElementById('countPill_food').textContent = productsData.filter(p => p.category === 'food').length;
-  document.getElementById('countPill_desserts').textContent = productsData.filter(p => p.category === 'desserts').length;
-  document.getElementById('countPill_beans').textContent = productsData.filter(p => p.category === 'beans').length;
+  const elAll = document.getElementById('countPill_all');
+  const elAut = document.getElementById('countPill_author');
+  const elRos = document.getElementById('countPill_roses');
+  const elBox = document.getElementById('countPill_boxes');
+  if (elAll) elAll.textContent = productsData.length;
+  if (elAut) elAut.textContent = productsData.filter(p => p.category === 'author').length;
+  if (elRos) elRos.textContent = productsData.filter(p => p.category === 'roses').length;
+  if (elBox) elBox.textContent = productsData.filter(p => p.category === 'boxes').length;
 
   if (filtered.length === 0) {
     tbody.innerHTML = `
@@ -534,7 +536,7 @@ function renderProductsTable() {
     return `
       <tr data-id="${item.id}">
         <td style="width: 60px;">
-          <img src="${item.image}" alt="${item.name}" class="product-row-thumb" onerror="this.src='assets/images/cappuccino.jpg'">
+          <img src="${item.image}" alt="${item.name}" class="product-row-thumb" onerror="this.src='assets/images/curated/catalog_1_author_grand.jpg'">
         </td>
         <td>
           <div class="product-row-title-box">
@@ -653,7 +655,7 @@ window.openProductEditModal = function(id) {
     document.getElementById('fld_kcal').value = item.nutrition ? item.nutrition.kcal : '';
     document.getElementById('fld_nutr').value = item.nutrition ? `${item.nutrition.p || ''} / ${item.nutrition.f || ''} / ${item.nutrition.c || ''}` : '';
     
-    preview.src = item.image || 'assets/images/cappuccino.jpg';
+    preview.src = item.image || 'assets/images/curated/catalog_1_author_grand.jpg';
   } else {
     modalTitle.textContent = 'Добавить новый товар';
     form.reset();
@@ -661,8 +663,8 @@ window.openProductEditModal = function(id) {
     document.getElementById('fld_category').value = 'coffee';
     document.getElementById('fld_volume').value = '250 мл';
     document.getElementById('fld_tag').value = 'Спешелти';
-    document.getElementById('fld_image').value = 'assets/images/cappuccino.jpg';
-    preview.src = 'assets/images/cappuccino.jpg';
+    document.getElementById('fld_image').value = 'assets/images/curated/catalog_1_author_grand.jpg';
+    preview.src = 'assets/images/curated/catalog_1_author_grand.jpg';
   }
 
   modal.classList.add('active');
@@ -689,7 +691,7 @@ function loadBeansForm() {
   document.getElementById('beans_image').value = featuredBeansData.image || '';
   
   const preview = document.getElementById('beansImagePreview');
-  if (preview) preview.src = featuredBeansData.image || 'assets/images/specialty_bean_bags.jpg';
+  if (preview) preview.src = featuredBeansData.image || 'assets/images/curated/catalog_5_hatbox_royal.jpg';
 }
 
 function saveBeansForm(e) {
@@ -707,7 +709,7 @@ function saveBeansForm(e) {
     desc: document.getElementById('beans_desc').value.trim(),
     price: parseInt(document.getElementById('beans_price').value, 10) || 850,
     weight: document.getElementById('beans_weight').value.trim(),
-    image: document.getElementById('beans_image').value.trim() || 'assets/images/specialty_bean_bags.jpg'
+    image: document.getElementById('beans_image').value.trim() || 'assets/images/curated/catalog_5_hatbox_royal.jpg'
   };
 
   setStoredData(STORAGE_KEYS.BEANS, featuredBeansData);
@@ -734,7 +736,7 @@ function renderOrdersTable() {
   if (ordersData.length === 0) {
     container.innerHTML = `
       <div style="text-align: center; padding: 60px 20px; color: var(--admin-text-dim);">
-        <p style="font-size: 1rem; font-weight:700;">Входящих предзаказов пока нет</p>
+        <p style="font-size: 1rem; font-weight:700;">Входящих бронирований пока нет</p>
         <p style="font-size: 0.8rem; margin-top: 6px;">Когда клиент оформит заказ через корзину на сайте, он отобразится здесь моментально.</p>
       </div>
     `;
@@ -743,8 +745,8 @@ function renderOrdersTable() {
 
   const statusNames = {
     new: '🟡 Новый заказ',
-    in_progress: '🔵 Готовится на баре',
-    completed: '🟢 Выдан гостю',
+    in_progress: '🔵 В сборке у флориста',
+    completed: '🟢 Выдан клиенту',
     cancelled: '🔴 Отменен'
   };
 
@@ -1256,7 +1258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const price = parseInt(document.getElementById('fld_price').value, 10);
       const volume = document.getElementById('fld_volume').value.trim();
       const tag = document.getElementById('fld_tag').value.trim() || 'Спешелти';
-      const image = document.getElementById('fld_image').value.trim() || 'assets/images/cappuccino.jpg';
+      const image = document.getElementById('fld_image').value.trim() || 'assets/images/curated/catalog_1_author_grand.jpg';
       const desc = document.getElementById('fld_desc').value.trim();
       const ingredients = document.getElementById('fld_ingredients').value.trim();
       const kcal = parseInt(document.getElementById('fld_kcal').value, 10) || 120;
@@ -1320,7 +1322,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (imgInput) {
     imgInput.addEventListener('input', (e) => {
-      previewImg.src = e.target.value.trim() || 'assets/images/cappuccino.jpg';
+      previewImg.src = e.target.value.trim() || 'assets/images/curated/catalog_1_author_grand.jpg';
     });
   }
 
